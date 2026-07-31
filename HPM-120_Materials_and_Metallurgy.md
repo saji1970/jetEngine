@@ -4,32 +4,36 @@
 
 ## 1. MATERIALS SUMMARY BY COMPONENT
 
+### Engine Architecture
+
+Inlet → Rotating Detonation Annulus → MHD Generator → MHD Accelerator → C-D Nozzle
+
 ### Master Materials List
 
-| # | Component              | Primary Material        | Secondary/Coating       | Max Temp (K) |
-|---|------------------------|-------------------------|-------------------------|-------------|
-| 1 | Intake cowl            | Ti-6Al-4V (Grade 5)    | —                       | 600         |
-| 2 | Intake centerbody      | Ti-6Al-4V              | Ceramic TBC optional    | 800         |
-| 3 | Diffuser duct          | Ti-6Al-4V              | —                       | 600         |
-| 4 | Plasma chamber walls   | Inconel 718             | HfO₂ inner coating     | 1,200       |
-| 5 | Plasma chamber liner   | C/SiC composite         | —                       | 1,800       |
-| 6 | RF waveguides          | C10100 OFHC Copper      | —                       | 400         |
-| 7 | Magnetic coils (plasma)| Copper (water-cooled)   | Kapton insulation       | 400         |
-| 8 | Fuel injectors         | Inconel 625             | —                       | 1,100       |
-| 9 | Fuel manifold          | 316L Stainless Steel    | —                       | 700         |
-| 10| Combustion liner       | C/SiC composite         | ZrO₂ TBC (0.3 mm)     | 1,800       |
-| 11| Combustion outer shell | Inconel 718             | —                       | 1,100       |
-| 12| MHD channel walls      | C/SiC composite         | ZrO₂ TBC (0.5 mm)     | 1,800       |
-| 13| MHD electrodes         | W-Cu composite (80/20)  | —                       | 1,500       |
-| 14| MHD insulators         | Boron Nitride (BN)      | —                       | 1,800       |
-| 15| MHD magnet coils       | NbTi superconductor     | Cryostat (SS304)        | < 10 (cryo) |
-| 16| MHD cryostat           | 304 Stainless Steel     | MLI insulation          | 77 - 300    |
-| 17| Nozzle inner wall      | C/SiC composite         | ZrO₂ TBC (0.5 mm)     | 1,800       |
-| 18| Nozzle outer shell     | Inconel 718             | —                       | 1,000       |
-| 19| Nozzle EM coils        | Copper (water-cooled)   | Ceramic insulation      | 500         |
-| 20| Mounting brackets      | Inconel 718             | —                       | 900         |
-| 21| Fasteners throughout   | A-286 or Inconel 718    | —                       | 900         |
-| 22| Seals                  | Inconel X-750 (C-seals) | —                       | 1,000       |
+| # | Component | Primary Material | Secondary/Coating | Max Temp (K) |
+|---|---|---|---|---|
+| 1 | Intake cowl | Ti-6Al-4V (Grade 5) | — | 600 |
+| 2 | Intake centerbody | Ti-6Al-4V | — | 800 |
+| 3 | Diffuser duct | Ti-6Al-4V | — | 600 |
+| 4 | RDE outer shell | Inconel 718 | — | 1,100 |
+| 5 | RDE inner liner | C/SiC composite | ZrO₂ TBC (0.5 mm) + EBC | 1,800 |
+| 6 | RDE injector face plate | Inconel 625 | — | 1,100 |
+| 7 | Plasma igniter waveguide (1x) | C10100 OFHC Copper | — | 400 |
+| 8 | MHD Generator channel walls | C/SiC composite | ZrO₂ TBC (0.5 mm) | 1,800 |
+| 9 | MHD Generator electrodes | W-Cu composite (80/20) | — | 1,500 |
+| 10 | MHD Generator insulators | Boron Nitride (BN) | — | 1,800 |
+| 11 | MHD Generator magnet coils | NbTi superconductor | Cryostat (SS304) | <10 (cryo) |
+| 12 | MHD Generator cryostat | 304 Stainless Steel | MLI insulation | 77-300 |
+| 13 | MHD Accelerator channel walls | C/SiC composite | ZrO₂ TBC (0.5 mm) | 1,800 |
+| 14 | MHD Accelerator electrodes | W-Cu composite (80/20) | — | 1,500 |
+| 15 | MHD Accelerator insulators | Boron Nitride (BN) | — | 1,800 |
+| 16 | MHD Accelerator magnet coils | NbTi superconductor | Cryostat (SS304) | <10 (cryo) |
+| 17 | MHD Accelerator cryostat | 304 Stainless Steel | MLI insulation | 77-300 |
+| 18 | Nozzle inner wall | C/SiC composite | ZrO₂ TBC (0.5 mm) | 1,800 |
+| 19 | Nozzle outer shell | Inconel 718 | — | 1,000 |
+| 20 | Mounting brackets | Inconel 718 | — | 900 |
+| 21 | Fasteners | A-286 or Inconel 718 | — | 900 |
+| 22 | Seals | Inconel X-750 (C-seals) | — | 1,000 |
 
 ---
 
@@ -67,7 +71,7 @@
 
 ### 2.2 Inconel 718
 
-**Used in:** Plasma chamber outer, combustion shell, nozzle shell, mounts
+**Used in:** RDE annulus outer shell, nozzle outer shell, mounting brackets, fasteners
 
 | Property              | Value              |
 |-----------------------|--------------------|
@@ -104,7 +108,7 @@
 
 ### 2.3 Inconel 625
 
-**Used in:** Fuel injectors
+**Used in:** RDE injector face plate
 
 | Property              | Value              |
 |-----------------------|--------------------|
@@ -128,7 +132,7 @@
 
 ### 2.4 C/SiC Composite (Carbon fiber / Silicon Carbide matrix)
 
-**Used in:** Plasma liner, combustion liner, MHD channel walls, nozzle inner wall
+**Used in:** RDE annulus inner liner, MHD Generator channel walls, MHD Accelerator channel walls, nozzle inner wall
 
 | Property              | Value              |
 |-----------------------|--------------------|
@@ -160,7 +164,7 @@
 
 ### 2.5 C10100 OFHC Copper
 
-**Used in:** RF waveguides
+**Used in:** Plasma igniter waveguide (1x)
 
 | Property              | Value              |
 |-----------------------|--------------------|
@@ -174,7 +178,7 @@
 
 ### 2.6 Tungsten-Copper (W-Cu 80/20) Composite
 
-**Used in:** MHD electrodes
+**Used in:** MHD Generator electrodes, MHD Accelerator electrodes
 
 | Property              | Value              |
 |-----------------------|--------------------|
@@ -191,7 +195,7 @@
 
 ### 2.7 Boron Nitride (BN) — Hot-Pressed
 
-**Used in:** MHD channel insulators
+**Used in:** MHD Generator channel insulators, MHD Accelerator channel insulators
 
 | Property              | Value              |
 |-----------------------|--------------------|
@@ -206,7 +210,7 @@
 
 ### 2.8 316L Stainless Steel
 
-**Used in:** Fuel manifold, non-critical structural parts
+**Used in:** Non-critical structural parts
 
 | Property              | Value              |
 |-----------------------|--------------------|
@@ -224,32 +228,73 @@
 
 ### 2.9 ZrO₂ Thermal Barrier Coating (Yttria-Stabilized Zirconia, 8YSZ)
 
-**Used in:** Inner surface of combustion chamber, MHD channel, nozzle
+**Used in:** Inner surface of RDE annulus liner, MHD Generator channel walls, MHD Accelerator channel walls, nozzle inner wall
 
 | Property              | Value              |
 |-----------------------|--------------------|
 | Thermal conductivity  | 1.5 - 2.0 W/m·K   |
 | CTE                   | 10 × 10⁻⁶ /K     |
 | Max surface temp      | 1,500 K            |
-| Coating thickness     | 0.3 - 0.5 mm       |
+| Coating thickness     | 0.5 mm             |
 
 **Application Method:**
 - Air Plasma Spray (APS) for thick coatings
 - Electron Beam Physical Vapor Deposition (EB-PVD) for thin, strain-tolerant coatings
 - Bond coat: NiCrAlY (0.1 mm) applied first via HVOF spray
 
+### 2.10 UHTC — Ultra-High Temperature Ceramics (Future Upgrade Path)
+
+The Rotating Detonation Annulus produces gas temperatures of 3,500 - 4,000 K, which
+exceed the service limits of C/SiC (1,800 K). While the baseline design relies on
+TBC + EBC + regenerative cooling to keep wall temperatures within C/SiC limits, UHTC
+materials are identified as potential future upgrades if thermal management proves
+insufficient.
+
+**HfC (Hafnium Carbide):**
+
+| Property              | Value              |
+|-----------------------|--------------------|
+| Melting point         | 4,232 K            |
+| Density               | 12,200 kg/m³       |
+| Thermal conductivity  | 20 W/m·K           |
+| Hardness              | 26 GPa (Vickers)   |
+
+- Candidate for RDE throat regions and annulus hot-side liners
+- Extremely high melting point enables operation near detonation temperatures
+- Brittle; requires careful structural design or composite reinforcement (e.g., HfC-SiC)
+
+**ZrB₂ (Zirconium Diboride):**
+
+| Property              | Value              |
+|-----------------------|--------------------|
+| Max service temp      | ~2,500 K           |
+| Density               | 6,100 kg/m³        |
+| Thermal conductivity  | 60 W/m·K           |
+| Oxidation resistance  | Good with SiC additive (ZrB₂-SiC) |
+
+- Oxidation-resistant when combined with 20 vol% SiC particulate
+- Forms protective ZrO₂ + SiO₂ glassy layer in oxidizing environments
+- Candidate for RDE annulus liner upgrade if C/SiC proves marginal
+
+**Note:** Both HfC and ZrB₂ are currently limited by manufacturing maturity and cost.
+Spark Plasma Sintering (SPS) is the preferred densification route. These materials
+should be considered Phase 2 upgrades pending thermal validation of the C/SiC baseline.
+
 ---
 
 ## 3. THERMAL BARRIER AND COATING SYSTEM
 
 ```
-WALL CROSS-SECTION (combustion/MHD/nozzle):
+WALL CROSS-SECTION (RDE annulus / MHD channels / nozzle):
 
-HOT GAS SIDE (2,500 - 3,200 K)
+HOT GAS SIDE (3,500 - 4,000 K in RDE; 2,500 - 3,200 K in MHD/nozzle)
     │
     ▼
 ┌──────────────────────┐
-│  ZrO₂ TBC (0.3-0.5mm)│  ← Thermal barrier
+│  ZrO₂ TBC (0.5 mm)  │  ← Thermal barrier
+├──────────────────────┤
+│  EBC layer           │  ← Environmental barrier (RDE: mandatory)
+│  (0.05 - 0.1 mm)    │
 ├──────────────────────┤
 │  NiCrAlY bond coat   │  ← Oxidation barrier (0.1 mm)
 │  (0.1 mm)            │
@@ -267,8 +312,15 @@ HOT GAS SIDE (2,500 - 3,200 K)
     ▼
 COLD SIDE (~400 - 600 K)
 
-Total wall thickness: 15 - 23 mm
+Total wall thickness: 16 - 24 mm
 ```
+
+**RDE-specific coating notes:** The RDE annulus liner requires a full EBC (Environmental
+Barrier Coating) system in addition to the ZrO₂ TBC. The EBC typically consists of a
+mullite or rare-earth silicate layer (e.g., Yb₂Si₂O₇) applied between the bond coat
+and the TBC. This prevents steam-induced recession of the SiC matrix at elevated
+temperatures. All MHD and nozzle sections also benefit from EBC but may operate with
+TBC-only at reduced gas temperatures.
 
 ---
 
@@ -282,26 +334,49 @@ Total wall thickness: 15 - 23 mm
 | C/SiC to Inconel 718          | Mechanical (spring clips/seals)|
 | Inconel 718 to Inconel 718    | TIG weld (Inconel 625 filler)  |
 | W-Cu electrodes to BN         | Mechanical (clamped)           |
-| 316L to Inconel               | TIG weld (309L filler)         |
 | C/SiC to ZrO₂ TBC            | Plasma spray (direct)          |
+| Inconel 625 to Inconel 718    | TIG weld (Inconel 625 filler)  |
 
 ### Critical Notes on Material Selection
 
-1. **C/SiC degrades in steam-rich environments.** Combustion of hydrocarbon fuel
+1. **C/SiC at RDE detonation temperatures (3,500 - 4,000 K).** The Rotating
+   Detonation Annulus produces gas temperatures far exceeding C/SiC service limits
+   (1,800 K). The TBC + EBC + regenerative cooling system must reduce wall
+   temperatures below 1,800 K. If thermal analysis shows insufficient margin,
+   fallback options include:
+   - UHTC liners (HfC or ZrB₂-SiC) for the annulus hot-side
+   - Active transpiration cooling through porous C/SiC walls
+   - Hybrid designs with UHTC face layer bonded to C/SiC structural backing
+
+2. **RDE thermal cycling.** Detonation waves rotate through the annulus at
+   approximately 1,500 - 2,000 Hz, creating rapid thermal cycling on the annulus
+   walls. This is far more severe than steady-state combustion loading. All annulus
+   liner materials and coatings must be validated for thermal fatigue resistance
+   under pulsed heating at these frequencies. Coating adhesion under cyclic thermal
+   shock is a primary failure mode to monitor.
+
+3. **C/SiC degrades in steam-rich environments.** Combustion of hydrocarbon fuel
    produces H₂O. The SiC matrix reacts with H₂O above 1,200°C to form Si(OH)₄
-   gas. The ZrO₂ TBC and environmental barrier coating (EBC) are essential.
+   gas. The ZrO₂ TBC and environmental barrier coating (EBC) are essential,
+   especially in the RDE annulus where both temperature and steam partial pressure
+   are highest.
 
-2. **Inconel 718 loses strength above 700°C.** For regions exceeding this, use
-   Haynes 230 (max 1,150°C) or Inconel 625 as alternatives.
+4. **Inconel 718 loses strength above 700°C.** For regions exceeding this, use
+   Haynes 230 (max 1,150°C) or Inconel 625 as alternatives. The RDE outer shell
+   operates at up to 1,100 K (827°C), which is above the standard IN718 limit of
+   980 K. Active cooling of the outer shell or substitution with Haynes 230 may
+   be required if regenerative cooling is insufficient.
 
-3. **Alkali seed contamination.** K or Cs salts used for MHD conductivity seeding
-   are corrosive to some materials. W-Cu electrodes and BN insulators are
-   resistant. Ni-superalloy surfaces in the MHD section need protective coatings.
+5. **Alkali seed contamination.** K or Cs salts used for MHD conductivity seeding
+   (in both the MHD Generator and MHD Accelerator) are corrosive to some materials.
+   W-Cu electrodes and BN insulators are resistant. Ni-superalloy surfaces in the
+   MHD sections need protective coatings.
 
-4. **Thermal expansion mismatch.** C/SiC (CTE ~3 × 10⁻⁶/K) vs Inconel 718
+6. **Thermal expansion mismatch.** C/SiC (CTE ~3 × 10⁻⁶/K) vs Inconel 718
    (CTE ~13 × 10⁻⁶/K) creates severe mismatch. Use compliant seals (Inconel
    X-750 C-seals or ceramic rope packing) at all liner-to-shell interfaces.
-   Never bond them rigidly.
+   Never bond them rigidly. This applies at all C/SiC-to-IN718 joints: RDE
+   annulus, MHD Generator, MHD Accelerator, and nozzle.
 
 ---
 
@@ -318,3 +393,5 @@ Total wall thickness: 15 - 23 mm
 | BN billets          | Saint-Gobain (Combat BN), Momentive         | Hot-pressed    |
 | ZrO₂ spray powder  | Oerlikon Metco, Praxair                     | Spray powder   |
 | NbTi superconductor | Bruker EAS, Luvata, SuperOx                 | Wire/tape      |
+| HfC powder          | American Elements, ALB Materials             | Powder (UHTC)  |
+| ZrB₂ powder        | H.C. Starck, American Elements              | Powder (UHTC)  |

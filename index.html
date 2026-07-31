@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HPM-120 — Hybrid Plasma MHD 120 kN Engine</title>
+<title>HPM-120 — RDE-MHD Hybrid 120 kN Engine</title>
 <style>
   :root {
     --bg: #0a0e1a;
@@ -487,8 +487,8 @@
 <!-- HEADER -->
 <div class="header">
   <h1>HPM-120</h1>
-  <div class="subtitle">Hybrid Plasma-Assisted Magnetohydrodynamic Jet Engine</div>
-  <div style="margin-top:6px; color:var(--green); font-size:0.82em; letter-spacing:4px;">TURBINE-FREE &bull; COMPRESSOR-FREE &bull; BLADE-FREE</div>
+  <div class="subtitle">Rotating Detonation &mdash; MHD Hybrid Jet Engine</div>
+  <div style="margin-top:6px; color:var(--green); font-size:0.82em; letter-spacing:4px;">TURBINE-FREE &bull; SELF-COMPRESSING &bull; BLADE-FREE &bull; SELF-POWERING</div>
   <div class="thrust-badge">120 kN TARGET THRUST</div>
 </div>
 
@@ -525,39 +525,44 @@
         <div class="fb-detail">Non-rotating diffuser<br>850 mm diameter</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
-      <div class="flow-block">
-        <div class="fb-num">STAGE 2</div>
-        <div class="fb-title">Plasma Ionization</div>
-        <div class="fb-detail">RF 2.45 GHz<br>120 &ndash; 150 kW</div>
+      <div class="flow-block" style="border-color:var(--hot);">
+        <div class="fb-num" style="color:var(--hot);">STAGE 2</div>
+        <div class="fb-title">Rotating Detonation</div>
+        <div class="fb-detail">Self-compressing<br>3,500 &ndash; 4,000 K &bull; 15&ndash;25 bar</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
-      <div class="flow-block">
-        <div class="fb-num">STAGE 3</div>
-        <div class="fb-title">Fuel Injection</div>
-        <div class="fb-detail">24 swirl injectors<br>Jet-A / JP-8</div>
+      <div class="flow-block" style="border-color:var(--green);">
+        <div class="fb-num" style="color:var(--green);">STAGE 3</div>
+        <div class="fb-title">MHD Generator</div>
+        <div class="fb-detail">Extracts 300&ndash;600 kW<br>Powers Stage 4</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-block">
         <div class="fb-num">STAGE 4</div>
-        <div class="fb-title">Plasma Combustion</div>
-        <div class="fb-detail">2,500 &ndash; 3,200 K<br>C/SiC liner</div>
+        <div class="fb-title">MHD Accelerator</div>
+        <div class="fb-detail">2 &ndash; 4 Tesla<br>J &times; B force (self-powered)</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-block">
         <div class="fb-num">STAGE 5</div>
-        <div class="fb-title">MHD Accelerator</div>
-        <div class="fb-detail">2 &ndash; 4 Tesla<br>J &times; B force</div>
-      </div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-block">
-        <div class="fb-num">STAGE 6</div>
-        <div class="fb-title">EM Nozzle</div>
-        <div class="fb-detail">Variable geometry<br>8 EM coil rings</div>
+        <div class="fb-title">C-D Nozzle</div>
+        <div class="fb-detail">Conventional bell<br>500&ndash;650 mm exit</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-result">
         <div class="fr-val">120 kN</div>
         <div class="fr-label">Thrust</div>
+      </div>
+    </div>
+    <!-- Power loop & seed annotation -->
+    <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px dashed var(--green);border-radius:6px;font-size:0.75em;">
+        <span style="color:var(--green);font-weight:700;">&#x21BB;</span>
+        <span style="color:var(--green);">POWER LOOP: Stage 3 &rarr; Stage 4 (self-sustaining, 300&ndash;600 kW)</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px dashed var(--warn);border-radius:6px;font-size:0.75em;">
+        <span style="color:var(--warn);font-weight:700;">&#x25C8;</span>
+        <span style="color:var(--warn);">ALKALI SEED: K/Cs 0.5&ndash;1% injected at RDE exit</span>
       </div>
     </div>
   </div>
@@ -566,19 +571,19 @@
   <div class="grid grid-4" style="margin-bottom:20px;">
     <div class="card" style="text-align:center;">
       <h3>Total Length</h3>
-      <div style="font-size:2em;font-weight:700;color:var(--white);">3.63 m</div>
+      <div style="font-size:2em;font-weight:700;color:var(--white);">2.85 m</div>
     </div>
     <div class="card" style="text-align:center;">
       <h3>Max Diameter</h3>
-      <div style="font-size:2em;font-weight:700;color:var(--white);">0.95 m</div>
+      <div style="font-size:2em;font-weight:700;color:var(--white);">0.90 m</div>
     </div>
     <div class="card" style="text-align:center;">
       <h3>Dry Weight</h3>
-      <div style="font-size:2em;font-weight:700;color:var(--white);">~498 kg</div>
+      <div style="font-size:2em;font-weight:700;color:var(--white);">~420 kg</div>
     </div>
     <div class="card" style="text-align:center;">
       <h3>T/W Ratio</h3>
-      <div style="font-size:2em;font-weight:700;color:var(--white);">~24:1</div>
+      <div style="font-size:2em;font-weight:700;color:var(--white);">~29:1</div>
     </div>
   </div>
 
@@ -588,15 +593,16 @@
       <h3>Performance Estimates</h3>
       <table>
         <tr><td>Thrust (static, sea level)</td><td class="val">120 kN</td></tr>
-        <tr><td>Thrust (Mach 0.8, 10 km)</td><td class="val">80 &ndash; 100 kN</td></tr>
-        <tr><td>Specific impulse (Jet-A)</td><td class="val">1,200 &ndash; 1,800 s</td></tr>
+        <tr><td>Thrust (Mach 0.8, 10 km)</td><td class="val">90 &ndash; 110 kN</td></tr>
         <tr><td>Air mass flow</td><td class="val">80 &ndash; 100 kg/s</td></tr>
-        <tr><td>Fuel mass flow</td><td class="val">1.8 &ndash; 2.5 kg/s</td></tr>
-        <tr><td>Exhaust velocity</td><td class="val">1,200 &ndash; 1,800 m/s</td></tr>
-        <tr><td>Combustion temperature</td><td class="val hot">2,500 &ndash; 3,200 K</td></tr>
-        <tr><td>Thermal efficiency</td><td class="val">30 &ndash; 45%</td></tr>
-        <tr><td>Electrical power required</td><td class="val warn">420 &ndash; 1,050 kW</td></tr>
-        <tr><td>SFC</td><td class="val">54 &ndash; 75 kg/kN&middot;hr</td></tr>
+        <tr><td>Fuel mass flow</td><td class="val">2.0 &ndash; 3.0 kg/s</td></tr>
+        <tr><td>Exhaust velocity</td><td class="val">1,400 &ndash; 2,000 m/s</td></tr>
+        <tr><td>Detonation temperature</td><td class="val hot">3,500 &ndash; 4,000 K</td></tr>
+        <tr><td>Chamber pressure (RDE)</td><td class="val ok">15 &ndash; 25 bar</td></tr>
+        <tr><td>Thermal efficiency</td><td class="val">35 &ndash; 50%</td></tr>
+        <tr><td>External power (startup only)</td><td class="val ok">~50 kW</td></tr>
+        <tr><td>MHD generator output</td><td class="val ok">300 &ndash; 600 kW</td></tr>
+        <tr><td>SFC</td><td class="val">42 &ndash; 55 kg/kN&middot;hr</td></tr>
       </table>
     </div>
     <div class="card">
@@ -612,8 +618,8 @@
           <tr><td>HPM-1000</td><td class="val">1,000 kN</td><td>Commercial Aircraft</td></tr>
         </tbody>
       </table>
-      <div class="warn-box" style="margin-top:14px;">
-        <strong>&#9888; Critical Note:</strong> Non-rotating compression at zero/low airspeed is the hardest unsolved problem. This engine may require minimum forward velocity or an auxiliary boost system.
+      <div class="note" style="margin-top:14px;">
+        <strong>Key Innovation:</strong> Rotating Detonation provides self-compression (15&ndash;25 bar pressure gain) eliminating the need for a mechanical compressor. The MHD generator&ndash;accelerator cycle is self-powering after startup, eliminating external power dependency.
       </div>
     </div>
   </div>
@@ -627,7 +633,6 @@
   <div class="engine-diagram" style="margin-bottom:20px;">
     <h3 style="color:var(--accent);margin-bottom:15px;">ENGINE SIDE PROFILE (to scale proportions)</h3>
     <svg viewBox="0 0 1200 340" class="engine-svg" xmlns="http://www.w3.org/2000/svg">
-      <!-- Background grid -->
       <defs>
         <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
           <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1a2744" stroke-width="0.5"/>
@@ -643,13 +648,13 @@
           <stop offset="0%" stop-color="#0a3d62"/>
           <stop offset="100%" stop-color="#0e4d72"/>
         </linearGradient>
-        <linearGradient id="plasmaGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#1a0a3e"/>
-          <stop offset="100%" stop-color="#2d1b69"/>
+        <linearGradient id="rdeGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#6b2000"/>
+          <stop offset="100%" stop-color="#8b3000"/>
         </linearGradient>
-        <linearGradient id="combGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#4a1500"/>
-          <stop offset="100%" stop-color="#6b2000"/>
+        <linearGradient id="mhdGenGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0a3a2a"/>
+          <stop offset="100%" stop-color="#0d5b3b"/>
         </linearGradient>
         <linearGradient id="mhdGrad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stop-color="#0a2a4a"/>
@@ -665,105 +670,103 @@
       <!-- Center line -->
       <line x1="30" y1="170" x2="1170" y2="170" stroke="#1a2744" stroke-width="1" stroke-dasharray="8,4"/>
 
-      <!-- Section 1: Intake (x:40-220) -->
-      <polygon points="40,100 40,240 100,120 100,220 220,140 220,200" fill="url(#intakeGrad)" stroke="#00b4d8" stroke-width="1.5" opacity="0.9"/>
-      <!-- Centerbody -->
-      <polygon points="40,160 40,180 220,166 220,174" fill="#0a1628" stroke="#00b4d8" stroke-width="0.8"/>
+      <!-- Section 1: Intake (x:40-270) -->
+      <polygon points="40,100 40,240 110,120 110,220 270,140 270,200" fill="url(#intakeGrad)" stroke="#00b4d8" stroke-width="1.5" opacity="0.9"/>
+      <polygon points="40,160 40,180 270,166 270,174" fill="#0a1628" stroke="#00b4d8" stroke-width="0.8"/>
 
-      <!-- Section 2: Plasma (x:220-420) -->
-      <rect x="220" y="130" width="200" height="80" rx="3" fill="url(#plasmaGrad)" stroke="#8b5cf6" stroke-width="1.5" opacity="0.9"/>
-      <!-- RF ports -->
-      <rect x="250" y="122" width="16" height="12" rx="2" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-      <rect x="310" y="122" width="16" height="12" rx="2" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-      <rect x="370" y="122" width="16" height="12" rx="2" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-      <rect x="250" y="206" width="16" height="12" rx="2" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-      <rect x="310" y="206" width="16" height="12" rx="2" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-      <rect x="370" y="206" width="16" height="12" rx="2" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-      <!-- Plasma glow -->
-      <rect x="235" y="148" width="170" height="44" rx="4" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.6" stroke-dasharray="4,3"/>
+      <!-- Section 2: RDE Annulus (x:270-440) — 528 mm OD -->
+      <rect x="270" y="127" width="170" height="86" rx="3" fill="url(#rdeGrad)" stroke="#ff6b35" stroke-width="1.5" opacity="0.9"/>
+      <!-- Detonation wave indicators (rotating arrows) -->
+      <circle cx="355" cy="170" r="30" fill="none" stroke="#ffd60a" stroke-width="1.5" opacity="0.7" stroke-dasharray="8,6"/>
+      <circle cx="355" cy="170" r="20" fill="none" stroke="#ff6b35" stroke-width="1" opacity="0.5" stroke-dasharray="4,4"/>
+      <!-- Fuel injector face plate -->
+      <rect x="270" y="132" width="6" height="76" fill="#ffd60a" stroke="#ffd60a" stroke-width="1" opacity="0.8"/>
 
-      <!-- Fuel injector ring (x:420-428) -->
-      <rect x="418" y="135" width="8" height="70" fill="#ffd60a" stroke="#ffd60a" stroke-width="1" opacity="0.8"/>
-
-      <!-- Section 4: Combustion (x:426-690) -->
-      <rect x="426" y="135" width="264" height="70" rx="3" fill="url(#combGrad)" stroke="#ff6b35" stroke-width="1.5" opacity="0.9"/>
-      <!-- Inner fire indication -->
-      <rect x="440" y="152" width="236" height="36" rx="3" fill="none" stroke="#ff6b35" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,3"/>
-
-      <!-- Section 5: MHD (x:690-1020) -->
-      <rect x="690" y="120" width="330" height="100" rx="3" fill="url(#mhdGrad)" stroke="#00b4d8" stroke-width="1.5" opacity="0.9"/>
-      <!-- Magnet indicators -->
-      <text x="700" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
-      <text x="760" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
-      <text x="820" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
-      <text x="880" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
-      <text x="940" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
-      <text x="1000" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
-      <text x="700" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
-      <text x="760" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
-      <text x="820" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
-      <text x="880" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
-      <text x="940" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
-      <text x="1000" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
+      <!-- Section 3: MHD Generator (x:440-690) -->
+      <rect x="440" y="125" width="250" height="90" rx="3" fill="url(#mhdGenGrad)" stroke="#2ec4b6" stroke-width="1.5" opacity="0.9"/>
       <!-- Electrode lines -->
-      <line x1="710" y1="135" x2="710" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="735" y1="135" x2="735" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="760" y1="135" x2="760" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="785" y1="135" x2="785" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="810" y1="135" x2="810" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="835" y1="135" x2="835" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="860" y1="135" x2="860" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="885" y1="135" x2="885" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="910" y1="135" x2="910" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="935" y1="135" x2="935" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="960" y1="135" x2="960" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="985" y1="135" x2="985" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="1010" y1="135" x2="1010" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="460" y1="138" x2="460" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="490" y1="138" x2="490" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="520" y1="138" x2="520" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="550" y1="138" x2="550" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="580" y1="138" x2="580" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="610" y1="138" x2="610" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="640" y1="138" x2="640" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="670" y1="138" x2="670" y2="202" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <!-- Magnet labels -->
+      <text x="465" y="120" fill="#2ec4b6" font-size="8" font-weight="600">N</text>
+      <text x="525" y="120" fill="#2ec4b6" font-size="8" font-weight="600">N</text>
+      <text x="585" y="120" fill="#2ec4b6" font-size="8" font-weight="600">N</text>
+      <text x="645" y="120" fill="#2ec4b6" font-size="8" font-weight="600">N</text>
+      <text x="465" y="226" fill="#ff6b35" font-size="8" font-weight="600">S</text>
+      <text x="525" y="226" fill="#ff6b35" font-size="8" font-weight="600">S</text>
+      <text x="585" y="226" fill="#ff6b35" font-size="8" font-weight="600">S</text>
+      <text x="645" y="226" fill="#ff6b35" font-size="8" font-weight="600">S</text>
+      <!-- Power extraction arrow -->
+      <text x="565" y="174" fill="#2ec4b6" font-size="8" font-weight="600" text-anchor="middle">POWER OUT</text>
 
-      <!-- Section 6: Nozzle (x:1020-1170) -->
-      <polygon points="1020,130 1020,210 1050,138 1050,202 1060,145 1060,195 1170,95 1170,245" fill="url(#nozzleGrad)" stroke="#ff6b35" stroke-width="1.5" opacity="0.9"/>
-      <!-- EM coil rings on nozzle -->
-      <line x1="1040" y1="133" x2="1040" y2="207" stroke="#00b4d8" stroke-width="1.5" opacity="0.5"/>
-      <line x1="1060" y1="142" x2="1060" y2="198" stroke="#00b4d8" stroke-width="1.5" opacity="0.5"/>
-      <line x1="1080" y1="135" x2="1080" y2="205" stroke="#00b4d8" stroke-width="1.5" opacity="0.5"/>
-      <line x1="1100" y1="128" x2="1100" y2="212" stroke="#00b4d8" stroke-width="1.5" opacity="0.5"/>
-      <line x1="1120" y1="118" x2="1120" y2="222" stroke="#00b4d8" stroke-width="1.5" opacity="0.5"/>
-      <line x1="1140" y1="108" x2="1140" y2="232" stroke="#00b4d8" stroke-width="1.5" opacity="0.5"/>
+      <!-- Section 4: MHD Accelerator (x:690-1020) -->
+      <rect x="690" y="120" width="330" height="100" rx="3" fill="url(#mhdGrad)" stroke="#00b4d8" stroke-width="1.5" opacity="0.9"/>
+      <text x="710" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
+      <text x="780" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
+      <text x="850" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
+      <text x="920" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
+      <text x="990" y="116" fill="#00b4d8" font-size="9" font-weight="600">N</text>
+      <text x="710" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
+      <text x="780" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
+      <text x="850" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
+      <text x="920" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
+      <text x="990" y="232" fill="#ff6b35" font-size="9" font-weight="600">S</text>
+      <line x1="720" y1="135" x2="720" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="750" y1="135" x2="750" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="780" y1="135" x2="780" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="810" y1="135" x2="810" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="840" y1="135" x2="840" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="870" y1="135" x2="870" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="900" y1="135" x2="900" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="930" y1="135" x2="930" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="960" y1="135" x2="960" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="990" y1="135" x2="990" y2="205" stroke="#ffd60a" stroke-width="0.5" opacity="0.4"/>
+      <!-- Power input arrow -->
+      <path d="M565,185 Q620,190 690,175" fill="none" stroke="#2ec4b6" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="620" y="200" fill="#2ec4b6" font-size="7" text-anchor="middle">electrical power</text>
+
+      <!-- Section 5: C-D Nozzle (x:1020-1170) -->
+      <polygon points="1020,130 1020,210 1050,140 1050,200 1060,148 1060,192 1170,105 1170,235" fill="url(#nozzleGrad)" stroke="#ff6b35" stroke-width="1.5" opacity="0.9"/>
 
       <!-- Flow arrow through engine -->
       <line x1="45" y1="170" x2="1165" y2="170" stroke="url(#flowGrad)" stroke-width="2" opacity="0.3"/>
       <polygon points="1165,165 1175,170 1165,175" fill="#d62828" opacity="0.5"/>
 
       <!-- Labels -->
-      <text x="90" y="82" fill="#00b4d8" font-size="10" font-weight="600" text-anchor="middle">1. INTAKE</text>
-      <text x="90" y="93" fill="#6e7681" font-size="8" text-anchor="middle">850 mm</text>
-      <text x="320" y="82" fill="#8b5cf6" font-size="10" font-weight="600" text-anchor="middle">2. PLASMA</text>
-      <text x="320" y="93" fill="#6e7681" font-size="8" text-anchor="middle">620 mm OD</text>
-      <text x="422" y="82" fill="#ffd60a" font-size="9" font-weight="600" text-anchor="middle">3.</text>
-      <text x="558" y="82" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">4. COMBUSTION</text>
-      <text x="558" y="93" fill="#6e7681" font-size="8" text-anchor="middle">528 mm OD</text>
-      <text x="855" y="82" fill="#00b4d8" font-size="10" font-weight="600" text-anchor="middle">5. MHD ACCELERATOR</text>
-      <text x="855" y="93" fill="#6e7681" font-size="8" text-anchor="middle">950 mm OD</text>
-      <text x="1095" y="82" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">6. EM NOZZLE</text>
-      <text x="1095" y="93" fill="#6e7681" font-size="8" text-anchor="middle">750 mm exit</text>
+      <text x="120" y="82" fill="#00b4d8" font-size="10" font-weight="600" text-anchor="middle">1. INTAKE</text>
+      <text x="120" y="93" fill="#6e7681" font-size="8" text-anchor="middle">850 mm</text>
+      <text x="355" y="82" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">2. RDE ANNULUS</text>
+      <text x="355" y="93" fill="#6e7681" font-size="8" text-anchor="middle">528 mm OD</text>
+      <text x="565" y="82" fill="#2ec4b6" font-size="10" font-weight="600" text-anchor="middle">3. MHD GENERATOR</text>
+      <text x="565" y="93" fill="#6e7681" font-size="8" text-anchor="middle">850 mm OD</text>
+      <text x="855" y="82" fill="#00b4d8" font-size="10" font-weight="600" text-anchor="middle">4. MHD ACCELERATOR</text>
+      <text x="855" y="93" fill="#6e7681" font-size="8" text-anchor="middle">900 mm OD</text>
+      <text x="1095" y="82" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">5. C-D NOZZLE</text>
+      <text x="1095" y="93" fill="#6e7681" font-size="8" text-anchor="middle">650 mm exit</text>
 
       <!-- Dimension lines -->
       <line x1="40" y1="280" x2="1170" y2="280" stroke="#6e7681" stroke-width="1"/>
       <line x1="40" y1="275" x2="40" y2="285" stroke="#6e7681" stroke-width="1"/>
       <line x1="1170" y1="275" x2="1170" y2="285" stroke="#6e7681" stroke-width="1"/>
-      <text x="605" y="295" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="middle">3,630 mm Total Length</text>
+      <text x="605" y="295" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="middle">2,850 mm Total Length</text>
 
       <!-- Section lengths -->
-      <line x1="40" y1="260" x2="220" y2="260" stroke="#6e7681" stroke-width="0.5"/>
-      <text x="130" y="258" fill="#6e7681" font-size="7" text-anchor="middle">550</text>
-      <line x1="220" y1="260" x2="420" y2="260" stroke="#6e7681" stroke-width="0.5"/>
-      <text x="320" y="258" fill="#6e7681" font-size="7" text-anchor="middle">600</text>
-      <line x1="426" y1="260" x2="690" y2="260" stroke="#6e7681" stroke-width="0.5"/>
-      <text x="558" y="258" fill="#6e7681" font-size="7" text-anchor="middle">800</text>
+      <line x1="40" y1="260" x2="270" y2="260" stroke="#6e7681" stroke-width="0.5"/>
+      <text x="155" y="258" fill="#6e7681" font-size="7" text-anchor="middle">550</text>
+      <line x1="270" y1="260" x2="440" y2="260" stroke="#6e7681" stroke-width="0.5"/>
+      <text x="355" y="258" fill="#6e7681" font-size="7" text-anchor="middle">400</text>
+      <line x1="440" y1="260" x2="690" y2="260" stroke="#6e7681" stroke-width="0.5"/>
+      <text x="565" y="258" fill="#6e7681" font-size="7" text-anchor="middle">600</text>
       <line x1="690" y1="260" x2="1020" y2="260" stroke="#6e7681" stroke-width="0.5"/>
-      <text x="855" y="258" fill="#6e7681" font-size="7" text-anchor="middle">1,000</text>
+      <text x="855" y="258" fill="#6e7681" font-size="7" text-anchor="middle">800</text>
       <line x1="1020" y1="260" x2="1170" y2="260" stroke="#6e7681" stroke-width="0.5"/>
-      <text x="1095" y="258" fill="#6e7681" font-size="7" text-anchor="middle">650</text>
+      <text x="1095" y="258" fill="#6e7681" font-size="7" text-anchor="middle">500</text>
 
       <!-- AIR arrow -->
       <polygon points="20,160 35,170 20,180" fill="#00b4d8" opacity="0.7"/>
@@ -786,58 +789,55 @@
       <text x="100" y="258" fill="#6e7681" font-size="9" text-anchor="middle">OD: 850 mm</text>
       <text x="100" y="270" fill="#6e7681" font-size="8" text-anchor="middle">Hub: 250 mm</text>
 
-      <!-- Station 2: Plasma -->
-      <circle cx="320" cy="140" r="62" fill="none" stroke="#8b5cf6" stroke-width="2"/>
-      <circle cx="320" cy="140" r="50" fill="none" stroke="#c084fc" stroke-width="1" stroke-dasharray="4,3"/>
-      <circle cx="320" cy="140" r="42" fill="none" stroke="#8b5cf6" stroke-width="0.8" opacity="0.5"/>
-      <!-- Coil positions -->
-      <circle cx="320" cy="70" r="5" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
-      <circle cx="320" cy="210" r="5" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
-      <circle cx="250" cy="140" r="5" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
-      <circle cx="390" cy="140" r="5" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
-      <text x="320" y="245" fill="#8b5cf6" font-size="10" font-weight="600" text-anchor="middle">PLASMA</text>
-      <text x="320" y="258" fill="#6e7681" font-size="9" text-anchor="middle">OD: 620 mm</text>
-      <text x="320" y="270" fill="#6e7681" font-size="8" text-anchor="middle">ID: 500 mm</text>
+      <!-- Station 2: RDE Annulus -->
+      <circle cx="320" cy="140" r="53" fill="none" stroke="#ff6b35" stroke-width="2"/>
+      <circle cx="320" cy="140" r="35" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+      <!-- Detonation wave arc -->
+      <path d="M 320 87 A 53 53 0 0 1 373 140" fill="none" stroke="#ffd60a" stroke-width="2.5" opacity="0.8"/>
+      <circle cx="373" cy="140" r="3" fill="#ffd60a"/>
+      <text x="320" y="142" fill="#ffd60a" font-size="7" font-weight="700" text-anchor="middle">DET</text>
+      <text x="320" y="245" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">RDE ANNULUS</text>
+      <text x="320" y="258" fill="#6e7681" font-size="9" text-anchor="middle">OD: 528 mm</text>
+      <text x="320" y="270" fill="#6e7681" font-size="8" text-anchor="middle">ID: 350 mm</text>
 
-      <!-- Station 3: Combustion -->
-      <circle cx="520" cy="140" r="53" fill="none" stroke="#ff6b35" stroke-width="2"/>
-      <circle cx="520" cy="140" r="47" fill="none" stroke="#ff6b35" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,2"/>
-      <circle cx="520" cy="140" r="42" fill="none" stroke="#ff6b35" stroke-width="0.5" opacity="0.3"/>
-      <text x="520" y="245" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">COMBUSTION</text>
-      <text x="520" y="258" fill="#6e7681" font-size="9" text-anchor="middle">OD: 528 mm</text>
-      <text x="520" y="270" fill="#6e7681" font-size="8" text-anchor="middle">ID: 500 mm</text>
+      <!-- Station 3: MHD Generator (rectangular) -->
+      <rect x="470" y="95" width="85" height="90" rx="6" fill="none" stroke="#2ec4b6" stroke-width="2"/>
+      <line x1="470" y1="105" x2="470" y2="175" stroke="#ffd60a" stroke-width="3" opacity="0.6"/>
+      <line x1="555" y1="105" x2="555" y2="175" stroke="#ffd60a" stroke-width="3" opacity="0.6"/>
+      <rect x="485" y="80" width="40" height="10" rx="2" fill="none" stroke="#2ec4b6" stroke-width="1.5"/>
+      <text x="505" y="88" fill="#2ec4b6" font-size="6" font-weight="700" text-anchor="middle">N</text>
+      <rect x="485" y="190" width="40" height="10" rx="2" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+      <text x="505" y="198" fill="#ff6b35" font-size="6" font-weight="700" text-anchor="middle">S</text>
+      <circle cx="512" cy="140" r="85" fill="none" stroke="#6e7681" stroke-width="1" stroke-dasharray="6,3"/>
+      <text x="512" y="245" fill="#2ec4b6" font-size="10" font-weight="600" text-anchor="middle">MHD GENERATOR</text>
+      <text x="512" y="258" fill="#6e7681" font-size="9" text-anchor="middle">400 &times; 300 mm</text>
+      <text x="512" y="270" fill="#6e7681" font-size="8" text-anchor="middle">OD: 850 mm</text>
 
-      <!-- Station 4: MHD (rectangular) -->
-      <rect x="660" y="90" width="100" height="100" rx="6" fill="none" stroke="#00b4d8" stroke-width="2"/>
-      <!-- Electrodes -->
-      <line x1="660" y1="100" x2="660" y2="180" stroke="#ffd60a" stroke-width="3" opacity="0.6"/>
-      <line x1="760" y1="100" x2="760" y2="180" stroke="#ffd60a" stroke-width="3" opacity="0.6"/>
-      <!-- Magnets -->
-      <rect x="675" y="75" width="50" height="12" rx="2" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
-      <text x="700" y="84" fill="#00b4d8" font-size="7" font-weight="700" text-anchor="middle">N</text>
-      <rect x="675" y="193" width="50" height="12" rx="2" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
-      <text x="700" y="202" fill="#ff6b35" font-size="7" font-weight="700" text-anchor="middle">S</text>
-      <!-- Outer cryostat -->
-      <circle cx="710" cy="140" r="95" fill="none" stroke="#6e7681" stroke-width="1" stroke-dasharray="6,3"/>
-      <text x="710" y="245" fill="#00b4d8" font-size="10" font-weight="600" text-anchor="middle">MHD CHANNEL</text>
-      <text x="710" y="258" fill="#6e7681" font-size="9" text-anchor="middle">450 &times; 350 mm</text>
-      <text x="710" y="270" fill="#6e7681" font-size="8" text-anchor="middle">OD: 950 mm</text>
+      <!-- Station 4: MHD Accelerator (rectangular) -->
+      <rect x="710" y="90" width="100" height="100" rx="6" fill="none" stroke="#00b4d8" stroke-width="2"/>
+      <line x1="710" y1="100" x2="710" y2="180" stroke="#ffd60a" stroke-width="3" opacity="0.6"/>
+      <line x1="810" y1="100" x2="810" y2="180" stroke="#ffd60a" stroke-width="3" opacity="0.6"/>
+      <rect x="725" y="75" width="50" height="12" rx="2" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
+      <text x="750" y="84" fill="#00b4d8" font-size="7" font-weight="700" text-anchor="middle">N</text>
+      <rect x="725" y="193" width="50" height="12" rx="2" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+      <text x="750" y="202" fill="#ff6b35" font-size="7" font-weight="700" text-anchor="middle">S</text>
+      <circle cx="760" cy="140" r="90" fill="none" stroke="#6e7681" stroke-width="1" stroke-dasharray="6,3"/>
+      <text x="760" y="245" fill="#00b4d8" font-size="10" font-weight="600" text-anchor="middle">MHD ACCELERATOR</text>
+      <text x="760" y="258" fill="#6e7681" font-size="9" text-anchor="middle">400 &times; 300 mm</text>
+      <text x="760" y="270" fill="#6e7681" font-size="8" text-anchor="middle">OD: 900 mm</text>
 
       <!-- Station 5: Nozzle exit -->
-      <circle cx="940" cy="140" r="75" fill="none" stroke="#ff6b35" stroke-width="2"/>
-      <circle cx="940" cy="140" r="55" fill="none" stroke="#ff6b35" stroke-width="0.8" opacity="0.4"/>
-      <!-- EM coil indicators -->
-      <circle cx="940" cy="140" r="80" fill="none" stroke="#00b4d8" stroke-width="1" opacity="0.4" stroke-dasharray="8,6"/>
-      <text x="940" y="245" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">NOZZLE EXIT</text>
-      <text x="940" y="258" fill="#6e7681" font-size="9" text-anchor="middle">550 &ndash; 750 mm</text>
-      <text x="940" y="270" fill="#6e7681" font-size="8" text-anchor="middle">Variable</text>
+      <circle cx="980" cy="140" r="65" fill="none" stroke="#ff6b35" stroke-width="2"/>
+      <circle cx="980" cy="140" r="50" fill="none" stroke="#ff6b35" stroke-width="0.8" opacity="0.4"/>
+      <text x="980" y="245" fill="#ff6b35" font-size="10" font-weight="600" text-anchor="middle">NOZZLE EXIT</text>
+      <text x="980" y="258" fill="#6e7681" font-size="9" text-anchor="middle">500 &ndash; 650 mm</text>
 
       <!-- Connecting labels -->
       <text x="100" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 0</text>
       <text x="320" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 550</text>
-      <text x="520" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 1180</text>
-      <text x="710" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 1980</text>
-      <text x="940" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 3630</text>
+      <text x="512" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 950</text>
+      <text x="760" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 1550</text>
+      <text x="980" y="30" fill="#6e7681" font-size="8" text-anchor="middle">Station 2850</text>
     </svg>
   </div>
 
@@ -850,14 +850,13 @@
       </thead>
       <tbody>
         <tr><td>Air Intake / Diffuser</td><td class="val">550</td><td class="val">850</td><td class="val">250 hub</td><td class="val">35</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td></tr>
-        <tr><td>Plasma Ionization</td><td class="val">600</td><td class="val">620</td><td class="val">500</td><td class="val">65</td><td><span class="mat-badge mat-in">IN718</span> <span class="mat-badge mat-csic">C/SiC</span></td></tr>
-        <tr><td>Fuel Injection Ring</td><td class="val">30</td><td class="val">540</td><td class="val">500</td><td class="val">8</td><td><span class="mat-badge mat-in">IN625</span></td></tr>
-        <tr><td>Combustion Chamber</td><td class="val">800</td><td class="val">528</td><td class="val">500</td><td class="val">45</td><td><span class="mat-badge mat-in">IN718</span> <span class="mat-badge mat-csic">C/SiC</span></td></tr>
-        <tr><td>MHD Accelerator</td><td class="val">1,000</td><td class="val">950</td><td class="val">450&times;350</td><td class="val">180</td><td><span class="mat-badge mat-csic">C/SiC</span> <span class="mat-badge mat-wcu">W-Cu</span> <span class="mat-badge mat-bn">BN</span></td></tr>
-        <tr><td>EM Nozzle</td><td class="val">650</td><td class="val">750</td><td class="val">300 throat</td><td class="val">55</td><td><span class="mat-badge mat-in">IN718</span> <span class="mat-badge mat-csic">C/SiC</span></td></tr>
-        <tr style="font-weight:700;"><td>Subtotal (core)</td><td class="val">3,630</td><td class="val">950</td><td></td><td class="val">388</td><td></td></tr>
-        <tr><td>Mounting + wiring + coolant + ECU</td><td></td><td></td><td></td><td class="val">110</td><td></td></tr>
-        <tr style="border-top:2px solid var(--accent);font-weight:700;color:var(--accent);"><td>TOTAL ENGINE</td><td class="val" style="color:var(--accent);">3,630</td><td class="val" style="color:var(--accent);">950</td><td></td><td class="val" style="color:var(--accent);">498</td><td></td></tr>
+        <tr><td>RDE Annulus + Injector Face</td><td class="val">400</td><td class="val">528</td><td class="val">350</td><td class="val">55</td><td><span class="mat-badge mat-in">IN718</span> <span class="mat-badge mat-csic">C/SiC</span> <span class="mat-badge mat-in">IN625</span></td></tr>
+        <tr><td>MHD Generator</td><td class="val">600</td><td class="val">850</td><td class="val">400&times;300</td><td class="val">120</td><td><span class="mat-badge mat-csic">C/SiC</span> <span class="mat-badge mat-wcu">W-Cu</span> <span class="mat-badge mat-bn">BN</span></td></tr>
+        <tr><td>MHD Accelerator</td><td class="val">800</td><td class="val">900</td><td class="val">400&times;300</td><td class="val">130</td><td><span class="mat-badge mat-csic">C/SiC</span> <span class="mat-badge mat-wcu">W-Cu</span> <span class="mat-badge mat-bn">BN</span></td></tr>
+        <tr><td>C-D Nozzle</td><td class="val">500</td><td class="val">650</td><td class="val">280 throat</td><td class="val">30</td><td><span class="mat-badge mat-in">IN718</span> <span class="mat-badge mat-csic">C/SiC</span></td></tr>
+        <tr style="font-weight:700;"><td>Subtotal (core)</td><td class="val">2,850</td><td class="val">900</td><td></td><td class="val">370</td><td></td></tr>
+        <tr><td>Mounting + wiring + coolant + ECU</td><td></td><td></td><td></td><td class="val">50</td><td></td></tr>
+        <tr style="border-top:2px solid var(--accent);font-weight:700;color:var(--accent);"><td>TOTAL ENGINE</td><td class="val" style="color:var(--accent);">2,850</td><td class="val" style="color:var(--accent);">900</td><td></td><td class="val" style="color:var(--accent);">420</td><td></td></tr>
       </tbody>
     </table>
   </div>
@@ -886,115 +885,102 @@
       <div class="note">Fixed geometry, no rotating parts. Boundary layer bleed slots at 3 stations.</div>
     </div>
 
-    <!-- Plasma -->
-    <div class="card">
-      <h3>2. Plasma Ionization Chamber</h3>
+    <!-- RDE Annulus -->
+    <div class="card" style="border-color:var(--hot);">
+      <h3 style="color:var(--hot);">2. Rotating Detonation Annulus</h3>
       <table class="pp-table">
-        <tr><td>Chamber ID</td><td class="val">500 mm</td></tr>
-        <tr><td>Chamber wall OD</td><td class="val">550 mm</td></tr>
-        <tr><td>Overall OD (with coils)</td><td class="val">620 mm</td></tr>
-        <tr><td>Length</td><td class="val">600 mm</td></tr>
-        <tr><td>Wall thickness</td><td class="val">6 mm</td></tr>
-        <tr><td>RF waveguide ports</td><td class="val">6 at 60&deg; intervals</td></tr>
-        <tr><td>RF frequency</td><td class="val">2.45 GHz</td></tr>
-        <tr><td>RF power per port</td><td class="val">20 &ndash; 25 kW</td></tr>
-        <tr><td>Total RF power</td><td class="val warn">120 &ndash; 150 kW</td></tr>
-        <tr><td>Magnetic confinement</td><td class="val">4 solenoid rings, 0.5&ndash;1.0 T</td></tr>
-        <tr><td>Target ionization</td><td class="val">5 &ndash; 15% of airflow</td></tr>
-        <tr><td>Inner material</td><td><span class="mat-badge mat-csic">C/SiC</span></td></tr>
-        <tr><td>Outer material</td><td><span class="mat-badge mat-in">IN718</span></td></tr>
-        <tr><td>Coating</td><td class="val">HfO&sub2;</td></tr>
-      </table>
-    </div>
-
-    <!-- Fuel Injection -->
-    <div class="card">
-      <h3>3. Fuel Injection System</h3>
-      <table class="pp-table">
-        <tr><td>Injector ring diameter</td><td class="val">500 mm (on ID)</td></tr>
-        <tr><td>Number of injectors</td><td class="val">24 at 15&deg; intervals</td></tr>
-        <tr><td>Orifice diameter</td><td class="val">3.0 mm</td></tr>
-        <tr><td>Fuel feed tube</td><td class="val">6 mm OD / 4 mm ID</td></tr>
-        <tr><td>Swirl angle</td><td class="val">45&deg;</td></tr>
-        <tr><td>Fuel manifold ring</td><td class="val">540 mm OD / 520 mm ID</td></tr>
-        <tr><td>Manifold tube ID</td><td class="val">20 mm</td></tr>
+        <tr><td>Annulus outer diameter</td><td class="val">500 mm</td></tr>
+        <tr><td>Overall OD (with shell)</td><td class="val">528 mm</td></tr>
+        <tr><td>Annulus inner diameter</td><td class="val">350 mm</td></tr>
+        <tr><td>Annular gap width</td><td class="val">75 mm</td></tr>
+        <tr><td>Annulus length</td><td class="val">400 mm</td></tr>
+        <tr><td>Detonation waves</td><td class="val">1 &ndash; 3 co-rotating</td></tr>
+        <tr><td>Wave speed</td><td class="val">1,500 &ndash; 2,000 m/s</td></tr>
+        <tr><td>Pressure gain</td><td class="val ok">15 &ndash; 25:1</td></tr>
+        <tr><td>Peak detonation temp</td><td class="val hot">3,500 &ndash; 4,000 K</td></tr>
+        <tr><td>Chamber pressure</td><td class="val ok">15 &ndash; 25 bar</td></tr>
+        <tr><td>Fuel injectors</td><td class="val">24 impinging-jet pairs on face plate</td></tr>
         <tr><td>Fuel type</td><td class="val">Jet-A / JP-8</td></tr>
-        <tr><td>Fuel flow rate</td><td class="val">1.8 &ndash; 2.5 kg/s</td></tr>
-        <tr><td>Fuel pressure</td><td class="val">15 &ndash; 25 bar</td></tr>
-        <tr><td>Injector material</td><td><span class="mat-badge mat-in">IN625</span></td></tr>
-        <tr><td>Manifold material</td><td><span class="mat-badge mat-ss">316L SS</span></td></tr>
-      </table>
-      <div class="note">Monolithic 3D printed ring with integrated internal manifold and 24 swirl injectors.</div>
-    </div>
-
-    <!-- Combustion -->
-    <div class="card">
-      <h3>4. Plasma Combustion Chamber</h3>
-      <table class="pp-table">
-        <tr><td>Inner diameter</td><td class="val">500 mm</td></tr>
-        <tr><td>Outer diameter</td><td class="val">528 mm</td></tr>
-        <tr><td>Length</td><td class="val">800 mm</td></tr>
+        <tr><td>Fuel flow rate</td><td class="val">2.0 &ndash; 3.0 kg/s</td></tr>
+        <tr><td>Fuel pressure</td><td class="val">25 &ndash; 40 bar</td></tr>
+        <tr><td>Face plate material</td><td><span class="mat-badge mat-in">IN625</span></td></tr>
         <tr><td>Inner liner</td><td class="val">5 mm <span class="mat-badge mat-csic">C/SiC</span></td></tr>
-        <tr><td>Cooling gap</td><td class="val">3 mm</td></tr>
         <tr><td>Outer shell</td><td class="val">6 mm <span class="mat-badge mat-in">IN718</span></td></tr>
-        <tr><td>Cooling channels</td><td class="val">48 axial, 4&times;3 mm</td></tr>
-        <tr><td>Peak gas temp</td><td class="val hot">2,500 &ndash; 3,200 K</td></tr>
-        <tr><td>Chamber pressure</td><td class="val">8 &ndash; 15 bar</td></tr>
         <tr><td>TBC coating</td><td class="val">ZrO&sub2; 0.3 mm</td></tr>
-        <tr><td>Cooling method</td><td class="val">Regenerative (fuel)</td></tr>
-        <tr><td>Residence time</td><td class="val">2 &ndash; 4 ms</td></tr>
+        <tr><td>Ignition</td><td class="val">Single 5 kW plasma igniter (startup only)</td></tr>
+        <tr><td>Cooling</td><td class="val">Regenerative fuel (48 axial channels)</td></tr>
       </table>
       <h4>Wall Stack (hot &rarr; cold)</h4>
       <div style="display:flex;height:24px;border-radius:4px;overflow:hidden;margin-top:6px;font-size:0.7em;">
         <div style="flex:1;background:#d62828;display:flex;align-items:center;justify-content:center;color:#fff;">ZrO&sub2;</div>
-        <div style="flex:0.3;background:#ffd60a;display:flex;align-items:center;justify-content:center;color:#000;">Bond</div>
+        <div style="flex:0.3;background:#ffd60a;display:flex;align-items:center;justify-content:center;color:#000;">EBC</div>
         <div style="flex:2;background:#2ec4b6;display:flex;align-items:center;justify-content:center;color:#000;">C/SiC</div>
         <div style="flex:1;background:#0077b6;display:flex;align-items:center;justify-content:center;color:#fff;">Cool</div>
         <div style="flex:2;background:#ff6b35;display:flex;align-items:center;justify-content:center;color:#fff;">IN718</div>
       </div>
+      <div class="warn-box" style="margin-top:12px;"><strong>Key Innovation:</strong> Detonation waves produce their own compression (15&ndash;25 bar), eliminating the need for a mechanical compressor. This solves the fundamental static-thrust problem of the original design.</div>
     </div>
 
-    <!-- MHD -->
-    <div class="card">
-      <h3>5. MHD Accelerator Channel</h3>
+    <!-- MHD Generator -->
+    <div class="card" style="border-color:#2ec4b6;">
+      <h3 style="color:#2ec4b6;">3. MHD Generator Channel</h3>
       <table class="pp-table">
         <tr><td>Channel type</td><td class="val">Faraday segmented</td></tr>
-        <tr><td>Channel cross-section</td><td class="val">450 &times; 350 mm (rect.)</td></tr>
-        <tr><td>Channel length</td><td class="val">1,000 mm</td></tr>
-        <tr><td>Overall OD (with magnets)</td><td class="val">950 mm</td></tr>
-        <tr><td>Electrode pairs</td><td class="val">40 segmented</td></tr>
+        <tr><td>Channel cross-section</td><td class="val">400 &times; 300 mm (rect.)</td></tr>
+        <tr><td>Channel length</td><td class="val">600 mm</td></tr>
+        <tr><td>Overall OD (with magnets)</td><td class="val">850 mm</td></tr>
+        <tr><td>Electrode pairs</td><td class="val">24 segmented</td></tr>
         <tr><td>Electrode spacing</td><td class="val">25 mm</td></tr>
         <tr><td>Electrode material</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td></tr>
         <tr><td>Insulator material</td><td><span class="mat-badge mat-bn">Boron Nitride</span></td></tr>
         <tr><td>Magnetic field</td><td class="val ok">2 &ndash; 4 Tesla</td></tr>
         <tr><td>Magnet type</td><td class="val">Superconducting NbTi</td></tr>
-        <tr><td>Coil current</td><td class="val warn">8,000 &ndash; 12,000 A</td></tr>
         <tr><td>Cryostat coolant</td><td class="val">Liquid Nitrogen</td></tr>
-        <tr><td>Gas entry temp</td><td class="val hot">2,500 &ndash; 3,000 K</td></tr>
+        <tr><td>Gas entry temp</td><td class="val hot">3,500 &ndash; 4,000 K</td></tr>
         <tr><td>Required gas conductivity</td><td class="val">&gt; 10 S/m (seeded)</td></tr>
         <tr><td>Seed material</td><td class="val">Cesium or K salt (0.5&ndash;1%)</td></tr>
-        <tr><td>Electrical power input</td><td class="val warn">200 &ndash; 800 kW</td></tr>
+        <tr><td>Electrical power output</td><td class="val ok">300 &ndash; 600 kW</td></tr>
       </table>
-      <div class="note">Operates as MHD ACCELERATOR (not generator). J &times; B Lorentz force accelerates exhaust axially.</div>
+      <div class="note">Operates as MHD GENERATOR. J &times; B Lorentz force acts as drag, extracting kinetic energy as electricity. Powers the downstream MHD Accelerator in a closed-loop cycle.</div>
+    </div>
+
+    <!-- MHD Accelerator -->
+    <div class="card">
+      <h3>4. MHD Accelerator Channel</h3>
+      <table class="pp-table">
+        <tr><td>Channel type</td><td class="val">Faraday segmented</td></tr>
+        <tr><td>Channel cross-section</td><td class="val">400 &times; 300 mm (rect.)</td></tr>
+        <tr><td>Channel length</td><td class="val">800 mm</td></tr>
+        <tr><td>Overall OD (with magnets)</td><td class="val">900 mm</td></tr>
+        <tr><td>Electrode pairs</td><td class="val">32 segmented</td></tr>
+        <tr><td>Electrode spacing</td><td class="val">25 mm</td></tr>
+        <tr><td>Electrode material</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td></tr>
+        <tr><td>Insulator material</td><td><span class="mat-badge mat-bn">Boron Nitride</span></td></tr>
+        <tr><td>Magnetic field</td><td class="val ok">2 &ndash; 4 Tesla</td></tr>
+        <tr><td>Magnet type</td><td class="val">Superconducting NbTi</td></tr>
+        <tr><td>Cryostat coolant</td><td class="val">Liquid Nitrogen</td></tr>
+        <tr><td>Gas entry temp</td><td class="val hot">3,000 &ndash; 3,500 K</td></tr>
+        <tr><td>Required gas conductivity</td><td class="val">&gt; 10 S/m (seeded)</td></tr>
+        <tr><td>Electrical power input</td><td class="val ok">300 &ndash; 600 kW (from generator)</td></tr>
+      </table>
+      <div class="note">Operates as MHD ACCELERATOR. Powered by the upstream MHD Generator &mdash; self-sustaining, no external power needed after startup. J &times; B Lorentz force accelerates exhaust axially.</div>
     </div>
 
     <!-- Nozzle -->
     <div class="card">
-      <h3>6. Electromagnetic Nozzle</h3>
+      <h3>5. Converging-Diverging Nozzle</h3>
       <table class="pp-table">
-        <tr><td>Nozzle type</td><td class="val">Converging-diverging</td></tr>
-        <tr><td>Length</td><td class="val">650 mm</td></tr>
-        <tr><td>Entry</td><td class="val">450 &times; 350 mm (rect.)</td></tr>
-        <tr><td>Throat diameter</td><td class="val">300 mm (circular)</td></tr>
-        <tr><td>Exit diameter</td><td class="val">550 &ndash; 750 mm (variable)</td></tr>
-        <tr><td>Expansion ratio</td><td class="val">3.4:1 to 6.25:1</td></tr>
-        <tr><td>EM coil rings</td><td class="val">8 rings</td></tr>
-        <tr><td>EM coil current</td><td class="val">500 &ndash; 2,000 A</td></tr>
-        <tr><td>EM field</td><td class="val">0.5 &ndash; 1.5 Tesla</td></tr>
+        <tr><td>Nozzle type</td><td class="val">Conventional C-D bell</td></tr>
+        <tr><td>Length</td><td class="val">500 mm</td></tr>
+        <tr><td>Entry</td><td class="val">400 &times; 300 mm (rect. &rarr; round transition)</td></tr>
+        <tr><td>Throat diameter</td><td class="val">280 mm (circular)</td></tr>
+        <tr><td>Exit diameter</td><td class="val">500 &ndash; 650 mm</td></tr>
+        <tr><td>Expansion ratio</td><td class="val">3.2:1 to 5.4:1</td></tr>
+        <tr><td>EM coil rings (optional)</td><td class="val">2 rings</td></tr>
         <tr><td>Inner wall</td><td><span class="mat-badge mat-csic">C/SiC</span> 6 mm</td></tr>
         <tr><td>Outer shell</td><td><span class="mat-badge mat-in">IN718</span> 4 mm</td></tr>
         <tr><td>TBC</td><td class="val">ZrO&sub2; 0.5 mm</td></tr>
-        <tr><td>Throat temp</td><td class="val hot">2,200 &ndash; 2,800 K</td></tr>
+        <tr><td>Throat temp</td><td class="val hot">2,400 &ndash; 3,000 K</td></tr>
         <tr><td>Exit gas temp</td><td class="val warn">1,200 &ndash; 1,800 K</td></tr>
       </table>
     </div>
@@ -1006,32 +992,34 @@
     <div class="card">
       <h3>Electrical Power</h3>
       <table class="pp-table">
-        <tr><td>RF generators (6&times;)</td><td class="val">25 kW each</td></tr>
-        <tr><td>MHD power supply</td><td class="val">200 &ndash; 800 kW DC</td></tr>
-        <tr><td>EM nozzle coils (8&times;)</td><td class="val">10 kW each</td></tr>
-        <tr><td>Magnet coil supply</td><td class="val">50 kW</td></tr>
-        <tr><td>Control + cooling</td><td class="val">20 kW</td></tr>
-        <tr style="font-weight:700;"><td>Total</td><td class="val warn">420 &ndash; 1,050 kW</td></tr>
+        <tr><td>MHD Generator output</td><td class="val ok">300 &ndash; 600 kW</td></tr>
+        <tr><td>MHD Accelerator input</td><td class="val">300 &ndash; 600 kW</td></tr>
+        <tr><td>Plasma igniter (startup)</td><td class="val">5 kW</td></tr>
+        <tr><td>Magnet coil supply (startup)</td><td class="val">50 kW</td></tr>
+        <tr><td>Control + cooling</td><td class="val">15 kW</td></tr>
+        <tr style="font-weight:700;"><td>External (startup only)</td><td class="val ok">~50 kW</td></tr>
+        <tr style="font-weight:700;"><td>Running: self-sustaining</td><td class="val ok">0 kW external</td></tr>
       </table>
     </div>
     <div class="card">
       <h3>Cooling System</h3>
       <table class="pp-table">
-        <tr><td>Combustion (fuel)</td><td class="val">2.5 kg/s, +200 K</td></tr>
-        <tr><td>MHD channel (water)</td><td class="val">5.0 kg/s, +80 K</td></tr>
-        <tr><td>Magnets (LN&sub2;)</td><td class="val">1.0 L/min, 77 K</td></tr>
-        <tr><td>RF waveguides (water)</td><td class="val">2.0 kg/s, +40 K</td></tr>
-        <tr><td>Nozzle (fuel film)</td><td class="val">0.5 kg/s, +150 K</td></tr>
+        <tr><td>RDE annulus (fuel)</td><td class="val">3.0 kg/s, +250 K</td></tr>
+        <tr><td>MHD gen channel (water)</td><td class="val">4.0 kg/s, +80 K</td></tr>
+        <tr><td>MHD accel channel (water)</td><td class="val">5.0 kg/s, +80 K</td></tr>
+        <tr><td>Magnets &mdash; gen (LN&sub2;)</td><td class="val">0.8 L/min, 77 K</td></tr>
+        <tr><td>Magnets &mdash; accel (LN&sub2;)</td><td class="val">1.0 L/min, 77 K</td></tr>
+        <tr><td>Nozzle throat (fuel film)</td><td class="val">0.5 kg/s, +200 K</td></tr>
       </table>
     </div>
     <div class="card">
       <h3>Fuel System</h3>
       <table class="pp-table">
         <tr><td>Fuel type</td><td class="val">Jet-A / JP-8</td></tr>
-        <tr><td>Max fuel flow</td><td class="val">2.5 kg/s</td></tr>
-        <tr><td>Pump pressure</td><td class="val">30 bar</td></tr>
+        <tr><td>Max fuel flow</td><td class="val">3.0 kg/s</td></tr>
+        <tr><td>Pump pressure</td><td class="val">45 bar</td></tr>
         <tr><td>Pump type</td><td class="val">Electric gear</td></tr>
-        <tr><td>Pump power</td><td class="val">8 kW</td></tr>
+        <tr><td>Pump power</td><td class="val">12 kW</td></tr>
         <tr><td>Filter</td><td class="val">10 &mu;m nominal</td></tr>
       </table>
     </div>
@@ -1166,19 +1154,19 @@
     <h3>Temperature Map Along Engine Axis</h3>
     <div style="display:flex;height:40px;border-radius:6px;overflow:hidden;margin:12px 0;font-size:0.75em;">
       <div style="flex:1.5;background:linear-gradient(90deg,#0077b6,#0099cc);display:flex;align-items:center;justify-content:center;color:#fff;">288 K<br>Intake</div>
-      <div style="flex:1.7;background:linear-gradient(90deg,#0099cc,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;">500&ndash;2000 K<br>Plasma</div>
-      <div style="flex:2.2;background:linear-gradient(90deg,#c2410c,#dc2626);display:flex;align-items:center;justify-content:center;color:#fff;">2500&ndash;3200 K<br>Combustion</div>
-      <div style="flex:2.8;background:linear-gradient(90deg,#dc2626,#ea580c);display:flex;align-items:center;justify-content:center;color:#fff;">2500&ndash;3000 K<br>MHD Channel</div>
-      <div style="flex:1.8;background:linear-gradient(90deg,#ea580c,#f59e0b);display:flex;align-items:center;justify-content:center;color:#000;">1200&ndash;1800 K<br>Nozzle Exit</div>
+      <div style="flex:1.2;background:linear-gradient(90deg,#b91c1c,#991b1b);display:flex;align-items:center;justify-content:center;color:#fff;">3500&ndash;4000 K<br>RDE Detonation</div>
+      <div style="flex:1.5;background:linear-gradient(90deg,#991b1b,#dc2626);display:flex;align-items:center;justify-content:center;color:#fff;">3000&ndash;3500 K<br>MHD Generator</div>
+      <div style="flex:2.2;background:linear-gradient(90deg,#dc2626,#ea580c);display:flex;align-items:center;justify-content:center;color:#fff;">2500&ndash;3000 K<br>MHD Accelerator</div>
+      <div style="flex:1.6;background:linear-gradient(90deg,#ea580c,#f59e0b);display:flex;align-items:center;justify-content:center;color:#000;">1200&ndash;1800 K<br>Nozzle Exit</div>
     </div>
   </div>
 
   <!-- Compatibility warnings -->
   <div class="card" style="margin-top:20px;">
     <h3>Critical Material Notes</h3>
-    <div class="warn-box"><strong>C/SiC + Steam:</strong> SiC reacts with H&sub2;O above 1,200&deg;C forming Si(OH)&sub4; gas. ZrO&sub2; TBC and environmental barrier coating (EBC) are essential.</div>
-    <div class="warn-box"><strong>IN718 Limit:</strong> Loses strength above 700&deg;C. Use Haynes 230 (max 1,150&deg;C) where needed.</div>
-    <div class="warn-box"><strong>Alkali Seed Corrosion:</strong> K/Cs salts corrode some materials. W-Cu and BN are resistant. Ni-superalloy in MHD section needs protective coatings.</div>
+    <div class="warn-box"><strong>C/SiC at 4,000 K:</strong> RDE detonation temps exceed C/SiC service limit (1,800 K). TBC + EBC + regenerative cooling must keep wall temps below 1,800 K. If insufficient, UHTC liners (HfC, ZrB&sub2;) or transpiration cooling may be needed.</div>
+    <div class="warn-box"><strong>RDE Thermal Cycling:</strong> Detonation waves create rapid thermal cycling (1,500&ndash;2,000 Hz) on annulus walls &mdash; much more severe than steady combustion. Materials must withstand extreme thermal fatigue.</div>
+    <div class="warn-box"><strong>Alkali Seed Corrosion:</strong> K/Cs salts corrode some materials. W-Cu and BN are resistant. Ni-superalloy in MHD sections needs protective coatings.</div>
     <div class="warn-box"><strong>CTE Mismatch:</strong> C/SiC (~3&times;10&supmin;&sup6;/K) vs IN718 (~13&times;10&supmin;&sup6;/K). Use compliant seals (C-seals or ceramic rope). Never bond rigidly.</div>
   </div>
 </div>
@@ -1195,23 +1183,22 @@
       <tbody>
         <tr><td>Intake cowl</td><td>Metal AM (EBM)</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td><span class="print-yes">YES</span></td><td>Arcam Q20+</td></tr>
         <tr><td>Centerbody</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
-        <tr><td>Plasma outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
-        <tr><td>Plasma liner</td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI reactor</td></tr>
-        <tr><td>RF waveguides</td><td>CNC machining</td><td><span class="mat-badge mat-cu">OFHC Cu</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
-        <tr><td>Fuel injector ring</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-in">IN625</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
-        <tr><td>Fuel manifold</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-ss">316L</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
-        <tr><td>Combustion outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
-        <tr><td>Combustion liner</td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI reactor</td></tr>
-        <tr><td>MHD channel walls</td><td>CVI + machining</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI + grinder</td></tr>
-        <tr><td>MHD electrodes</td><td>Press-sinter + EDM</td><td><span class="mat-badge mat-wcu">W-Cu</span></td><td><span class="print-no">NO</span></td><td>Press + EDM</td></tr>
-        <tr><td>MHD insulators</td><td>CNC machining</td><td><span class="mat-badge mat-bn">BN</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
-        <tr><td>Cryostat housing</td><td>Roll-form + weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td><span class="print-no">NO*</span></td><td>Roll + TIG</td></tr>
+        <tr><td>RDE outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
+        <tr><td>RDE inner liner</td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI reactor</td></tr>
+        <tr><td>RDE injector face plate</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-in">IN625</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
+        <tr><td>MHD Gen channel walls</td><td>CVI + machining</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI + grinder</td></tr>
+        <tr><td>MHD Gen electrodes (48)</td><td>Press-sinter + EDM</td><td><span class="mat-badge mat-wcu">W-Cu</span></td><td><span class="print-no">NO</span></td><td>Press + EDM</td></tr>
+        <tr><td>MHD Gen insulators (24)</td><td>CNC machining</td><td><span class="mat-badge mat-bn">BN</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
+        <tr><td>MHD Gen cryostat</td><td>Roll-form + weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td><span class="print-no">NO</span></td><td>Roll + TIG</td></tr>
+        <tr><td>MHD Accel channel walls</td><td>CVI + machining</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI + grinder</td></tr>
+        <tr><td>MHD Accel electrodes (64)</td><td>Press-sinter + EDM</td><td><span class="mat-badge mat-wcu">W-Cu</span></td><td><span class="print-no">NO</span></td><td>Press + EDM</td></tr>
+        <tr><td>MHD Accel insulators (32)</td><td>CNC machining</td><td><span class="mat-badge mat-bn">BN</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
+        <tr><td>MHD Accel cryostat</td><td>Roll-form + weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td><span class="print-no">NO</span></td><td>Roll + TIG</td></tr>
         <tr><td>Nozzle outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
-        <tr><td>EM coil bobbins</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-ss">316L</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
         <tr><td>Mounting brackets</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
       </tbody>
     </table>
-    <div style="margin-top:12px;font-size:0.85em;color:var(--dim);">~55% of components are 3D printable via metal additive manufacturing</div>
+    <div style="margin-top:12px;font-size:0.85em;color:var(--dim);">~40% of components are 3D printable via metal additive manufacturing. The RDE injector face plate is the ideal AM candidate.</div>
   </div>
 
   <!-- AM machines needed -->
@@ -1245,7 +1232,7 @@
   <div class="grid grid-2">
     <div class="card">
       <h3>Print Procedure: IN718 Shells</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Plasma, combustion, and nozzle outer shells</div>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">RDE annulus and nozzle outer shells</div>
       <ol class="steps">
         <li>Export STL with 0.05 mm chord tolerance, add 0.5 mm stock on mating surfaces</li>
         <li>Orient part vertically (axis vertical), add support anchors at overhangs</li>
@@ -1261,20 +1248,20 @@
     </div>
 
     <div class="card">
-      <h3>Print Procedure: Fuel Injector Ring</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Monolithic IN625 with 24 integrated injectors</div>
+      <h3>Print Procedure: RDE Injector Face Plate</h3>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Monolithic IN625 disc with 24 integrated impinging-jet injectors</div>
       <ol class="steps">
-        <li>Design internal manifold with teardrop cross-section (self-supporting)</li>
-        <li>24 injector passages with 45&deg; printed swirl vanes</li>
-        <li>Print flat (ring plane horizontal) on EOS M290</li>
+        <li>Design internal fuel manifold with teardrop cross-section (self-supporting)</li>
+        <li>24 impinging-jet doublet passages aimed at annular gap</li>
+        <li>Print flat (face plane horizontal) on EOS M290 or M400-4</li>
         <li>IN625 powder, 40 &mu;m layers, 300 W, 800 mm/s</li>
         <li>Stress relief: 870&deg;C / 1 hour</li>
-        <li>Ream all 24 orifices to 3.00 &plusmn;0.02 mm</li>
+        <li>Ream all 48 orifices to 2.00 &plusmn;0.02 mm</li>
         <li>Flow test: target &plusmn;3% uniformity across all injectors</li>
-        <li>Pressure test manifold: 50 bar hydrostatic (2&times; operating)</li>
-        <li>Helium leak check: &lt;1 cc/min at 30 bar</li>
+        <li>Pressure test manifold: 70 bar hydrostatic (2&times; operating)</li>
+        <li>Helium leak check: &lt;1 cc/min at 40 bar</li>
       </ol>
-      <div class="note">This is the ideal AM candidate &mdash; internal channels and integrated features impossible via conventional machining.</div>
+      <div class="note">This is the ideal AM candidate &mdash; complex internal manifold and 24 doublet injectors impossible via conventional machining. Critical for uniform fuel distribution in the RDE annulus.</div>
     </div>
   </div>
 </div>
@@ -1297,48 +1284,27 @@
       </ol>
     </div>
     <div class="card">
-      <h3>Sub-Assembly 2: Plasma</h3>
+      <h3>Sub-Assembly 2: RDE Module</h3>
       <ol class="steps">
         <li>3D print outer shell (IN718 DMLS)</li>
-        <li>HIP + heat treat + CNC machine</li>
+        <li>3D print injector face plate (IN625 SLM)</li>
+        <li>HIP + heat treat all metal parts</li>
+        <li>CNC finish machine mating surfaces</li>
         <li>Receive C/SiC liner from CVI supplier</li>
         <li>Apply EBC + TBC coatings to liner</li>
-        <li>CNC machine RF waveguides (copper)</li>
-        <li>Wind magnetic confinement coils</li>
-        <li>Install liner into shell (spring clips)</li>
-        <li>Install waveguides and coils</li>
-        <li>Pressure test cooling + electrical test</li>
+        <li>Install liner into shell (compliant mounts)</li>
+        <li>Install injector face plate</li>
+        <li>Ream 48 orifices, flow test (&plusmn;3%)</li>
+        <li>Install plasma igniter (small magnetron)</li>
+        <li>Pressure test cooling channels (50 bar)</li>
       </ol>
     </div>
     <div class="card">
-      <h3>Sub-Assembly 3: Fuel Injection</h3>
-      <ol class="steps">
-        <li>3D print injector ring (IN625 SLM)</li>
-        <li>Stress relief heat treatment</li>
-        <li>Drill/ream 24 orifices to final size</li>
-        <li>Flow test all injectors (&plusmn;3%)</li>
-        <li>Pressure test manifold (50 bar)</li>
-        <li>Helium leak test (&lt;1 cc/min)</li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>Sub-Assembly 4: Combustion</h3>
-      <ol class="steps">
-        <li>3D print outer shell (IN718 DMLS)</li>
-        <li>HIP + heat treat + CNC machine</li>
-        <li>Receive C/SiC liner from CVI supplier</li>
-        <li>Apply EBC + TBC coatings</li>
-        <li>Install liner with compliant mounts</li>
-        <li>Pressure test cooling channels (40 bar)</li>
-        <li>Hydrostatic proof test</li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>Sub-Assembly 5: MHD</h3>
+      <h3>Sub-Assembly 3: MHD Generator</h3>
       <ol class="steps">
         <li>Receive C/SiC channel walls + apply TBC</li>
-        <li>Press-sinter + EDM W-Cu electrodes (80 pcs)</li>
-        <li>CNC machine BN insulators (40 pcs)</li>
+        <li>Press-sinter + EDM W-Cu electrodes (48 pcs)</li>
+        <li>CNC machine BN insulators (24 pcs)</li>
         <li>Assemble electrode-insulator stack</li>
         <li>Fabricate cryostat housing (roll + weld)</li>
         <li>Procure superconducting coils</li>
@@ -1349,14 +1315,29 @@
       </ol>
     </div>
     <div class="card">
-      <h3>Sub-Assembly 6: Nozzle</h3>
+      <h3>Sub-Assembly 4: MHD Accelerator</h3>
       <ol class="steps">
-        <li>3D print outer shell halves (IN718)</li>
+        <li>Receive C/SiC channel walls + apply TBC</li>
+        <li>Press-sinter + EDM W-Cu electrodes (64 pcs)</li>
+        <li>CNC machine BN insulators (32 pcs)</li>
+        <li>Assemble electrode-insulator stack</li>
+        <li>Fabricate cryostat housing (roll + weld)</li>
+        <li>Procure superconducting coils</li>
+        <li>Assemble coils into cryostat</li>
+        <li>Install MHD channel into bore</li>
+        <li>Leak test, electrical test, LN&sub2; cooldown</li>
+        <li>Wire power bus from generator module</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Sub-Assembly 5: C-D Nozzle</h3>
+      <ol class="steps">
+        <li>3D print outer shell (IN718 DMLS)</li>
         <li>HIP + heat treat + CNC machine</li>
         <li>Receive C/SiC inner liner + apply TBC</li>
-        <li>Wind EM coils on printed bobbins</li>
-        <li>Install liner into shell</li>
-        <li>Install EM coils, connect cooling</li>
+        <li>Install liner into shell (compliant mounts)</li>
+        <li>Install optional EM coils (2 rings)</li>
+        <li>Connect film cooling feed</li>
         <li>Flow test</li>
       </ol>
     </div>
@@ -1367,15 +1348,15 @@
     <h3>Final Assembly Sequence</h3>
     <ol class="steps">
       <li><strong>Mount intake on assembly fixture</strong> &mdash; horizontal rail, engine axis horizontal</li>
-      <li><strong>Mate plasma module to intake</strong> &mdash; 12&times; M12 A-286 bolts, Inconel X-750 C-seal, 85 N&middot;m torque</li>
-      <li><strong>Install fuel injector ring</strong> &mdash; clamped between flanges, metal C-seals both sides</li>
-      <li><strong>Mate combustion module</strong> &mdash; 12&times; M12 bolts, connect fuel cooling lines</li>
-      <li><strong>Mate MHD accelerator</strong> &mdash; 16&times; M16 bolts (heavier loads), align to &plusmn;0.5 mm</li>
-      <li><strong>Mate nozzle module</strong> &mdash; 12&times; M12 bolts, connect EM coil cables + cooling</li>
-      <li><strong>Install mounting brackets</strong> &mdash; forward at station 400 mm, aft at station 2,800 mm</li>
-      <li><strong>Connect all external systems</strong> &mdash; RF power, fuel, water cooling, LN&sub2;, MHD power buses, sensors, ECU harness</li>
-      <li><strong>Leak test all fluid circuits</strong> &mdash; fuel 50 bar He, water 15 bar hydro, cryo vacuum + He</li>
-      <li><strong>Electrical test</strong> &mdash; all coils resistance + Hi-pot, all electrodes, all sensors</li>
+      <li><strong>Mate RDE module to intake</strong> &mdash; 12&times; M12 A-286 bolts, Inconel X-750 C-seal, 85 N&middot;m torque</li>
+      <li><strong>Mate MHD Generator module</strong> &mdash; 12&times; M14 bolts, connect seed injection port</li>
+      <li><strong>Mate MHD Accelerator module</strong> &mdash; 16&times; M16 bolts (heavier loads), align to &plusmn;0.5 mm</li>
+      <li><strong>Wire MHD generator &rarr; accelerator power bus</strong> &mdash; heavy-gauge DC cables, verify polarity</li>
+      <li><strong>Mate nozzle module</strong> &mdash; 12&times; M12 bolts, connect cooling</li>
+      <li><strong>Install mounting brackets</strong> &mdash; forward at station 400 mm, aft at station 2,200 mm</li>
+      <li><strong>Connect all external systems</strong> &mdash; fuel, water cooling, LN&sub2;, igniter power, sensors, ECU harness</li>
+      <li><strong>Leak test all fluid circuits</strong> &mdash; fuel 70 bar He, water 15 bar hydro, cryo vacuum + He</li>
+      <li><strong>Electrical test</strong> &mdash; all coils resistance + Hi-pot, all electrodes, generator&ndash;accelerator circuit, all sensors</li>
       <li><strong>Weight and CG measurement</strong></li>
       <li><strong>Ready for test cell installation</strong></li>
     </ol>
@@ -1387,22 +1368,23 @@
   <h2>Phased Development Plan</h2>
 
   <div class="warn-box" style="margin-bottom:20px;">
-    <strong>Recommendation:</strong> Do NOT attempt the 120 kN engine first. Build in phases to prove fundamental concepts before committing full resources.
+    <strong>Recommendation:</strong> Do NOT attempt the 120 kN engine first. Build the RDE demonstrator (Phase 1) to prove rotating detonation, then add MHD in Phase 2.
   </div>
 
   <div class="timeline">
     <!-- Phase 1 -->
     <div class="tl-item">
-      <h3>Phase 1 &mdash; Plasma Combustion Demonstrator</h3>
+      <h3>Phase 1 &mdash; RDE Demonstrator</h3>
       <div style="display:flex;gap:20px;flex-wrap:wrap;">
         <div style="flex:1;min-width:250px;">
           <h4 style="color:var(--green);margin-bottom:8px;">Target: 1 &ndash; 5 kN</h4>
           <table class="pp-table" style="font-size:0.85em;">
             <tr><td>Air mass flow</td><td class="val">1 &ndash; 5 kg/s</td></tr>
             <tr><td>Intake diameter</td><td class="val">200 mm</td></tr>
-            <tr><td>Combustion ID</td><td class="val">120 mm</td></tr>
-            <tr><td>Total length</td><td class="val">800 mm</td></tr>
-            <tr><td>RF power</td><td class="val">10 &ndash; 20 kW</td></tr>
+            <tr><td>RDE annulus OD</td><td class="val">120 mm</td></tr>
+            <tr><td>RDE annulus ID</td><td class="val">80 mm</td></tr>
+            <tr><td>Total length</td><td class="val">600 mm</td></tr>
+            <tr><td>Igniter</td><td class="val">5 kW magnetron (startup)</td></tr>
             <tr><td>Fuel flow</td><td class="val">0.1 &ndash; 0.3 kg/s</td></tr>
             <tr><td>MHD section</td><td class="val">None (Phase 1)</td></tr>
           </table>
@@ -1410,12 +1392,13 @@
         <div style="flex:1;min-width:250px;">
           <h4 style="color:var(--green);margin-bottom:8px;">Prove:</h4>
           <ul class="checklist">
-            <li>Plasma ignition sustained &gt; 60 s</li>
-            <li>Fuel ignition via plasma (no spark plug)</li>
-            <li>Stable combustion &gt; 30 s</li>
+            <li>Stable rotating detonation &gt; 60 s</li>
+            <li>Wave speed &gt; 1,000 m/s</li>
+            <li>Pressure gain &gt; 5:1</li>
             <li>Measurable thrust &gt; 500 N</li>
-            <li>No structural failure</li>
-            <li>Combustion temp &gt; 1,500 K</li>
+            <li>No structural failure or thermal runaway</li>
+            <li>Detonation temp &gt; 2,500 K</li>
+            <li>Fuel injection uniformity</li>
           </ul>
         </div>
         <div style="flex:1;min-width:250px;">
@@ -1424,42 +1407,45 @@
             <tr><td>Metal AM (all parts)</td><td class="val">$15,000</td></tr>
             <tr><td>HIP + heat treat</td><td class="val">$5,000</td></tr>
             <tr><td>CNC finishing</td><td class="val">$8,000</td></tr>
-            <tr><td>RF magnetron system</td><td class="val">$11,000</td></tr>
+            <tr><td>Plasma igniter (5 kW)</td><td class="val">$4,000</td></tr>
+            <tr><td>High-speed pressure transducers</td><td class="val">$6,000</td></tr>
             <tr><td>Fuel system</td><td class="val">$3,000</td></tr>
-            <tr><td>Instrumentation</td><td class="val">$7,500</td></tr>
+            <tr><td>Data acquisition (&gt;1 MHz)</td><td class="val">$5,000</td></tr>
+            <tr><td>Instrumentation</td><td class="val">$5,000</td></tr>
             <tr><td>Test stand + safety</td><td class="val">$8,000</td></tr>
-            <tr><td>Misc + contingency</td><td class="val">$4,500</td></tr>
-            <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Phase 1</td><td class="val" style="color:var(--accent);">~$62,000</td></tr>
+            <tr><td>Misc + contingency</td><td class="val">$6,000</td></tr>
+            <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Phase 1</td><td class="val" style="color:var(--accent);">~$65,000</td></tr>
           </table>
         </div>
       </div>
-      <div class="note" style="margin-top:12px;">All Phase 1 parts fit within a standard EOS M290 build volume (250&times;250&times;325 mm) — prints in single pieces.</div>
+      <div class="note" style="margin-top:12px;">All Phase 1 parts fit within a standard EOS M290 build volume (250&times;250&times;325 mm). Answers the key question: can rotating detonation provide reliable pressure-gain combustion for a bladeless engine?</div>
     </div>
 
     <!-- Phase 2 -->
     <div class="tl-item">
-      <h3>Phase 2 &mdash; Turbine-Free Propulsion Demonstrator</h3>
+      <h3>Phase 2 &mdash; RDE + MHD Self-Powering Demonstrator</h3>
       <div style="display:flex;gap:20px;flex-wrap:wrap;">
         <div style="flex:1;min-width:250px;">
           <h4 style="color:var(--green);margin-bottom:8px;">Target: 10 &ndash; 20 kN</h4>
           <table class="pp-table" style="font-size:0.85em;">
             <tr><td>Air mass flow</td><td class="val">8 &ndash; 15 kg/s</td></tr>
             <tr><td>Intake diameter</td><td class="val">400 mm</td></tr>
-            <tr><td>Combustion ID</td><td class="val">250 mm</td></tr>
-            <tr><td>MHD channel</td><td class="val">200 &times; 180 mm</td></tr>
-            <tr><td>Total length</td><td class="val">1,600 mm</td></tr>
-            <tr><td>RF power</td><td class="val">40 &ndash; 60 kW</td></tr>
+            <tr><td>RDE annulus OD</td><td class="val">250 mm</td></tr>
+            <tr><td>RDE annulus ID</td><td class="val">180 mm</td></tr>
+            <tr><td>MHD Gen channel</td><td class="val">200 &times; 180 mm</td></tr>
+            <tr><td>MHD Accel channel</td><td class="val">200 &times; 180 mm</td></tr>
+            <tr><td>Total length</td><td class="val">1,400 mm</td></tr>
             <tr><td>Magnetic field</td><td class="val">1 &ndash; 2 T (copper coils)</td></tr>
-            <tr><td>Electrical power</td><td class="val">80 &ndash; 200 kW</td></tr>
+            <tr><td>MHD Gen output</td><td class="val ok">80 &ndash; 200 kW</td></tr>
           </table>
         </div>
         <div style="flex:1;min-width:250px;">
           <h4 style="color:var(--green);margin-bottom:8px;">Prove:</h4>
           <ul class="checklist">
-            <li>Non-rotating inlet &gt;1.5:1 pressure ratio at M0.5+</li>
-            <li>MHD interaction parameter &gt; 0.1</li>
-            <li>Measurable MHD thrust increment (&gt;10%)</li>
-            <li>EM nozzle variable exit area</li>
+            <li>Stable RDE at 10+ kg/s airflow</li>
+            <li>MHD generator produces &gt; 100 kW from exhaust</li>
+            <li>MHD accelerator thrust increase &gt; 10%</li>
+            <li>Self-sustaining generator&ndash;accelerator cycle</li>
             <li>Sustained operation &gt; 120 s</li>
             <li>Total thrust &gt; 10 kN</li>
           </ul>
@@ -1477,8 +1463,8 @@
             <tr><td>Full HPM-120 spec</td><td class="val">See Dimensions tab</td></tr>
             <tr><td>Air mass flow</td><td class="val">80 &ndash; 100 kg/s</td></tr>
             <tr><td>Magnetic field</td><td class="val">2 &ndash; 4 T (superconducting)</td></tr>
-            <tr><td>Total length</td><td class="val">3,630 mm</td></tr>
-            <tr><td>Max diameter</td><td class="val">950 mm</td></tr>
+            <tr><td>Total length</td><td class="val">2,850 mm</td></tr>
+            <tr><td>Max diameter</td><td class="val">900 mm</td></tr>
           </table>
         </div>
         <div style="flex:1;min-width:250px;">
@@ -1508,11 +1494,12 @@
       <h3>Test Sequence</h3>
       <ol class="steps">
         <li><strong>Cold Flow Test</strong> &mdash; Ambient air through engine. Measure pressure drops, verify mass flow capacity (100 kg/s target), check for leaks.</li>
-        <li><strong>Plasma Ignition Test</strong> &mdash; Reduced airflow (10&ndash;20%), energize RF at low power, verify plasma, map density vs power.</li>
-        <li><strong>Combustion Test</strong> &mdash; Establish plasma, introduce fuel at 10% flow, achieve ignition, increase incrementally to 50% thrust.</li>
-        <li><strong>MHD Test</strong> &mdash; Cool magnets, verify field, inject alkali seed, measure gas conductivity, apply accelerator voltage, measure thrust increment.</li>
+        <li><strong>Detonation Initiation Test</strong> &mdash; Reduced airflow (10&ndash;20%), energize plasma igniter, introduce fuel at low flow. Verify detonation initiation and wave stability via high-speed pressure transducers.</li>
+        <li><strong>RDE Characterization</strong> &mdash; Map detonation wave speed, count, pressure gain vs fuel flow. Increase airflow to 50% design point.</li>
+        <li><strong>MHD Generator Test</strong> &mdash; Cool magnets, verify field, inject alkali seed, measure gas conductivity and power extraction.</li>
+        <li><strong>MHD Accelerator Test</strong> &mdash; Power accelerator from generator output, measure thrust increment. Verify self-sustaining cycle.</li>
         <li><strong>Full Engine Test</strong> &mdash; Ramp 25% &rarr; 50% &rarr; 75% &rarr; 100%. Measure thrust on calibrated stand. Record all parameters.</li>
-        <li><strong>Endurance Run</strong> &mdash; Sustained operation at rated thrust. Monitor for thermal creep, vibration, seal degradation.</li>
+        <li><strong>Endurance Run</strong> &mdash; Sustained operation at rated thrust. Monitor for thermal creep, vibration, seal degradation, detonation stability.</li>
       </ol>
     </div>
 
@@ -1542,28 +1529,28 @@
     <h3>Critical Engineering Challenges</h3>
     <div class="grid grid-2" style="gap:12px;">
       <div class="warn-box">
-        <strong>1. Non-Rotating Compression</strong><br>
-        Without a mechanical compressor, chamber pressure at static conditions is only ~1&ndash;3 bar.
-        The engine may require minimum forward velocity (ramjet-like) or an auxiliary boost system for takeoff.
-        This is the single hardest unsolved problem.
+        <strong>1. RDE Detonation Stability</strong><br>
+        Maintaining continuous rotating detonation in an annular channel at 80&ndash;100 kg/s airflow
+        is the primary challenge. Wave extinction, mode switching, and uneven fuel-air mixing can
+        cause instability. This is an active area of research at AFRL, GE, and others.
       </div>
       <div class="warn-box">
-        <strong>2. Electrical Power Demand</strong><br>
-        MHD acceleration of 80&ndash;100 kg/s requires hundreds of kW to MW. The power source
-        (turbogenerator, battery, APU) adds significant weight and complexity. A closed-loop
-        MHD generator/accelerator design could help but adds engineering difficulty.
+        <strong>2. Extreme Thermal Environment</strong><br>
+        Detonation temperatures of 3,500&ndash;4,000 K exceed C/SiC service limits (1,800 K).
+        TBC + EBC + regenerative cooling must maintain wall temps below limits. Detonation
+        wave thermal cycling at 1,500&ndash;2,000 Hz creates severe fatigue conditions.
       </div>
       <div class="warn-box">
-        <strong>3. Gas Conductivity</strong><br>
-        Combustion products at 2,500&ndash;3,000 K have electrical conductivity of only 1&ndash;5 S/m.
-        Alkali seed (K or Cs, 0.5&ndash;1% mass fraction) is required to reach &gt;10 S/m for effective
-        MHD interaction. Seed recovery and environmental impact must be addressed.
+        <strong>3. MHD Generator&ndash;Accelerator Balance</strong><br>
+        The generator must extract enough power (300&ndash;600 kW) to drive the accelerator while
+        maintaining positive net thrust. Getting this energy balance right requires precise control
+        of electrode loading and magnetic field strength in both sections.
       </div>
       <div class="warn-box">
-        <strong>4. Thermal Management</strong><br>
-        2,500&ndash;3,200 K gas temperatures for sustained operation demand advanced CMC liners,
-        multi-layer TBC systems, and active cooling. Any cooling failure causes rapid catastrophic
-        damage. Materials life and inspection intervals are critical concerns.
+        <strong>4. Gas Conductivity &amp; Alkali Seeding</strong><br>
+        Higher RDE temps (3,500&ndash;4,000 K) improve natural ionization, but alkali seeding
+        (K or Cs, 0.5&ndash;1%) is still needed for &gt;10 S/m conductivity. Seed recovery and
+        downstream contamination must be addressed.
       </div>
     </div>
   </div>
@@ -1572,13 +1559,15 @@
   <div class="card" style="margin-top:20px;">
     <h3>Immediate Next Steps</h3>
     <ol class="steps">
-      <li>Create detailed CAD model of Phase 1 components (SolidWorks, Fusion 360, or FreeCAD)</li>
-      <li>Run thermal-structural FEA on combustion chamber (Ansys, COMSOL, or OpenFOAM)</li>
+      <li>Create detailed CAD model of Phase 1 RDE annulus (SolidWorks, Fusion 360, or FreeCAD)</li>
+      <li>Run CFD detonation simulation (Ansys Fluent, OpenFOAM with reactive solver)</li>
+      <li>Run thermal-structural FEA on RDE annulus walls (Ansys, COMSOL)</li>
       <li>Contact metal AM service bureau for Phase 1 print quotes</li>
-      <li>Source a 20 kW 2.45 GHz magnetron system (industrial microwave suppliers)</li>
+      <li>Source 5 kW 2.45 GHz magnetron for detonation igniter</li>
+      <li>Source high-speed pressure transducers (&gt;1 MHz bandwidth) for wave tracking</li>
       <li>Design and build test stand with thrust measurement</li>
-      <li>Obtain permits/clearances for hot-fire testing (local fire marshal, FAA if applicable)</li>
-      <li>Establish safety protocols: fuel handling, plasma exposure, RF radiation, noise, fire suppression</li>
+      <li>Obtain permits/clearances for hot-fire testing (detonation events)</li>
+      <li>Establish safety protocols: detonation containment, fuel handling, noise suppression</li>
     </ol>
   </div>
 </div>
@@ -2104,7 +2093,7 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
   var simRunning = false;
   var throttle = 0;
   var cutawayActive = false;
-  var particles = {intake:[], plasma:[], combustion:[], mhd:[], exhaust:[]};
+  var particles = {intake:[], rde:[], mhdGen:[], mhdAccel:[], exhaust:[]};
   var clock = new THREE.Clock();
   var shakeOffset = new THREE.Vector3();
   var clippingPlane;
@@ -2232,22 +2221,23 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
     var matCopper = makeMetalClip(0xcc8844, 0.3, 0.9);    // Copper alloy
     var matCeramic = makeMetalClip(0x444444, 0.7, 0.2);   // C/SiC
     var matCryo = makeMetalClip(0x99aacc, 0.25, 0.95);    // Cryostat steel
+    var matCryoGen = makeMetalClip(0x88bbaa, 0.25, 0.95);  // Generator cryostat
     var matMount = makeMetalClip(0x556677, 0.5, 0.8);
+    var matRDE = makeMetalClip(0x885533, 0.35, 0.8);       // RDE shell
     var matInternal = new THREE.MeshStandardMaterial({color:0xcc6600, roughness:0.5, metalness:0.6, side:THREE.DoubleSide});
     matInternal.clippingPlanes = [clippingPlane]; matInternal.clipShadows = true;
 
     var zOff = 0; // z-offset accumulator, engine built along -Z
 
-    // === INTAKE SECTION (Axisymmetric inlet) ===
-    // Outer cowl: 850mm OD, 550mm long
-    var intakeGeo = new THREE.CylinderGeometry(0.425, 0.4, 0.55, 48, 1, true);
+    // === SECTION 1: INTAKE (550mm, 850mm OD) ===
+    var intakeGeo = new THREE.CylinderGeometry(0.425, 0.38, 0.55, 48, 1, true);
     intakeGeo.rotateX(Math.PI/2);
     var intake = new THREE.Mesh(intakeGeo, matTi);
     intake.position.z = zOff - 0.275;
     engineGroup.add(intake);
     outerMeshes.push(intake);
 
-    // Centerbody cone (250mm base, pointed)
+    // Centerbody cone
     var cbGeo = new THREE.ConeGeometry(0.125, 0.4, 32);
     cbGeo.rotateX(-Math.PI/2);
     var cb = new THREE.Mesh(cbGeo, matTi);
@@ -2256,99 +2246,108 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
     internalMeshes.push(cb);
 
     addLabel('INTAKE', new THREE.Vector3(0, 0.55, zOff - 0.275));
-
     zOff -= 0.55;
 
-    // === PLASMA IONIZATION CHAMBER ===
-    // 620mm OD, 600mm long
-    var plasmaGeo = new THREE.CylinderGeometry(0.31, 0.31, 0.6, 48, 1, true);
-    plasmaGeo.rotateX(Math.PI/2);
-    var plasma = new THREE.Mesh(plasmaGeo, matInconel);
-    plasma.position.z = zOff - 0.3;
-    engineGroup.add(plasma);
-    outerMeshes.push(plasma);
+    // === SECTION 2: RDE ANNULUS (400mm, 500mm OD) ===
+    // Outer shell (IN718)
+    var rdeGeo = new THREE.CylinderGeometry(0.25, 0.25, 0.4, 48, 1, true);
+    rdeGeo.rotateX(Math.PI/2);
+    var rde = new THREE.Mesh(rdeGeo, matRDE);
+    rde.position.z = zOff - 0.2;
+    engineGroup.add(rde);
+    outerMeshes.push(rde);
 
-    // Plasma inner liner (C/SiC)
-    var plasmaLinerGeo = new THREE.CylinderGeometry(0.27, 0.27, 0.58, 32, 1, true);
-    plasmaLinerGeo.rotateX(Math.PI/2);
-    var plasmaLiner = new THREE.Mesh(plasmaLinerGeo, matCeramic);
-    plasmaLiner.position.z = zOff - 0.3;
-    engineGroup.add(plasmaLiner);
-    internalMeshes.push(plasmaLiner);
+    // Inner annulus wall (C/SiC, 350mm OD)
+    var rdeInnerGeo = new THREE.CylinderGeometry(0.175, 0.175, 0.38, 32, 1, true);
+    rdeInnerGeo.rotateX(Math.PI/2);
+    var rdeInner = new THREE.Mesh(rdeInnerGeo, matCeramic);
+    rdeInner.position.z = zOff - 0.2;
+    engineGroup.add(rdeInner);
+    internalMeshes.push(rdeInner);
 
-    addLabel('PLASMA CHAMBER', new THREE.Vector3(0, 0.45, zOff - 0.3));
+    // Injector face plate (thin disc at front of RDE)
+    var facePlateGeo = new THREE.RingGeometry(0.175, 0.25, 48);
+    var facePlateMat = makeMetalClip(0xaa7733, 0.3, 0.85);
+    var facePlate = new THREE.Mesh(facePlateGeo, facePlateMat);
+    facePlate.position.z = zOff;
+    engineGroup.add(facePlate);
+    internalMeshes.push(facePlate);
 
-    zOff -= 0.6;
+    addLabel('RDE ANNULUS', new THREE.Vector3(0, 0.38, zOff - 0.2));
+    zOff -= 0.4;
 
-    // === COMBUSTION CHAMBER ===
-    // 528mm OD, 800mm long
-    var combGeo = new THREE.CylinderGeometry(0.264, 0.264, 0.8, 48, 1, true);
-    combGeo.rotateX(Math.PI/2);
-    var comb = new THREE.Mesh(combGeo, matInconel);
-    comb.position.z = zOff - 0.4;
-    engineGroup.add(comb);
-    outerMeshes.push(comb);
-
-    // Internal liner (C/SiC)
-    var combLinerGeo = new THREE.CylinderGeometry(0.22, 0.22, 0.78, 32, 1, true);
-    combLinerGeo.rotateX(Math.PI/2);
-    var combLiner = new THREE.Mesh(combLinerGeo, matCeramic);
-    combLiner.position.z = zOff - 0.4;
-    engineGroup.add(combLiner);
-    internalMeshes.push(combLiner);
-
-    addLabel('COMBUSTION', new THREE.Vector3(0, 0.4, zOff - 0.4));
-
-    zOff -= 0.8;
-
-    // === MHD ACCELERATOR ===
-    // 950mm OD, 1000mm long
-    var mhdGeo = new THREE.CylinderGeometry(0.475, 0.475, 1.0, 48, 1, true);
-    mhdGeo.rotateX(Math.PI/2);
-    var mhd = new THREE.Mesh(mhdGeo, matCryo);
-    mhd.position.z = zOff - 0.5;
-    engineGroup.add(mhd);
-    outerMeshes.push(mhd);
+    // === SECTION 3: MHD GENERATOR (600mm, 850mm OD) ===
+    var mhdGenGeo = new THREE.CylinderGeometry(0.425, 0.425, 0.6, 48, 1, true);
+    mhdGenGeo.rotateX(Math.PI/2);
+    var mhdGen = new THREE.Mesh(mhdGenGeo, matCryoGen);
+    mhdGen.position.z = zOff - 0.3;
+    engineGroup.add(mhdGen);
+    outerMeshes.push(mhdGen);
 
     // Inner flow channel
-    var mhdInnerGeo = new THREE.CylinderGeometry(0.25, 0.28, 0.98, 32, 1, true);
-    mhdInnerGeo.rotateX(Math.PI/2);
-    var mhdInner = new THREE.Mesh(mhdInnerGeo, matCeramic);
-    mhdInner.position.z = zOff - 0.5;
-    engineGroup.add(mhdInner);
-    internalMeshes.push(mhdInner);
+    var mhdGenInnerGeo = new THREE.CylinderGeometry(0.2, 0.22, 0.58, 32, 1, true);
+    mhdGenInnerGeo.rotateX(Math.PI/2);
+    var mhdGenInner = new THREE.Mesh(mhdGenInnerGeo, matCeramic);
+    mhdGenInner.position.z = zOff - 0.3;
+    engineGroup.add(mhdGenInner);
+    internalMeshes.push(mhdGenInner);
 
-    // Electrode pairs (top/bottom)
-    for (var i = 0; i < 8; i++) {
+    // Generator electrodes
+    for (var i = 0; i < 6; i++) {
       for (var side = -1; side <= 1; side += 2) {
-        var elGeo = new THREE.BoxGeometry(0.04, 0.015, 0.08);
+        var elGeo = new THREE.BoxGeometry(0.04, 0.015, 0.06);
         var el = new THREE.Mesh(elGeo, matCopper);
-        el.position.set(0, side * 0.26, zOff - 0.1 - i * 0.11);
+        el.position.set(0, side * 0.22, zOff - 0.05 - i * 0.09);
         engineGroup.add(el);
         internalMeshes.push(el);
       }
     }
 
-    addLabel('MHD ACCELERATOR', new THREE.Vector3(0, 0.6, zOff - 0.5));
+    addLabel('MHD GENERATOR', new THREE.Vector3(0, 0.55, zOff - 0.3));
+    zOff -= 0.6;
 
-    zOff -= 1.0;
+    // === SECTION 4: MHD ACCELERATOR (800mm, 900mm OD) ===
+    var mhdGeo = new THREE.CylinderGeometry(0.45, 0.45, 0.8, 48, 1, true);
+    mhdGeo.rotateX(Math.PI/2);
+    var mhd = new THREE.Mesh(mhdGeo, matCryo);
+    mhd.position.z = zOff - 0.4;
+    engineGroup.add(mhd);
+    outerMeshes.push(mhd);
 
-    // === EM NOZZLE ===
-    // Converging-diverging bell, 300mm throat, 750mm exit, 650mm long
-    // Build as a LatheGeometry for smooth bell curve
+    // Inner flow channel
+    var mhdInnerGeo = new THREE.CylinderGeometry(0.2, 0.22, 0.78, 32, 1, true);
+    mhdInnerGeo.rotateX(Math.PI/2);
+    var mhdInner = new THREE.Mesh(mhdInnerGeo, matCeramic);
+    mhdInner.position.z = zOff - 0.4;
+    engineGroup.add(mhdInner);
+    internalMeshes.push(mhdInner);
+
+    // Accelerator electrodes
+    for (var i = 0; i < 8; i++) {
+      for (var side = -1; side <= 1; side += 2) {
+        var elGeo = new THREE.BoxGeometry(0.04, 0.015, 0.06);
+        var el = new THREE.Mesh(elGeo, matCopper);
+        el.position.set(0, side * 0.22, zOff - 0.05 - i * 0.09);
+        engineGroup.add(el);
+        internalMeshes.push(el);
+      }
+    }
+
+    addLabel('MHD ACCELERATOR', new THREE.Vector3(0, 0.55, zOff - 0.4));
+    zOff -= 0.8;
+
+    // === SECTION 5: C-D NOZZLE (500mm, 650mm exit) ===
     var nozzlePts = [];
     var nSteps = 40;
     for (var i = 0; i <= nSteps; i++) {
       var t = i / nSteps;
-      var z = t * 0.65;
+      var z = t * 0.5;
       var r;
       if (t < 0.35) {
-        // Converging section: from 0.28 down to 0.15
-        r = 0.28 - (0.28 - 0.15) * (t / 0.35);
+        r = 0.22 - (0.22 - 0.14) * (t / 0.35);
       } else {
-        // Diverging section: from 0.15 up to 0.375
         var td = (t - 0.35) / 0.65;
-        r = 0.15 + (0.375 - 0.15) * Math.pow(td, 0.7);
+        r = 0.14 + (0.325 - 0.14) * Math.pow(td, 0.7);
       }
       nozzlePts.push(new THREE.Vector2(r, z));
     }
@@ -2356,11 +2355,11 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
     nozzleGeo.rotateX(Math.PI/2);
     var nozzle = new THREE.Mesh(nozzleGeo, matInconel);
     nozzle.position.z = zOff;
-    nozzle.rotation.x = Math.PI; // flip so diverging points backward
+    nozzle.rotation.x = Math.PI;
     engineGroup.add(nozzle);
     outerMeshes.push(nozzle);
 
-    addLabel('EM NOZZLE', new THREE.Vector3(0, 0.5, zOff - 0.32));
+    addLabel('C-D NOZZLE', new THREE.Vector3(0, 0.45, zOff - 0.25));
 
     // === MOUNTING BRACKETS ===
     for (var i = 0; i < 4; i++) {
@@ -2417,41 +2416,41 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
       p.z = 0.6 + Math.random()*0.8;
     });
 
-    // Plasma glow particles (purple)
-    createParticleGroup('plasma', 150, 0xaa44ff, 0.02, function(p, i) {
+    // RDE detonation particles (bright orange/yellow, rotating)
+    createParticleGroup('rde', 200, 0xff8800, 0.02, function(p, i) {
       var a = Math.random()*Math.PI*2;
-      var r = Math.random()*0.25;
+      var r = 0.175 + Math.random()*0.075;
       p.x = Math.cos(a)*r;
       p.y = Math.sin(a)*r;
-      p.z = -0.15 + Math.random()*0.5;
+      p.z = -0.55 + Math.random()*0.35;
     });
 
-    // Combustion particles (orange/red)
-    createParticleGroup('combustion', 200, 0xff6622, 0.018, function(p, i) {
+    // MHD Generator particles (green/cyan, power extraction)
+    createParticleGroup('mhdGen', 120, 0x00cc88, 0.012, function(p, i) {
       var a = Math.random()*Math.PI*2;
-      var r = Math.random()*0.2;
+      var r = 0.15 + Math.random()*0.07;
       p.x = Math.cos(a)*r;
       p.y = Math.sin(a)*r;
-      p.z = -0.7 + Math.random()*0.7;
+      p.z = -1.0 + Math.random()*0.5;
     });
 
-    // MHD field lines (cyan)
-    createParticleGroup('mhd', 120, 0x00ffcc, 0.01, function(p, i) {
+    // MHD Accelerator particles (cyan, field lines)
+    createParticleGroup('mhdAccel', 120, 0x00ffcc, 0.01, function(p, i) {
       var a = Math.random()*Math.PI*2;
-      var r = 0.15 + Math.random()*0.1;
+      var r = 0.15 + Math.random()*0.07;
       p.x = Math.cos(a)*r;
       p.y = Math.sin(a)*r;
-      p.z = -1.6 + Math.random()*0.9;
+      p.z = -1.6 + Math.random()*0.7;
     });
 
     // Exhaust plume (orange-to-red)
     createParticleGroup('exhaust', 400, 0xff4400, 0.025, function(p, i) {
       var a = Math.random()*Math.PI*2;
       var t = Math.random();
-      var r = t * 0.5;
+      var r = t * 0.4;
       p.x = Math.cos(a)*r;
       p.y = Math.sin(a)*r;
-      p.z = -2.7 - t*1.5;
+      p.z = -2.5 - t*1.2;
     });
 
     // Hide all particles initially
@@ -2541,37 +2540,41 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
       p.material.opacity = 0.3 + t * 0.5;
     });
 
-    // Plasma glow: pulse
-    particles.plasma.forEach(function(p) {
+    // RDE detonation particles: ROTATE around annulus rapidly
+    particles.rde.forEach(function(p) {
       p.visible = t > 0.1;
-      var pulse = Math.sin(time * 8 + p._phase) * 0.5 + 0.5;
+      var rotSpeed = 15 * t;
+      var a = time * rotSpeed + p._phase;
+      var r = 0.175 + Math.sin(time*8+p._phase)*0.03;
+      var flicker = Math.sin(time * 20 + p._phase) * 0.5 + 0.5;
       p.position.set(
-        p._basePos.x + Math.sin(time*3+p._phase)*0.03 + engineGroup.position.x,
-        p._basePos.y + Math.cos(time*3+p._phase)*0.03 + engineGroup.position.y,
-        p._basePos.z + Math.sin(time*5+p._phase)*0.02 + engineGroup.position.z
-      );
-      p.material.opacity = (0.3 + pulse * 0.7) * t;
-      p.scale.setScalar(0.8 + pulse * 0.6);
-    });
-
-    // Combustion
-    particles.combustion.forEach(function(p) {
-      p.visible = t > 0.15;
-      var flicker = Math.sin(time * 12 + p._phase) * 0.5 + 0.5;
-      p.position.set(
-        p._basePos.x + Math.sin(time*6+p._phase)*0.04 + engineGroup.position.x,
-        p._basePos.y + Math.cos(time*6+p._phase)*0.04 + engineGroup.position.y,
+        Math.cos(a) * r + engineGroup.position.x,
+        Math.sin(a) * r + engineGroup.position.y,
         p._basePos.z + Math.sin(time*4+p._phase)*0.05 + engineGroup.position.z
       );
-      p.material.opacity = (0.3 + flicker * 0.6) * t;
-      p.material.color.setHex(flicker > 0.5 ? 0xff6622 : 0xff3300);
+      p.material.opacity = (0.4 + flicker * 0.6) * t;
+      p.material.color.setHex(flicker > 0.5 ? 0xff8800 : 0xff4400);
+      p.scale.setScalar(0.8 + flicker * 0.6);
     });
 
-    // MHD field particles (orbit around axis)
-    particles.mhd.forEach(function(p) {
+    // MHD Generator particles (green glow, slower orbit)
+    particles.mhdGen.forEach(function(p) {
+      p.visible = t > 0.15;
+      var a = time * 2 * p._speed + p._phase;
+      var r = 0.15 + Math.sin(time + p._phase) * 0.04;
+      p.position.set(
+        Math.cos(a) * r + engineGroup.position.x,
+        Math.sin(a) * r + engineGroup.position.y,
+        p._basePos.z + Math.sin(time * 2 + p._phase) * 0.08 + engineGroup.position.z
+      );
+      p.material.opacity = 0.5 * t;
+    });
+
+    // MHD Accelerator particles (cyan, faster orbit)
+    particles.mhdAccel.forEach(function(p) {
       p.visible = t > 0.2;
       var a = time * 3 * p._speed + p._phase;
-      var r = 0.15 + Math.sin(time + p._phase) * 0.05;
+      var r = 0.15 + Math.sin(time + p._phase) * 0.04;
       p.position.set(
         Math.cos(a) * r + engineGroup.position.x,
         Math.sin(a) * r + engineGroup.position.y,
@@ -2584,10 +2587,10 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
     particles.exhaust.forEach(function(p) {
       p.visible = t > 0.1;
       var speed = p._speed * t * 3;
-      var z = p._basePos.z - (time * speed) % 2.0;
-      if (z < p._basePos.z - 2.0) z += 2.0;
-      var expand = Math.abs(z - p._basePos.z) / 2.0;
-      var r = expand * 0.6 * t;
+      var z = p._basePos.z - (time * speed) % 1.5;
+      if (z < p._basePos.z - 1.5) z += 1.5;
+      var expand = Math.abs(z - p._basePos.z) / 1.5;
+      var r = expand * 0.5 * t;
       var a = p._phase + time * 2;
       p.position.set(
         Math.cos(a) * r * (0.3 + Math.random()*0.1) + engineGroup.position.x,
@@ -2595,13 +2598,12 @@ THREE.OrbitControls=function(o,d){this.object=o;this.domElement=d||document;this
         z + engineGroup.position.z
       );
       p.material.opacity = (1 - expand) * 0.7 * t;
-      var hue = expand;
-      p.material.color.setHex(hue > 0.5 ? 0xcc2200 : 0xff5500);
+      p.material.color.setHex(expand > 0.5 ? 0xcc2200 : 0xff5500);
     });
 
     // Dynamic lights
-    window._ptPlasma.intensity = t * 2.5 * (0.7 + Math.sin(time*8)*0.3);
-    window._ptCombust.intensity = t * 3.0 * (0.8 + Math.sin(time*12)*0.2);
+    window._ptPlasma.intensity = t * 3.0 * (0.7 + Math.sin(time*20)*0.3); // RDE detonation flash
+    window._ptCombust.intensity = t * 2.5 * (0.8 + Math.sin(time*12)*0.2);
 
     // Gauges
     updateGauges(t);
