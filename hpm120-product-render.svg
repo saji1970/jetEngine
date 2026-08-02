@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 565">
+<defs>
+  <linearGradient id="g-titanium" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#5a6878"/><stop offset="8%" stop-color="#8aa0b4"/>
+    <stop offset="18%" stop-color="#c4d4e0"/><stop offset="28%" stop-color="#a0b4c4"/>
+    <stop offset="55%" stop-color="#7a8e9e"/><stop offset="80%" stop-color="#556570"/>
+    <stop offset="100%" stop-color="#3a464e"/>
+  </linearGradient>
+  <linearGradient id="g-inconel-hot" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#584838"/><stop offset="8%" stop-color="#907050"/>
+    <stop offset="15%" stop-color="#b08860"/><stop offset="22%" stop-color="#c09868"/>
+    <stop offset="35%" stop-color="#906848"/><stop offset="55%" stop-color="#685040"/>
+    <stop offset="80%" stop-color="#483830"/><stop offset="100%" stop-color="#302018"/>
+  </linearGradient>
+  <linearGradient id="g-stainless" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#6a7078"/><stop offset="8%" stop-color="#a0a8b0"/>
+    <stop offset="18%" stop-color="#d0d4d8"/><stop offset="28%" stop-color="#b0b8c0"/>
+    <stop offset="55%" stop-color="#8890a0"/><stop offset="80%" stop-color="#606870"/>
+    <stop offset="100%" stop-color="#3e444a"/>
+  </linearGradient>
+  <linearGradient id="g-nozzle" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#504540"/><stop offset="8%" stop-color="#806858"/>
+    <stop offset="15%" stop-color="#9a7860"/><stop offset="25%" stop-color="#8a6850"/>
+    <stop offset="55%" stop-color="#5a4a40"/><stop offset="80%" stop-color="#403430"/>
+    <stop offset="100%" stop-color="#282020"/>
+  </linearGradient>
+  <linearGradient id="g-transition" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#404048"/><stop offset="15%" stop-color="#787880"/>
+    <stop offset="30%" stop-color="#606068"/><stop offset="70%" stop-color="#484850"/>
+    <stop offset="100%" stop-color="#282830"/>
+  </linearGradient>
+  <linearGradient id="g-flange" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#505058"/><stop offset="15%" stop-color="#787880"/>
+    <stop offset="40%" stop-color="#606068"/><stop offset="100%" stop-color="#303038"/>
+  </linearGradient>
+  <linearGradient id="g-centerbody" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#687888"/><stop offset="12%" stop-color="#a8b8c8"/>
+    <stop offset="30%" stop-color="#90a0b0"/><stop offset="60%" stop-color="#708090"/>
+    <stop offset="100%" stop-color="#405060"/>
+  </linearGradient>
+  <linearGradient id="g-copper" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#8a5c32"/><stop offset="15%" stop-color="#d4944a"/>
+    <stop offset="35%" stop-color="#b87333"/><stop offset="65%" stop-color="#8a5c32"/>
+    <stop offset="100%" stop-color="#5a3a1a"/>
+  </linearGradient>
+  <linearGradient id="g-backdrop" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0e1525"/><stop offset="50%" stop-color="#0a0e1a"/>
+    <stop offset="100%" stop-color="#060810"/>
+  </linearGradient>
+  <radialGradient id="g-exhaust" cx="0.1" cy="0.5" r="0.9">
+    <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
+    <stop offset="10%" stop-color="#a0d4ff" stop-opacity="0.4"/>
+    <stop offset="25%" stop-color="#4090ff" stop-opacity="0.3"/>
+    <stop offset="45%" stop-color="#ff8040" stop-opacity="0.15"/>
+    <stop offset="70%" stop-color="#ff4020" stop-opacity="0.05"/>
+    <stop offset="100%" stop-color="#ff2000" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g-heat" cx="0.5" cy="0.5" r="0.6">
+    <stop offset="0%" stop-color="#ff6030" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#ff6030" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="p-electrodes" patternUnits="userSpaceOnUse" width="10" height="500">
+    <rect x="0" y="0" width="2" height="500" fill="#b87333" opacity="0.12"/>
+  </pattern>
+  <pattern id="p-cooling" patternUnits="userSpaceOnUse" width="16" height="300">
+    <rect x="0" y="0" width="1" height="300" fill="#000" opacity="0.06"/>
+  </pattern>
+  <filter id="f-shadow" x="-10%" y="-10%" width="120%" height="130%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="14"/>
+  </filter>
+  <filter id="f-glow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+  </filter>
+</defs>
+
+<!-- Background -->
+<rect width="1400" height="565" fill="url(#g-backdrop)"/>
+<line x1="0" y1="480" x2="1400" y2="480" stroke="#151a28" stroke-width="0.5"/>
+
+<!-- Title -->
+<text x="700" y="30" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="300" letter-spacing="8" fill="#708898">HPM-120</text>
+<text x="700" y="48" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="300" letter-spacing="4" fill="#4a5a6a">ROTATING DETONATION — MHD HYBRID PROPULSION</text>
+
+<!-- Shadow -->
+<ellipse cx="710" cy="490" rx="630" ry="16" fill="#000" opacity="0.5" filter="url(#f-shadow)"/>
+
+<!-- Heat glow behind RDE -->
+<ellipse cx="420" cy="280" rx="120" ry="140" fill="url(#g-heat)"/>
+
+<!-- STAGE 1: AIR INTAKE (Ti-6Al-4V) -->
+<path d="M 90,112 L 310,112 L 310,448 L 90,448 C 87,448 85,445 85,440 L 85,120 C 85,115 87,112 90,112 Z" fill="url(#g-titanium)"/>
+<rect x="82" y="114" width="5" height="332" fill="#0a1018" rx="1"/>
+<rect x="82" y="114" width="1.5" height="332" fill="rgba(160,180,200,0.25)" rx="0.5"/>
+<path d="M 68,280 C 72,268 78,257 85,250 L 85,310 C 78,303 72,292 68,280 Z" fill="url(#g-centerbody)" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+
+<!-- TRANSITION 1 -->
+<path d="M 310,112 L 340,174 L 340,386 L 310,448 Z" fill="url(#g-transition)"/>
+
+<!-- STAGE 2: RDE (Inconel 718/625, heat-tinted) -->
+<rect x="340" y="174" width="160" height="212" fill="url(#g-inconel-hot)"/>
+<rect x="340" y="174" width="160" height="212" fill="url(#p-cooling)"/>
+
+<!-- TRANSITION 2 -->
+<path d="M 500,174 L 535,112 L 535,448 L 500,386 Z" fill="url(#g-transition)"/>
+
+<!-- STAGE 3: MHD GENERATOR (304SS) -->
+<rect x="535" y="112" width="240" height="336" fill="url(#g-stainless)"/>
+<rect x="535" y="112" width="240" height="336" fill="url(#p-electrodes)"/>
+<rect x="535" y="112" width="240" height="336" fill="rgba(40,180,160,0.03)"/>
+<line x1="535" y1="230" x2="775" y2="230" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+<line x1="535" y1="330" x2="775" y2="330" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+
+<!-- TRANSITION 3 -->
+<path d="M 775,112 L 800,102 L 800,458 L 775,448 Z" fill="url(#g-transition)"/>
+
+<!-- STAGE 4: MHD ACCELERATOR (304SS) -->
+<rect x="800" y="102" width="320" height="356" fill="url(#g-stainless)"/>
+<rect x="800" y="102" width="320" height="356" fill="url(#p-electrodes)"/>
+<rect x="800" y="102" width="320" height="356" fill="rgba(0,150,220,0.03)"/>
+<line x1="800" y1="225" x2="1120" y2="225" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+<line x1="800" y1="335" x2="1120" y2="335" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+
+<!-- TRANSITION 4 -->
+<path d="M 1120,102 L 1155,180 L 1155,380 L 1120,458 Z" fill="url(#g-transition)"/>
+
+<!-- STAGE 5: C-D NOZZLE (Inconel 718 + C/SiC) -->
+<path d="M 1155,180 C 1185,195 1210,212 1240,224 C 1265,218 1300,190 1340,160 L 1340,400 C 1300,370 1265,342 1240,336 C 1210,348 1185,365 1155,380 Z" fill="url(#g-nozzle)"/>
+<rect x="1337" y="160" width="5" height="240" fill="#181210" rx="1"/>
+<rect x="1340" y="160" width="1.5" height="240" fill="rgba(140,100,80,0.3)" rx="0.5"/>
+
+<!-- Nozzle throat glow -->
+<ellipse cx="1240" cy="280" rx="10" ry="45" fill="rgba(255,150,50,0.06)" filter="url(#f-glow)"/>
+
+<!-- Conduits (fuel/coolant lines) -->
+<path d="M 200,108 L 310,108 L 340,170 L 500,170 L 535,108 L 775,108 L 800,98 L 1120,98" fill="none" stroke="#404048" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 200,108 L 310,108 L 340,170 L 500,170 L 535,108 L 775,108 L 800,98 L 1120,98" fill="none" stroke="#606068" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 200,452 L 310,452 L 340,390 L 500,390 L 535,452 L 775,452 L 800,462 L 1120,462" fill="none" stroke="#404048" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 200,452 L 310,452 L 340,390 L 500,390 L 535,452 L 775,452 L 800,462 L 1120,462" fill="none" stroke="#585860" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- Flanges -->
+<g fill="url(#g-flange)">
+  <rect x="307" y="108" width="7" height="344" rx="1"/>
+  <rect x="497" y="170" width="7" height="220" rx="1"/>
+  <rect x="532" y="108" width="7" height="344" rx="1"/>
+  <rect x="772" y="108" width="7" height="344" rx="1"/>
+  <rect x="797" y="98" width="7" height="364" rx="1"/>
+  <rect x="1117" y="98" width="7" height="364" rx="1"/>
+</g>
+
+<!-- Bolts -->
+<g fill="#606068" stroke="#404048" stroke-width="0.5">
+  <circle cx="310" cy="120" r="2.5"/><circle cx="310" cy="140" r="2.5"/>
+  <circle cx="310" cy="420" r="2.5"/><circle cx="310" cy="440" r="2.5"/>
+  <circle cx="535" cy="120" r="2.5"/><circle cx="535" cy="140" r="2.5"/>
+  <circle cx="535" cy="420" r="2.5"/><circle cx="535" cy="440" r="2.5"/>
+  <circle cx="800" cy="110" r="2.5"/><circle cx="800" cy="130" r="2.5"/>
+  <circle cx="800" cy="430" r="2.5"/><circle cx="800" cy="450" r="2.5"/>
+  <circle cx="1120" cy="110" r="2.5"/><circle cx="1120" cy="130" r="2.5"/>
+  <circle cx="1120" cy="430" r="2.5"/><circle cx="1120" cy="450" r="2.5"/>
+</g>
+
+<!-- Panel lines -->
+<line x1="155" y1="112" x2="155" y2="448" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
+<line x1="235" y1="112" x2="235" y2="448" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
+<line x1="655" y1="112" x2="655" y2="448" stroke="rgba(0,0,0,0.06)" stroke-width="0.5"/>
+<line x1="900" y1="102" x2="900" y2="458" stroke="rgba(0,0,0,0.06)" stroke-width="0.5"/>
+<line x1="1010" y1="102" x2="1010" y2="458" stroke="rgba(0,0,0,0.06)" stroke-width="0.5"/>
+
+<!-- Mounting brackets -->
+<path d="M 630,112 L 630,88 L 640,78 L 660,78 L 670,88 L 670,112 Z" fill="url(#g-flange)" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+<path d="M 950,102 L 950,78 L 960,68 L 980,68 L 990,78 L 990,102 Z" fill="url(#g-flange)" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+<g fill="#505058" stroke="#383840" stroke-width="0.5">
+  <circle cx="645" cy="95" r="2"/><circle cx="655" cy="95" r="2"/><circle cx="665" cy="95" r="2"/>
+  <circle cx="960" cy="85" r="2"/><circle cx="970" cy="85" r="2"/><circle cx="985" cy="85" r="2"/>
+</g>
+
+<!-- Brand marking on engine body -->
+<text x="960" y="288" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="22" font-weight="700" letter-spacing="6" fill="rgba(0,0,0,0.07)">HPM-120</text>
+
+<!-- Specular highlights -->
+<g stroke="rgba(255,255,255,0.07)" stroke-width="1.5" stroke-linecap="round">
+  <line x1="95" y1="135" x2="305" y2="135"/>
+  <line x1="345" y1="198" x2="495" y2="198"/>
+  <line x1="540" y1="135" x2="770" y2="135"/>
+  <line x1="805" y1="127" x2="1115" y2="127"/>
+</g>
+<path d="M 1160,200 C 1185,212 1210,222 1240,228" stroke="rgba(255,255,255,0.05)" stroke-width="1.5" fill="none"/>
+
+<!-- Exhaust effect -->
+<ellipse cx="1360" cy="280" rx="55" ry="115" fill="url(#g-exhaust)"/>
+<ellipse cx="1345" cy="280" rx="20" ry="60" fill="rgba(150,200,255,0.08)" filter="url(#f-glow)"/>
+
+<!-- Section labels -->
+<g font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" text-anchor="middle">
+  <g stroke="#354050" stroke-width="0.5" stroke-dasharray="2,2">
+    <line x1="200" y1="453" x2="200" y2="495"/>
+    <line x1="420" y1="390" x2="420" y2="495"/>
+    <line x1="655" y1="453" x2="655" y2="495"/>
+    <line x1="960" y1="463" x2="960" y2="495"/>
+    <line x1="1250" y1="370" x2="1250" y2="495"/>
+  </g>
+  <g font-size="9" fill="#607888" letter-spacing="2" font-weight="400">
+    <text x="200" y="508">AIR INTAKE</text>
+    <text x="420" y="508">RDE ANNULUS</text>
+    <text x="655" y="508">MHD GENERATOR</text>
+    <text x="960" y="508">MHD ACCELERATOR</text>
+    <text x="1250" y="508">C-D NOZZLE</text>
+  </g>
+  <g font-size="7" fill="#405060" letter-spacing="1">
+    <text x="200" y="520">Ti-6Al-4V</text>
+    <text x="420" y="520">IN-718 / C/SiC</text>
+    <text x="655" y="520">304SS / NbTi / W-Cu</text>
+    <text x="960" y="520">304SS / NbTi / W-Cu</text>
+    <text x="1250" y="520">IN-718 / C/SiC</text>
+  </g>
+</g>
+
+<!-- Specs line -->
+<line x1="200" y1="540" x2="1200" y2="540" stroke="#1a2030" stroke-width="0.5"/>
+<text x="700" y="557" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#506070" letter-spacing="3" font-weight="300">120 kN THRUST &#x2502; 2.85 m LENGTH &#x2502; 420 kg DRY WEIGHT &#x2502; TURBINE-FREE</text>
+</svg>
