@@ -506,6 +506,7 @@
   <button onclick="showTab('model3d')">3D Model</button>
   <button onclick="showTab('videos')">Videos</button>
   <button onclick="showTab('plancost')">Plan &amp; Cost</button>
+  <button onclick="showTab('storyboard')">Storyboard</button>
 </div>
 
 <!-- ==================== OVERVIEW ==================== -->
@@ -2126,6 +2127,111 @@
   </div>
 </div>
 
+<!-- ==================== STORYBOARD ==================== -->
+<div class="section" id="storyboard">
+  <h2><span class="icon">&#127916;</span> Cinematic Storyboard</h2>
+
+  <!-- Engine render image -->
+  <div class="card span-full" style="margin-bottom:20px; text-align:center; padding:10px;">
+    <h3>HPM-120 Engine Render</h3>
+    <img src="hpm120-engine-render.png" alt="HPM-120 Engine Render — Test Stand View" style="width:100%; max-width:1400px; border-radius:6px; margin-top:12px;">
+    <p style="margin-top:10px; color:var(--dim); font-size:0.85em;">High-fidelity render of the HPM-120 on its test stand &mdash; intake cone, RDE annulus with thermal glow, copper MHD coils, electrode stacks, and exhaust nozzle.</p>
+  </div>
+
+  <!-- Shot overview cards -->
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="card">
+      <h3 style="color:var(--accent);">Shot 1 &mdash; Engine Reveal</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">5s</td></tr>
+        <tr><td>Camera</td><td class="val">Slow dolly in + pan L&rarr;R, 15mm low angle</td></tr>
+        <tr><td>Motion</td><td class="val">Low &mdash; subtle dust drift, volumetric haze</td></tr>
+        <tr><td>Strength</td><td class="val ok">0.3</td></tr>
+        <tr><td>End Frame</td><td class="val">Hold on copper coil detail, rack focus</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--accent);">Shot 2 &mdash; Intake Airflow</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">4s</td></tr>
+        <tr><td>Camera</td><td class="val">Push in extreme CU on intake, orbit 10&deg; CW</td></tr>
+        <tr><td>Motion</td><td class="val">High swirl &mdash; particle wind, vortex</td></tr>
+        <tr><td>Strength</td><td class="val warn">0.8</td></tr>
+        <tr><td>End Frame</td><td class="val">Vortex sharpens, blue glow &rarr; white core</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--hot);">Shot 3 &mdash; Chamber Ignition</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">4s</td></tr>
+        <tr><td>Camera</td><td class="val">Static lock + subtle zoom in (105%), cutaway</td></tr>
+        <tr><td>Motion</td><td class="val">High turbulence, flash intensity, plasma flicker</td></tr>
+        <tr><td>Strength</td><td class="val hot">0.9</td></tr>
+        <tr><td>End Frame</td><td class="val">Flash blooms then collapses into stable burn ring</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--wcu);">Shot 4 &mdash; MHD Activation</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">5s</td></tr>
+        <tr><td>Camera</td><td class="val">360&deg; slow orbit around MHD core, 15&deg; tilt</td></tr>
+        <tr><td>Motion</td><td class="val">Electrical arcs flicker, purple rings pulsate</td></tr>
+        <tr><td>Strength</td><td class="val warn">0.7</td></tr>
+        <tr><td>End Frame</td><td class="val">Rings align and lock, final bright pulse</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--hot);">Shot 5 &mdash; Full-Thrust Exhaust</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">5s</td></tr>
+        <tr><td>Camera</td><td class="val">Rear wide, handheld shake, push back</td></tr>
+        <tr><td>Motion</td><td class="val">Very high &mdash; heat distortion, plume roiling</td></tr>
+        <tr><td>Strength</td><td class="val hot">1.0</td></tr>
+        <tr><td>End Frame</td><td class="val">Plume fully expanded, Mach diamonds visible</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--green);">Shot 6 &mdash; Hero Ending</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">6s</td></tr>
+        <tr><td>Camera</td><td class="val">Epic crane up + slow zoom out, 24mm&rarr;35mm</td></tr>
+        <tr><td>Motion</td><td class="val">Low &mdash; engine breathing, subtle light flicker</td></tr>
+        <tr><td>Strength</td><td class="val ok">0.2</td></tr>
+        <tr><td>End Frame</td><td class="val">Full engine centered, lab lights fade up</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Sequence summary -->
+  <div class="card span-full" style="margin-bottom:20px; text-align:center;">
+    <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin:10px 0;">
+      <div>
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Total Duration</div>
+        <div style="font-size:2em;font-weight:700;color:var(--accent);">29 seconds</div>
+      </div>
+      <div>
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Shots</div>
+        <div style="font-size:2em;font-weight:700;color:var(--white);">6</div>
+      </div>
+      <div>
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Export</div>
+        <div style="font-size:2em;font-weight:700;color:var(--green);">4K</div>
+      </div>
+    </div>
+    <p style="color:var(--dim);font-size:0.82em;">1920&times;1080 master &bull; Center crop 1080&times;1920 vertical &bull; 8% overscan for Luma stability &bull; 24fps loop-safe &bull; Cut on action</p>
+  </div>
+
+  <!-- Full interactive storyboard embed -->
+  <div class="card span-full">
+    <h3>Interactive Storyboard &mdash; Full Detail</h3>
+    <p style="margin-bottom:12px; color:var(--dim); font-size:0.85em;">Complete cinematic storyboard with reference frames, Luma Dream Machine parameters, and prompt text for each shot.</p>
+    <iframe src="hpm120-storyboard.html" style="width:100%; height:800px; border:1px solid var(--border); border-radius:8px; background:#000;" loading="lazy"></iframe>
+    <div style="margin-top:10px; text-align:center;">
+      <a href="hpm120-storyboard.html" target="_blank" style="color:var(--accent); font-size:0.85em; text-decoration:none; border-bottom:1px solid var(--accent);">Open full storyboard in new tab &rarr;</a>
+    </div>
+  </div>
+</div>
+
 <!-- ==================== PLAN & COST ==================== -->
 <div class="section" id="plancost">
   <h2><span class="icon">&#128176;</span> Manufacturing Plan, Equipment &amp; Cost</h2>
@@ -3217,7 +3323,8 @@ function showTab(id) {
     'power': 'Power & Cooling',
     'model3d': '3D Model',
     'videos': 'Videos',
-    'plancost': 'Plan & Cost'
+    'plancost': 'Plan & Cost',
+    'storyboard': 'Storyboard'
   };
   buttons.forEach(b => {
     if (b.textContent.trim() === labels[id]) b.classList.add('active');
