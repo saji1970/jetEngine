@@ -497,19 +497,17 @@
   <button class="active" onclick="showTab('overview')">Overview</button>
   <button onclick="showTab('dimensions')">Dimensions</button>
   <button onclick="showTab('components')">Components</button>
+  <button onclick="showTab('power')">Power &amp; Cooling</button>
   <button onclick="showTab('materials')">Materials &amp; Metallurgy</button>
+  <button onclick="showTab('software')">Software &amp; Dashboard</button>
   <button onclick="showTab('printing')">3D Printing</button>
   <button onclick="showTab('assembly')">Assembly</button>
   <button onclick="showTab('phases')">Build Phases</button>
   <button onclick="showTab('testing')">Testing</button>
-  <button onclick="showTab('power')">Power &amp; Cooling</button>
   <button onclick="showTab('model3d')">3D Model</button>
   <button onclick="showTab('videos')">Videos</button>
   <button onclick="showTab('plancost')">Plan &amp; Cost</button>
   <button onclick="showTab('storyboard')">Storyboard</button>
-  <button onclick="showTab('blueprint')">Blueprint</button>
-  <button onclick="showTab('electronics')">Electronics</button>
-  <button onclick="showTab('software')">Software &amp; Dashboard</button>
 </div>
 
 <!-- ==================== OVERVIEW ==================== -->
@@ -871,1267 +869,10 @@
       </tbody>
     </table>
   </div>
-</div>
 
-<!-- ==================== COMPONENTS ==================== -->
-<div class="section" id="components">
-  <h2>Component Detail</h2>
+  <!-- ======= MERGED: Engineering Blueprint ======= -->
+  <hr style="border:none;border-top:2px solid var(--accent);margin:40px 0 30px;">
 
-  <div class="grid grid-2">
-    <!-- Intake -->
-    <div class="card">
-      <h3>1. Air Intake / Diffuser</h3>
-      <table class="pp-table">
-        <tr><td>Inlet outer diameter</td><td class="val">850 mm</td></tr>
-        <tr><td>Inner hub diameter</td><td class="val">250 mm</td></tr>
-        <tr><td>Annular flow area</td><td class="val">0.518 m&sup2;</td></tr>
-        <tr><td>Diffuser length</td><td class="val">550 mm</td></tr>
-        <tr><td>Exit diameter</td><td class="val">500 mm</td></tr>
-        <tr><td>Wall thickness</td><td class="val">4 mm</td></tr>
-        <tr><td>Centerbody cone half-angle</td><td class="val">12&deg;</td></tr>
-        <tr><td>Material</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td></tr>
-        <tr><td>Surface finish</td><td class="val">Ra 1.6 &mu;m</td></tr>
-        <tr><td>Pressure recovery target</td><td class="val">0.92 at Mach 0.85</td></tr>
-      </table>
-      <div class="note">Fixed geometry, no rotating parts. Boundary layer bleed slots at 3 stations.</div>
-    </div>
-
-    <!-- RDE Annulus -->
-    <div class="card" style="border-color:var(--hot);">
-      <h3 style="color:var(--hot);">2. Rotating Detonation Annulus</h3>
-      <table class="pp-table">
-        <tr><td>Annulus outer diameter</td><td class="val">500 mm</td></tr>
-        <tr><td>Overall OD (with shell)</td><td class="val">528 mm</td></tr>
-        <tr><td>Annulus inner diameter</td><td class="val">350 mm</td></tr>
-        <tr><td>Annular gap width</td><td class="val">75 mm</td></tr>
-        <tr><td>Annulus length</td><td class="val">400 mm</td></tr>
-        <tr><td>Detonation waves</td><td class="val">1 &ndash; 3 co-rotating</td></tr>
-        <tr><td>Wave speed</td><td class="val">1,500 &ndash; 2,000 m/s</td></tr>
-        <tr><td>Pressure gain</td><td class="val ok">15 &ndash; 25:1</td></tr>
-        <tr><td>Peak detonation temp</td><td class="val hot">3,500 &ndash; 4,000 K</td></tr>
-        <tr><td>Chamber pressure</td><td class="val ok">15 &ndash; 25 bar</td></tr>
-        <tr><td>Fuel injectors</td><td class="val">24 impinging-jet pairs on face plate</td></tr>
-        <tr><td>Fuel type</td><td class="val">Jet-A / JP-8</td></tr>
-        <tr><td>Fuel flow rate</td><td class="val">2.0 &ndash; 3.0 kg/s</td></tr>
-        <tr><td>Fuel pressure</td><td class="val">25 &ndash; 40 bar</td></tr>
-        <tr><td>Face plate material</td><td><span class="mat-badge mat-in">IN625</span></td></tr>
-        <tr><td>Inner liner</td><td class="val">5 mm <span class="mat-badge mat-csic">C/SiC</span></td></tr>
-        <tr><td>Outer shell</td><td class="val">6 mm <span class="mat-badge mat-in">IN718</span></td></tr>
-        <tr><td>TBC coating</td><td class="val">ZrO&sub2; 0.3 mm</td></tr>
-        <tr><td>Ignition</td><td class="val">Single 5 kW plasma igniter (startup only)</td></tr>
-        <tr><td>Cooling</td><td class="val">Regenerative fuel (48 axial channels)</td></tr>
-      </table>
-      <h4>Wall Stack (hot &rarr; cold)</h4>
-      <div style="display:flex;height:24px;border-radius:4px;overflow:hidden;margin-top:6px;font-size:0.7em;">
-        <div style="flex:1;background:#d62828;display:flex;align-items:center;justify-content:center;color:#fff;">ZrO&sub2;</div>
-        <div style="flex:0.3;background:#ffd60a;display:flex;align-items:center;justify-content:center;color:#000;">EBC</div>
-        <div style="flex:2;background:#2ec4b6;display:flex;align-items:center;justify-content:center;color:#000;">C/SiC</div>
-        <div style="flex:1;background:#0077b6;display:flex;align-items:center;justify-content:center;color:#fff;">Cool</div>
-        <div style="flex:2;background:#ff6b35;display:flex;align-items:center;justify-content:center;color:#fff;">IN718</div>
-      </div>
-      <div class="warn-box" style="margin-top:12px;"><strong>Key Innovation:</strong> Detonation waves produce their own compression (15&ndash;25 bar), eliminating the need for a mechanical compressor. This solves the fundamental static-thrust problem of the original design.</div>
-    </div>
-
-    <!-- MHD Generator -->
-    <div class="card" style="border-color:#2ec4b6;">
-      <h3 style="color:#2ec4b6;">3. MHD Generator Channel</h3>
-      <table class="pp-table">
-        <tr><td>Channel type</td><td class="val">Faraday segmented</td></tr>
-        <tr><td>Channel cross-section</td><td class="val">400 &times; 300 mm (rect.)</td></tr>
-        <tr><td>Channel length</td><td class="val">600 mm</td></tr>
-        <tr><td>Overall OD (with magnets)</td><td class="val">850 mm</td></tr>
-        <tr><td>Electrode pairs</td><td class="val">24 segmented</td></tr>
-        <tr><td>Electrode spacing</td><td class="val">25 mm</td></tr>
-        <tr><td>Electrode material</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td></tr>
-        <tr><td>Insulator material</td><td><span class="mat-badge mat-bn">Boron Nitride</span></td></tr>
-        <tr><td>Magnetic field</td><td class="val ok">2 &ndash; 4 Tesla</td></tr>
-        <tr><td>Magnet type</td><td class="val">Superconducting NbTi</td></tr>
-        <tr><td>Cryostat coolant</td><td class="val">Liquid Nitrogen</td></tr>
-        <tr><td>Gas entry temp</td><td class="val hot">3,500 &ndash; 4,000 K</td></tr>
-        <tr><td>Required gas conductivity</td><td class="val">&gt; 10 S/m (seeded)</td></tr>
-        <tr><td>Seed material</td><td class="val">Cesium or K salt (0.5&ndash;1%)</td></tr>
-        <tr><td>Electrical power output</td><td class="val ok">300 &ndash; 600 kW</td></tr>
-      </table>
-      <div class="note">Operates as MHD GENERATOR. J &times; B Lorentz force acts as drag, extracting kinetic energy as electricity. Powers the downstream MHD Accelerator in a closed-loop cycle.</div>
-    </div>
-
-    <!-- MHD Accelerator -->
-    <div class="card">
-      <h3>4. MHD Accelerator Channel</h3>
-      <table class="pp-table">
-        <tr><td>Channel type</td><td class="val">Faraday segmented</td></tr>
-        <tr><td>Channel cross-section</td><td class="val">400 &times; 300 mm (rect.)</td></tr>
-        <tr><td>Channel length</td><td class="val">800 mm</td></tr>
-        <tr><td>Overall OD (with magnets)</td><td class="val">900 mm</td></tr>
-        <tr><td>Electrode pairs</td><td class="val">32 segmented</td></tr>
-        <tr><td>Electrode spacing</td><td class="val">25 mm</td></tr>
-        <tr><td>Electrode material</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td></tr>
-        <tr><td>Insulator material</td><td><span class="mat-badge mat-bn">Boron Nitride</span></td></tr>
-        <tr><td>Magnetic field</td><td class="val ok">2 &ndash; 4 Tesla</td></tr>
-        <tr><td>Magnet type</td><td class="val">Superconducting NbTi</td></tr>
-        <tr><td>Cryostat coolant</td><td class="val">Liquid Nitrogen</td></tr>
-        <tr><td>Gas entry temp</td><td class="val hot">3,000 &ndash; 3,500 K</td></tr>
-        <tr><td>Required gas conductivity</td><td class="val">&gt; 10 S/m (seeded)</td></tr>
-        <tr><td>Electrical power input</td><td class="val ok">300 &ndash; 600 kW (from generator)</td></tr>
-      </table>
-      <div class="note">Operates as MHD ACCELERATOR. Powered by the upstream MHD Generator &mdash; self-sustaining, no external power needed after startup. J &times; B Lorentz force accelerates exhaust axially.</div>
-    </div>
-
-    <!-- Nozzle -->
-    <div class="card">
-      <h3>5. Converging-Diverging Nozzle</h3>
-      <table class="pp-table">
-        <tr><td>Nozzle type</td><td class="val">Conventional C-D bell</td></tr>
-        <tr><td>Length</td><td class="val">500 mm</td></tr>
-        <tr><td>Entry</td><td class="val">400 &times; 300 mm (rect. &rarr; round transition)</td></tr>
-        <tr><td>Throat diameter</td><td class="val">280 mm (circular)</td></tr>
-        <tr><td>Exit diameter</td><td class="val">500 &ndash; 650 mm</td></tr>
-        <tr><td>Expansion ratio</td><td class="val">3.2:1 to 5.4:1</td></tr>
-        <tr><td>EM coil rings (optional)</td><td class="val">2 rings</td></tr>
-        <tr><td>Inner wall</td><td><span class="mat-badge mat-csic">C/SiC</span> 6 mm</td></tr>
-        <tr><td>Outer shell</td><td><span class="mat-badge mat-in">IN718</span> 4 mm</td></tr>
-        <tr><td>TBC</td><td class="val">ZrO&sub2; 0.5 mm</td></tr>
-        <tr><td>Throat temp</td><td class="val hot">2,400 &ndash; 3,000 K</td></tr>
-        <tr><td>Exit gas temp</td><td class="val warn">1,200 &ndash; 1,800 K</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- Support systems -->
-  <h2 style="margin-top:30px;">Support Systems</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <h3>Electrical Power</h3>
-      <table class="pp-table">
-        <tr><td>MHD Generator output</td><td class="val ok">300 &ndash; 600 kW</td></tr>
-        <tr><td>MHD Accelerator input</td><td class="val">300 &ndash; 600 kW</td></tr>
-        <tr><td>Plasma igniter (startup)</td><td class="val">5 kW</td></tr>
-        <tr><td>Magnet coil supply (startup)</td><td class="val">50 kW</td></tr>
-        <tr><td>Control + cooling</td><td class="val">15 kW</td></tr>
-        <tr style="font-weight:700;"><td>External (startup only)</td><td class="val ok">~50 kW</td></tr>
-        <tr style="font-weight:700;"><td>Running: self-sustaining</td><td class="val ok">0 kW external</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h3>Cooling System</h3>
-      <table class="pp-table">
-        <tr><td>RDE annulus (fuel)</td><td class="val">3.0 kg/s, +250 K</td></tr>
-        <tr><td>MHD gen channel (water)</td><td class="val">4.0 kg/s, +80 K</td></tr>
-        <tr><td>MHD accel channel (water)</td><td class="val">5.0 kg/s, +80 K</td></tr>
-        <tr><td>Magnets &mdash; gen (LN&sub2;)</td><td class="val">0.8 L/min, 77 K</td></tr>
-        <tr><td>Magnets &mdash; accel (LN&sub2;)</td><td class="val">1.0 L/min, 77 K</td></tr>
-        <tr><td>Nozzle throat (fuel film)</td><td class="val">0.5 kg/s, +200 K</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h3>Fuel System</h3>
-      <table class="pp-table">
-        <tr><td>Fuel type</td><td class="val">Jet-A / JP-8</td></tr>
-        <tr><td>Max fuel flow</td><td class="val">3.0 kg/s</td></tr>
-        <tr><td>Pump pressure</td><td class="val">45 bar</td></tr>
-        <tr><td>Pump type</td><td class="val">Electric gear</td></tr>
-        <tr><td>Pump power</td><td class="val">12 kW</td></tr>
-        <tr><td>Filter</td><td class="val">10 &mu;m nominal</td></tr>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== MATERIALS ==================== -->
-<div class="section" id="materials">
-  <h2>Materials &amp; Metallurgy</h2>
-
-  <div class="grid grid-2">
-    <div class="card">
-      <h3>Ti-6Al-4V (Grade 5)</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">Intake cowl, centerbody, diffuser</div>
-      <table class="pp-table">
-        <tr><td>Density</td><td class="val">4,430 kg/m&sup3;</td></tr>
-        <tr><td>Yield strength</td><td class="val">880 MPa</td></tr>
-        <tr><td>UTS</td><td class="val">950 MPa</td></tr>
-        <tr><td>Max service temp</td><td class="val">600 K (315&deg;C)</td></tr>
-        <tr><td>Thermal conductivity</td><td class="val">6.7 W/m&middot;K</td></tr>
-        <tr><td>Melting point</td><td class="val">1,933 K</td></tr>
-      </table>
-      <h4>Composition</h4>
-      <div style="font-size:0.82em;">Ti (bal. ~90%) &bull; Al 5.5&ndash;6.75% &bull; V 3.5&ndash;4.5%</div>
-      <h4>3D Print Process: EBM or SLM</h4>
-      <table class="pp-table">
-        <tr><td>Powder size</td><td class="val">45&ndash;106 &mu;m (EBM) / 15&ndash;45 &mu;m (SLM)</td></tr>
-        <tr><td>Layer thickness</td><td class="val">50 &ndash; 100 &mu;m</td></tr>
-        <tr><td>Build temp</td><td class="val">700&deg;C preheat (EBM)</td></tr>
-        <tr><td>Atmosphere</td><td class="val">Vacuum (EBM) / Argon (SLM)</td></tr>
-        <tr><td>HIP</td><td class="val">920&deg;C / 100 MPa / 2 hr</td></tr>
-        <tr><td>Stress relief</td><td class="val">650&deg;C / 3 hr, furnace cool</td></tr>
-      </table>
-    </div>
-
-    <div class="card">
-      <h3>Inconel 718</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">Plasma shell, combustion shell, nozzle, mounts</div>
-      <table class="pp-table">
-        <tr><td>Density</td><td class="val">8,190 kg/m&sup3;</td></tr>
-        <tr><td>Yield strength (RT)</td><td class="val">1,035 MPa</td></tr>
-        <tr><td>Yield strength (650&deg;C)</td><td class="val">860 MPa</td></tr>
-        <tr><td>UTS</td><td class="val">1,240 MPa</td></tr>
-        <tr><td>Max service temp</td><td class="val">980 K (700&deg;C)</td></tr>
-        <tr><td>Thermal conductivity</td><td class="val">11.4 W/m&middot;K</td></tr>
-      </table>
-      <h4>Composition</h4>
-      <div style="font-size:0.82em;">Ni 50&ndash;55% &bull; Cr 17&ndash;21% &bull; Fe ~18% &bull; Nb+Ta 4.75&ndash;5.5% &bull; Mo 2.8&ndash;3.3%</div>
-      <h4>3D Print Process: DMLS / SLM</h4>
-      <table class="pp-table">
-        <tr><td>Powder size</td><td class="val">15 &ndash; 45 &mu;m</td></tr>
-        <tr><td>Layer thickness</td><td class="val">20 &ndash; 40 &mu;m</td></tr>
-        <tr><td>Laser power</td><td class="val">280 &ndash; 400 W</td></tr>
-        <tr><td>Scan speed</td><td class="val">800 &ndash; 1,200 mm/s</td></tr>
-        <tr><td>HIP</td><td class="val">1,165&deg;C / 100 MPa / 4 hr</td></tr>
-        <tr><td>Heat treat</td><td class="val">Sol: 980&deg;C/1h &rarr; Age: 720&deg;C/8h + 620&deg;C/8h</td></tr>
-      </table>
-    </div>
-
-    <div class="card">
-      <h3>Inconel 625</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">Fuel injectors</div>
-      <table class="pp-table">
-        <tr><td>Density</td><td class="val">8,440 kg/m&sup3;</td></tr>
-        <tr><td>Yield strength</td><td class="val">490 MPa</td></tr>
-        <tr><td>UTS</td><td class="val">965 MPa</td></tr>
-        <tr><td>Max service temp</td><td class="val">1,100 K (815&deg;C)</td></tr>
-        <tr><td>Composition</td><td class="val" style="font-size:0.85em;">Ni 58%+ &bull; Cr 20&ndash;23% &bull; Mo 8&ndash;10%</td></tr>
-      </table>
-      <h4>SLM Parameters</h4>
-      <table class="pp-table">
-        <tr><td>Laser power</td><td class="val">250 &ndash; 370 W</td></tr>
-        <tr><td>Stress relief</td><td class="val">870&deg;C / 1 hr</td></tr>
-      </table>
-    </div>
-
-    <div class="card">
-      <h3>C/SiC Composite</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">All hot-section liners</div>
-      <table class="pp-table">
-        <tr><td>Density</td><td class="val">2,100 &ndash; 2,500 kg/m&sup3;</td></tr>
-        <tr><td>Tensile strength</td><td class="val">250 &ndash; 400 MPa</td></tr>
-        <tr><td>Max service temp</td><td class="val hot">1,800 K (1,500&deg;C)</td></tr>
-        <tr><td>Thermal conductivity</td><td class="val">15 &ndash; 40 W/m&middot;K</td></tr>
-        <tr><td>CTE</td><td class="val">2 &ndash; 4 &times; 10&sup-6; /K</td></tr>
-      </table>
-      <h4>Manufacturing: CVI Process</h4>
-      <ol class="steps" style="font-size:0.82em;">
-        <li>Carbon fiber preform woven to shape</li>
-        <li>Preform placed in CVI reactor</li>
-        <li>MTS gas infiltrated at 1,000&ndash;1,100&deg;C</li>
-        <li>SiC matrix deposited (100&ndash;500 hr/cycle)</li>
-        <li>Multiple cycles to 85&ndash;95% density</li>
-        <li>Diamond grinding to final dimensions</li>
-      </ol>
-      <div class="warn-box" style="font-size:0.82em;"><strong>Not 3D printable.</strong> Requires CVI or PIP process. Lead time: 3&ndash;6 months.</div>
-    </div>
-
-    <div class="card">
-      <h3>W-Cu 80/20 Composite</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">MHD electrodes</div>
-      <table class="pp-table">
-        <tr><td>Density</td><td class="val">15,200 kg/m&sup3;</td></tr>
-        <tr><td>Electrical conductivity</td><td class="val">40% IACS</td></tr>
-        <tr><td>Thermal conductivity</td><td class="val">180 W/m&middot;K</td></tr>
-        <tr><td>Max service temp</td><td class="val hot">1,500 K</td></tr>
-      </table>
-      <h4>Manufacturing: Press-Sinter-Infiltrate</h4>
-      <ol class="steps" style="font-size:0.82em;">
-        <li>W powder pressed at 200&ndash;400 MPa</li>
-        <li>Pre-sinter at 1,200&deg;C in H&sub2;</li>
-        <li>Cu infiltration at 1,150&deg;C in H&sub2;</li>
-        <li>EDM to final dimensions</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h3>Boron Nitride (BN)</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">MHD insulators</div>
-      <table class="pp-table">
-        <tr><td>Density</td><td class="val">1,900 kg/m&sup3;</td></tr>
-        <tr><td>Dielectric strength</td><td class="val">40 kV/mm</td></tr>
-        <tr><td>Max service temp</td><td class="val">1,800 K (inert)</td></tr>
-        <tr><td>Resistivity</td><td class="val">&gt; 10&sup1;&sup4; &Omega;&middot;cm</td></tr>
-      </table>
-      <div class="note">CNC machined from hot-pressed billets. Diamond tooling, dry machining (moisture-sensitive).</div>
-    </div>
-  </div>
-
-  <!-- Thermal map -->
-  <div class="card" style="margin-top:20px;">
-    <h3>Temperature Map Along Engine Axis</h3>
-    <div style="display:flex;height:40px;border-radius:6px;overflow:hidden;margin:12px 0;font-size:0.75em;">
-      <div style="flex:1.5;background:linear-gradient(90deg,#0077b6,#0099cc);display:flex;align-items:center;justify-content:center;color:#fff;">288 K<br>Intake</div>
-      <div style="flex:1.2;background:linear-gradient(90deg,#b91c1c,#991b1b);display:flex;align-items:center;justify-content:center;color:#fff;">3500&ndash;4000 K<br>RDE Detonation</div>
-      <div style="flex:1.5;background:linear-gradient(90deg,#991b1b,#dc2626);display:flex;align-items:center;justify-content:center;color:#fff;">3000&ndash;3500 K<br>MHD Generator</div>
-      <div style="flex:2.2;background:linear-gradient(90deg,#dc2626,#ea580c);display:flex;align-items:center;justify-content:center;color:#fff;">2500&ndash;3000 K<br>MHD Accelerator</div>
-      <div style="flex:1.6;background:linear-gradient(90deg,#ea580c,#f59e0b);display:flex;align-items:center;justify-content:center;color:#000;">1200&ndash;1800 K<br>Nozzle Exit</div>
-    </div>
-  </div>
-
-  <!-- Compatibility warnings -->
-  <div class="card" style="margin-top:20px;">
-    <h3>Critical Material Notes</h3>
-    <div class="warn-box"><strong>C/SiC at 4,000 K:</strong> RDE detonation temps exceed C/SiC service limit (1,800 K). TBC + EBC + regenerative cooling must keep wall temps below 1,800 K. If insufficient, UHTC liners (HfC, ZrB&sub2;) or transpiration cooling may be needed.</div>
-    <div class="warn-box"><strong>RDE Thermal Cycling:</strong> Detonation waves create rapid thermal cycling (1,500&ndash;2,000 Hz) on annulus walls &mdash; much more severe than steady combustion. Materials must withstand extreme thermal fatigue.</div>
-    <div class="warn-box"><strong>Alkali Seed Corrosion:</strong> K/Cs salts corrode some materials. W-Cu and BN are resistant. Ni-superalloy in MHD sections needs protective coatings.</div>
-    <div class="warn-box"><strong>CTE Mismatch:</strong> C/SiC (~3&times;10&supmin;&sup6;/K) vs IN718 (~13&times;10&supmin;&sup6;/K). Use compliant seals (C-seals or ceramic rope). Never bond rigidly.</div>
-  </div>
-</div>
-
-<!-- ==================== 3D PRINTING ==================== -->
-<div class="section" id="printing">
-  <h2>3D Printing &amp; Manufacturing</h2>
-
-  <!-- Printability matrix -->
-  <div class="card" style="margin-bottom:20px;">
-    <h3>Component Printability Matrix</h3>
-    <table>
-      <thead><tr><th>Component</th><th>Method</th><th>Material</th><th>3D Print?</th><th>Machine</th></tr></thead>
-      <tbody>
-        <tr><td>Intake cowl</td><td>Metal AM (EBM)</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td><span class="print-yes">YES</span></td><td>Arcam Q20+</td></tr>
-        <tr><td>Centerbody</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
-        <tr><td>RDE outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
-        <tr><td>RDE inner liner</td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI reactor</td></tr>
-        <tr><td>RDE injector face plate</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-in">IN625</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
-        <tr><td>MHD Gen channel walls</td><td>CVI + machining</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI + grinder</td></tr>
-        <tr><td>MHD Gen electrodes (48)</td><td>Press-sinter + EDM</td><td><span class="mat-badge mat-wcu">W-Cu</span></td><td><span class="print-no">NO</span></td><td>Press + EDM</td></tr>
-        <tr><td>MHD Gen insulators (24)</td><td>CNC machining</td><td><span class="mat-badge mat-bn">BN</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
-        <tr><td>MHD Gen cryostat</td><td>Roll-form + weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td><span class="print-no">NO</span></td><td>Roll + TIG</td></tr>
-        <tr><td>MHD Accel channel walls</td><td>CVI + machining</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI + grinder</td></tr>
-        <tr><td>MHD Accel electrodes (64)</td><td>Press-sinter + EDM</td><td><span class="mat-badge mat-wcu">W-Cu</span></td><td><span class="print-no">NO</span></td><td>Press + EDM</td></tr>
-        <tr><td>MHD Accel insulators (32)</td><td>CNC machining</td><td><span class="mat-badge mat-bn">BN</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
-        <tr><td>MHD Accel cryostat</td><td>Roll-form + weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td><span class="print-no">NO</span></td><td>Roll + TIG</td></tr>
-        <tr><td>Nozzle outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
-        <tr><td>Mounting brackets</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
-      </tbody>
-    </table>
-    <div style="margin-top:12px;font-size:0.85em;color:var(--dim);">~40% of components are 3D printable via metal additive manufacturing. The RDE injector face plate is the ideal AM candidate.</div>
-  </div>
-
-  <!-- AM machines needed -->
-  <div class="grid grid-2" style="margin-bottom:20px;">
-    <div class="card">
-      <h3>Required AM Machines</h3>
-      <table class="pp-table">
-        <tr><td>EBM (Ti-6Al-4V)</td><td class="val">Arcam EBM Q20plus</td></tr>
-        <tr><td>SLM/DMLS (IN718)</td><td class="val">EOS M400-4 or SLM 500</td></tr>
-        <tr><td>SLM (IN625)</td><td class="val">EOS M290 or Renishaw AM500</td></tr>
-        <tr><td>SLM (316L)</td><td class="val">EOS M290 or TruPrint 3000</td></tr>
-      </table>
-      <div class="warn-box"><strong>These are industrial metal AM systems ($500K&ndash;$2M+ each).</strong> Desktop FDM/resin printers cannot produce functional engine parts. Use service bureaus: Protolabs, Materialise, Carpenter Additive, Velo3D.</div>
-    </div>
-    <div class="card">
-      <h3>Post-Processing Equipment</h3>
-      <table class="pp-table">
-        <tr><td>Hot Isostatic Press</td><td class="val">Close porosity</td></tr>
-        <tr><td>Vacuum furnace</td><td class="val">Heat treatment</td></tr>
-        <tr><td>Wire EDM</td><td class="val">Cut from build plate</td></tr>
-        <tr><td>5-axis CNC mill</td><td class="val">Finish machining</td></tr>
-        <tr><td>CNC lathe</td><td class="val">Cylindrical features</td></tr>
-        <tr><td>CMM</td><td class="val">Dimensional inspection</td></tr>
-        <tr><td>CT scanner</td><td class="val">Internal defect check</td></tr>
-        <tr><td>Plasma spray</td><td class="val">TBC application</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- Print procedures -->
-  <div class="grid grid-2">
-    <div class="card">
-      <h3>Print Procedure: IN718 Shells</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">RDE annulus and nozzle outer shells</div>
-      <ol class="steps">
-        <li>Export STL with 0.05 mm chord tolerance, add 0.5 mm stock on mating surfaces</li>
-        <li>Orient part vertically (axis vertical), add support anchors at overhangs</li>
-        <li>Load IN718 powder (15&ndash;53 &mu;m) in argon atmosphere (&lt;100 ppm O&sub2;)</li>
-        <li>Build: 40 &mu;m layers, 285 W &times; 4 lasers, 960 mm/s, 0.11 mm hatch</li>
-        <li>Wire EDM from build plate</li>
-        <li>HIP: 1,165&deg;C / 100 MPa / 4 hours in argon</li>
-        <li>Solution treat: 980&deg;C / 1 hr, air cool</li>
-        <li>Double age: 720&deg;C/8hr &rarr; furnace cool to 620&deg;C/8hr &rarr; air cool</li>
-        <li>CNC machine mating faces to &plusmn;0.05 mm</li>
-        <li>CT scan + FPI + CMM dimensional inspection</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h3>Print Procedure: RDE Injector Face Plate</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Monolithic IN625 disc with 24 integrated impinging-jet injectors</div>
-      <ol class="steps">
-        <li>Design internal fuel manifold with teardrop cross-section (self-supporting)</li>
-        <li>24 impinging-jet doublet passages aimed at annular gap</li>
-        <li>Print flat (face plane horizontal) on EOS M290 or M400-4</li>
-        <li>IN625 powder, 40 &mu;m layers, 300 W, 800 mm/s</li>
-        <li>Stress relief: 870&deg;C / 1 hour</li>
-        <li>Ream all 48 orifices to 2.00 &plusmn;0.02 mm</li>
-        <li>Flow test: target &plusmn;3% uniformity across all injectors</li>
-        <li>Pressure test manifold: 70 bar hydrostatic (2&times; operating)</li>
-        <li>Helium leak check: &lt;1 cc/min at 40 bar</li>
-      </ol>
-      <div class="note">This is the ideal AM candidate &mdash; complex internal manifold and 24 doublet injectors impossible via conventional machining. Critical for uniform fuel distribution in the RDE annulus.</div>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== ASSEMBLY ==================== -->
-<div class="section" id="assembly">
-  <h2>Assembly Sequence</h2>
-
-  <div class="grid grid-3" style="margin-bottom:24px;">
-    <div class="card">
-      <h3>Sub-Assembly 1: Intake</h3>
-      <ol class="steps">
-        <li>3D print cowl segments (Ti-6Al-4V EBM)</li>
-        <li>3D print centerbody (Ti-6Al-4V SLM)</li>
-        <li>HIP + heat treat all parts</li>
-        <li>CNC finish machine mating surfaces</li>
-        <li>Bolt/weld cowl segments together</li>
-        <li>Install boundary layer bleed tubes</li>
-        <li>Dimensional CMM inspection</li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>Sub-Assembly 2: RDE Module</h3>
-      <ol class="steps">
-        <li>3D print outer shell (IN718 DMLS)</li>
-        <li>3D print injector face plate (IN625 SLM)</li>
-        <li>HIP + heat treat all metal parts</li>
-        <li>CNC finish machine mating surfaces</li>
-        <li>Receive C/SiC liner from CVI supplier</li>
-        <li>Apply EBC + TBC coatings to liner</li>
-        <li>Install liner into shell (compliant mounts)</li>
-        <li>Install injector face plate</li>
-        <li>Ream 48 orifices, flow test (&plusmn;3%)</li>
-        <li>Install plasma igniter (small magnetron)</li>
-        <li>Pressure test cooling channels (50 bar)</li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>Sub-Assembly 3: MHD Generator</h3>
-      <ol class="steps">
-        <li>Receive C/SiC channel walls + apply TBC</li>
-        <li>Press-sinter + EDM W-Cu electrodes (48 pcs)</li>
-        <li>CNC machine BN insulators (24 pcs)</li>
-        <li>Assemble electrode-insulator stack</li>
-        <li>Fabricate cryostat housing (roll + weld)</li>
-        <li>Procure superconducting coils</li>
-        <li>Assemble coils into cryostat</li>
-        <li>Install MHD channel into bore</li>
-        <li>Leak test, electrical test, LN&sub2; cooldown</li>
-        <li>Verify magnetic field map</li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>Sub-Assembly 4: MHD Accelerator</h3>
-      <ol class="steps">
-        <li>Receive C/SiC channel walls + apply TBC</li>
-        <li>Press-sinter + EDM W-Cu electrodes (64 pcs)</li>
-        <li>CNC machine BN insulators (32 pcs)</li>
-        <li>Assemble electrode-insulator stack</li>
-        <li>Fabricate cryostat housing (roll + weld)</li>
-        <li>Procure superconducting coils</li>
-        <li>Assemble coils into cryostat</li>
-        <li>Install MHD channel into bore</li>
-        <li>Leak test, electrical test, LN&sub2; cooldown</li>
-        <li>Wire power bus from generator module</li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>Sub-Assembly 5: C-D Nozzle</h3>
-      <ol class="steps">
-        <li>3D print outer shell (IN718 DMLS)</li>
-        <li>HIP + heat treat + CNC machine</li>
-        <li>Receive C/SiC inner liner + apply TBC</li>
-        <li>Install liner into shell (compliant mounts)</li>
-        <li>Install optional EM coils (2 rings)</li>
-        <li>Connect film cooling feed</li>
-        <li>Flow test</li>
-      </ol>
-    </div>
-  </div>
-
-  <!-- Final assembly -->
-  <div class="card">
-    <h3>Final Assembly Sequence</h3>
-    <ol class="steps">
-      <li><strong>Mount intake on assembly fixture</strong> &mdash; horizontal rail, engine axis horizontal</li>
-      <li><strong>Mate RDE module to intake</strong> &mdash; 12&times; M12 A-286 bolts, Inconel X-750 C-seal, 85 N&middot;m torque</li>
-      <li><strong>Mate MHD Generator module</strong> &mdash; 12&times; M14 bolts, connect seed injection port</li>
-      <li><strong>Mate MHD Accelerator module</strong> &mdash; 16&times; M16 bolts (heavier loads), align to &plusmn;0.5 mm</li>
-      <li><strong>Wire MHD generator &rarr; accelerator power bus</strong> &mdash; heavy-gauge DC cables, verify polarity</li>
-      <li><strong>Mate nozzle module</strong> &mdash; 12&times; M12 bolts, connect cooling</li>
-      <li><strong>Install mounting brackets</strong> &mdash; forward at station 400 mm, aft at station 2,200 mm</li>
-      <li><strong>Connect all external systems</strong> &mdash; fuel, water cooling, LN&sub2;, igniter power, sensors, ECU harness</li>
-      <li><strong>Leak test all fluid circuits</strong> &mdash; fuel 70 bar He, water 15 bar hydro, cryo vacuum + He</li>
-      <li><strong>Electrical test</strong> &mdash; all coils resistance + Hi-pot, all electrodes, generator&ndash;accelerator circuit, all sensors</li>
-      <li><strong>Weight and CG measurement</strong></li>
-      <li><strong>Ready for test cell installation</strong></li>
-    </ol>
-  </div>
-</div>
-
-<!-- ==================== PHASES ==================== -->
-<div class="section" id="phases">
-  <h2>Phased Development Plan</h2>
-
-  <div class="warn-box" style="margin-bottom:20px;">
-    <strong>Recommendation:</strong> Do NOT attempt the 120 kN engine first. Build the RDE demonstrator (Phase 1) to prove rotating detonation, then add MHD in Phase 2.
-  </div>
-
-  <div class="timeline">
-    <!-- Phase 1 -->
-    <div class="tl-item">
-      <h3>Phase 1 &mdash; RDE Demonstrator</h3>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:250px;">
-          <h4 style="color:var(--green);margin-bottom:8px;">Target: 1 &ndash; 5 kN</h4>
-          <table class="pp-table" style="font-size:0.85em;">
-            <tr><td>Air mass flow</td><td class="val">1 &ndash; 5 kg/s</td></tr>
-            <tr><td>Intake diameter</td><td class="val">200 mm</td></tr>
-            <tr><td>RDE annulus OD</td><td class="val">120 mm</td></tr>
-            <tr><td>RDE annulus ID</td><td class="val">80 mm</td></tr>
-            <tr><td>Total length</td><td class="val">600 mm</td></tr>
-            <tr><td>Igniter</td><td class="val">5 kW magnetron (startup)</td></tr>
-            <tr><td>Fuel flow</td><td class="val">0.1 &ndash; 0.3 kg/s</td></tr>
-            <tr><td>MHD section</td><td class="val">None (Phase 1)</td></tr>
-          </table>
-        </div>
-        <div style="flex:1;min-width:250px;">
-          <h4 style="color:var(--green);margin-bottom:8px;">Prove:</h4>
-          <ul class="checklist">
-            <li>Stable rotating detonation &gt; 60 s</li>
-            <li>Wave speed &gt; 1,000 m/s</li>
-            <li>Pressure gain &gt; 5:1</li>
-            <li>Measurable thrust &gt; 500 N</li>
-            <li>No structural failure or thermal runaway</li>
-            <li>Detonation temp &gt; 2,500 K</li>
-            <li>Fuel injection uniformity</li>
-          </ul>
-        </div>
-        <div style="flex:1;min-width:250px;">
-          <h4 style="color:var(--green);margin-bottom:8px;">Budget Estimate</h4>
-          <table class="pp-table" style="font-size:0.85em;">
-            <tr><td>Metal AM (all parts)</td><td class="val">$15,000</td></tr>
-            <tr><td>HIP + heat treat</td><td class="val">$5,000</td></tr>
-            <tr><td>CNC finishing</td><td class="val">$8,000</td></tr>
-            <tr><td>Plasma igniter (5 kW)</td><td class="val">$4,000</td></tr>
-            <tr><td>High-speed pressure transducers</td><td class="val">$6,000</td></tr>
-            <tr><td>Fuel system</td><td class="val">$3,000</td></tr>
-            <tr><td>Data acquisition (&gt;1 MHz)</td><td class="val">$5,000</td></tr>
-            <tr><td>Instrumentation</td><td class="val">$5,000</td></tr>
-            <tr><td>Test stand + safety</td><td class="val">$8,000</td></tr>
-            <tr><td>Misc + contingency</td><td class="val">$6,000</td></tr>
-            <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Phase 1</td><td class="val" style="color:var(--accent);">~$65,000</td></tr>
-          </table>
-        </div>
-      </div>
-      <div class="note" style="margin-top:12px;">All Phase 1 parts fit within a standard EOS M290 build volume (250&times;250&times;325 mm). Answers the key question: can rotating detonation provide reliable pressure-gain combustion for a bladeless engine?</div>
-    </div>
-
-    <!-- Phase 2 -->
-    <div class="tl-item">
-      <h3>Phase 2 &mdash; RDE + MHD Self-Powering Demonstrator</h3>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:250px;">
-          <h4 style="color:var(--green);margin-bottom:8px;">Target: 10 &ndash; 20 kN</h4>
-          <table class="pp-table" style="font-size:0.85em;">
-            <tr><td>Air mass flow</td><td class="val">8 &ndash; 15 kg/s</td></tr>
-            <tr><td>Intake diameter</td><td class="val">400 mm</td></tr>
-            <tr><td>RDE annulus OD</td><td class="val">250 mm</td></tr>
-            <tr><td>RDE annulus ID</td><td class="val">180 mm</td></tr>
-            <tr><td>MHD Gen channel</td><td class="val">200 &times; 180 mm</td></tr>
-            <tr><td>MHD Accel channel</td><td class="val">200 &times; 180 mm</td></tr>
-            <tr><td>Total length</td><td class="val">1,400 mm</td></tr>
-            <tr><td>Magnetic field</td><td class="val">1 &ndash; 2 T (copper coils)</td></tr>
-            <tr><td>MHD Gen output</td><td class="val ok">80 &ndash; 200 kW</td></tr>
-          </table>
-        </div>
-        <div style="flex:1;min-width:250px;">
-          <h4 style="color:var(--green);margin-bottom:8px;">Prove:</h4>
-          <ul class="checklist">
-            <li>Stable RDE at 10+ kg/s airflow</li>
-            <li>MHD generator produces &gt; 100 kW from exhaust</li>
-            <li>MHD accelerator thrust increase &gt; 10%</li>
-            <li>Self-sustaining generator&ndash;accelerator cycle</li>
-            <li>Sustained operation &gt; 120 s</li>
-            <li>Total thrust &gt; 10 kN</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Phase 3 -->
-    <div class="tl-item">
-      <h3>Phase 3 &mdash; Full-Scale Prototype</h3>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:250px;">
-          <h4 style="color:var(--green);margin-bottom:8px;">Target: 50 &ndash; 120 kN</h4>
-          <table class="pp-table" style="font-size:0.85em;">
-            <tr><td>Full HPM-120 spec</td><td class="val">See Dimensions tab</td></tr>
-            <tr><td>Air mass flow</td><td class="val">80 &ndash; 100 kg/s</td></tr>
-            <tr><td>Magnetic field</td><td class="val">2 &ndash; 4 T (superconducting)</td></tr>
-            <tr><td>Total length</td><td class="val">2,850 mm</td></tr>
-            <tr><td>Max diameter</td><td class="val">900 mm</td></tr>
-          </table>
-        </div>
-        <div style="flex:1;min-width:250px;">
-          <h4 style="color:var(--green);margin-bottom:8px;">Estimated Cost</h4>
-          <table class="pp-table" style="font-size:0.85em;">
-            <tr><td>Metal AM (all parts)</td><td class="val">$150K &ndash; $300K</td></tr>
-            <tr><td>C/SiC CMC liners</td><td class="val">$200K &ndash; $500K</td></tr>
-            <tr><td>Superconducting magnets</td><td class="val">$300K &ndash; $800K</td></tr>
-            <tr><td>Power + RF systems</td><td class="val">$150K &ndash; $300K</td></tr>
-            <tr><td>Instrumentation + test</td><td class="val">$280K &ndash; $650K</td></tr>
-            <tr><td>Post-processing + assy</td><td class="val">$180K &ndash; $350K</td></tr>
-            <tr><td>Contingency (25%)</td><td class="val">$340K &ndash; $775K</td></tr>
-            <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Phase 3</td><td class="val" style="color:var(--accent);">$1.7M &ndash; $3.9M</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== TESTING ==================== -->
-<div class="section" id="testing">
-  <h2>Testing &amp; Validation</h2>
-
-  <div class="grid grid-2" style="margin-bottom:20px;">
-    <div class="card">
-      <h3>Test Sequence</h3>
-      <ol class="steps">
-        <li><strong>Cold Flow Test</strong> &mdash; Ambient air through engine. Measure pressure drops, verify mass flow capacity (100 kg/s target), check for leaks.</li>
-        <li><strong>Detonation Initiation Test</strong> &mdash; Reduced airflow (10&ndash;20%), energize plasma igniter, introduce fuel at low flow. Verify detonation initiation and wave stability via high-speed pressure transducers.</li>
-        <li><strong>RDE Characterization</strong> &mdash; Map detonation wave speed, count, pressure gain vs fuel flow. Increase airflow to 50% design point.</li>
-        <li><strong>MHD Generator Test</strong> &mdash; Cool magnets, verify field, inject alkali seed, measure gas conductivity and power extraction.</li>
-        <li><strong>MHD Accelerator Test</strong> &mdash; Power accelerator from generator output, measure thrust increment. Verify self-sustaining cycle.</li>
-        <li><strong>Full Engine Test</strong> &mdash; Ramp 25% &rarr; 50% &rarr; 75% &rarr; 100%. Measure thrust on calibrated stand. Record all parameters.</li>
-        <li><strong>Endurance Run</strong> &mdash; Sustained operation at rated thrust. Monitor for thermal creep, vibration, seal degradation, detonation stability.</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h3>Instrumentation Required</h3>
-      <table>
-        <thead><tr><th>Measurement</th><th>Sensor</th><th>Qty</th></tr></thead>
-        <tbody>
-          <tr><td>Thrust</td><td class="val">Load cell (200 kN)</td><td class="val">1</td></tr>
-          <tr><td>Chamber pressure</td><td class="val">Piezo transducers</td><td class="val">8</td></tr>
-          <tr><td>Gas temperature</td><td class="val">Type B thermocouples</td><td class="val">24</td></tr>
-          <tr><td>Structure temperature</td><td class="val">Type K thermocouples</td><td class="val">48</td></tr>
-          <tr><td>Air mass flow</td><td class="val">Venturi + diff. pressure</td><td class="val">1</td></tr>
-          <tr><td>Fuel mass flow</td><td class="val">Coriolis meter</td><td class="val">1</td></tr>
-          <tr><td>Plasma density</td><td class="val">Langmuir probes</td><td class="val">4</td></tr>
-          <tr><td>Magnetic field</td><td class="val">Hall probes</td><td class="val">8</td></tr>
-          <tr><td>Exhaust velocity</td><td class="val">Pitot rake</td><td class="val">1</td></tr>
-          <tr><td>Vibration</td><td class="val">Accelerometers</td><td class="val">6</td></tr>
-          <tr><td>Gas composition</td><td class="val">Mass spectrometer</td><td class="val">1</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Critical challenges -->
-  <div class="card">
-    <h3>Critical Engineering Challenges</h3>
-    <div class="grid grid-2" style="gap:12px;">
-      <div class="warn-box">
-        <strong>1. RDE Detonation Stability</strong><br>
-        Maintaining continuous rotating detonation in an annular channel at 80&ndash;100 kg/s airflow
-        is the primary challenge. Wave extinction, mode switching, and uneven fuel-air mixing can
-        cause instability. This is an active area of research at AFRL, GE, and others.
-      </div>
-      <div class="warn-box">
-        <strong>2. Extreme Thermal Environment</strong><br>
-        Detonation temperatures of 3,500&ndash;4,000 K exceed C/SiC service limits (1,800 K).
-        TBC + EBC + regenerative cooling must maintain wall temps below limits. Detonation
-        wave thermal cycling at 1,500&ndash;2,000 Hz creates severe fatigue conditions.
-      </div>
-      <div class="warn-box">
-        <strong>3. MHD Generator&ndash;Accelerator Balance</strong><br>
-        The generator must extract enough power (300&ndash;600 kW) to drive the accelerator while
-        maintaining positive net thrust. Getting this energy balance right requires precise control
-        of electrode loading and magnetic field strength in both sections.
-      </div>
-      <div class="warn-box">
-        <strong>4. Gas Conductivity &amp; Alkali Seeding</strong><br>
-        Higher RDE temps (3,500&ndash;4,000 K) improve natural ionization, but alkali seeding
-        (K or Cs, 0.5&ndash;1%) is still needed for &gt;10 S/m conductivity. Seed recovery and
-        downstream contamination must be addressed.
-      </div>
-    </div>
-  </div>
-
-  <!-- Immediate next steps -->
-  <div class="card" style="margin-top:20px;">
-    <h3>Immediate Next Steps</h3>
-    <ol class="steps">
-      <li>Create detailed CAD model of Phase 1 RDE annulus (SolidWorks, Fusion 360, or FreeCAD)</li>
-      <li>Run CFD detonation simulation (Ansys Fluent, OpenFOAM with reactive solver)</li>
-      <li>Run thermal-structural FEA on RDE annulus walls (Ansys, COMSOL)</li>
-      <li>Contact metal AM service bureau for Phase 1 print quotes</li>
-      <li>Source 5 kW 2.45 GHz magnetron for detonation igniter</li>
-      <li>Source high-speed pressure transducers (&gt;1 MHz bandwidth) for wave tracking</li>
-      <li>Design and build test stand with thrust measurement</li>
-      <li>Obtain permits/clearances for hot-fire testing (detonation events)</li>
-      <li>Establish safety protocols: detonation containment, fuel handling, noise suppression</li>
-    </ol>
-  </div>
-</div>
-
-<!-- ==================== POWER & COOLING ==================== -->
-<div class="section" id="power">
-  <h2>Power Generation &amp; Cryogenic Cooling System</h2>
-
-  <!-- Power demand summary -->
-  <div class="card" style="margin-bottom:20px;">
-    <h3>Electrical Power Demand Breakdown</h3>
-    <p style="font-size:0.88em;color:var(--dim);margin-bottom:12px;">The HPM-120 requires 420 &ndash; 1,050 kW of continuous electrical power. This is the dominant system-level challenge. The following analysis ranks all viable power source options.</p>
-    <table>
-      <thead><tr><th>Consumer</th><th>Power (kW)</th><th>Voltage</th><th>Duty</th></tr></thead>
-      <tbody>
-        <tr><td>RF plasma generators (6&times;)</td><td class="val">150</td><td class="val">HV AC (2.45 GHz)</td><td class="val">Continuous</td></tr>
-        <tr><td>MHD accelerator DC supply</td><td class="val warn">200 &ndash; 800</td><td class="val">500 &ndash; 2,000 V DC</td><td class="val">Continuous</td></tr>
-        <tr><td>EM nozzle coil drivers (8&times;)</td><td class="val">80</td><td class="val">48 V DC</td><td class="val">Continuous</td></tr>
-        <tr><td>Superconducting magnet ramp</td><td class="val">50</td><td class="val">20 V DC</td><td class="val">Start-up only</td></tr>
-        <tr><td>Cryocoolers / LN&sub2; pumps</td><td class="val">35</td><td class="val">400 V AC</td><td class="val">Continuous</td></tr>
-        <tr><td>Coolant circulation pumps</td><td class="val">15</td><td class="val">400 V AC</td><td class="val">Continuous</td></tr>
-        <tr><td>Control electronics + sensors</td><td class="val">5</td><td class="val">28 V DC</td><td class="val">Continuous</td></tr>
-        <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total</td><td class="val" style="color:var(--accent);">420 &ndash; 1,050 kW</td><td></td><td></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Power source ranking -->
-  <h2 style="margin-top:30px;">Power Source Options &mdash; Ranked by Feasibility</h2>
-
-  <div class="grid grid-2" style="margin-bottom:20px;">
-
-    <!-- Option 1: Turbo-Generator -->
-    <div class="card" style="border-color:var(--green);">
-      <h3 style="display:flex;justify-content:space-between;align-items:center;">1. Exhaust-Driven Turbo-Generator <span class="print-yes">RECOMMENDED</span></h3>
-      <div style="font-size:0.8em;color:var(--green);margin-bottom:10px;">Best long-term solution &mdash; self-sustaining, no external fuel penalty</div>
-      <table class="pp-table">
-        <tr><td>Concept</td><td class="val">Small radial turbine in exhaust bypass duct drives high-speed generator</td></tr>
-        <tr><td>Power output</td><td class="val ok">500 &ndash; 1,200 kW</td></tr>
-        <tr><td>Exhaust bleed fraction</td><td class="val">5 &ndash; 12% of exhaust mass flow</td></tr>
-        <tr><td>Turbine inlet temp</td><td class="val hot">1,200 &ndash; 1,600 K</td></tr>
-        <tr><td>Generator type</td><td class="val">Permanent magnet, 50,000+ RPM</td></tr>
-        <tr><td>Efficiency (mech &rarr; elec)</td><td class="val">85 &ndash; 92%</td></tr>
-        <tr><td>Weight</td><td class="val">80 &ndash; 150 kg</td></tr>
-        <tr><td>Thrust penalty</td><td class="val warn">5 &ndash; 12% (exhaust diversion)</td></tr>
-        <tr><td>Fuel type</td><td class="val">Same Jet-A (no separate fuel)</td></tr>
-        <tr><td>TRL</td><td class="val ok">7 &ndash; 8 (mature technology)</td></tr>
-      </table>
-      <div class="note">This is the most practical flight-weight solution. The exhaust at 1,200&ndash;1,800 K contains enormous enthalpy. A small bypass turbine can extract 500+ kW while only reducing net thrust by 5&ndash;12%. Similar to APU bleed systems on commercial aircraft. Requires IN718 or Mar-M-247 turbine wheel, which can be 3D printed via SLM.</div>
-    </div>
-
-    <!-- Option 2: Gas Turbine APU -->
-    <div class="card">
-      <h3 style="display:flex;justify-content:space-between;align-items:center;">2. Dedicated Gas Turbine APU <span class="print-yes">BEST FOR PROTOTYPE</span></h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">Proven, off-the-shelf &mdash; ideal for ground testing and early flight</div>
-      <table class="pp-table">
-        <tr><td>Concept</td><td class="val">Separate small gas turbine engine driving a generator</td></tr>
-        <tr><td>Power output</td><td class="val ok">500 &ndash; 1,500 kW</td></tr>
-        <tr><td>Examples</td><td class="val">Honeywell 36-150, Safran e-APU60, Pratt &amp; Whitney APS5000</td></tr>
-        <tr><td>Fuel consumption</td><td class="val">0.3 &ndash; 0.5 kg/kWh (Jet-A)</td></tr>
-        <tr><td>Weight</td><td class="val warn">150 &ndash; 350 kg (complete system)</td></tr>
-        <tr><td>Efficiency</td><td class="val">25 &ndash; 35%</td></tr>
-        <tr><td>TRL</td><td class="val ok">9 (production hardware)</td></tr>
-        <tr><td>Cost</td><td class="val">$200K &ndash; $800K</td></tr>
-      </table>
-      <div class="note">Best choice for Phase 1&ndash;2 testing. Completely decouples power generation from the HPM-120 engine itself. Heavy for flight but eliminates a variable during development. Use same Jet-A fuel supply.</div>
-    </div>
-
-    <!-- Option 3: High-Density Battery -->
-    <div class="card">
-      <h3>3. High-Energy Battery Pack</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">Short-duration only &mdash; useful for test runs and hybrid boost</div>
-      <table class="pp-table">
-        <tr><td>Concept</td><td class="val">Lithium-ion or solid-state battery pack with high C-rate discharge</td></tr>
-        <tr><td>Energy density (Li-ion)</td><td class="val">250 &ndash; 300 Wh/kg (cell level)</td></tr>
-        <tr><td>Energy density (solid-state, projected)</td><td class="val">400 &ndash; 500 Wh/kg</td></tr>
-        <tr><td>Power density</td><td class="val">2 &ndash; 5 kW/kg</td></tr>
-        <tr><td>Pack mass for 1 MW &times; 10 min</td><td class="val hot">~670 kg (Li-ion) / ~400 kg (solid-state)</td></tr>
-        <tr><td>Pack mass for 1 MW &times; 1 hr</td><td class="val hot">~4,000 kg (Li-ion)</td></tr>
-        <tr><td>Thermal management</td><td class="val">Liquid-cooled plates required</td></tr>
-        <tr><td>TRL</td><td class="val ok">8 &ndash; 9 (Li-ion) / 5 &ndash; 6 (solid-state)</td></tr>
-      </table>
-      <div class="warn-box"><strong>Mass prohibitive for sustained flight.</strong> At ~670 kg for 10 minutes of 1 MW power, batteries are only viable for short ground tests, hybrid boost during takeoff, or as emergency backup. Not a primary flight power source at this power level.</div>
-    </div>
-
-    <!-- Option 4: Solid Oxide Fuel Cell -->
-    <div class="card">
-      <h3>4. Solid Oxide Fuel Cell (SOFC)</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">High efficiency, uses Jet-A fuel &mdash; emerging aviation technology</div>
-      <table class="pp-table">
-        <tr><td>Concept</td><td class="val">Jet-A reformed to syngas, electrochemically converted to electricity</td></tr>
-        <tr><td>Electrical efficiency</td><td class="val ok">50 &ndash; 60%</td></tr>
-        <tr><td>Power density</td><td class="val">0.5 &ndash; 1.5 kW/kg (current)</td></tr>
-        <tr><td>Operating temperature</td><td class="val hot">700 &ndash; 1,000&deg;C</td></tr>
-        <tr><td>System mass for 1 MW</td><td class="val">700 &ndash; 2,000 kg</td></tr>
-        <tr><td>Fuel consumption</td><td class="val ok">0.17 &ndash; 0.22 kg/kWh (very efficient)</td></tr>
-        <tr><td>TRL (aviation)</td><td class="val warn">4 &ndash; 5</td></tr>
-        <tr><td>Developers</td><td class="val">Bloom Energy, Ceres Power, Aerojet Rocketdyne</td></tr>
-      </table>
-      <div class="note">Highest fuel efficiency of any option. SOFC operating temperature (700&ndash;1,000&deg;C) could be synergistically heated by engine waste heat, further improving system efficiency. Boeing and Airbus are actively developing SOFC auxiliary power for aircraft. Main drawback: low power density and slow transient response.</div>
-    </div>
-
-    <!-- Option 5: Compact Fission Reactor -->
-    <div class="card">
-      <h3>5. Compact Fission Reactor</h3>
-      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">Very high energy density &mdash; limited by shielding mass and regulatory barriers</div>
-      <table class="pp-table">
-        <tr><td>Concept</td><td class="val">Micro fission reactor with Stirling or Brayton cycle power conversion</td></tr>
-        <tr><td>Fuel</td><td class="val">LEU (Low Enriched Uranium) or HALEU (High-Assay LEU)</td></tr>
-        <tr><td>Reactor thermal output</td><td class="val">1 &ndash; 5 MW thermal</td></tr>
-        <tr><td>Electrical output</td><td class="val">200 kW &ndash; 1 MW</td></tr>
-        <tr><td>Conversion efficiency</td><td class="val">20 &ndash; 30% (Stirling/Brayton)</td></tr>
-        <tr><td>Core mass</td><td class="val ok">50 &ndash; 200 kg (compact core)</td></tr>
-        <tr><td>Shielding mass</td><td class="val hot">500 &ndash; 2,000 kg (radiation shielding)</td></tr>
-        <tr><td>Total system mass</td><td class="val hot">800 &ndash; 3,000 kg</td></tr>
-        <tr><td>Endurance</td><td class="val ok">Years (no refueling)</td></tr>
-        <tr><td>Programs</td><td class="val">NASA Kilopower (10 kW), DARPA DRACO, Project Pele (5 MWe)</td></tr>
-        <tr><td>TRL</td><td class="val warn">4 &ndash; 6 (ground demos exist)</td></tr>
-      </table>
-      <div class="warn-box"><strong>Radiation shielding dominates mass.</strong> While the reactor core itself can be very compact, the shielding required for crewed aircraft makes the total system 800&ndash;3,000 kg. Best suited for large unmanned platforms or spacecraft where shielding geometry is favorable. Regulatory and safety certification for manned flight is extremely challenging.</div>
-    </div>
-
-    <!-- Option 6: Compact Fusion Reactor -->
-    <div class="card" style="border-color:#8b5cf6;">
-      <h3 style="color:#c084fc;">6. Compact Fusion Reactor</h3>
-      <div style="font-size:0.8em;color:#8b5cf6;margin-bottom:10px;">Highest theoretical energy density &mdash; no radiation shielding penalty &mdash; still experimental</div>
-      <table class="pp-table">
-        <tr><td>Concept</td><td class="val">Small-scale D-T, D-D, or D-He&sup3; fusion reactor with direct or thermal power conversion</td></tr>
-        <tr><td>Fuel</td><td class="val">Deuterium + Tritium (D-T) or Deuterium + He&sup3;</td></tr>
-        <tr><td>Plasma temperature</td><td class="val hot">100 &ndash; 200 million K (10&ndash;20 keV)</td></tr>
-        <tr><td>Confinement method</td><td class="val">Compact tokamak, FRC (Field-Reversed Configuration), or Z-pinch</td></tr>
-        <tr><td>Theoretical power density</td><td class="val ok">&gt; 10 kW/kg (far exceeds all other sources)</td></tr>
-        <tr><td>Electrical output target</td><td class="val">500 kW &ndash; 10 MW</td></tr>
-        <tr><td>Neutron shielding (D-T)</td><td class="val warn">200 &ndash; 500 kg (14.1 MeV neutrons)</td></tr>
-        <tr><td>Neutron shielding (D-He&sup3;)</td><td class="val ok">Minimal (aneutronic fusion)</td></tr>
-        <tr><td>Magnet requirement</td><td class="val">&gt; 10 Tesla (HTS: REBCO or YBCO)</td></tr>
-        <tr><td>Cryogenic requirement</td><td class="val">20 &ndash; 77 K for HTS magnets</td></tr>
-        <tr><td>Estimated system mass</td><td class="val">300 &ndash; 1,500 kg (highly speculative)</td></tr>
-        <tr><td>Developers</td><td class="val">Commonwealth Fusion (SPARC), Helion, TAE Technologies, Zap Energy, Lockheed Martin (CFR)</td></tr>
-        <tr><td>TRL</td><td class="val hot">2 &ndash; 3 (laboratory concept only)</td></tr>
-      </table>
-      <h4>Fusion Approach Comparison for Compact Integration</h4>
-      <table style="margin-top:8px;">
-        <thead><tr><th>Approach</th><th>Size Potential</th><th>Shielding</th><th>Synergy with HPM-120</th></tr></thead>
-        <tbody>
-          <tr><td>Compact Tokamak (CFS SPARC-type)</td><td class="val">~3 m diameter</td><td class="val warn">Heavy (D-T neutrons)</td><td class="val">Shared HTS cryogenics with MHD magnets</td></tr>
-          <tr><td>Field-Reversed Configuration (TAE)</td><td class="val ok">~1&ndash;2 m length</td><td class="val">Moderate</td><td class="val ok">Compact, linear geometry fits nacelle</td></tr>
-          <tr><td>Z-Pinch (Zap Energy)</td><td class="val ok">~1 m device</td><td class="val">Moderate</td><td class="val">Pulsed output needs power smoothing</td></tr>
-          <tr><td>Magneto-Inertial (Helion)</td><td class="val">~2&ndash;3 m</td><td class="val ok">Low (D-He&sup3; target)</td><td class="val ok">Direct energy capture, high efficiency</td></tr>
-          <tr><td>Lockheed CFR (Compact Fusion)</td><td class="val ok">~1&ndash;2 m</td><td class="val warn">D-T based</td><td class="val">Designed for mobile platforms</td></tr>
-        </tbody>
-      </table>
-      <div class="note" style="border-left-color:#8b5cf6;">
-        <strong>Synergy with HPM-120:</strong> A compact fusion reactor shares critical infrastructure with the HPM-120's existing systems:
-        (1) HTS superconducting magnets &mdash; the fusion reactor and MHD accelerator both require high-field superconducting coils with cryogenic cooling, allowing a shared cryogenic plant;
-        (2) Plasma physics expertise &mdash; the same RF/microwave plasma technology used in the ionization chamber applies to plasma heating in fusion;
-        (3) MHD power conversion &mdash; fusion plasma exhaust could be passed through an MHD generator channel to directly extract electrical power, bypassing thermal cycles entirely.
-        If compact fusion becomes viable, the HPM-120 architecture is uniquely well-positioned to integrate it.
-      </div>
-      <div class="warn-box"><strong>Status: No compact fusion reactor has achieved net energy gain (Q &gt; 1) as of 2025.</strong> NIF achieved ignition (Dec 2022) in a laser-driven inertial confinement experiment, but that facility fills a building. Compact approaches (tokamak, FRC, Z-pinch) are targeting Q &gt; 1 demos in the 2026&ndash;2030 timeframe. Flight-weight fusion power is likely 15&ndash;30+ years away. Include in HPM-120 roadmap as a <em>future power upgrade path</em>, not a near-term design dependency.</div>
-    </div>
-  </div>
-
-  <!-- Power source comparison table -->
-  <div class="card" style="margin-bottom:20px;">
-    <h3>Power Source Comparison Matrix</h3>
-    <table>
-      <thead>
-        <tr><th>Source</th><th>Power (kW)</th><th>Mass (kg)</th><th>kW/kg</th><th>Endurance</th><th>TRL</th><th>Verdict</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Turbo-Generator</td><td class="val">500&ndash;1,200</td><td class="val ok">80&ndash;150</td><td class="val ok">5&ndash;8</td><td class="val ok">Unlimited</td><td class="val ok">7&ndash;8</td><td class="ok">Flight primary</td></tr>
-        <tr><td>Gas Turbine APU</td><td class="val">500&ndash;1,500</td><td class="val warn">150&ndash;350</td><td class="val">3&ndash;4</td><td class="val ok">Unlimited</td><td class="val ok">9</td><td class="ok">Prototype primary</td></tr>
-        <tr><td>Battery (Li-ion)</td><td class="val">1,000+</td><td class="val hot">670/10min</td><td class="val">2&ndash;5</td><td class="val hot">Minutes</td><td class="val ok">8&ndash;9</td><td class="warn">Boost / backup only</td></tr>
-        <tr><td>SOFC</td><td class="val">500&ndash;1,000</td><td class="val warn">700&ndash;2,000</td><td class="val">0.5&ndash;1.5</td><td class="val ok">Unlimited</td><td class="val warn">4&ndash;5</td><td class="warn">Future option</td></tr>
-        <tr><td>Fission Reactor</td><td class="val">200&ndash;1,000</td><td class="val hot">800&ndash;3,000</td><td class="val">0.2&ndash;0.5</td><td class="val ok">Years</td><td class="val warn">4&ndash;6</td><td class="warn">Unmanned only</td></tr>
-        <tr><td>Fusion Reactor</td><td class="val">500&ndash;10,000</td><td class="val">300&ndash;1,500*</td><td class="val ok">&gt;10*</td><td class="val ok">Years</td><td class="val hot">2&ndash;3</td><td style="color:#8b5cf6;">Future upgrade</td></tr>
-      </tbody>
-    </table>
-    <div style="font-size:0.78em;color:var(--dim);margin-top:6px;">* Fusion values are theoretical projections, not demonstrated hardware</div>
-  </div>
-
-  <!-- Recommended architecture -->
-  <div class="card" style="margin-bottom:30px;border-color:var(--green);">
-    <h3>Recommended Power Architecture</h3>
-    <div class="grid grid-3" style="margin-top:12px;">
-      <div style="text-align:center;padding:16px;">
-        <div style="font-size:0.75em;color:var(--accent);font-weight:700;letter-spacing:1px;">PHASE 1&ndash;2</div>
-        <div style="font-size:1.3em;font-weight:700;color:var(--white);margin:8px 0;">Gas Turbine APU</div>
-        <div style="font-size:0.82em;color:var(--dim);">Off-the-shelf 500&ndash;1,000 kW APU generator. Completely decouples power from engine development. Allows focus on plasma + MHD validation.</div>
-      </div>
-      <div style="text-align:center;padding:16px;border-left:1px solid var(--border);border-right:1px solid var(--border);">
-        <div style="font-size:0.75em;color:var(--green);font-weight:700;letter-spacing:1px;">PHASE 3</div>
-        <div style="font-size:1.3em;font-weight:700;color:var(--white);margin:8px 0;">Exhaust Turbo-Generator</div>
-        <div style="font-size:0.82em;color:var(--dim);">Integrated exhaust bypass turbine + PM generator. Self-sustaining. 80&ndash;150 kg. Accepts 5&ndash;12% thrust penalty for electrical independence.</div>
-      </div>
-      <div style="text-align:center;padding:16px;">
-        <div style="font-size:0.75em;color:#8b5cf6;font-weight:700;letter-spacing:1px;">FUTURE (2035+)</div>
-        <div style="font-size:1.3em;font-weight:700;color:var(--white);margin:8px 0;">Compact Fusion Module</div>
-        <div style="font-size:0.82em;color:var(--dim);">When available, replaces turbo-generator entirely. Eliminates thrust penalty. Shared cryogenics with MHD magnets. Unlimited endurance.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== CRYOGENIC COOLING SYSTEM ==================== -->
-  <h2 style="margin-top:40px;">Integrated Cryogenic &amp; Thermal Management System</h2>
-
-  <div class="warn-box" style="margin-bottom:20px;">
-    <strong>Yes, cryogenic coolant is required through the engine.</strong> The HPM-120 operates across an extreme temperature range: from 77 K (liquid nitrogen for superconducting magnets) to 3,200 K (plasma combustion). A multi-circuit cooling system is essential to maintain structural integrity and prevent thermal runaway in every section.
-  </div>
-
-  <!-- Cooling circuit overview SVG -->
-  <div class="engine-diagram" style="margin-bottom:20px;">
-    <h3 style="color:var(--accent);margin-bottom:15px;">COOLING CIRCUITS THROUGH ENGINE</h3>
-    <svg viewBox="0 0 1200 420" class="engine-svg" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="cryo-grad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#0077ff"/>
-          <stop offset="100%" stop-color="#00ccff"/>
-        </linearGradient>
-        <linearGradient id="water-grad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#0077b6"/>
-          <stop offset="100%" stop-color="#00b4d8"/>
-        </linearGradient>
-        <linearGradient id="fuel-grad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#ffd60a"/>
-          <stop offset="100%" stop-color="#ff6b35"/>
-        </linearGradient>
-      </defs>
-
-      <!-- Engine outline (simplified) -->
-      <rect x="40" y="140" width="180" height="80" rx="4" fill="none" stroke="#1a2744" stroke-width="1.5"/>
-      <text x="130" y="175" fill="#6e7681" font-size="10" text-anchor="middle" font-weight="600">INTAKE</text>
-      <text x="130" y="190" fill="#6e7681" font-size="8" text-anchor="middle">288 K</text>
-
-      <rect x="240" y="130" width="180" height="100" rx="4" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
-      <text x="330" y="175" fill="#8b5cf6" font-size="10" text-anchor="middle" font-weight="600">PLASMA</text>
-      <text x="330" y="190" fill="#8b5cf6" font-size="8" text-anchor="middle">500&ndash;2,000 K</text>
-
-      <rect x="440" y="130" width="200" height="100" rx="4" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
-      <text x="540" y="175" fill="#ff6b35" font-size="10" text-anchor="middle" font-weight="600">COMBUSTION</text>
-      <text x="540" y="190" fill="#ff6b35" font-size="8" text-anchor="middle">2,500&ndash;3,200 K</text>
-
-      <rect x="660" y="110" width="280" height="140" rx="4" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
-      <text x="800" y="175" fill="#00b4d8" font-size="10" text-anchor="middle" font-weight="600">MHD ACCELERATOR</text>
-      <text x="800" y="190" fill="#00b4d8" font-size="8" text-anchor="middle">2,500&ndash;3,000 K</text>
-
-      <rect x="960" y="120" width="180" height="120" rx="4" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
-      <text x="1050" y="175" fill="#ff6b35" font-size="10" text-anchor="middle" font-weight="600">NOZZLE</text>
-      <text x="1050" y="190" fill="#ff6b35" font-size="8" text-anchor="middle">1,200&ndash;1,800 K</text>
-
-      <!-- CIRCUIT 1: LN2 Cryogenic (blue, top path) -->
-      <text x="40" y="50" fill="#00ccff" font-size="11" font-weight="700">CIRCUIT 1: LIQUID NITROGEN (77 K)</text>
-      <!-- LN2 tank -->
-      <rect x="40" y="60" width="80" height="30" rx="4" fill="rgba(0,204,255,0.1)" stroke="#00ccff" stroke-width="1.5"/>
-      <text x="80" y="80" fill="#00ccff" font-size="8" text-anchor="middle" font-weight="600">LN&#8322; TANK</text>
-      <!-- Line from tank to plasma coils -->
-      <path d="M120,75 L280,75 L280,130" fill="none" stroke="#00ccff" stroke-width="2" stroke-dasharray="6,3"/>
-      <circle cx="280" cy="130" r="4" fill="#00ccff"/>
-      <text x="200" y="70" fill="#00ccff" font-size="7" text-anchor="middle">Plasma confinement coils</text>
-      <!-- Line to MHD magnets -->
-      <path d="M280,75 L750,75 L750,110" fill="none" stroke="#00ccff" stroke-width="2.5" stroke-dasharray="6,3"/>
-      <circle cx="750" cy="110" r="5" fill="#00ccff"/>
-      <text x="550" y="68" fill="#00ccff" font-size="8" text-anchor="middle" font-weight="600">Primary cryogenic supply to MHD magnets</text>
-      <!-- Line to MHD cryostat exit -->
-      <path d="M850,110 L850,75 L1000,75" fill="none" stroke="#00ccff" stroke-width="2" stroke-dasharray="6,3" opacity="0.5"/>
-      <circle cx="850" cy="110" r="4" fill="#00ccff"/>
-      <text x="930" y="68" fill="#00ccff" font-size="7" text-anchor="middle">GN&#8322; vent / recycle</text>
-      <!-- EM nozzle coils -->
-      <path d="M1000,75 L1050,75 L1050,120" fill="none" stroke="#00ccff" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.5"/>
-      <circle cx="1050" cy="120" r="3" fill="#00ccff"/>
-      <text x="1090" y="68" fill="#00ccff" font-size="7" text-anchor="middle">EM coil pre-cool</text>
-
-      <!-- CIRCUIT 2: Water cooling (mid path, teal) -->
-      <text x="40" y="280" fill="#00b4d8" font-size="11" font-weight="700">CIRCUIT 2: WATER GLYCOL COOLANT (280&ndash;360 K)</text>
-      <!-- Water pump -->
-      <rect x="40" y="290" width="80" height="30" rx="4" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="1.5"/>
-      <text x="80" y="310" fill="#00b4d8" font-size="8" text-anchor="middle" font-weight="600">PUMP</text>
-      <!-- Line to RF waveguides -->
-      <path d="M120,305 L300,305 L300,230" fill="none" stroke="#00b4d8" stroke-width="2" stroke-dasharray="5,3"/>
-      <circle cx="300" cy="230" r="4" fill="#00b4d8"/>
-      <text x="210" y="298" fill="#00b4d8" font-size="7" text-anchor="middle">RF waveguide jackets</text>
-      <!-- Line to MHD channel walls -->
-      <path d="M300,305 L780,305 L780,250" fill="none" stroke="#00b4d8" stroke-width="2" stroke-dasharray="5,3"/>
-      <circle cx="780" cy="250" r="4" fill="#00b4d8"/>
-      <text x="550" y="298" fill="#00b4d8" font-size="7" text-anchor="middle">MHD channel wall cooling (external)</text>
-      <!-- Line to radiator/return -->
-      <path d="M780,305 L1100,305 L1100,330 L40,330 L40,320" fill="none" stroke="#00b4d8" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.4"/>
-      <rect x="1060" y="290" width="80" height="30" rx="4" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="1.5"/>
-      <text x="1100" y="310" fill="#00b4d8" font-size="7" text-anchor="middle" font-weight="600">RADIATOR</text>
-
-      <!-- CIRCUIT 3: Fuel regenerative (bottom path, yellow/orange) -->
-      <text x="40" y="370" fill="#ffd60a" font-size="11" font-weight="700">CIRCUIT 3: REGENERATIVE FUEL (HEAT SINK &rarr; INJECTION)</text>
-      <!-- Fuel tank -->
-      <rect x="40" y="380" width="80" height="30" rx="4" fill="rgba(255,214,10,0.1)" stroke="#ffd60a" stroke-width="1.5"/>
-      <text x="80" y="400" fill="#ffd60a" font-size="8" text-anchor="middle" font-weight="600">FUEL TANK</text>
-      <!-- Fuel flows through nozzle walls first -->
-      <path d="M120,395 L1050,395 L1050,240" fill="none" stroke="#ffd60a" stroke-width="2" stroke-dasharray="4,3"/>
-      <circle cx="1050" cy="240" r="4" fill="#ffd60a"/>
-      <text x="1050" y="260" fill="#ffd60a" font-size="7" text-anchor="middle">Nozzle film cool</text>
-      <!-- Then through combustion walls -->
-      <path d="M1050,395 L540,395 L540,230" fill="none" stroke="#ff6b35" stroke-width="2" stroke-dasharray="4,3"/>
-      <circle cx="540" cy="230" r="4" fill="#ff6b35"/>
-      <text x="540" y="248" fill="#ff6b35" font-size="7" text-anchor="middle">48 axial cooling channels</text>
-      <!-- Then through plasma walls -->
-      <path d="M540,395 L330,395 L330,230" fill="none" stroke="#ff6b35" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
-      <circle cx="330" cy="230" r="3" fill="#ff6b35"/>
-      <text x="330" y="248" fill="#ff6b35" font-size="7" text-anchor="middle">Plasma chamber walls</text>
-      <!-- Then to injectors -->
-      <path d="M330,395 L440,395 L440,180" fill="none" stroke="#ffd60a" stroke-width="2.5"/>
-      <polygon points="440,160 435,175 445,175" fill="#ffd60a"/>
-      <text x="460" y="160" fill="#ffd60a" font-size="8" font-weight="600">INJECT</text>
-      <text x="385" y="388" fill="#ffd60a" font-size="7" text-anchor="middle">Pre-heated fuel</text>
-    </svg>
-  </div>
-
-  <!-- Cooling circuits detail -->
-  <div class="grid grid-2" style="margin-bottom:20px;">
-    <div class="card" style="border-color:#00ccff;">
-      <h3 style="color:#00ccff;">Circuit 1: Cryogenic LN&sub2; System</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Maintains superconducting magnets and pre-cools EM coils</div>
-      <table class="pp-table">
-        <tr><td>Coolant</td><td class="val">Liquid Nitrogen (LN&sub2;)</td></tr>
-        <tr><td>Operating temperature</td><td class="val" style="color:#00ccff;">77 K (&minus;196&deg;C)</td></tr>
-        <tr><td>Boiling point (1 atm)</td><td class="val">77.36 K</td></tr>
-        <tr><td>Latent heat</td><td class="val">199 kJ/kg</td></tr>
-        <tr><td>Flow rate (MHD cryostat)</td><td class="val">1.0 &ndash; 2.0 L/min</td></tr>
-        <tr><td>Flow rate (plasma coils)</td><td class="val">0.3 L/min</td></tr>
-        <tr><td>Flow rate (EM nozzle pre-cool)</td><td class="val">0.2 L/min</td></tr>
-        <tr><td>Total LN&sub2; flow</td><td class="val">1.5 &ndash; 2.5 L/min</td></tr>
-        <tr><td>Tank capacity (30 min run)</td><td class="val">45 &ndash; 75 L</td></tr>
-        <tr><td>Tank mass (full)</td><td class="val">55 &ndash; 90 kg (incl. vacuum dewar)</td></tr>
-        <tr><td>Piping material</td><td class="val">304L stainless steel, vacuum-jacketed</td></tr>
-        <tr><td>Insulation</td><td class="val">Multi-layer insulation (MLI), 30+ layers</td></tr>
-      </table>
-      <h4>Cryostat Design (MHD Section)</h4>
-      <table class="pp-table">
-        <tr><td>Cryostat inner bore</td><td class="val">500 mm</td></tr>
-        <tr><td>Cryostat outer diameter</td><td class="val">950 mm</td></tr>
-        <tr><td>Cryostat length</td><td class="val">1,000 mm</td></tr>
-        <tr><td>Vacuum gap</td><td class="val">10 &ndash; 15 mm</td></tr>
-        <tr><td>Radiation shields</td><td class="val">3 layers Al foil</td></tr>
-        <tr><td>Heat leak budget</td><td class="val">&lt; 50 W total (to LN&sub2; space)</td></tr>
-        <tr><td>Cryostat material</td><td class="val">304 stainless steel (non-magnetic)</td></tr>
-        <tr><td>Cool-down time</td><td class="val">30 &ndash; 60 min (from ambient to 77 K)</td></tr>
-      </table>
-      <div class="note" style="border-left-color:#00ccff;">
-        <strong>Why LN&sub2; and not liquid helium?</strong> The NbTi superconducting coils in the MHD section have a critical temperature of 9.2 K, which normally requires LHe (4.2 K). However, by using high-current-density coils and limiting the operating current to 80% of critical, LN&sub2; cooling at 77 K with a secondary cryocooler stage can bring the coil temperature down to 4&ndash;10 K locally. Alternatively, upgrading to HTS (REBCO) magnets with T_c &gt; 90 K allows full LN&sub2; operation, eliminating liquid helium entirely. <strong>HTS upgrade is strongly recommended for flight applications.</strong>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Circuit 2: Water-Glycol Coolant Loop</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Active cooling for electronics, RF systems, and MHD channel exterior</div>
-      <table class="pp-table">
-        <tr><td>Coolant</td><td class="val">50/50 Water-Ethylene Glycol</td></tr>
-        <tr><td>Inlet temperature</td><td class="val">280 &ndash; 300 K</td></tr>
-        <tr><td>Max outlet temperature</td><td class="val">360 K (+80 K rise)</td></tr>
-        <tr><td>System pressure</td><td class="val">3 &ndash; 5 bar</td></tr>
-        <tr><td>RF waveguide jackets (6&times;)</td><td class="val">2.0 kg/s, +40 K</td></tr>
-        <tr><td>MHD channel external walls</td><td class="val">5.0 kg/s, +80 K</td></tr>
-        <tr><td>Power electronics</td><td class="val">0.5 kg/s, +30 K</td></tr>
-        <tr><td>Generator windings</td><td class="val">1.0 kg/s, +50 K</td></tr>
-        <tr><td>Total flow rate</td><td class="val">8.5 kg/s</td></tr>
-        <tr><td>Pump power</td><td class="val">8 kW</td></tr>
-        <tr><td>Radiator</td><td class="val">Ram-air heat exchanger, 600 kW rejection capacity</td></tr>
-        <tr><td>Piping material</td><td class="val">6061-T6 aluminum or 316L SS</td></tr>
-      </table>
-      <div class="note">The water-glycol loop acts as the intermediate temperature circuit, bridging the gap between cryogenic (77 K) and hot-section (2,500+ K) systems. The ram-air radiator rejects heat to ambient during flight. At static conditions on the ground, an auxiliary fan or larger radiator is needed.</div>
-    </div>
-
-    <div class="card" style="border-color:#ffd60a;">
-      <h3 style="color:#ffd60a;">Circuit 3: Regenerative Fuel Cooling</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Fuel absorbs heat from hot-section walls before injection &mdash; dual-purpose cooling</div>
-      <table class="pp-table">
-        <tr><td>Coolant</td><td class="val">Jet-A / JP-8 fuel</td></tr>
-        <tr><td>Fuel inlet temperature</td><td class="val">288 K (ambient)</td></tr>
-        <tr><td>Fuel temp after nozzle cooling</td><td class="val">~440 K (+150 K)</td></tr>
-        <tr><td>Fuel temp after combustion cooling</td><td class="val">~640 K (+200 K)</td></tr>
-        <tr><td>Fuel temp at injectors</td><td class="val">~640 K (pre-heated)</td></tr>
-        <tr><td>Jet-A thermal stability limit</td><td class="val hot">~700 K (above this: coking)</td></tr>
-        <tr><td>Nozzle film cooling flow</td><td class="val">0.5 kg/s</td></tr>
-        <tr><td>Combustion wall cooling flow</td><td class="val">2.5 kg/s</td></tr>
-        <tr><td>Total fuel flow (cooling + injection)</td><td class="val">2.5 kg/s</td></tr>
-        <tr><td>Cooling channel dimensions</td><td class="val">48 channels, 4 &times; 3 mm each</td></tr>
-        <tr><td>Heat absorbed by fuel</td><td class="val">~800 kW</td></tr>
-      </table>
-      <div class="warn-box"><strong>Fuel coking limit:</strong> Jet-A begins thermal decomposition above ~700 K, forming carbon deposits (coke) that block cooling channels. The fuel must be injected and burned before reaching this temperature. This limits the maximum heat absorption per kg of fuel and sets a hard ceiling on how much cooling the fuel circuit can provide. JP-7 (used in the SR-71) has better thermal stability to ~800 K but is more expensive.</div>
-    </div>
-
-    <div class="card" style="border-color:var(--hot);">
-      <h3 style="color:var(--hot);">Circuit 4: Thermal Barrier Coatings (Passive)</h3>
-      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Ceramic coatings reduce heat flux into structural walls</div>
-      <table class="pp-table">
-        <tr><td>Coating material</td><td class="val">Yttria-Stabilized Zirconia (YSZ / ZrO&sub2;)</td></tr>
-        <tr><td>Thickness</td><td class="val">0.3 &ndash; 0.5 mm</td></tr>
-        <tr><td>Thermal conductivity</td><td class="val">~2 W/m&middot;K (very low)</td></tr>
-        <tr><td>Max surface temperature</td><td class="val ok">1,500 K</td></tr>
-        <tr><td>Temperature drop across TBC</td><td class="val ok">200 &ndash; 500 K</td></tr>
-        <tr><td>Bond coat</td><td class="val">MCrAlY (NiCoCrAlY), 0.1 mm</td></tr>
-        <tr><td>Application method</td><td class="val">Air Plasma Spray (APS) or EB-PVD</td></tr>
-        <tr><td>Applied to</td><td class="val">Combustion liner, MHD channel walls, nozzle throat</td></tr>
-      </table>
-      <h4>Environmental Barrier Coating (EBC) for C/SiC</h4>
-      <table class="pp-table">
-        <tr><td>EBC material</td><td class="val">Mullite + BSAS (barium strontium aluminosilicate)</td></tr>
-        <tr><td>Purpose</td><td class="val">Prevents steam recession of SiC above 1,200&deg;C</td></tr>
-        <tr><td>Thickness</td><td class="val">0.1 &ndash; 0.3 mm</td></tr>
-        <tr><td>Applied to</td><td class="val">All C/SiC liners (plasma, combustion, MHD, nozzle)</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- Thermal budget table -->
-  <div class="card" style="margin-bottom:20px;">
-    <h3>Section-by-Section Thermal Budget</h3>
-    <table>
-      <thead>
-        <tr><th>Engine Section</th><th>Gas Temp (K)</th><th>Wall Temp Limit (K)</th><th>Cooling Method</th><th>Coolant</th><th>Heat Rejected (kW)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Intake / Diffuser</td><td class="val">288</td><td class="val ok">600</td><td>None needed (ambient)</td><td class="val">&mdash;</td><td class="val">0</td></tr>
-        <tr><td>Plasma Ionization</td><td class="val warn">500 &ndash; 2,000</td><td class="val">1,200</td><td>Regenerative fuel + water</td><td class="val">Fuel + Water-glycol</td><td class="val">~150</td></tr>
-        <tr><td>Combustion Chamber</td><td class="val hot">2,500 &ndash; 3,200</td><td class="val">1,800 (C/SiC)</td><td>TBC + EBC + regenerative fuel</td><td class="val">Fuel (48 channels)</td><td class="val hot">~800</td></tr>
-        <tr><td>MHD Channel Walls</td><td class="val hot">2,500 &ndash; 3,000</td><td class="val">1,500 (W-Cu)</td><td>TBC + water external</td><td class="val">Water-glycol</td><td class="val">~400</td></tr>
-        <tr><td>MHD Magnets (cryostat)</td><td class="val">&mdash;</td><td class="val" style="color:#00ccff;">10 K (NbTi) / 77 K (HTS)</td><td>Cryostat + LN&sub2;</td><td class="val" style="color:#00ccff;">LN&sub2;</td><td class="val">~50 (heat leak)</td></tr>
-        <tr><td>Nozzle Throat</td><td class="val hot">2,200 &ndash; 2,800</td><td class="val">1,800 (C/SiC)</td><td>TBC + film cooling</td><td class="val">Fuel film</td><td class="val">~200</td></tr>
-        <tr><td>Nozzle Divergent</td><td class="val warn">1,200 &ndash; 1,800</td><td class="val">1,200</td><td>Radiation + EM coil cooling</td><td class="val">Water-glycol</td><td class="val">~100</td></tr>
-        <tr><td>RF Waveguides</td><td class="val">&mdash;</td><td class="val">400</td><td>Water jacket</td><td class="val">Water-glycol</td><td class="val">~80</td></tr>
-        <tr><td>Power Electronics</td><td class="val">&mdash;</td><td class="val">350</td><td>Cold plate</td><td class="val">Water-glycol</td><td class="val">~50</td></tr>
-        <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Heat Rejection</td><td></td><td></td><td></td><td></td><td class="val" style="color:var(--accent);">~1,830 kW</td></tr>
-      </tbody>
-    </table>
-    <div class="note">Total thermal management load is approximately 1.8 MW. Of this, ~800 kW is absorbed by fuel (and then burned, so it is not wasted), ~600 kW is rejected via the water-glycol radiator, ~380 kW radiates from the nozzle and hot surfaces, and ~50 kW is absorbed by the cryogenic system.</div>
-  </div>
-
-  <!-- Critical thermal risks -->
-  <div class="card">
-    <h3>Critical Thermal Risks &amp; Mitigations</h3>
-    <div class="grid grid-2" style="gap:12px;">
-      <div class="warn-box">
-        <strong>Cryogenic &harr; Hot Section Interface</strong><br>
-        The MHD section has 77 K magnets separated by only 200 mm from 3,000 K gas. The cryostat vacuum gap and MLI insulation must maintain &lt;50 W heat leak. Any vacuum breach causes immediate magnet quench (superconductor loses superconductivity), resulting in rapid boil-off and potential structural damage from thermal shock. <em>Mitigation:</em> Redundant vacuum monitoring, automatic LN&sub2; dump valve, quench detection on every coil.
-      </div>
-      <div class="warn-box">
-        <strong>Combustion Cooling Channel Blockage</strong><br>
-        If any of the 48 fuel cooling channels become blocked (by coke, debris, or manufacturing defect), local wall temperature will exceed 1,800 K within seconds, causing C/SiC liner failure and burn-through. <em>Mitigation:</em> 10 &mu;m fuel filter, thermal stability monitoring per channel (thermocouples), oversized channels (4&times;3 mm), and CT-scan inspection of all printed cooling passages before assembly.
-      </div>
-      <div class="warn-box">
-        <strong>Thermal Expansion Mismatch</strong><br>
-        C/SiC liners (CTE: ~3&times;10&supmin;&sup6;/K) expand much less than Inconel 718 shells (CTE: ~13&times;10&supmin;&sup6;/K). At operating temperature, the outer shell grows ~10 mm more in diameter than the liner. <em>Mitigation:</em> Compliant mounting (C-seals, spring clips, ceramic rope gaskets). Never bond rigidly. Design 3&ndash;5 mm radial clearance at room temperature.
-      </div>
-      <div class="warn-box">
-        <strong>Transient Thermal Shock (Start-up / Shutdown)</strong><br>
-        Rapid heat-up from 288 K to 3,200 K generates severe thermal gradients. C/SiC handles this well (low CTE, high thermal shock resistance), but Inconel and TBC coatings are vulnerable to spallation. <em>Mitigation:</em> Controlled ramp rate: 100 K/s max through combustion zone. RF plasma at low power before fuel introduction to pre-heat gradually.
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 3D MODEL & SIMULATION -->
-<div class="section" id="model3d">
-  <h2><span class="icon">&#9883;</span> 3D Model &amp; Simulation</h2>
-
-  <!-- Controls bar -->
-  <div style="display:flex; align-items:center; gap:16px; margin-bottom:14px; flex-wrap:wrap;">
-    <button id="simToggle" onclick="toggleSimulation()" style="padding:8px 22px; background:var(--accent); color:#000; border:none; border-radius:5px; cursor:pointer; font-weight:600; font-size:0.9em;">Start Simulation</button>
-    <label style="color:var(--dim); font-size:0.85em;">Throttle:
-      <input id="throttleSlider" type="range" min="0" max="100" value="0" style="width:160px; vertical-align:middle;" oninput="updateThrottle(this.value)">
-      <span id="throttleVal" style="color:var(--accent); font-weight:600;">0%</span>
-    </label>
-    <button id="cutawayBtn" onclick="toggleCutaway()" style="padding:8px 18px; background:var(--panel); color:var(--accent); border:1px solid var(--accent); border-radius:5px; cursor:pointer; font-size:0.85em;">Toggle Cutaway</button>
-  </div>
-
-  <!-- Canvas + Gauges row -->
-  <div style="display:flex; gap:16px; flex-wrap:wrap;">
-    <!-- 3D Canvas -->
-    <div style="flex:1; min-width:600px;">
-      <canvas id="engine3dCanvas" style="width:100%; height:600px; background:#1a2540; border:1px solid var(--border); border-radius:8px; display:block;"></canvas>
-    </div>
-    <!-- Gauges panel -->
-    <div id="gaugesPanel" style="width:240px; flex-shrink:0;">
-      <div class="card" style="margin-bottom:10px;">
-        <h3 style="font-size:0.75em;">Engine Gauges</h3>
-        <div style="font-size:0.82em; line-height:2.2;">
-          <div>Thrust <span id="gThrust" class="val" style="float:right;">0.0 kN</span></div>
-          <div>Exhaust Temp <span id="gTemp" class="val hot" style="float:right;">288 K</span></div>
-          <div>Chamber Press <span id="gPress" class="val" style="float:right;">0.0 bar</span></div>
-          <div>Power Draw <span id="gPower" class="val warn" style="float:right;">0.0 kW</span></div>
-          <div>Air Flow <span id="gAir" class="val" style="float:right;">0.00 kg/s</span></div>
-          <div>Fuel Flow <span id="gFuel" class="val" style="float:right;">0.00 kg/s</span></div>
-          <div>MHD Extract <span id="gMHD" class="val ok" style="float:right;">0.0 kW</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <h3 style="font-size:0.75em;">Controls</h3>
-        <div style="font-size:0.78em; color:var(--dim); line-height:1.8;">
-          Left-click drag: Rotate<br>
-          Scroll: Zoom<br>
-          Right-click drag: Pan
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  HPM-120 Hybrid Plasma MHD Engine &mdash; Engineering Specification Package &mdash; Conceptual Design Document
-</div>
-
-<!-- ==================== VIDEOS ==================== -->
-<div class="section" id="videos">
-  <h2><span class="icon">&#9654;</span> Engine Test Videos</h2>
-
-  <div class="grid-3">
-    <div class="card">
-      <h3>HPM-120 Ignition Sequence</h3>
-      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
-        <source src="hpm120-ignition.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top:10px; color:var(--dim);">Ultra-cinematic ignition shot of the HPM-120 hybrid plasma MHD engine. Captures the initial ignition sequence with plasma discharge and MHD field activation.</p>
-    </div>
-    <div class="card">
-      <h3>HPM-120 Engine Running</h3>
-      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
-        <source src="hpm120-engine-running.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top:10px; color:var(--dim);">Extended footage of the HPM-120 engine during sustained operation. Shows the engine running at full power with exhaust plume and MHD plasma interaction visible.</p>
-    </div>
-    <div class="card">
-      <h3>HPM-120 Ignition — Alternate Angle</h3>
-      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
-        <source src="hpm120-ignition-2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top:10px; color:var(--dim);">Additional cinematic ignition footage of the HPM-120 engine from an alternate angle, showcasing plasma arc formation and exhaust plume dynamics.</p>
-    </div>
-    <div class="card">
-      <h3>HPM-120 Full Test Compilation</h3>
-      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
-        <source src="hpm120-clips-merged.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top:10px; color:var(--dim);">Compiled footage of the HPM-120 engine across multiple test runs. Merged clips covering ignition, sustained operation, and exhaust plume behaviour.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== BLUEPRINT ==================== -->
-<div class="section" id="blueprint">
   <h2><span class="icon">&#128208;</span> Engineering Blueprint</h2>
 
   <!-- Download buttons -->
@@ -2521,113 +1262,172 @@
   </div>
 </div>
 
-<!-- ==================== STORYBOARD ==================== -->
-<div class="section" id="storyboard">
-  <h2><span class="icon">&#127916;</span> Cinematic Storyboard</h2>
+<!-- ==================== COMPONENTS ==================== -->
+<div class="section" id="components">
+  <h2>Component Detail</h2>
 
-  <!-- Engine render image -->
-  <div class="card span-full" style="margin-bottom:20px; text-align:center; padding:10px;">
-    <h3>HPM-120 Engine Render</h3>
-    <img src="hpm120-engine-render.png" alt="HPM-120 Engine Render — Test Stand View" style="width:100%; max-width:1400px; border-radius:6px; margin-top:12px;">
-    <p style="margin-top:10px; color:var(--dim); font-size:0.85em;">High-fidelity render of the HPM-120 on its test stand &mdash; intake cone, RDE annulus with thermal glow, copper MHD coils, electrode stacks, and exhaust nozzle.</p>
-  </div>
+  <div class="grid grid-2">
+    <!-- Intake -->
+    <div class="card">
+      <h3>1. Air Intake / Diffuser</h3>
+      <table class="pp-table">
+        <tr><td>Inlet outer diameter</td><td class="val">850 mm</td></tr>
+        <tr><td>Inner hub diameter</td><td class="val">250 mm</td></tr>
+        <tr><td>Annular flow area</td><td class="val">0.518 m&sup2;</td></tr>
+        <tr><td>Diffuser length</td><td class="val">550 mm</td></tr>
+        <tr><td>Exit diameter</td><td class="val">500 mm</td></tr>
+        <tr><td>Wall thickness</td><td class="val">4 mm</td></tr>
+        <tr><td>Centerbody cone half-angle</td><td class="val">12&deg;</td></tr>
+        <tr><td>Material</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td></tr>
+        <tr><td>Surface finish</td><td class="val">Ra 1.6 &mu;m</td></tr>
+        <tr><td>Pressure recovery target</td><td class="val">0.92 at Mach 0.85</td></tr>
+      </table>
+      <div class="note">Fixed geometry, no rotating parts. Boundary layer bleed slots at 3 stations.</div>
+    </div>
 
-  <!-- Shot overview cards -->
-  <div class="grid-3" style="margin-bottom:20px;">
-    <div class="card">
-      <h3 style="color:var(--accent);">Shot 1 &mdash; Engine Reveal</h3>
-      <table class="pp-table" style="font-size:0.82em;">
-        <tr><td>Duration</td><td class="val">5s</td></tr>
-        <tr><td>Camera</td><td class="val">Slow dolly in + pan L&rarr;R, 15mm low angle</td></tr>
-        <tr><td>Motion</td><td class="val">Low &mdash; subtle dust drift, volumetric haze</td></tr>
-        <tr><td>Strength</td><td class="val ok">0.3</td></tr>
-        <tr><td>End Frame</td><td class="val">Hold on copper coil detail, rack focus</td></tr>
+    <!-- RDE Annulus -->
+    <div class="card" style="border-color:var(--hot);">
+      <h3 style="color:var(--hot);">2. Rotating Detonation Annulus</h3>
+      <table class="pp-table">
+        <tr><td>Annulus outer diameter</td><td class="val">500 mm</td></tr>
+        <tr><td>Overall OD (with shell)</td><td class="val">528 mm</td></tr>
+        <tr><td>Annulus inner diameter</td><td class="val">350 mm</td></tr>
+        <tr><td>Annular gap width</td><td class="val">75 mm</td></tr>
+        <tr><td>Annulus length</td><td class="val">400 mm</td></tr>
+        <tr><td>Detonation waves</td><td class="val">1 &ndash; 3 co-rotating</td></tr>
+        <tr><td>Wave speed</td><td class="val">1,500 &ndash; 2,000 m/s</td></tr>
+        <tr><td>Pressure gain</td><td class="val ok">15 &ndash; 25:1</td></tr>
+        <tr><td>Peak detonation temp</td><td class="val hot">3,500 &ndash; 4,000 K</td></tr>
+        <tr><td>Chamber pressure</td><td class="val ok">15 &ndash; 25 bar</td></tr>
+        <tr><td>Fuel injectors</td><td class="val">24 impinging-jet pairs on face plate</td></tr>
+        <tr><td>Fuel type</td><td class="val">Jet-A / JP-8</td></tr>
+        <tr><td>Fuel flow rate</td><td class="val">2.0 &ndash; 3.0 kg/s</td></tr>
+        <tr><td>Fuel pressure</td><td class="val">25 &ndash; 40 bar</td></tr>
+        <tr><td>Face plate material</td><td><span class="mat-badge mat-in">IN625</span></td></tr>
+        <tr><td>Inner liner</td><td class="val">5 mm <span class="mat-badge mat-csic">C/SiC</span></td></tr>
+        <tr><td>Outer shell</td><td class="val">6 mm <span class="mat-badge mat-in">IN718</span></td></tr>
+        <tr><td>TBC coating</td><td class="val">ZrO&sub2; 0.3 mm</td></tr>
+        <tr><td>Ignition</td><td class="val">Single 5 kW plasma igniter (startup only)</td></tr>
+        <tr><td>Cooling</td><td class="val">Regenerative fuel (48 axial channels)</td></tr>
       </table>
-    </div>
-    <div class="card">
-      <h3 style="color:var(--accent);">Shot 2 &mdash; Intake Airflow</h3>
-      <table class="pp-table" style="font-size:0.82em;">
-        <tr><td>Duration</td><td class="val">4s</td></tr>
-        <tr><td>Camera</td><td class="val">Push in extreme CU on intake, orbit 10&deg; CW</td></tr>
-        <tr><td>Motion</td><td class="val">High swirl &mdash; particle wind, vortex</td></tr>
-        <tr><td>Strength</td><td class="val warn">0.8</td></tr>
-        <tr><td>End Frame</td><td class="val">Vortex sharpens, blue glow &rarr; white core</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h3 style="color:var(--hot);">Shot 3 &mdash; Chamber Ignition</h3>
-      <table class="pp-table" style="font-size:0.82em;">
-        <tr><td>Duration</td><td class="val">4s</td></tr>
-        <tr><td>Camera</td><td class="val">Static lock + subtle zoom in (105%), cutaway</td></tr>
-        <tr><td>Motion</td><td class="val">High turbulence, flash intensity, plasma flicker</td></tr>
-        <tr><td>Strength</td><td class="val hot">0.9</td></tr>
-        <tr><td>End Frame</td><td class="val">Flash blooms then collapses into stable burn ring</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h3 style="color:var(--wcu);">Shot 4 &mdash; MHD Activation</h3>
-      <table class="pp-table" style="font-size:0.82em;">
-        <tr><td>Duration</td><td class="val">5s</td></tr>
-        <tr><td>Camera</td><td class="val">360&deg; slow orbit around MHD core, 15&deg; tilt</td></tr>
-        <tr><td>Motion</td><td class="val">Electrical arcs flicker, purple rings pulsate</td></tr>
-        <tr><td>Strength</td><td class="val warn">0.7</td></tr>
-        <tr><td>End Frame</td><td class="val">Rings align and lock, final bright pulse</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h3 style="color:var(--hot);">Shot 5 &mdash; Full-Thrust Exhaust</h3>
-      <table class="pp-table" style="font-size:0.82em;">
-        <tr><td>Duration</td><td class="val">5s</td></tr>
-        <tr><td>Camera</td><td class="val">Rear wide, handheld shake, push back</td></tr>
-        <tr><td>Motion</td><td class="val">Very high &mdash; heat distortion, plume roiling</td></tr>
-        <tr><td>Strength</td><td class="val hot">1.0</td></tr>
-        <tr><td>End Frame</td><td class="val">Plume fully expanded, Mach diamonds visible</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h3 style="color:var(--green);">Shot 6 &mdash; Hero Ending</h3>
-      <table class="pp-table" style="font-size:0.82em;">
-        <tr><td>Duration</td><td class="val">6s</td></tr>
-        <tr><td>Camera</td><td class="val">Epic crane up + slow zoom out, 24mm&rarr;35mm</td></tr>
-        <tr><td>Motion</td><td class="val">Low &mdash; engine breathing, subtle light flicker</td></tr>
-        <tr><td>Strength</td><td class="val ok">0.2</td></tr>
-        <tr><td>End Frame</td><td class="val">Full engine centered, lab lights fade up</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- Sequence summary -->
-  <div class="card span-full" style="margin-bottom:20px; text-align:center;">
-    <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin:10px 0;">
-      <div>
-        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Total Duration</div>
-        <div style="font-size:2em;font-weight:700;color:var(--accent);">29 seconds</div>
+      <h4>Wall Stack (hot &rarr; cold)</h4>
+      <div style="display:flex;height:24px;border-radius:4px;overflow:hidden;margin-top:6px;font-size:0.7em;">
+        <div style="flex:1;background:#d62828;display:flex;align-items:center;justify-content:center;color:#fff;">ZrO&sub2;</div>
+        <div style="flex:0.3;background:#ffd60a;display:flex;align-items:center;justify-content:center;color:#000;">EBC</div>
+        <div style="flex:2;background:#2ec4b6;display:flex;align-items:center;justify-content:center;color:#000;">C/SiC</div>
+        <div style="flex:1;background:#0077b6;display:flex;align-items:center;justify-content:center;color:#fff;">Cool</div>
+        <div style="flex:2;background:#ff6b35;display:flex;align-items:center;justify-content:center;color:#fff;">IN718</div>
       </div>
-      <div>
-        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Shots</div>
-        <div style="font-size:2em;font-weight:700;color:var(--white);">6</div>
-      </div>
-      <div>
-        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Export</div>
-        <div style="font-size:2em;font-weight:700;color:var(--green);">4K</div>
-      </div>
+      <div class="warn-box" style="margin-top:12px;"><strong>Key Innovation:</strong> Detonation waves produce their own compression (15&ndash;25 bar), eliminating the need for a mechanical compressor. This solves the fundamental static-thrust problem of the original design.</div>
     </div>
-    <p style="color:var(--dim);font-size:0.82em;">1920&times;1080 master &bull; Center crop 1080&times;1920 vertical &bull; 8% overscan for Luma stability &bull; 24fps loop-safe &bull; Cut on action</p>
+
+    <!-- MHD Generator -->
+    <div class="card" style="border-color:#2ec4b6;">
+      <h3 style="color:#2ec4b6;">3. MHD Generator Channel</h3>
+      <table class="pp-table">
+        <tr><td>Channel type</td><td class="val">Faraday segmented</td></tr>
+        <tr><td>Channel cross-section</td><td class="val">400 &times; 300 mm (rect.)</td></tr>
+        <tr><td>Channel length</td><td class="val">600 mm</td></tr>
+        <tr><td>Overall OD (with magnets)</td><td class="val">850 mm</td></tr>
+        <tr><td>Electrode pairs</td><td class="val">24 segmented</td></tr>
+        <tr><td>Electrode spacing</td><td class="val">25 mm</td></tr>
+        <tr><td>Electrode material</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td></tr>
+        <tr><td>Insulator material</td><td><span class="mat-badge mat-bn">Boron Nitride</span></td></tr>
+        <tr><td>Magnetic field</td><td class="val ok">2 &ndash; 4 Tesla</td></tr>
+        <tr><td>Magnet type</td><td class="val">Superconducting NbTi</td></tr>
+        <tr><td>Cryostat coolant</td><td class="val">Liquid Nitrogen</td></tr>
+        <tr><td>Gas entry temp</td><td class="val hot">3,500 &ndash; 4,000 K</td></tr>
+        <tr><td>Required gas conductivity</td><td class="val">&gt; 10 S/m (seeded)</td></tr>
+        <tr><td>Seed material</td><td class="val">Cesium or K salt (0.5&ndash;1%)</td></tr>
+        <tr><td>Electrical power output</td><td class="val ok">300 &ndash; 600 kW</td></tr>
+      </table>
+      <div class="note">Operates as MHD GENERATOR. J &times; B Lorentz force acts as drag, extracting kinetic energy as electricity. Powers the downstream MHD Accelerator in a closed-loop cycle.</div>
+    </div>
+
+    <!-- MHD Accelerator -->
+    <div class="card">
+      <h3>4. MHD Accelerator Channel</h3>
+      <table class="pp-table">
+        <tr><td>Channel type</td><td class="val">Faraday segmented</td></tr>
+        <tr><td>Channel cross-section</td><td class="val">400 &times; 300 mm (rect.)</td></tr>
+        <tr><td>Channel length</td><td class="val">800 mm</td></tr>
+        <tr><td>Overall OD (with magnets)</td><td class="val">900 mm</td></tr>
+        <tr><td>Electrode pairs</td><td class="val">32 segmented</td></tr>
+        <tr><td>Electrode spacing</td><td class="val">25 mm</td></tr>
+        <tr><td>Electrode material</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td></tr>
+        <tr><td>Insulator material</td><td><span class="mat-badge mat-bn">Boron Nitride</span></td></tr>
+        <tr><td>Magnetic field</td><td class="val ok">2 &ndash; 4 Tesla</td></tr>
+        <tr><td>Magnet type</td><td class="val">Superconducting NbTi</td></tr>
+        <tr><td>Cryostat coolant</td><td class="val">Liquid Nitrogen</td></tr>
+        <tr><td>Gas entry temp</td><td class="val hot">3,000 &ndash; 3,500 K</td></tr>
+        <tr><td>Required gas conductivity</td><td class="val">&gt; 10 S/m (seeded)</td></tr>
+        <tr><td>Electrical power input</td><td class="val ok">300 &ndash; 600 kW (from generator)</td></tr>
+      </table>
+      <div class="note">Operates as MHD ACCELERATOR. Powered by the upstream MHD Generator &mdash; self-sustaining, no external power needed after startup. J &times; B Lorentz force accelerates exhaust axially.</div>
+    </div>
+
+    <!-- Nozzle -->
+    <div class="card">
+      <h3>5. Converging-Diverging Nozzle</h3>
+      <table class="pp-table">
+        <tr><td>Nozzle type</td><td class="val">Conventional C-D bell</td></tr>
+        <tr><td>Length</td><td class="val">500 mm</td></tr>
+        <tr><td>Entry</td><td class="val">400 &times; 300 mm (rect. &rarr; round transition)</td></tr>
+        <tr><td>Throat diameter</td><td class="val">280 mm (circular)</td></tr>
+        <tr><td>Exit diameter</td><td class="val">500 &ndash; 650 mm</td></tr>
+        <tr><td>Expansion ratio</td><td class="val">3.2:1 to 5.4:1</td></tr>
+        <tr><td>EM coil rings (optional)</td><td class="val">2 rings</td></tr>
+        <tr><td>Inner wall</td><td><span class="mat-badge mat-csic">C/SiC</span> 6 mm</td></tr>
+        <tr><td>Outer shell</td><td><span class="mat-badge mat-in">IN718</span> 4 mm</td></tr>
+        <tr><td>TBC</td><td class="val">ZrO&sub2; 0.5 mm</td></tr>
+        <tr><td>Throat temp</td><td class="val hot">2,400 &ndash; 3,000 K</td></tr>
+        <tr><td>Exit gas temp</td><td class="val warn">1,200 &ndash; 1,800 K</td></tr>
+      </table>
+    </div>
   </div>
 
-  <!-- Full interactive storyboard embed -->
-  <div class="card span-full">
-    <h3>Interactive Storyboard &mdash; Full Detail</h3>
-    <p style="margin-bottom:12px; color:var(--dim); font-size:0.85em;">Complete cinematic storyboard with reference frames, Luma Dream Machine parameters, and prompt text for each shot.</p>
-    <iframe src="hpm120-storyboard.html" style="width:100%; height:800px; border:1px solid var(--border); border-radius:8px; background:#000;" loading="lazy"></iframe>
-    <div style="margin-top:10px; text-align:center;">
-      <a href="hpm120-storyboard.html" target="_blank" style="color:var(--accent); font-size:0.85em; text-decoration:none; border-bottom:1px solid var(--accent);">Open full storyboard in new tab &rarr;</a>
+  <!-- Support systems -->
+  <h2 style="margin-top:30px;">Support Systems</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Electrical Power</h3>
+      <table class="pp-table">
+        <tr><td>MHD Generator output</td><td class="val ok">300 &ndash; 600 kW</td></tr>
+        <tr><td>MHD Accelerator input</td><td class="val">300 &ndash; 600 kW</td></tr>
+        <tr><td>Plasma igniter (startup)</td><td class="val">5 kW</td></tr>
+        <tr><td>Magnet coil supply (startup)</td><td class="val">50 kW</td></tr>
+        <tr><td>Control + cooling</td><td class="val">15 kW</td></tr>
+        <tr style="font-weight:700;"><td>External (startup only)</td><td class="val ok">~50 kW</td></tr>
+        <tr style="font-weight:700;"><td>Running: self-sustaining</td><td class="val ok">0 kW external</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Cooling System</h3>
+      <table class="pp-table">
+        <tr><td>RDE annulus (fuel)</td><td class="val">3.0 kg/s, +250 K</td></tr>
+        <tr><td>MHD gen channel (water)</td><td class="val">4.0 kg/s, +80 K</td></tr>
+        <tr><td>MHD accel channel (water)</td><td class="val">5.0 kg/s, +80 K</td></tr>
+        <tr><td>Magnets &mdash; gen (LN&sub2;)</td><td class="val">0.8 L/min, 77 K</td></tr>
+        <tr><td>Magnets &mdash; accel (LN&sub2;)</td><td class="val">1.0 L/min, 77 K</td></tr>
+        <tr><td>Nozzle throat (fuel film)</td><td class="val">0.5 kg/s, +200 K</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Fuel System</h3>
+      <table class="pp-table">
+        <tr><td>Fuel type</td><td class="val">Jet-A / JP-8</td></tr>
+        <tr><td>Max fuel flow</td><td class="val">3.0 kg/s</td></tr>
+        <tr><td>Pump pressure</td><td class="val">45 bar</td></tr>
+        <tr><td>Pump type</td><td class="val">Electric gear</td></tr>
+        <tr><td>Pump power</td><td class="val">12 kW</td></tr>
+        <tr><td>Filter</td><td class="val">10 &mu;m nominal</td></tr>
+      </table>
     </div>
   </div>
-</div>
 
-<!-- ==================== ELECTRONICS ==================== -->
-<div class="section" id="electronics">
+  <!-- ======= MERGED: Electronics & Electrical Systems ======= -->
+  <hr style="border:none;border-top:2px solid var(--accent);margin:40px 0 30px;">
+
   <h2><span class="icon">&#9889;</span> Electronics &amp; Electrical Systems</h2>
 
   <div class="warn-box" style="margin-bottom:20px;">
@@ -3087,6 +1887,607 @@
   </div>
 </div>
 
+<!-- ==================== POWER & COOLING ==================== -->
+<div class="section" id="power">
+  <h2>Power Generation &amp; Cryogenic Cooling System</h2>
+
+  <!-- Power demand summary -->
+  <div class="card" style="margin-bottom:20px;">
+    <h3>Electrical Power Demand Breakdown</h3>
+    <p style="font-size:0.88em;color:var(--dim);margin-bottom:12px;">The HPM-120 requires 420 &ndash; 1,050 kW of continuous electrical power. This is the dominant system-level challenge. The following analysis ranks all viable power source options.</p>
+    <table>
+      <thead><tr><th>Consumer</th><th>Power (kW)</th><th>Voltage</th><th>Duty</th></tr></thead>
+      <tbody>
+        <tr><td>RF plasma generators (6&times;)</td><td class="val">150</td><td class="val">HV AC (2.45 GHz)</td><td class="val">Continuous</td></tr>
+        <tr><td>MHD accelerator DC supply</td><td class="val warn">200 &ndash; 800</td><td class="val">500 &ndash; 2,000 V DC</td><td class="val">Continuous</td></tr>
+        <tr><td>EM nozzle coil drivers (8&times;)</td><td class="val">80</td><td class="val">48 V DC</td><td class="val">Continuous</td></tr>
+        <tr><td>Superconducting magnet ramp</td><td class="val">50</td><td class="val">20 V DC</td><td class="val">Start-up only</td></tr>
+        <tr><td>Cryocoolers / LN&sub2; pumps</td><td class="val">35</td><td class="val">400 V AC</td><td class="val">Continuous</td></tr>
+        <tr><td>Coolant circulation pumps</td><td class="val">15</td><td class="val">400 V AC</td><td class="val">Continuous</td></tr>
+        <tr><td>Control electronics + sensors</td><td class="val">5</td><td class="val">28 V DC</td><td class="val">Continuous</td></tr>
+        <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total</td><td class="val" style="color:var(--accent);">420 &ndash; 1,050 kW</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Power source ranking -->
+  <h2 style="margin-top:30px;">Power Source Options &mdash; Ranked by Feasibility</h2>
+
+  <div class="grid grid-2" style="margin-bottom:20px;">
+
+    <!-- Option 1: Turbo-Generator -->
+    <div class="card" style="border-color:var(--green);">
+      <h3 style="display:flex;justify-content:space-between;align-items:center;">1. Exhaust-Driven Turbo-Generator <span class="print-yes">RECOMMENDED</span></h3>
+      <div style="font-size:0.8em;color:var(--green);margin-bottom:10px;">Best long-term solution &mdash; self-sustaining, no external fuel penalty</div>
+      <table class="pp-table">
+        <tr><td>Concept</td><td class="val">Small radial turbine in exhaust bypass duct drives high-speed generator</td></tr>
+        <tr><td>Power output</td><td class="val ok">500 &ndash; 1,200 kW</td></tr>
+        <tr><td>Exhaust bleed fraction</td><td class="val">5 &ndash; 12% of exhaust mass flow</td></tr>
+        <tr><td>Turbine inlet temp</td><td class="val hot">1,200 &ndash; 1,600 K</td></tr>
+        <tr><td>Generator type</td><td class="val">Permanent magnet, 50,000+ RPM</td></tr>
+        <tr><td>Efficiency (mech &rarr; elec)</td><td class="val">85 &ndash; 92%</td></tr>
+        <tr><td>Weight</td><td class="val">80 &ndash; 150 kg</td></tr>
+        <tr><td>Thrust penalty</td><td class="val warn">5 &ndash; 12% (exhaust diversion)</td></tr>
+        <tr><td>Fuel type</td><td class="val">Same Jet-A (no separate fuel)</td></tr>
+        <tr><td>TRL</td><td class="val ok">7 &ndash; 8 (mature technology)</td></tr>
+      </table>
+      <div class="note">This is the most practical flight-weight solution. The exhaust at 1,200&ndash;1,800 K contains enormous enthalpy. A small bypass turbine can extract 500+ kW while only reducing net thrust by 5&ndash;12%. Similar to APU bleed systems on commercial aircraft. Requires IN718 or Mar-M-247 turbine wheel, which can be 3D printed via SLM.</div>
+    </div>
+
+    <!-- Option 2: Gas Turbine APU -->
+    <div class="card">
+      <h3 style="display:flex;justify-content:space-between;align-items:center;">2. Dedicated Gas Turbine APU <span class="print-yes">BEST FOR PROTOTYPE</span></h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">Proven, off-the-shelf &mdash; ideal for ground testing and early flight</div>
+      <table class="pp-table">
+        <tr><td>Concept</td><td class="val">Separate small gas turbine engine driving a generator</td></tr>
+        <tr><td>Power output</td><td class="val ok">500 &ndash; 1,500 kW</td></tr>
+        <tr><td>Examples</td><td class="val">Honeywell 36-150, Safran e-APU60, Pratt &amp; Whitney APS5000</td></tr>
+        <tr><td>Fuel consumption</td><td class="val">0.3 &ndash; 0.5 kg/kWh (Jet-A)</td></tr>
+        <tr><td>Weight</td><td class="val warn">150 &ndash; 350 kg (complete system)</td></tr>
+        <tr><td>Efficiency</td><td class="val">25 &ndash; 35%</td></tr>
+        <tr><td>TRL</td><td class="val ok">9 (production hardware)</td></tr>
+        <tr><td>Cost</td><td class="val">$200K &ndash; $800K</td></tr>
+      </table>
+      <div class="note">Best choice for Phase 1&ndash;2 testing. Completely decouples power generation from the HPM-120 engine itself. Heavy for flight but eliminates a variable during development. Use same Jet-A fuel supply.</div>
+    </div>
+
+    <!-- Option 3: High-Density Battery -->
+    <div class="card">
+      <h3>3. High-Energy Battery Pack</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">Short-duration only &mdash; useful for test runs and hybrid boost</div>
+      <table class="pp-table">
+        <tr><td>Concept</td><td class="val">Lithium-ion or solid-state battery pack with high C-rate discharge</td></tr>
+        <tr><td>Energy density (Li-ion)</td><td class="val">250 &ndash; 300 Wh/kg (cell level)</td></tr>
+        <tr><td>Energy density (solid-state, projected)</td><td class="val">400 &ndash; 500 Wh/kg</td></tr>
+        <tr><td>Power density</td><td class="val">2 &ndash; 5 kW/kg</td></tr>
+        <tr><td>Pack mass for 1 MW &times; 10 min</td><td class="val hot">~670 kg (Li-ion) / ~400 kg (solid-state)</td></tr>
+        <tr><td>Pack mass for 1 MW &times; 1 hr</td><td class="val hot">~4,000 kg (Li-ion)</td></tr>
+        <tr><td>Thermal management</td><td class="val">Liquid-cooled plates required</td></tr>
+        <tr><td>TRL</td><td class="val ok">8 &ndash; 9 (Li-ion) / 5 &ndash; 6 (solid-state)</td></tr>
+      </table>
+      <div class="warn-box"><strong>Mass prohibitive for sustained flight.</strong> At ~670 kg for 10 minutes of 1 MW power, batteries are only viable for short ground tests, hybrid boost during takeoff, or as emergency backup. Not a primary flight power source at this power level.</div>
+    </div>
+
+    <!-- Option 4: Solid Oxide Fuel Cell -->
+    <div class="card">
+      <h3>4. Solid Oxide Fuel Cell (SOFC)</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">High efficiency, uses Jet-A fuel &mdash; emerging aviation technology</div>
+      <table class="pp-table">
+        <tr><td>Concept</td><td class="val">Jet-A reformed to syngas, electrochemically converted to electricity</td></tr>
+        <tr><td>Electrical efficiency</td><td class="val ok">50 &ndash; 60%</td></tr>
+        <tr><td>Power density</td><td class="val">0.5 &ndash; 1.5 kW/kg (current)</td></tr>
+        <tr><td>Operating temperature</td><td class="val hot">700 &ndash; 1,000&deg;C</td></tr>
+        <tr><td>System mass for 1 MW</td><td class="val">700 &ndash; 2,000 kg</td></tr>
+        <tr><td>Fuel consumption</td><td class="val ok">0.17 &ndash; 0.22 kg/kWh (very efficient)</td></tr>
+        <tr><td>TRL (aviation)</td><td class="val warn">4 &ndash; 5</td></tr>
+        <tr><td>Developers</td><td class="val">Bloom Energy, Ceres Power, Aerojet Rocketdyne</td></tr>
+      </table>
+      <div class="note">Highest fuel efficiency of any option. SOFC operating temperature (700&ndash;1,000&deg;C) could be synergistically heated by engine waste heat, further improving system efficiency. Boeing and Airbus are actively developing SOFC auxiliary power for aircraft. Main drawback: low power density and slow transient response.</div>
+    </div>
+
+    <!-- Option 5: Compact Fission Reactor -->
+    <div class="card">
+      <h3>5. Compact Fission Reactor</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:10px;">Very high energy density &mdash; limited by shielding mass and regulatory barriers</div>
+      <table class="pp-table">
+        <tr><td>Concept</td><td class="val">Micro fission reactor with Stirling or Brayton cycle power conversion</td></tr>
+        <tr><td>Fuel</td><td class="val">LEU (Low Enriched Uranium) or HALEU (High-Assay LEU)</td></tr>
+        <tr><td>Reactor thermal output</td><td class="val">1 &ndash; 5 MW thermal</td></tr>
+        <tr><td>Electrical output</td><td class="val">200 kW &ndash; 1 MW</td></tr>
+        <tr><td>Conversion efficiency</td><td class="val">20 &ndash; 30% (Stirling/Brayton)</td></tr>
+        <tr><td>Core mass</td><td class="val ok">50 &ndash; 200 kg (compact core)</td></tr>
+        <tr><td>Shielding mass</td><td class="val hot">500 &ndash; 2,000 kg (radiation shielding)</td></tr>
+        <tr><td>Total system mass</td><td class="val hot">800 &ndash; 3,000 kg</td></tr>
+        <tr><td>Endurance</td><td class="val ok">Years (no refueling)</td></tr>
+        <tr><td>Programs</td><td class="val">NASA Kilopower (10 kW), DARPA DRACO, Project Pele (5 MWe)</td></tr>
+        <tr><td>TRL</td><td class="val warn">4 &ndash; 6 (ground demos exist)</td></tr>
+      </table>
+      <div class="warn-box"><strong>Radiation shielding dominates mass.</strong> While the reactor core itself can be very compact, the shielding required for crewed aircraft makes the total system 800&ndash;3,000 kg. Best suited for large unmanned platforms or spacecraft where shielding geometry is favorable. Regulatory and safety certification for manned flight is extremely challenging.</div>
+    </div>
+
+    <!-- Option 6: Compact Fusion Reactor -->
+    <div class="card" style="border-color:#8b5cf6;">
+      <h3 style="color:#c084fc;">6. Compact Fusion Reactor</h3>
+      <div style="font-size:0.8em;color:#8b5cf6;margin-bottom:10px;">Highest theoretical energy density &mdash; no radiation shielding penalty &mdash; still experimental</div>
+      <table class="pp-table">
+        <tr><td>Concept</td><td class="val">Small-scale D-T, D-D, or D-He&sup3; fusion reactor with direct or thermal power conversion</td></tr>
+        <tr><td>Fuel</td><td class="val">Deuterium + Tritium (D-T) or Deuterium + He&sup3;</td></tr>
+        <tr><td>Plasma temperature</td><td class="val hot">100 &ndash; 200 million K (10&ndash;20 keV)</td></tr>
+        <tr><td>Confinement method</td><td class="val">Compact tokamak, FRC (Field-Reversed Configuration), or Z-pinch</td></tr>
+        <tr><td>Theoretical power density</td><td class="val ok">&gt; 10 kW/kg (far exceeds all other sources)</td></tr>
+        <tr><td>Electrical output target</td><td class="val">500 kW &ndash; 10 MW</td></tr>
+        <tr><td>Neutron shielding (D-T)</td><td class="val warn">200 &ndash; 500 kg (14.1 MeV neutrons)</td></tr>
+        <tr><td>Neutron shielding (D-He&sup3;)</td><td class="val ok">Minimal (aneutronic fusion)</td></tr>
+        <tr><td>Magnet requirement</td><td class="val">&gt; 10 Tesla (HTS: REBCO or YBCO)</td></tr>
+        <tr><td>Cryogenic requirement</td><td class="val">20 &ndash; 77 K for HTS magnets</td></tr>
+        <tr><td>Estimated system mass</td><td class="val">300 &ndash; 1,500 kg (highly speculative)</td></tr>
+        <tr><td>Developers</td><td class="val">Commonwealth Fusion (SPARC), Helion, TAE Technologies, Zap Energy, Lockheed Martin (CFR)</td></tr>
+        <tr><td>TRL</td><td class="val hot">2 &ndash; 3 (laboratory concept only)</td></tr>
+      </table>
+      <h4>Fusion Approach Comparison for Compact Integration</h4>
+      <table style="margin-top:8px;">
+        <thead><tr><th>Approach</th><th>Size Potential</th><th>Shielding</th><th>Synergy with HPM-120</th></tr></thead>
+        <tbody>
+          <tr><td>Compact Tokamak (CFS SPARC-type)</td><td class="val">~3 m diameter</td><td class="val warn">Heavy (D-T neutrons)</td><td class="val">Shared HTS cryogenics with MHD magnets</td></tr>
+          <tr><td>Field-Reversed Configuration (TAE)</td><td class="val ok">~1&ndash;2 m length</td><td class="val">Moderate</td><td class="val ok">Compact, linear geometry fits nacelle</td></tr>
+          <tr><td>Z-Pinch (Zap Energy)</td><td class="val ok">~1 m device</td><td class="val">Moderate</td><td class="val">Pulsed output needs power smoothing</td></tr>
+          <tr><td>Magneto-Inertial (Helion)</td><td class="val">~2&ndash;3 m</td><td class="val ok">Low (D-He&sup3; target)</td><td class="val ok">Direct energy capture, high efficiency</td></tr>
+          <tr><td>Lockheed CFR (Compact Fusion)</td><td class="val ok">~1&ndash;2 m</td><td class="val warn">D-T based</td><td class="val">Designed for mobile platforms</td></tr>
+        </tbody>
+      </table>
+      <div class="note" style="border-left-color:#8b5cf6;">
+        <strong>Synergy with HPM-120:</strong> A compact fusion reactor shares critical infrastructure with the HPM-120's existing systems:
+        (1) HTS superconducting magnets &mdash; the fusion reactor and MHD accelerator both require high-field superconducting coils with cryogenic cooling, allowing a shared cryogenic plant;
+        (2) Plasma physics expertise &mdash; the same RF/microwave plasma technology used in the ionization chamber applies to plasma heating in fusion;
+        (3) MHD power conversion &mdash; fusion plasma exhaust could be passed through an MHD generator channel to directly extract electrical power, bypassing thermal cycles entirely.
+        If compact fusion becomes viable, the HPM-120 architecture is uniquely well-positioned to integrate it.
+      </div>
+      <div class="warn-box"><strong>Status: No compact fusion reactor has achieved net energy gain (Q &gt; 1) as of 2025.</strong> NIF achieved ignition (Dec 2022) in a laser-driven inertial confinement experiment, but that facility fills a building. Compact approaches (tokamak, FRC, Z-pinch) are targeting Q &gt; 1 demos in the 2026&ndash;2030 timeframe. Flight-weight fusion power is likely 15&ndash;30+ years away. Include in HPM-120 roadmap as a <em>future power upgrade path</em>, not a near-term design dependency.</div>
+    </div>
+  </div>
+
+  <!-- Power source comparison table -->
+  <div class="card" style="margin-bottom:20px;">
+    <h3>Power Source Comparison Matrix</h3>
+    <table>
+      <thead>
+        <tr><th>Source</th><th>Power (kW)</th><th>Mass (kg)</th><th>kW/kg</th><th>Endurance</th><th>TRL</th><th>Verdict</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Turbo-Generator</td><td class="val">500&ndash;1,200</td><td class="val ok">80&ndash;150</td><td class="val ok">5&ndash;8</td><td class="val ok">Unlimited</td><td class="val ok">7&ndash;8</td><td class="ok">Flight primary</td></tr>
+        <tr><td>Gas Turbine APU</td><td class="val">500&ndash;1,500</td><td class="val warn">150&ndash;350</td><td class="val">3&ndash;4</td><td class="val ok">Unlimited</td><td class="val ok">9</td><td class="ok">Prototype primary</td></tr>
+        <tr><td>Battery (Li-ion)</td><td class="val">1,000+</td><td class="val hot">670/10min</td><td class="val">2&ndash;5</td><td class="val hot">Minutes</td><td class="val ok">8&ndash;9</td><td class="warn">Boost / backup only</td></tr>
+        <tr><td>SOFC</td><td class="val">500&ndash;1,000</td><td class="val warn">700&ndash;2,000</td><td class="val">0.5&ndash;1.5</td><td class="val ok">Unlimited</td><td class="val warn">4&ndash;5</td><td class="warn">Future option</td></tr>
+        <tr><td>Fission Reactor</td><td class="val">200&ndash;1,000</td><td class="val hot">800&ndash;3,000</td><td class="val">0.2&ndash;0.5</td><td class="val ok">Years</td><td class="val warn">4&ndash;6</td><td class="warn">Unmanned only</td></tr>
+        <tr><td>Fusion Reactor</td><td class="val">500&ndash;10,000</td><td class="val">300&ndash;1,500*</td><td class="val ok">&gt;10*</td><td class="val ok">Years</td><td class="val hot">2&ndash;3</td><td style="color:#8b5cf6;">Future upgrade</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:0.78em;color:var(--dim);margin-top:6px;">* Fusion values are theoretical projections, not demonstrated hardware</div>
+  </div>
+
+  <!-- Recommended architecture -->
+  <div class="card" style="margin-bottom:30px;border-color:var(--green);">
+    <h3>Recommended Power Architecture</h3>
+    <div class="grid grid-3" style="margin-top:12px;">
+      <div style="text-align:center;padding:16px;">
+        <div style="font-size:0.75em;color:var(--accent);font-weight:700;letter-spacing:1px;">PHASE 1&ndash;2</div>
+        <div style="font-size:1.3em;font-weight:700;color:var(--white);margin:8px 0;">Gas Turbine APU</div>
+        <div style="font-size:0.82em;color:var(--dim);">Off-the-shelf 500&ndash;1,000 kW APU generator. Completely decouples power from engine development. Allows focus on plasma + MHD validation.</div>
+      </div>
+      <div style="text-align:center;padding:16px;border-left:1px solid var(--border);border-right:1px solid var(--border);">
+        <div style="font-size:0.75em;color:var(--green);font-weight:700;letter-spacing:1px;">PHASE 3</div>
+        <div style="font-size:1.3em;font-weight:700;color:var(--white);margin:8px 0;">Exhaust Turbo-Generator</div>
+        <div style="font-size:0.82em;color:var(--dim);">Integrated exhaust bypass turbine + PM generator. Self-sustaining. 80&ndash;150 kg. Accepts 5&ndash;12% thrust penalty for electrical independence.</div>
+      </div>
+      <div style="text-align:center;padding:16px;">
+        <div style="font-size:0.75em;color:#8b5cf6;font-weight:700;letter-spacing:1px;">FUTURE (2035+)</div>
+        <div style="font-size:1.3em;font-weight:700;color:var(--white);margin:8px 0;">Compact Fusion Module</div>
+        <div style="font-size:0.82em;color:var(--dim);">When available, replaces turbo-generator entirely. Eliminates thrust penalty. Shared cryogenics with MHD magnets. Unlimited endurance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CRYOGENIC COOLING SYSTEM ==================== -->
+  <h2 style="margin-top:40px;">Integrated Cryogenic &amp; Thermal Management System</h2>
+
+  <div class="warn-box" style="margin-bottom:20px;">
+    <strong>Yes, cryogenic coolant is required through the engine.</strong> The HPM-120 operates across an extreme temperature range: from 77 K (liquid nitrogen for superconducting magnets) to 3,200 K (plasma combustion). A multi-circuit cooling system is essential to maintain structural integrity and prevent thermal runaway in every section.
+  </div>
+
+  <!-- Cooling circuit overview SVG -->
+  <div class="engine-diagram" style="margin-bottom:20px;">
+    <h3 style="color:var(--accent);margin-bottom:15px;">COOLING CIRCUITS THROUGH ENGINE</h3>
+    <svg viewBox="0 0 1200 420" class="engine-svg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="cryo-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0077ff"/>
+          <stop offset="100%" stop-color="#00ccff"/>
+        </linearGradient>
+        <linearGradient id="water-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0077b6"/>
+          <stop offset="100%" stop-color="#00b4d8"/>
+        </linearGradient>
+        <linearGradient id="fuel-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#ffd60a"/>
+          <stop offset="100%" stop-color="#ff6b35"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Engine outline (simplified) -->
+      <rect x="40" y="140" width="180" height="80" rx="4" fill="none" stroke="#1a2744" stroke-width="1.5"/>
+      <text x="130" y="175" fill="#6e7681" font-size="10" text-anchor="middle" font-weight="600">INTAKE</text>
+      <text x="130" y="190" fill="#6e7681" font-size="8" text-anchor="middle">288 K</text>
+
+      <rect x="240" y="130" width="180" height="100" rx="4" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="330" y="175" fill="#8b5cf6" font-size="10" text-anchor="middle" font-weight="600">PLASMA</text>
+      <text x="330" y="190" fill="#8b5cf6" font-size="8" text-anchor="middle">500&ndash;2,000 K</text>
+
+      <rect x="440" y="130" width="200" height="100" rx="4" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+      <text x="540" y="175" fill="#ff6b35" font-size="10" text-anchor="middle" font-weight="600">COMBUSTION</text>
+      <text x="540" y="190" fill="#ff6b35" font-size="8" text-anchor="middle">2,500&ndash;3,200 K</text>
+
+      <rect x="660" y="110" width="280" height="140" rx="4" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
+      <text x="800" y="175" fill="#00b4d8" font-size="10" text-anchor="middle" font-weight="600">MHD ACCELERATOR</text>
+      <text x="800" y="190" fill="#00b4d8" font-size="8" text-anchor="middle">2,500&ndash;3,000 K</text>
+
+      <rect x="960" y="120" width="180" height="120" rx="4" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+      <text x="1050" y="175" fill="#ff6b35" font-size="10" text-anchor="middle" font-weight="600">NOZZLE</text>
+      <text x="1050" y="190" fill="#ff6b35" font-size="8" text-anchor="middle">1,200&ndash;1,800 K</text>
+
+      <!-- CIRCUIT 1: LN2 Cryogenic (blue, top path) -->
+      <text x="40" y="50" fill="#00ccff" font-size="11" font-weight="700">CIRCUIT 1: LIQUID NITROGEN (77 K)</text>
+      <!-- LN2 tank -->
+      <rect x="40" y="60" width="80" height="30" rx="4" fill="rgba(0,204,255,0.1)" stroke="#00ccff" stroke-width="1.5"/>
+      <text x="80" y="80" fill="#00ccff" font-size="8" text-anchor="middle" font-weight="600">LN&#8322; TANK</text>
+      <!-- Line from tank to plasma coils -->
+      <path d="M120,75 L280,75 L280,130" fill="none" stroke="#00ccff" stroke-width="2" stroke-dasharray="6,3"/>
+      <circle cx="280" cy="130" r="4" fill="#00ccff"/>
+      <text x="200" y="70" fill="#00ccff" font-size="7" text-anchor="middle">Plasma confinement coils</text>
+      <!-- Line to MHD magnets -->
+      <path d="M280,75 L750,75 L750,110" fill="none" stroke="#00ccff" stroke-width="2.5" stroke-dasharray="6,3"/>
+      <circle cx="750" cy="110" r="5" fill="#00ccff"/>
+      <text x="550" y="68" fill="#00ccff" font-size="8" text-anchor="middle" font-weight="600">Primary cryogenic supply to MHD magnets</text>
+      <!-- Line to MHD cryostat exit -->
+      <path d="M850,110 L850,75 L1000,75" fill="none" stroke="#00ccff" stroke-width="2" stroke-dasharray="6,3" opacity="0.5"/>
+      <circle cx="850" cy="110" r="4" fill="#00ccff"/>
+      <text x="930" y="68" fill="#00ccff" font-size="7" text-anchor="middle">GN&#8322; vent / recycle</text>
+      <!-- EM nozzle coils -->
+      <path d="M1000,75 L1050,75 L1050,120" fill="none" stroke="#00ccff" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.5"/>
+      <circle cx="1050" cy="120" r="3" fill="#00ccff"/>
+      <text x="1090" y="68" fill="#00ccff" font-size="7" text-anchor="middle">EM coil pre-cool</text>
+
+      <!-- CIRCUIT 2: Water cooling (mid path, teal) -->
+      <text x="40" y="280" fill="#00b4d8" font-size="11" font-weight="700">CIRCUIT 2: WATER GLYCOL COOLANT (280&ndash;360 K)</text>
+      <!-- Water pump -->
+      <rect x="40" y="290" width="80" height="30" rx="4" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="1.5"/>
+      <text x="80" y="310" fill="#00b4d8" font-size="8" text-anchor="middle" font-weight="600">PUMP</text>
+      <!-- Line to RF waveguides -->
+      <path d="M120,305 L300,305 L300,230" fill="none" stroke="#00b4d8" stroke-width="2" stroke-dasharray="5,3"/>
+      <circle cx="300" cy="230" r="4" fill="#00b4d8"/>
+      <text x="210" y="298" fill="#00b4d8" font-size="7" text-anchor="middle">RF waveguide jackets</text>
+      <!-- Line to MHD channel walls -->
+      <path d="M300,305 L780,305 L780,250" fill="none" stroke="#00b4d8" stroke-width="2" stroke-dasharray="5,3"/>
+      <circle cx="780" cy="250" r="4" fill="#00b4d8"/>
+      <text x="550" y="298" fill="#00b4d8" font-size="7" text-anchor="middle">MHD channel wall cooling (external)</text>
+      <!-- Line to radiator/return -->
+      <path d="M780,305 L1100,305 L1100,330 L40,330 L40,320" fill="none" stroke="#00b4d8" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.4"/>
+      <rect x="1060" y="290" width="80" height="30" rx="4" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="1.5"/>
+      <text x="1100" y="310" fill="#00b4d8" font-size="7" text-anchor="middle" font-weight="600">RADIATOR</text>
+
+      <!-- CIRCUIT 3: Fuel regenerative (bottom path, yellow/orange) -->
+      <text x="40" y="370" fill="#ffd60a" font-size="11" font-weight="700">CIRCUIT 3: REGENERATIVE FUEL (HEAT SINK &rarr; INJECTION)</text>
+      <!-- Fuel tank -->
+      <rect x="40" y="380" width="80" height="30" rx="4" fill="rgba(255,214,10,0.1)" stroke="#ffd60a" stroke-width="1.5"/>
+      <text x="80" y="400" fill="#ffd60a" font-size="8" text-anchor="middle" font-weight="600">FUEL TANK</text>
+      <!-- Fuel flows through nozzle walls first -->
+      <path d="M120,395 L1050,395 L1050,240" fill="none" stroke="#ffd60a" stroke-width="2" stroke-dasharray="4,3"/>
+      <circle cx="1050" cy="240" r="4" fill="#ffd60a"/>
+      <text x="1050" y="260" fill="#ffd60a" font-size="7" text-anchor="middle">Nozzle film cool</text>
+      <!-- Then through combustion walls -->
+      <path d="M1050,395 L540,395 L540,230" fill="none" stroke="#ff6b35" stroke-width="2" stroke-dasharray="4,3"/>
+      <circle cx="540" cy="230" r="4" fill="#ff6b35"/>
+      <text x="540" y="248" fill="#ff6b35" font-size="7" text-anchor="middle">48 axial cooling channels</text>
+      <!-- Then through plasma walls -->
+      <path d="M540,395 L330,395 L330,230" fill="none" stroke="#ff6b35" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+      <circle cx="330" cy="230" r="3" fill="#ff6b35"/>
+      <text x="330" y="248" fill="#ff6b35" font-size="7" text-anchor="middle">Plasma chamber walls</text>
+      <!-- Then to injectors -->
+      <path d="M330,395 L440,395 L440,180" fill="none" stroke="#ffd60a" stroke-width="2.5"/>
+      <polygon points="440,160 435,175 445,175" fill="#ffd60a"/>
+      <text x="460" y="160" fill="#ffd60a" font-size="8" font-weight="600">INJECT</text>
+      <text x="385" y="388" fill="#ffd60a" font-size="7" text-anchor="middle">Pre-heated fuel</text>
+    </svg>
+  </div>
+
+  <!-- Cooling circuits detail -->
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card" style="border-color:#00ccff;">
+      <h3 style="color:#00ccff;">Circuit 1: Cryogenic LN&sub2; System</h3>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Maintains superconducting magnets and pre-cools EM coils</div>
+      <table class="pp-table">
+        <tr><td>Coolant</td><td class="val">Liquid Nitrogen (LN&sub2;)</td></tr>
+        <tr><td>Operating temperature</td><td class="val" style="color:#00ccff;">77 K (&minus;196&deg;C)</td></tr>
+        <tr><td>Boiling point (1 atm)</td><td class="val">77.36 K</td></tr>
+        <tr><td>Latent heat</td><td class="val">199 kJ/kg</td></tr>
+        <tr><td>Flow rate (MHD cryostat)</td><td class="val">1.0 &ndash; 2.0 L/min</td></tr>
+        <tr><td>Flow rate (plasma coils)</td><td class="val">0.3 L/min</td></tr>
+        <tr><td>Flow rate (EM nozzle pre-cool)</td><td class="val">0.2 L/min</td></tr>
+        <tr><td>Total LN&sub2; flow</td><td class="val">1.5 &ndash; 2.5 L/min</td></tr>
+        <tr><td>Tank capacity (30 min run)</td><td class="val">45 &ndash; 75 L</td></tr>
+        <tr><td>Tank mass (full)</td><td class="val">55 &ndash; 90 kg (incl. vacuum dewar)</td></tr>
+        <tr><td>Piping material</td><td class="val">304L stainless steel, vacuum-jacketed</td></tr>
+        <tr><td>Insulation</td><td class="val">Multi-layer insulation (MLI), 30+ layers</td></tr>
+      </table>
+      <h4>Cryostat Design (MHD Section)</h4>
+      <table class="pp-table">
+        <tr><td>Cryostat inner bore</td><td class="val">500 mm</td></tr>
+        <tr><td>Cryostat outer diameter</td><td class="val">950 mm</td></tr>
+        <tr><td>Cryostat length</td><td class="val">1,000 mm</td></tr>
+        <tr><td>Vacuum gap</td><td class="val">10 &ndash; 15 mm</td></tr>
+        <tr><td>Radiation shields</td><td class="val">3 layers Al foil</td></tr>
+        <tr><td>Heat leak budget</td><td class="val">&lt; 50 W total (to LN&sub2; space)</td></tr>
+        <tr><td>Cryostat material</td><td class="val">304 stainless steel (non-magnetic)</td></tr>
+        <tr><td>Cool-down time</td><td class="val">30 &ndash; 60 min (from ambient to 77 K)</td></tr>
+      </table>
+      <div class="note" style="border-left-color:#00ccff;">
+        <strong>Why LN&sub2; and not liquid helium?</strong> The NbTi superconducting coils in the MHD section have a critical temperature of 9.2 K, which normally requires LHe (4.2 K). However, by using high-current-density coils and limiting the operating current to 80% of critical, LN&sub2; cooling at 77 K with a secondary cryocooler stage can bring the coil temperature down to 4&ndash;10 K locally. Alternatively, upgrading to HTS (REBCO) magnets with T_c &gt; 90 K allows full LN&sub2; operation, eliminating liquid helium entirely. <strong>HTS upgrade is strongly recommended for flight applications.</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Circuit 2: Water-Glycol Coolant Loop</h3>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Active cooling for electronics, RF systems, and MHD channel exterior</div>
+      <table class="pp-table">
+        <tr><td>Coolant</td><td class="val">50/50 Water-Ethylene Glycol</td></tr>
+        <tr><td>Inlet temperature</td><td class="val">280 &ndash; 300 K</td></tr>
+        <tr><td>Max outlet temperature</td><td class="val">360 K (+80 K rise)</td></tr>
+        <tr><td>System pressure</td><td class="val">3 &ndash; 5 bar</td></tr>
+        <tr><td>RF waveguide jackets (6&times;)</td><td class="val">2.0 kg/s, +40 K</td></tr>
+        <tr><td>MHD channel external walls</td><td class="val">5.0 kg/s, +80 K</td></tr>
+        <tr><td>Power electronics</td><td class="val">0.5 kg/s, +30 K</td></tr>
+        <tr><td>Generator windings</td><td class="val">1.0 kg/s, +50 K</td></tr>
+        <tr><td>Total flow rate</td><td class="val">8.5 kg/s</td></tr>
+        <tr><td>Pump power</td><td class="val">8 kW</td></tr>
+        <tr><td>Radiator</td><td class="val">Ram-air heat exchanger, 600 kW rejection capacity</td></tr>
+        <tr><td>Piping material</td><td class="val">6061-T6 aluminum or 316L SS</td></tr>
+      </table>
+      <div class="note">The water-glycol loop acts as the intermediate temperature circuit, bridging the gap between cryogenic (77 K) and hot-section (2,500+ K) systems. The ram-air radiator rejects heat to ambient during flight. At static conditions on the ground, an auxiliary fan or larger radiator is needed.</div>
+    </div>
+
+    <div class="card" style="border-color:#ffd60a;">
+      <h3 style="color:#ffd60a;">Circuit 3: Regenerative Fuel Cooling</h3>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Fuel absorbs heat from hot-section walls before injection &mdash; dual-purpose cooling</div>
+      <table class="pp-table">
+        <tr><td>Coolant</td><td class="val">Jet-A / JP-8 fuel</td></tr>
+        <tr><td>Fuel inlet temperature</td><td class="val">288 K (ambient)</td></tr>
+        <tr><td>Fuel temp after nozzle cooling</td><td class="val">~440 K (+150 K)</td></tr>
+        <tr><td>Fuel temp after combustion cooling</td><td class="val">~640 K (+200 K)</td></tr>
+        <tr><td>Fuel temp at injectors</td><td class="val">~640 K (pre-heated)</td></tr>
+        <tr><td>Jet-A thermal stability limit</td><td class="val hot">~700 K (above this: coking)</td></tr>
+        <tr><td>Nozzle film cooling flow</td><td class="val">0.5 kg/s</td></tr>
+        <tr><td>Combustion wall cooling flow</td><td class="val">2.5 kg/s</td></tr>
+        <tr><td>Total fuel flow (cooling + injection)</td><td class="val">2.5 kg/s</td></tr>
+        <tr><td>Cooling channel dimensions</td><td class="val">48 channels, 4 &times; 3 mm each</td></tr>
+        <tr><td>Heat absorbed by fuel</td><td class="val">~800 kW</td></tr>
+      </table>
+      <div class="warn-box"><strong>Fuel coking limit:</strong> Jet-A begins thermal decomposition above ~700 K, forming carbon deposits (coke) that block cooling channels. The fuel must be injected and burned before reaching this temperature. This limits the maximum heat absorption per kg of fuel and sets a hard ceiling on how much cooling the fuel circuit can provide. JP-7 (used in the SR-71) has better thermal stability to ~800 K but is more expensive.</div>
+    </div>
+
+    <div class="card" style="border-color:var(--hot);">
+      <h3 style="color:var(--hot);">Circuit 4: Thermal Barrier Coatings (Passive)</h3>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Ceramic coatings reduce heat flux into structural walls</div>
+      <table class="pp-table">
+        <tr><td>Coating material</td><td class="val">Yttria-Stabilized Zirconia (YSZ / ZrO&sub2;)</td></tr>
+        <tr><td>Thickness</td><td class="val">0.3 &ndash; 0.5 mm</td></tr>
+        <tr><td>Thermal conductivity</td><td class="val">~2 W/m&middot;K (very low)</td></tr>
+        <tr><td>Max surface temperature</td><td class="val ok">1,500 K</td></tr>
+        <tr><td>Temperature drop across TBC</td><td class="val ok">200 &ndash; 500 K</td></tr>
+        <tr><td>Bond coat</td><td class="val">MCrAlY (NiCoCrAlY), 0.1 mm</td></tr>
+        <tr><td>Application method</td><td class="val">Air Plasma Spray (APS) or EB-PVD</td></tr>
+        <tr><td>Applied to</td><td class="val">Combustion liner, MHD channel walls, nozzle throat</td></tr>
+      </table>
+      <h4>Environmental Barrier Coating (EBC) for C/SiC</h4>
+      <table class="pp-table">
+        <tr><td>EBC material</td><td class="val">Mullite + BSAS (barium strontium aluminosilicate)</td></tr>
+        <tr><td>Purpose</td><td class="val">Prevents steam recession of SiC above 1,200&deg;C</td></tr>
+        <tr><td>Thickness</td><td class="val">0.1 &ndash; 0.3 mm</td></tr>
+        <tr><td>Applied to</td><td class="val">All C/SiC liners (plasma, combustion, MHD, nozzle)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Thermal budget table -->
+  <div class="card" style="margin-bottom:20px;">
+    <h3>Section-by-Section Thermal Budget</h3>
+    <table>
+      <thead>
+        <tr><th>Engine Section</th><th>Gas Temp (K)</th><th>Wall Temp Limit (K)</th><th>Cooling Method</th><th>Coolant</th><th>Heat Rejected (kW)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Intake / Diffuser</td><td class="val">288</td><td class="val ok">600</td><td>None needed (ambient)</td><td class="val">&mdash;</td><td class="val">0</td></tr>
+        <tr><td>Plasma Ionization</td><td class="val warn">500 &ndash; 2,000</td><td class="val">1,200</td><td>Regenerative fuel + water</td><td class="val">Fuel + Water-glycol</td><td class="val">~150</td></tr>
+        <tr><td>Combustion Chamber</td><td class="val hot">2,500 &ndash; 3,200</td><td class="val">1,800 (C/SiC)</td><td>TBC + EBC + regenerative fuel</td><td class="val">Fuel (48 channels)</td><td class="val hot">~800</td></tr>
+        <tr><td>MHD Channel Walls</td><td class="val hot">2,500 &ndash; 3,000</td><td class="val">1,500 (W-Cu)</td><td>TBC + water external</td><td class="val">Water-glycol</td><td class="val">~400</td></tr>
+        <tr><td>MHD Magnets (cryostat)</td><td class="val">&mdash;</td><td class="val" style="color:#00ccff;">10 K (NbTi) / 77 K (HTS)</td><td>Cryostat + LN&sub2;</td><td class="val" style="color:#00ccff;">LN&sub2;</td><td class="val">~50 (heat leak)</td></tr>
+        <tr><td>Nozzle Throat</td><td class="val hot">2,200 &ndash; 2,800</td><td class="val">1,800 (C/SiC)</td><td>TBC + film cooling</td><td class="val">Fuel film</td><td class="val">~200</td></tr>
+        <tr><td>Nozzle Divergent</td><td class="val warn">1,200 &ndash; 1,800</td><td class="val">1,200</td><td>Radiation + EM coil cooling</td><td class="val">Water-glycol</td><td class="val">~100</td></tr>
+        <tr><td>RF Waveguides</td><td class="val">&mdash;</td><td class="val">400</td><td>Water jacket</td><td class="val">Water-glycol</td><td class="val">~80</td></tr>
+        <tr><td>Power Electronics</td><td class="val">&mdash;</td><td class="val">350</td><td>Cold plate</td><td class="val">Water-glycol</td><td class="val">~50</td></tr>
+        <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Heat Rejection</td><td></td><td></td><td></td><td></td><td class="val" style="color:var(--accent);">~1,830 kW</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Total thermal management load is approximately 1.8 MW. Of this, ~800 kW is absorbed by fuel (and then burned, so it is not wasted), ~600 kW is rejected via the water-glycol radiator, ~380 kW radiates from the nozzle and hot surfaces, and ~50 kW is absorbed by the cryogenic system.</div>
+  </div>
+
+  <!-- Critical thermal risks -->
+  <div class="card">
+    <h3>Critical Thermal Risks &amp; Mitigations</h3>
+    <div class="grid grid-2" style="gap:12px;">
+      <div class="warn-box">
+        <strong>Cryogenic &harr; Hot Section Interface</strong><br>
+        The MHD section has 77 K magnets separated by only 200 mm from 3,000 K gas. The cryostat vacuum gap and MLI insulation must maintain &lt;50 W heat leak. Any vacuum breach causes immediate magnet quench (superconductor loses superconductivity), resulting in rapid boil-off and potential structural damage from thermal shock. <em>Mitigation:</em> Redundant vacuum monitoring, automatic LN&sub2; dump valve, quench detection on every coil.
+      </div>
+      <div class="warn-box">
+        <strong>Combustion Cooling Channel Blockage</strong><br>
+        If any of the 48 fuel cooling channels become blocked (by coke, debris, or manufacturing defect), local wall temperature will exceed 1,800 K within seconds, causing C/SiC liner failure and burn-through. <em>Mitigation:</em> 10 &mu;m fuel filter, thermal stability monitoring per channel (thermocouples), oversized channels (4&times;3 mm), and CT-scan inspection of all printed cooling passages before assembly.
+      </div>
+      <div class="warn-box">
+        <strong>Thermal Expansion Mismatch</strong><br>
+        C/SiC liners (CTE: ~3&times;10&supmin;&sup6;/K) expand much less than Inconel 718 shells (CTE: ~13&times;10&supmin;&sup6;/K). At operating temperature, the outer shell grows ~10 mm more in diameter than the liner. <em>Mitigation:</em> Compliant mounting (C-seals, spring clips, ceramic rope gaskets). Never bond rigidly. Design 3&ndash;5 mm radial clearance at room temperature.
+      </div>
+      <div class="warn-box">
+        <strong>Transient Thermal Shock (Start-up / Shutdown)</strong><br>
+        Rapid heat-up from 288 K to 3,200 K generates severe thermal gradients. C/SiC handles this well (low CTE, high thermal shock resistance), but Inconel and TBC coatings are vulnerable to spallation. <em>Mitigation:</em> Controlled ramp rate: 100 K/s max through combustion zone. RF plasma at low power before fuel introduction to pre-heat gradually.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MATERIALS ==================== -->
+<div class="section" id="materials">
+  <h2>Materials &amp; Metallurgy</h2>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Ti-6Al-4V (Grade 5)</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">Intake cowl, centerbody, diffuser</div>
+      <table class="pp-table">
+        <tr><td>Density</td><td class="val">4,430 kg/m&sup3;</td></tr>
+        <tr><td>Yield strength</td><td class="val">880 MPa</td></tr>
+        <tr><td>UTS</td><td class="val">950 MPa</td></tr>
+        <tr><td>Max service temp</td><td class="val">600 K (315&deg;C)</td></tr>
+        <tr><td>Thermal conductivity</td><td class="val">6.7 W/m&middot;K</td></tr>
+        <tr><td>Melting point</td><td class="val">1,933 K</td></tr>
+      </table>
+      <h4>Composition</h4>
+      <div style="font-size:0.82em;">Ti (bal. ~90%) &bull; Al 5.5&ndash;6.75% &bull; V 3.5&ndash;4.5%</div>
+      <h4>3D Print Process: EBM or SLM</h4>
+      <table class="pp-table">
+        <tr><td>Powder size</td><td class="val">45&ndash;106 &mu;m (EBM) / 15&ndash;45 &mu;m (SLM)</td></tr>
+        <tr><td>Layer thickness</td><td class="val">50 &ndash; 100 &mu;m</td></tr>
+        <tr><td>Build temp</td><td class="val">700&deg;C preheat (EBM)</td></tr>
+        <tr><td>Atmosphere</td><td class="val">Vacuum (EBM) / Argon (SLM)</td></tr>
+        <tr><td>HIP</td><td class="val">920&deg;C / 100 MPa / 2 hr</td></tr>
+        <tr><td>Stress relief</td><td class="val">650&deg;C / 3 hr, furnace cool</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Inconel 718</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">Plasma shell, combustion shell, nozzle, mounts</div>
+      <table class="pp-table">
+        <tr><td>Density</td><td class="val">8,190 kg/m&sup3;</td></tr>
+        <tr><td>Yield strength (RT)</td><td class="val">1,035 MPa</td></tr>
+        <tr><td>Yield strength (650&deg;C)</td><td class="val">860 MPa</td></tr>
+        <tr><td>UTS</td><td class="val">1,240 MPa</td></tr>
+        <tr><td>Max service temp</td><td class="val">980 K (700&deg;C)</td></tr>
+        <tr><td>Thermal conductivity</td><td class="val">11.4 W/m&middot;K</td></tr>
+      </table>
+      <h4>Composition</h4>
+      <div style="font-size:0.82em;">Ni 50&ndash;55% &bull; Cr 17&ndash;21% &bull; Fe ~18% &bull; Nb+Ta 4.75&ndash;5.5% &bull; Mo 2.8&ndash;3.3%</div>
+      <h4>3D Print Process: DMLS / SLM</h4>
+      <table class="pp-table">
+        <tr><td>Powder size</td><td class="val">15 &ndash; 45 &mu;m</td></tr>
+        <tr><td>Layer thickness</td><td class="val">20 &ndash; 40 &mu;m</td></tr>
+        <tr><td>Laser power</td><td class="val">280 &ndash; 400 W</td></tr>
+        <tr><td>Scan speed</td><td class="val">800 &ndash; 1,200 mm/s</td></tr>
+        <tr><td>HIP</td><td class="val">1,165&deg;C / 100 MPa / 4 hr</td></tr>
+        <tr><td>Heat treat</td><td class="val">Sol: 980&deg;C/1h &rarr; Age: 720&deg;C/8h + 620&deg;C/8h</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Inconel 625</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">Fuel injectors</div>
+      <table class="pp-table">
+        <tr><td>Density</td><td class="val">8,440 kg/m&sup3;</td></tr>
+        <tr><td>Yield strength</td><td class="val">490 MPa</td></tr>
+        <tr><td>UTS</td><td class="val">965 MPa</td></tr>
+        <tr><td>Max service temp</td><td class="val">1,100 K (815&deg;C)</td></tr>
+        <tr><td>Composition</td><td class="val" style="font-size:0.85em;">Ni 58%+ &bull; Cr 20&ndash;23% &bull; Mo 8&ndash;10%</td></tr>
+      </table>
+      <h4>SLM Parameters</h4>
+      <table class="pp-table">
+        <tr><td>Laser power</td><td class="val">250 &ndash; 370 W</td></tr>
+        <tr><td>Stress relief</td><td class="val">870&deg;C / 1 hr</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>C/SiC Composite</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">All hot-section liners</div>
+      <table class="pp-table">
+        <tr><td>Density</td><td class="val">2,100 &ndash; 2,500 kg/m&sup3;</td></tr>
+        <tr><td>Tensile strength</td><td class="val">250 &ndash; 400 MPa</td></tr>
+        <tr><td>Max service temp</td><td class="val hot">1,800 K (1,500&deg;C)</td></tr>
+        <tr><td>Thermal conductivity</td><td class="val">15 &ndash; 40 W/m&middot;K</td></tr>
+        <tr><td>CTE</td><td class="val">2 &ndash; 4 &times; 10&sup-6; /K</td></tr>
+      </table>
+      <h4>Manufacturing: CVI Process</h4>
+      <ol class="steps" style="font-size:0.82em;">
+        <li>Carbon fiber preform woven to shape</li>
+        <li>Preform placed in CVI reactor</li>
+        <li>MTS gas infiltrated at 1,000&ndash;1,100&deg;C</li>
+        <li>SiC matrix deposited (100&ndash;500 hr/cycle)</li>
+        <li>Multiple cycles to 85&ndash;95% density</li>
+        <li>Diamond grinding to final dimensions</li>
+      </ol>
+      <div class="warn-box" style="font-size:0.82em;"><strong>Not 3D printable.</strong> Requires CVI or PIP process. Lead time: 3&ndash;6 months.</div>
+    </div>
+
+    <div class="card">
+      <h3>W-Cu 80/20 Composite</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">MHD electrodes</div>
+      <table class="pp-table">
+        <tr><td>Density</td><td class="val">15,200 kg/m&sup3;</td></tr>
+        <tr><td>Electrical conductivity</td><td class="val">40% IACS</td></tr>
+        <tr><td>Thermal conductivity</td><td class="val">180 W/m&middot;K</td></tr>
+        <tr><td>Max service temp</td><td class="val hot">1,500 K</td></tr>
+      </table>
+      <h4>Manufacturing: Press-Sinter-Infiltrate</h4>
+      <ol class="steps" style="font-size:0.82em;">
+        <li>W powder pressed at 200&ndash;400 MPa</li>
+        <li>Pre-sinter at 1,200&deg;C in H&sub2;</li>
+        <li>Cu infiltration at 1,150&deg;C in H&sub2;</li>
+        <li>EDM to final dimensions</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Boron Nitride (BN)</h3>
+      <div style="font-size:0.8em;color:var(--dim);margin-bottom:8px;">MHD insulators</div>
+      <table class="pp-table">
+        <tr><td>Density</td><td class="val">1,900 kg/m&sup3;</td></tr>
+        <tr><td>Dielectric strength</td><td class="val">40 kV/mm</td></tr>
+        <tr><td>Max service temp</td><td class="val">1,800 K (inert)</td></tr>
+        <tr><td>Resistivity</td><td class="val">&gt; 10&sup1;&sup4; &Omega;&middot;cm</td></tr>
+      </table>
+      <div class="note">CNC machined from hot-pressed billets. Diamond tooling, dry machining (moisture-sensitive).</div>
+    </div>
+  </div>
+
+  <!-- Thermal map -->
+  <div class="card" style="margin-top:20px;">
+    <h3>Temperature Map Along Engine Axis</h3>
+    <div style="display:flex;height:40px;border-radius:6px;overflow:hidden;margin:12px 0;font-size:0.75em;">
+      <div style="flex:1.5;background:linear-gradient(90deg,#0077b6,#0099cc);display:flex;align-items:center;justify-content:center;color:#fff;">288 K<br>Intake</div>
+      <div style="flex:1.2;background:linear-gradient(90deg,#b91c1c,#991b1b);display:flex;align-items:center;justify-content:center;color:#fff;">3500&ndash;4000 K<br>RDE Detonation</div>
+      <div style="flex:1.5;background:linear-gradient(90deg,#991b1b,#dc2626);display:flex;align-items:center;justify-content:center;color:#fff;">3000&ndash;3500 K<br>MHD Generator</div>
+      <div style="flex:2.2;background:linear-gradient(90deg,#dc2626,#ea580c);display:flex;align-items:center;justify-content:center;color:#fff;">2500&ndash;3000 K<br>MHD Accelerator</div>
+      <div style="flex:1.6;background:linear-gradient(90deg,#ea580c,#f59e0b);display:flex;align-items:center;justify-content:center;color:#000;">1200&ndash;1800 K<br>Nozzle Exit</div>
+    </div>
+  </div>
+
+  <!-- Compatibility warnings -->
+  <div class="card" style="margin-top:20px;">
+    <h3>Critical Material Notes</h3>
+    <div class="warn-box"><strong>C/SiC at 4,000 K:</strong> RDE detonation temps exceed C/SiC service limit (1,800 K). TBC + EBC + regenerative cooling must keep wall temps below 1,800 K. If insufficient, UHTC liners (HfC, ZrB&sub2;) or transpiration cooling may be needed.</div>
+    <div class="warn-box"><strong>RDE Thermal Cycling:</strong> Detonation waves create rapid thermal cycling (1,500&ndash;2,000 Hz) on annulus walls &mdash; much more severe than steady combustion. Materials must withstand extreme thermal fatigue.</div>
+    <div class="warn-box"><strong>Alkali Seed Corrosion:</strong> K/Cs salts corrode some materials. W-Cu and BN are resistant. Ni-superalloy in MHD sections needs protective coatings.</div>
+    <div class="warn-box"><strong>CTE Mismatch:</strong> C/SiC (~3&times;10&supmin;&sup6;/K) vs IN718 (~13&times;10&supmin;&sup6;/K). Use compliant seals (C-seals or ceramic rope). Never bond rigidly.</div>
+  </div>
+</div>
+
 <!-- ==================== SOFTWARE & DASHBOARD ==================== -->
 <div class="section" id="software">
   <h2><span class="icon">&#128187;</span> Software &amp; Engine Dashboard</h2>
@@ -3385,6 +2786,493 @@
       <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-cryo" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> CRYO</div>
       <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-ign" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> IGNITER</div>
       <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-ecu" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> ECU LINK</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 3D PRINTING ==================== -->
+<div class="section" id="printing">
+  <h2>3D Printing &amp; Manufacturing</h2>
+
+  <!-- Printability matrix -->
+  <div class="card" style="margin-bottom:20px;">
+    <h3>Component Printability Matrix</h3>
+    <table>
+      <thead><tr><th>Component</th><th>Method</th><th>Material</th><th>3D Print?</th><th>Machine</th></tr></thead>
+      <tbody>
+        <tr><td>Intake cowl</td><td>Metal AM (EBM)</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td><span class="print-yes">YES</span></td><td>Arcam Q20+</td></tr>
+        <tr><td>Centerbody</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
+        <tr><td>RDE outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
+        <tr><td>RDE inner liner</td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI reactor</td></tr>
+        <tr><td>RDE injector face plate</td><td>Metal AM (SLM)</td><td><span class="mat-badge mat-in">IN625</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
+        <tr><td>MHD Gen channel walls</td><td>CVI + machining</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI + grinder</td></tr>
+        <tr><td>MHD Gen electrodes (48)</td><td>Press-sinter + EDM</td><td><span class="mat-badge mat-wcu">W-Cu</span></td><td><span class="print-no">NO</span></td><td>Press + EDM</td></tr>
+        <tr><td>MHD Gen insulators (24)</td><td>CNC machining</td><td><span class="mat-badge mat-bn">BN</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
+        <tr><td>MHD Gen cryostat</td><td>Roll-form + weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td><span class="print-no">NO</span></td><td>Roll + TIG</td></tr>
+        <tr><td>MHD Accel channel walls</td><td>CVI + machining</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td><span class="print-no">NO</span></td><td>CVI + grinder</td></tr>
+        <tr><td>MHD Accel electrodes (64)</td><td>Press-sinter + EDM</td><td><span class="mat-badge mat-wcu">W-Cu</span></td><td><span class="print-no">NO</span></td><td>Press + EDM</td></tr>
+        <tr><td>MHD Accel insulators (32)</td><td>CNC machining</td><td><span class="mat-badge mat-bn">BN</span></td><td><span class="print-no">NO</span></td><td>CNC mill</td></tr>
+        <tr><td>MHD Accel cryostat</td><td>Roll-form + weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td><span class="print-no">NO</span></td><td>Roll + TIG</td></tr>
+        <tr><td>Nozzle outer shell</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M400-4</td></tr>
+        <tr><td>Mounting brackets</td><td>Metal AM (DMLS)</td><td><span class="mat-badge mat-in">IN718</span></td><td><span class="print-yes">YES</span></td><td>EOS M290</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:12px;font-size:0.85em;color:var(--dim);">~40% of components are 3D printable via metal additive manufacturing. The RDE injector face plate is the ideal AM candidate.</div>
+  </div>
+
+  <!-- AM machines needed -->
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <h3>Required AM Machines</h3>
+      <table class="pp-table">
+        <tr><td>EBM (Ti-6Al-4V)</td><td class="val">Arcam EBM Q20plus</td></tr>
+        <tr><td>SLM/DMLS (IN718)</td><td class="val">EOS M400-4 or SLM 500</td></tr>
+        <tr><td>SLM (IN625)</td><td class="val">EOS M290 or Renishaw AM500</td></tr>
+        <tr><td>SLM (316L)</td><td class="val">EOS M290 or TruPrint 3000</td></tr>
+      </table>
+      <div class="warn-box"><strong>These are industrial metal AM systems ($500K&ndash;$2M+ each).</strong> Desktop FDM/resin printers cannot produce functional engine parts. Use service bureaus: Protolabs, Materialise, Carpenter Additive, Velo3D.</div>
+    </div>
+    <div class="card">
+      <h3>Post-Processing Equipment</h3>
+      <table class="pp-table">
+        <tr><td>Hot Isostatic Press</td><td class="val">Close porosity</td></tr>
+        <tr><td>Vacuum furnace</td><td class="val">Heat treatment</td></tr>
+        <tr><td>Wire EDM</td><td class="val">Cut from build plate</td></tr>
+        <tr><td>5-axis CNC mill</td><td class="val">Finish machining</td></tr>
+        <tr><td>CNC lathe</td><td class="val">Cylindrical features</td></tr>
+        <tr><td>CMM</td><td class="val">Dimensional inspection</td></tr>
+        <tr><td>CT scanner</td><td class="val">Internal defect check</td></tr>
+        <tr><td>Plasma spray</td><td class="val">TBC application</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Print procedures -->
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Print Procedure: IN718 Shells</h3>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">RDE annulus and nozzle outer shells</div>
+      <ol class="steps">
+        <li>Export STL with 0.05 mm chord tolerance, add 0.5 mm stock on mating surfaces</li>
+        <li>Orient part vertically (axis vertical), add support anchors at overhangs</li>
+        <li>Load IN718 powder (15&ndash;53 &mu;m) in argon atmosphere (&lt;100 ppm O&sub2;)</li>
+        <li>Build: 40 &mu;m layers, 285 W &times; 4 lasers, 960 mm/s, 0.11 mm hatch</li>
+        <li>Wire EDM from build plate</li>
+        <li>HIP: 1,165&deg;C / 100 MPa / 4 hours in argon</li>
+        <li>Solution treat: 980&deg;C / 1 hr, air cool</li>
+        <li>Double age: 720&deg;C/8hr &rarr; furnace cool to 620&deg;C/8hr &rarr; air cool</li>
+        <li>CNC machine mating faces to &plusmn;0.05 mm</li>
+        <li>CT scan + FPI + CMM dimensional inspection</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Print Procedure: RDE Injector Face Plate</h3>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:8px;">Monolithic IN625 disc with 24 integrated impinging-jet injectors</div>
+      <ol class="steps">
+        <li>Design internal fuel manifold with teardrop cross-section (self-supporting)</li>
+        <li>24 impinging-jet doublet passages aimed at annular gap</li>
+        <li>Print flat (face plane horizontal) on EOS M290 or M400-4</li>
+        <li>IN625 powder, 40 &mu;m layers, 300 W, 800 mm/s</li>
+        <li>Stress relief: 870&deg;C / 1 hour</li>
+        <li>Ream all 48 orifices to 2.00 &plusmn;0.02 mm</li>
+        <li>Flow test: target &plusmn;3% uniformity across all injectors</li>
+        <li>Pressure test manifold: 70 bar hydrostatic (2&times; operating)</li>
+        <li>Helium leak check: &lt;1 cc/min at 40 bar</li>
+      </ol>
+      <div class="note">This is the ideal AM candidate &mdash; complex internal manifold and 24 doublet injectors impossible via conventional machining. Critical for uniform fuel distribution in the RDE annulus.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== ASSEMBLY ==================== -->
+<div class="section" id="assembly">
+  <h2>Assembly Sequence</h2>
+
+  <div class="grid grid-3" style="margin-bottom:24px;">
+    <div class="card">
+      <h3>Sub-Assembly 1: Intake</h3>
+      <ol class="steps">
+        <li>3D print cowl segments (Ti-6Al-4V EBM)</li>
+        <li>3D print centerbody (Ti-6Al-4V SLM)</li>
+        <li>HIP + heat treat all parts</li>
+        <li>CNC finish machine mating surfaces</li>
+        <li>Bolt/weld cowl segments together</li>
+        <li>Install boundary layer bleed tubes</li>
+        <li>Dimensional CMM inspection</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Sub-Assembly 2: RDE Module</h3>
+      <ol class="steps">
+        <li>3D print outer shell (IN718 DMLS)</li>
+        <li>3D print injector face plate (IN625 SLM)</li>
+        <li>HIP + heat treat all metal parts</li>
+        <li>CNC finish machine mating surfaces</li>
+        <li>Receive C/SiC liner from CVI supplier</li>
+        <li>Apply EBC + TBC coatings to liner</li>
+        <li>Install liner into shell (compliant mounts)</li>
+        <li>Install injector face plate</li>
+        <li>Ream 48 orifices, flow test (&plusmn;3%)</li>
+        <li>Install plasma igniter (small magnetron)</li>
+        <li>Pressure test cooling channels (50 bar)</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Sub-Assembly 3: MHD Generator</h3>
+      <ol class="steps">
+        <li>Receive C/SiC channel walls + apply TBC</li>
+        <li>Press-sinter + EDM W-Cu electrodes (48 pcs)</li>
+        <li>CNC machine BN insulators (24 pcs)</li>
+        <li>Assemble electrode-insulator stack</li>
+        <li>Fabricate cryostat housing (roll + weld)</li>
+        <li>Procure superconducting coils</li>
+        <li>Assemble coils into cryostat</li>
+        <li>Install MHD channel into bore</li>
+        <li>Leak test, electrical test, LN&sub2; cooldown</li>
+        <li>Verify magnetic field map</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Sub-Assembly 4: MHD Accelerator</h3>
+      <ol class="steps">
+        <li>Receive C/SiC channel walls + apply TBC</li>
+        <li>Press-sinter + EDM W-Cu electrodes (64 pcs)</li>
+        <li>CNC machine BN insulators (32 pcs)</li>
+        <li>Assemble electrode-insulator stack</li>
+        <li>Fabricate cryostat housing (roll + weld)</li>
+        <li>Procure superconducting coils</li>
+        <li>Assemble coils into cryostat</li>
+        <li>Install MHD channel into bore</li>
+        <li>Leak test, electrical test, LN&sub2; cooldown</li>
+        <li>Wire power bus from generator module</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Sub-Assembly 5: C-D Nozzle</h3>
+      <ol class="steps">
+        <li>3D print outer shell (IN718 DMLS)</li>
+        <li>HIP + heat treat + CNC machine</li>
+        <li>Receive C/SiC inner liner + apply TBC</li>
+        <li>Install liner into shell (compliant mounts)</li>
+        <li>Install optional EM coils (2 rings)</li>
+        <li>Connect film cooling feed</li>
+        <li>Flow test</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Final assembly -->
+  <div class="card">
+    <h3>Final Assembly Sequence</h3>
+    <ol class="steps">
+      <li><strong>Mount intake on assembly fixture</strong> &mdash; horizontal rail, engine axis horizontal</li>
+      <li><strong>Mate RDE module to intake</strong> &mdash; 12&times; M12 A-286 bolts, Inconel X-750 C-seal, 85 N&middot;m torque</li>
+      <li><strong>Mate MHD Generator module</strong> &mdash; 12&times; M14 bolts, connect seed injection port</li>
+      <li><strong>Mate MHD Accelerator module</strong> &mdash; 16&times; M16 bolts (heavier loads), align to &plusmn;0.5 mm</li>
+      <li><strong>Wire MHD generator &rarr; accelerator power bus</strong> &mdash; heavy-gauge DC cables, verify polarity</li>
+      <li><strong>Mate nozzle module</strong> &mdash; 12&times; M12 bolts, connect cooling</li>
+      <li><strong>Install mounting brackets</strong> &mdash; forward at station 400 mm, aft at station 2,200 mm</li>
+      <li><strong>Connect all external systems</strong> &mdash; fuel, water cooling, LN&sub2;, igniter power, sensors, ECU harness</li>
+      <li><strong>Leak test all fluid circuits</strong> &mdash; fuel 70 bar He, water 15 bar hydro, cryo vacuum + He</li>
+      <li><strong>Electrical test</strong> &mdash; all coils resistance + Hi-pot, all electrodes, generator&ndash;accelerator circuit, all sensors</li>
+      <li><strong>Weight and CG measurement</strong></li>
+      <li><strong>Ready for test cell installation</strong></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ==================== PHASES ==================== -->
+<div class="section" id="phases">
+  <h2>Phased Development Plan</h2>
+
+  <div class="warn-box" style="margin-bottom:20px;">
+    <strong>Recommendation:</strong> Do NOT attempt the 120 kN engine first. Build the RDE demonstrator (Phase 1) to prove rotating detonation, then add MHD in Phase 2.
+  </div>
+
+  <div class="timeline">
+    <!-- Phase 1 -->
+    <div class="tl-item">
+      <h3>Phase 1 &mdash; RDE Demonstrator</h3>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:250px;">
+          <h4 style="color:var(--green);margin-bottom:8px;">Target: 1 &ndash; 5 kN</h4>
+          <table class="pp-table" style="font-size:0.85em;">
+            <tr><td>Air mass flow</td><td class="val">1 &ndash; 5 kg/s</td></tr>
+            <tr><td>Intake diameter</td><td class="val">200 mm</td></tr>
+            <tr><td>RDE annulus OD</td><td class="val">120 mm</td></tr>
+            <tr><td>RDE annulus ID</td><td class="val">80 mm</td></tr>
+            <tr><td>Total length</td><td class="val">600 mm</td></tr>
+            <tr><td>Igniter</td><td class="val">5 kW magnetron (startup)</td></tr>
+            <tr><td>Fuel flow</td><td class="val">0.1 &ndash; 0.3 kg/s</td></tr>
+            <tr><td>MHD section</td><td class="val">None (Phase 1)</td></tr>
+          </table>
+        </div>
+        <div style="flex:1;min-width:250px;">
+          <h4 style="color:var(--green);margin-bottom:8px;">Prove:</h4>
+          <ul class="checklist">
+            <li>Stable rotating detonation &gt; 60 s</li>
+            <li>Wave speed &gt; 1,000 m/s</li>
+            <li>Pressure gain &gt; 5:1</li>
+            <li>Measurable thrust &gt; 500 N</li>
+            <li>No structural failure or thermal runaway</li>
+            <li>Detonation temp &gt; 2,500 K</li>
+            <li>Fuel injection uniformity</li>
+          </ul>
+        </div>
+        <div style="flex:1;min-width:250px;">
+          <h4 style="color:var(--green);margin-bottom:8px;">Budget Estimate</h4>
+          <table class="pp-table" style="font-size:0.85em;">
+            <tr><td>Metal AM (all parts)</td><td class="val">$15,000</td></tr>
+            <tr><td>HIP + heat treat</td><td class="val">$5,000</td></tr>
+            <tr><td>CNC finishing</td><td class="val">$8,000</td></tr>
+            <tr><td>Plasma igniter (5 kW)</td><td class="val">$4,000</td></tr>
+            <tr><td>High-speed pressure transducers</td><td class="val">$6,000</td></tr>
+            <tr><td>Fuel system</td><td class="val">$3,000</td></tr>
+            <tr><td>Data acquisition (&gt;1 MHz)</td><td class="val">$5,000</td></tr>
+            <tr><td>Instrumentation</td><td class="val">$5,000</td></tr>
+            <tr><td>Test stand + safety</td><td class="val">$8,000</td></tr>
+            <tr><td>Misc + contingency</td><td class="val">$6,000</td></tr>
+            <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Phase 1</td><td class="val" style="color:var(--accent);">~$65,000</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="note" style="margin-top:12px;">All Phase 1 parts fit within a standard EOS M290 build volume (250&times;250&times;325 mm). Answers the key question: can rotating detonation provide reliable pressure-gain combustion for a bladeless engine?</div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="tl-item">
+      <h3>Phase 2 &mdash; RDE + MHD Self-Powering Demonstrator</h3>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:250px;">
+          <h4 style="color:var(--green);margin-bottom:8px;">Target: 10 &ndash; 20 kN</h4>
+          <table class="pp-table" style="font-size:0.85em;">
+            <tr><td>Air mass flow</td><td class="val">8 &ndash; 15 kg/s</td></tr>
+            <tr><td>Intake diameter</td><td class="val">400 mm</td></tr>
+            <tr><td>RDE annulus OD</td><td class="val">250 mm</td></tr>
+            <tr><td>RDE annulus ID</td><td class="val">180 mm</td></tr>
+            <tr><td>MHD Gen channel</td><td class="val">200 &times; 180 mm</td></tr>
+            <tr><td>MHD Accel channel</td><td class="val">200 &times; 180 mm</td></tr>
+            <tr><td>Total length</td><td class="val">1,400 mm</td></tr>
+            <tr><td>Magnetic field</td><td class="val">1 &ndash; 2 T (copper coils)</td></tr>
+            <tr><td>MHD Gen output</td><td class="val ok">80 &ndash; 200 kW</td></tr>
+          </table>
+        </div>
+        <div style="flex:1;min-width:250px;">
+          <h4 style="color:var(--green);margin-bottom:8px;">Prove:</h4>
+          <ul class="checklist">
+            <li>Stable RDE at 10+ kg/s airflow</li>
+            <li>MHD generator produces &gt; 100 kW from exhaust</li>
+            <li>MHD accelerator thrust increase &gt; 10%</li>
+            <li>Self-sustaining generator&ndash;accelerator cycle</li>
+            <li>Sustained operation &gt; 120 s</li>
+            <li>Total thrust &gt; 10 kN</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="tl-item">
+      <h3>Phase 3 &mdash; Full-Scale Prototype</h3>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:250px;">
+          <h4 style="color:var(--green);margin-bottom:8px;">Target: 50 &ndash; 120 kN</h4>
+          <table class="pp-table" style="font-size:0.85em;">
+            <tr><td>Full HPM-120 spec</td><td class="val">See Dimensions tab</td></tr>
+            <tr><td>Air mass flow</td><td class="val">80 &ndash; 100 kg/s</td></tr>
+            <tr><td>Magnetic field</td><td class="val">2 &ndash; 4 T (superconducting)</td></tr>
+            <tr><td>Total length</td><td class="val">2,850 mm</td></tr>
+            <tr><td>Max diameter</td><td class="val">900 mm</td></tr>
+          </table>
+        </div>
+        <div style="flex:1;min-width:250px;">
+          <h4 style="color:var(--green);margin-bottom:8px;">Estimated Cost</h4>
+          <table class="pp-table" style="font-size:0.85em;">
+            <tr><td>Metal AM (all parts)</td><td class="val">$150K &ndash; $300K</td></tr>
+            <tr><td>C/SiC CMC liners</td><td class="val">$200K &ndash; $500K</td></tr>
+            <tr><td>Superconducting magnets</td><td class="val">$300K &ndash; $800K</td></tr>
+            <tr><td>Power + RF systems</td><td class="val">$150K &ndash; $300K</td></tr>
+            <tr><td>Instrumentation + test</td><td class="val">$280K &ndash; $650K</td></tr>
+            <tr><td>Post-processing + assy</td><td class="val">$180K &ndash; $350K</td></tr>
+            <tr><td>Contingency (25%)</td><td class="val">$340K &ndash; $775K</td></tr>
+            <tr style="font-weight:700;border-top:2px solid var(--accent);"><td>Total Phase 3</td><td class="val" style="color:var(--accent);">$1.7M &ndash; $3.9M</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== TESTING ==================== -->
+<div class="section" id="testing">
+  <h2>Testing &amp; Validation</h2>
+
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <h3>Test Sequence</h3>
+      <ol class="steps">
+        <li><strong>Cold Flow Test</strong> &mdash; Ambient air through engine. Measure pressure drops, verify mass flow capacity (100 kg/s target), check for leaks.</li>
+        <li><strong>Detonation Initiation Test</strong> &mdash; Reduced airflow (10&ndash;20%), energize plasma igniter, introduce fuel at low flow. Verify detonation initiation and wave stability via high-speed pressure transducers.</li>
+        <li><strong>RDE Characterization</strong> &mdash; Map detonation wave speed, count, pressure gain vs fuel flow. Increase airflow to 50% design point.</li>
+        <li><strong>MHD Generator Test</strong> &mdash; Cool magnets, verify field, inject alkali seed, measure gas conductivity and power extraction.</li>
+        <li><strong>MHD Accelerator Test</strong> &mdash; Power accelerator from generator output, measure thrust increment. Verify self-sustaining cycle.</li>
+        <li><strong>Full Engine Test</strong> &mdash; Ramp 25% &rarr; 50% &rarr; 75% &rarr; 100%. Measure thrust on calibrated stand. Record all parameters.</li>
+        <li><strong>Endurance Run</strong> &mdash; Sustained operation at rated thrust. Monitor for thermal creep, vibration, seal degradation, detonation stability.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Instrumentation Required</h3>
+      <table>
+        <thead><tr><th>Measurement</th><th>Sensor</th><th>Qty</th></tr></thead>
+        <tbody>
+          <tr><td>Thrust</td><td class="val">Load cell (200 kN)</td><td class="val">1</td></tr>
+          <tr><td>Chamber pressure</td><td class="val">Piezo transducers</td><td class="val">8</td></tr>
+          <tr><td>Gas temperature</td><td class="val">Type B thermocouples</td><td class="val">24</td></tr>
+          <tr><td>Structure temperature</td><td class="val">Type K thermocouples</td><td class="val">48</td></tr>
+          <tr><td>Air mass flow</td><td class="val">Venturi + diff. pressure</td><td class="val">1</td></tr>
+          <tr><td>Fuel mass flow</td><td class="val">Coriolis meter</td><td class="val">1</td></tr>
+          <tr><td>Plasma density</td><td class="val">Langmuir probes</td><td class="val">4</td></tr>
+          <tr><td>Magnetic field</td><td class="val">Hall probes</td><td class="val">8</td></tr>
+          <tr><td>Exhaust velocity</td><td class="val">Pitot rake</td><td class="val">1</td></tr>
+          <tr><td>Vibration</td><td class="val">Accelerometers</td><td class="val">6</td></tr>
+          <tr><td>Gas composition</td><td class="val">Mass spectrometer</td><td class="val">1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Critical challenges -->
+  <div class="card">
+    <h3>Critical Engineering Challenges</h3>
+    <div class="grid grid-2" style="gap:12px;">
+      <div class="warn-box">
+        <strong>1. RDE Detonation Stability</strong><br>
+        Maintaining continuous rotating detonation in an annular channel at 80&ndash;100 kg/s airflow
+        is the primary challenge. Wave extinction, mode switching, and uneven fuel-air mixing can
+        cause instability. This is an active area of research at AFRL, GE, and others.
+      </div>
+      <div class="warn-box">
+        <strong>2. Extreme Thermal Environment</strong><br>
+        Detonation temperatures of 3,500&ndash;4,000 K exceed C/SiC service limits (1,800 K).
+        TBC + EBC + regenerative cooling must maintain wall temps below limits. Detonation
+        wave thermal cycling at 1,500&ndash;2,000 Hz creates severe fatigue conditions.
+      </div>
+      <div class="warn-box">
+        <strong>3. MHD Generator&ndash;Accelerator Balance</strong><br>
+        The generator must extract enough power (300&ndash;600 kW) to drive the accelerator while
+        maintaining positive net thrust. Getting this energy balance right requires precise control
+        of electrode loading and magnetic field strength in both sections.
+      </div>
+      <div class="warn-box">
+        <strong>4. Gas Conductivity &amp; Alkali Seeding</strong><br>
+        Higher RDE temps (3,500&ndash;4,000 K) improve natural ionization, but alkali seeding
+        (K or Cs, 0.5&ndash;1%) is still needed for &gt;10 S/m conductivity. Seed recovery and
+        downstream contamination must be addressed.
+      </div>
+    </div>
+  </div>
+
+  <!-- Immediate next steps -->
+  <div class="card" style="margin-top:20px;">
+    <h3>Immediate Next Steps</h3>
+    <ol class="steps">
+      <li>Create detailed CAD model of Phase 1 RDE annulus (SolidWorks, Fusion 360, or FreeCAD)</li>
+      <li>Run CFD detonation simulation (Ansys Fluent, OpenFOAM with reactive solver)</li>
+      <li>Run thermal-structural FEA on RDE annulus walls (Ansys, COMSOL)</li>
+      <li>Contact metal AM service bureau for Phase 1 print quotes</li>
+      <li>Source 5 kW 2.45 GHz magnetron for detonation igniter</li>
+      <li>Source high-speed pressure transducers (&gt;1 MHz bandwidth) for wave tracking</li>
+      <li>Design and build test stand with thrust measurement</li>
+      <li>Obtain permits/clearances for hot-fire testing (detonation events)</li>
+      <li>Establish safety protocols: detonation containment, fuel handling, noise suppression</li>
+    </ol>
+  </div>
+</div>
+
+<!-- 3D MODEL & SIMULATION -->
+<div class="section" id="model3d">
+  <h2><span class="icon">&#9883;</span> 3D Model &amp; Simulation</h2>
+
+  <!-- Controls bar -->
+  <div style="display:flex; align-items:center; gap:16px; margin-bottom:14px; flex-wrap:wrap;">
+    <button id="simToggle" onclick="toggleSimulation()" style="padding:8px 22px; background:var(--accent); color:#000; border:none; border-radius:5px; cursor:pointer; font-weight:600; font-size:0.9em;">Start Simulation</button>
+    <label style="color:var(--dim); font-size:0.85em;">Throttle:
+      <input id="throttleSlider" type="range" min="0" max="100" value="0" style="width:160px; vertical-align:middle;" oninput="updateThrottle(this.value)">
+      <span id="throttleVal" style="color:var(--accent); font-weight:600;">0%</span>
+    </label>
+    <button id="cutawayBtn" onclick="toggleCutaway()" style="padding:8px 18px; background:var(--panel); color:var(--accent); border:1px solid var(--accent); border-radius:5px; cursor:pointer; font-size:0.85em;">Toggle Cutaway</button>
+  </div>
+
+  <!-- Canvas + Gauges row -->
+  <div style="display:flex; gap:16px; flex-wrap:wrap;">
+    <!-- 3D Canvas -->
+    <div style="flex:1; min-width:600px;">
+      <canvas id="engine3dCanvas" style="width:100%; height:600px; background:#1a2540; border:1px solid var(--border); border-radius:8px; display:block;"></canvas>
+    </div>
+    <!-- Gauges panel -->
+    <div id="gaugesPanel" style="width:240px; flex-shrink:0;">
+      <div class="card" style="margin-bottom:10px;">
+        <h3 style="font-size:0.75em;">Engine Gauges</h3>
+        <div style="font-size:0.82em; line-height:2.2;">
+          <div>Thrust <span id="gThrust" class="val" style="float:right;">0.0 kN</span></div>
+          <div>Exhaust Temp <span id="gTemp" class="val hot" style="float:right;">288 K</span></div>
+          <div>Chamber Press <span id="gPress" class="val" style="float:right;">0.0 bar</span></div>
+          <div>Power Draw <span id="gPower" class="val warn" style="float:right;">0.0 kW</span></div>
+          <div>Air Flow <span id="gAir" class="val" style="float:right;">0.00 kg/s</span></div>
+          <div>Fuel Flow <span id="gFuel" class="val" style="float:right;">0.00 kg/s</span></div>
+          <div>MHD Extract <span id="gMHD" class="val ok" style="float:right;">0.0 kW</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:0.75em;">Controls</h3>
+        <div style="font-size:0.78em; color:var(--dim); line-height:1.8;">
+          Left-click drag: Rotate<br>
+          Scroll: Zoom<br>
+          Right-click drag: Pan
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== VIDEOS ==================== -->
+<div class="section" id="videos">
+  <h2><span class="icon">&#9654;</span> Engine Test Videos</h2>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>HPM-120 Ignition Sequence</h3>
+      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
+        <source src="hpm120-ignition.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top:10px; color:var(--dim);">Ultra-cinematic ignition shot of the HPM-120 hybrid plasma MHD engine. Captures the initial ignition sequence with plasma discharge and MHD field activation.</p>
+    </div>
+    <div class="card">
+      <h3>HPM-120 Engine Running</h3>
+      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
+        <source src="hpm120-engine-running.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top:10px; color:var(--dim);">Extended footage of the HPM-120 engine during sustained operation. Shows the engine running at full power with exhaust plume and MHD plasma interaction visible.</p>
+    </div>
+    <div class="card">
+      <h3>HPM-120 Ignition — Alternate Angle</h3>
+      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
+        <source src="hpm120-ignition-2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top:10px; color:var(--dim);">Additional cinematic ignition footage of the HPM-120 engine from an alternate angle, showcasing plasma arc formation and exhaust plume dynamics.</p>
+    </div>
+    <div class="card">
+      <h3>HPM-120 Full Test Compilation</h3>
+      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
+        <source src="hpm120-clips-merged.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top:10px; color:var(--dim);">Compiled footage of the HPM-120 engine across multiple test runs. Merged clips covering ignition, sustained operation, and exhaust plume behaviour.</p>
     </div>
   </div>
 </div>
@@ -3899,6 +3787,112 @@
     </div>
   </div>
 </div>
+
+<!-- ==================== STORYBOARD ==================== -->
+<div class="section" id="storyboard">
+  <h2><span class="icon">&#127916;</span> Cinematic Storyboard</h2>
+
+  <!-- Engine render image -->
+  <div class="card span-full" style="margin-bottom:20px; text-align:center; padding:10px;">
+    <h3>HPM-120 Engine Render</h3>
+    <img src="hpm120-engine-render.png" alt="HPM-120 Engine Render — Test Stand View" style="width:100%; max-width:1400px; border-radius:6px; margin-top:12px;">
+    <p style="margin-top:10px; color:var(--dim); font-size:0.85em;">High-fidelity render of the HPM-120 on its test stand &mdash; intake cone, RDE annulus with thermal glow, copper MHD coils, electrode stacks, and exhaust nozzle.</p>
+  </div>
+
+  <!-- Shot overview cards -->
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="card">
+      <h3 style="color:var(--accent);">Shot 1 &mdash; Engine Reveal</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">5s</td></tr>
+        <tr><td>Camera</td><td class="val">Slow dolly in + pan L&rarr;R, 15mm low angle</td></tr>
+        <tr><td>Motion</td><td class="val">Low &mdash; subtle dust drift, volumetric haze</td></tr>
+        <tr><td>Strength</td><td class="val ok">0.3</td></tr>
+        <tr><td>End Frame</td><td class="val">Hold on copper coil detail, rack focus</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--accent);">Shot 2 &mdash; Intake Airflow</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">4s</td></tr>
+        <tr><td>Camera</td><td class="val">Push in extreme CU on intake, orbit 10&deg; CW</td></tr>
+        <tr><td>Motion</td><td class="val">High swirl &mdash; particle wind, vortex</td></tr>
+        <tr><td>Strength</td><td class="val warn">0.8</td></tr>
+        <tr><td>End Frame</td><td class="val">Vortex sharpens, blue glow &rarr; white core</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--hot);">Shot 3 &mdash; Chamber Ignition</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">4s</td></tr>
+        <tr><td>Camera</td><td class="val">Static lock + subtle zoom in (105%), cutaway</td></tr>
+        <tr><td>Motion</td><td class="val">High turbulence, flash intensity, plasma flicker</td></tr>
+        <tr><td>Strength</td><td class="val hot">0.9</td></tr>
+        <tr><td>End Frame</td><td class="val">Flash blooms then collapses into stable burn ring</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--wcu);">Shot 4 &mdash; MHD Activation</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">5s</td></tr>
+        <tr><td>Camera</td><td class="val">360&deg; slow orbit around MHD core, 15&deg; tilt</td></tr>
+        <tr><td>Motion</td><td class="val">Electrical arcs flicker, purple rings pulsate</td></tr>
+        <tr><td>Strength</td><td class="val warn">0.7</td></tr>
+        <tr><td>End Frame</td><td class="val">Rings align and lock, final bright pulse</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--hot);">Shot 5 &mdash; Full-Thrust Exhaust</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">5s</td></tr>
+        <tr><td>Camera</td><td class="val">Rear wide, handheld shake, push back</td></tr>
+        <tr><td>Motion</td><td class="val">Very high &mdash; heat distortion, plume roiling</td></tr>
+        <tr><td>Strength</td><td class="val hot">1.0</td></tr>
+        <tr><td>End Frame</td><td class="val">Plume fully expanded, Mach diamonds visible</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--green);">Shot 6 &mdash; Hero Ending</h3>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Duration</td><td class="val">6s</td></tr>
+        <tr><td>Camera</td><td class="val">Epic crane up + slow zoom out, 24mm&rarr;35mm</td></tr>
+        <tr><td>Motion</td><td class="val">Low &mdash; engine breathing, subtle light flicker</td></tr>
+        <tr><td>Strength</td><td class="val ok">0.2</td></tr>
+        <tr><td>End Frame</td><td class="val">Full engine centered, lab lights fade up</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Sequence summary -->
+  <div class="card span-full" style="margin-bottom:20px; text-align:center;">
+    <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin:10px 0;">
+      <div>
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Total Duration</div>
+        <div style="font-size:2em;font-weight:700;color:var(--accent);">29 seconds</div>
+      </div>
+      <div>
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Shots</div>
+        <div style="font-size:2em;font-weight:700;color:var(--white);">6</div>
+      </div>
+      <div>
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Export</div>
+        <div style="font-size:2em;font-weight:700;color:var(--green);">4K</div>
+      </div>
+    </div>
+    <p style="color:var(--dim);font-size:0.82em;">1920&times;1080 master &bull; Center crop 1080&times;1920 vertical &bull; 8% overscan for Luma stability &bull; 24fps loop-safe &bull; Cut on action</p>
+  </div>
+
+  <!-- Full interactive storyboard embed -->
+  <div class="card span-full">
+    <h3>Interactive Storyboard &mdash; Full Detail</h3>
+    <p style="margin-bottom:12px; color:var(--dim); font-size:0.85em;">Complete cinematic storyboard with reference frames, Luma Dream Machine parameters, and prompt text for each shot.</p>
+    <iframe src="hpm120-storyboard.html" style="width:100%; height:800px; border:1px solid var(--border); border-radius:8px; background:#000;" loading="lazy"></iframe>
+    <div style="margin-top:10px; text-align:center;">
+      <a href="hpm120-storyboard.html" target="_blank" style="color:var(--accent); font-size:0.85em; text-decoration:none; border-bottom:1px solid var(--accent);">Open full storyboard in new tab &rarr;</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- Three.js CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -4472,19 +4466,17 @@ function showTab(id) {
     'overview': 'Overview',
     'dimensions': 'Dimensions',
     'components': 'Components',
+    'power': 'Power & Cooling',
     'materials': 'Materials & Metallurgy',
+    'software': 'Software & Dashboard',
     'printing': '3D Printing',
     'assembly': 'Assembly',
     'phases': 'Build Phases',
     'testing': 'Testing',
-    'power': 'Power & Cooling',
     'model3d': '3D Model',
     'videos': 'Videos',
     'plancost': 'Plan & Cost',
-    'storyboard': 'Storyboard',
-    'blueprint': 'Blueprint',
-    'electronics': 'Electronics',
-    'software': 'Software & Dashboard'
+    'storyboard': 'Storyboard'
   };
   buttons.forEach(b => {
     if (b.textContent.trim() === labels[id]) b.classList.add('active');
