@@ -507,6 +507,8 @@
   <button onclick="showTab('videos')">Videos</button>
   <button onclick="showTab('plancost')">Plan &amp; Cost</button>
   <button onclick="showTab('storyboard')">Storyboard</button>
+  <button onclick="showTab('blueprint')">Blueprint</button>
+  <button onclick="showTab('electronics')">Electronics</button>
 </div>
 
 <!-- ==================== OVERVIEW ==================== -->
@@ -2127,6 +2129,388 @@
   </div>
 </div>
 
+<!-- ==================== BLUEPRINT ==================== -->
+<div class="section" id="blueprint">
+  <h2><span class="icon">&#128208;</span> Engineering Blueprint</h2>
+
+  <!-- SIDE VIEW (Principal Drawing) -->
+  <div class="card span-full" style="margin-bottom:20px; overflow-x:auto;">
+    <h3>General Arrangement &mdash; Side Elevation</h3>
+    <svg viewBox="0 0 1400 520" style="width:100%;min-width:900px;background:#060a14;border-radius:6px;font-family:'Courier New',monospace;" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid -->
+      <defs>
+        <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#0d1a30" stroke-width="0.5"/></pattern>
+        <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#00b4d8"/></marker>
+        <marker id="arr2" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><polygon points="8 0, 0 3, 8 6" fill="#00b4d8"/></marker>
+      </defs>
+      <rect width="1400" height="520" fill="url(#grid)"/>
+
+      <!-- Title block -->
+      <rect x="1050" y="440" width="340" height="70" fill="#0a1020" stroke="#1a2744" rx="4"/>
+      <text x="1065" y="460" fill="#00b4d8" font-size="10" letter-spacing="2">JET ENGINE TECHNOLOGIES</text>
+      <text x="1065" y="478" fill="#e6edf3" font-size="13" font-weight="700">HPM-120 GENERAL ARRANGEMENT</text>
+      <text x="1065" y="494" fill="#6e7681" font-size="9">SCALE 1:10 | DIMS IN mm | REV B | SHEET 1/3</text>
+      <text x="1065" y="506" fill="#6e7681" font-size="9">DRAWN: ENGR | DATE: 2026-08-03 | UNITS: METRIC</text>
+
+      <!-- Center line -->
+      <line x1="60" y1="250" x2="1040" y2="250" stroke="#1a3a5c" stroke-width="0.5" stroke-dasharray="12,4,3,4"/>
+      <text x="25" y="253" fill="#1a3a5c" font-size="8">CL</text>
+
+      <!-- SECTION 1: INTAKE (60-175) -->
+      <!-- Outer cowl -->
+      <polygon points="60,250 80,165 175,155 175,345 80,335" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
+      <!-- Inner centerbody cone -->
+      <polygon points="60,250 175,220 175,280" fill="none" stroke="#2ec4b6" stroke-width="1"/>
+      <!-- Section label -->
+      <rect x="85" y="100" width="60" height="18" rx="3" fill="rgba(0,180,216,0.12)" stroke="#00b4d8" stroke-width="0.5"/>
+      <text x="115" y="113" fill="#00b4d8" font-size="9" text-anchor="middle" font-weight="700">SEC 1</text>
+      <line x1="115" y1="118" x2="115" y2="155" stroke="#00b4d8" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <text x="115" y="380" fill="#6e7681" font-size="8" text-anchor="middle">INTAKE/DIFFUSER</text>
+      <text x="115" y="392" fill="#6e7681" font-size="7" text-anchor="middle">Ti-6Al-4V EBM</text>
+
+      <!-- SECTION 2: RDE ANNULUS (175-260) -->
+      <rect x="175" y="142" width="85" height="216" fill="none" stroke="#ff6b35" stroke-width="2"/>
+      <!-- Inner liner -->
+      <rect x="180" y="175" width="75" height="150" fill="none" stroke="#2ec4b6" stroke-width="1" stroke-dasharray="4,2"/>
+      <!-- Injector face markers -->
+      <line x1="175" y1="155" x2="175" y2="345" stroke="#ff6b35" stroke-width="2"/>
+      <g><circle cx="178" cy="175" r="2" fill="#ff6b35"/><circle cx="178" cy="195" r="2" fill="#ff6b35"/><circle cx="178" cy="215" r="2" fill="#ff6b35"/><circle cx="178" cy="285" r="2" fill="#ff6b35"/><circle cx="178" cy="305" r="2" fill="#ff6b35"/><circle cx="178" cy="325" r="2" fill="#ff6b35"/></g>
+      <rect x="185" y="100" width="60" height="18" rx="3" fill="rgba(255,107,53,0.15)" stroke="#ff6b35" stroke-width="0.5"/>
+      <text x="215" y="113" fill="#ff6b35" font-size="9" text-anchor="middle" font-weight="700">SEC 2</text>
+      <line x1="215" y1="118" x2="215" y2="142" stroke="#ff6b35" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <text x="215" y="380" fill="#6e7681" font-size="8" text-anchor="middle">RDE ANNULUS</text>
+      <text x="215" y="392" fill="#6e7681" font-size="7" text-anchor="middle">IN718 + C/SiC</text>
+      <text x="215" y="403" fill="#ff6b35" font-size="7" text-anchor="middle">3,500&ndash;4,000 K</text>
+
+      <!-- SECTION 3: MHD GENERATOR (260-385) -->
+      <rect x="260" y="132" width="125" height="236" fill="none" stroke="#2ec4b6" stroke-width="1.5"/>
+      <!-- Cryostat double-wall -->
+      <rect x="263" y="135" width="119" height="230" fill="none" stroke="#2ec4b6" stroke-width="0.5" stroke-dasharray="6,3"/>
+      <!-- Inner channel -->
+      <rect x="275" y="180" width="95" height="140" fill="none" stroke="#bc8ff3" stroke-width="1"/>
+      <!-- Electrode pairs -->
+      <g fill="#ffd60a" stroke="none">
+        <rect x="275" y="178" width="10" height="4"/><rect x="275" y="318" width="10" height="4"/>
+        <rect x="295" y="178" width="10" height="4"/><rect x="295" y="318" width="10" height="4"/>
+        <rect x="315" y="178" width="10" height="4"/><rect x="315" y="318" width="10" height="4"/>
+        <rect x="335" y="178" width="10" height="4"/><rect x="335" y="318" width="10" height="4"/>
+        <rect x="355" y="178" width="10" height="4"/><rect x="355" y="318" width="10" height="4"/>
+      </g>
+      <!-- Magnet coils (schematic) -->
+      <ellipse cx="325" cy="135" rx="50" ry="8" fill="none" stroke="#00b4d8" stroke-width="1"/>
+      <ellipse cx="325" cy="365" rx="50" ry="8" fill="none" stroke="#00b4d8" stroke-width="1"/>
+      <rect x="290" y="100" width="75" height="18" rx="3" fill="rgba(46,196,178,0.12)" stroke="#2ec4b6" stroke-width="0.5"/>
+      <text x="327" y="113" fill="#2ec4b6" font-size="9" text-anchor="middle" font-weight="700">SEC 3</text>
+      <line x1="327" y1="118" x2="327" y2="132" stroke="#2ec4b6" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <text x="325" y="400" fill="#6e7681" font-size="8" text-anchor="middle">MHD GENERATOR</text>
+      <text x="325" y="412" fill="#6e7681" font-size="7" text-anchor="middle">24 electrode pairs</text>
+      <text x="325" y="423" fill="#2ec4b6" font-size="7" text-anchor="middle">300&ndash;600 kW extract</text>
+
+      <!-- SECTION 4: MHD ACCELERATOR (385-555) -->
+      <rect x="385" y="125" width="170" height="250" fill="none" stroke="#0077b6" stroke-width="1.5"/>
+      <rect x="388" y="128" width="164" height="244" fill="none" stroke="#0077b6" stroke-width="0.5" stroke-dasharray="6,3"/>
+      <rect x="400" y="180" width="140" height="140" fill="none" stroke="#bc8ff3" stroke-width="1"/>
+      <!-- Electrode pairs -->
+      <g fill="#ffd60a" stroke="none">
+        <rect x="405" y="178" width="8" height="4"/><rect x="405" y="318" width="8" height="4"/>
+        <rect x="420" y="178" width="8" height="4"/><rect x="420" y="318" width="8" height="4"/>
+        <rect x="435" y="178" width="8" height="4"/><rect x="435" y="318" width="8" height="4"/>
+        <rect x="450" y="178" width="8" height="4"/><rect x="450" y="318" width="8" height="4"/>
+        <rect x="465" y="178" width="8" height="4"/><rect x="465" y="318" width="8" height="4"/>
+        <rect x="480" y="178" width="8" height="4"/><rect x="480" y="318" width="8" height="4"/>
+        <rect x="495" y="178" width="8" height="4"/><rect x="495" y="318" width="8" height="4"/>
+        <rect x="510" y="178" width="8" height="4"/><rect x="510" y="318" width="8" height="4"/>
+      </g>
+      <ellipse cx="470" cy="128" rx="65" ry="8" fill="none" stroke="#00b4d8" stroke-width="1"/>
+      <ellipse cx="470" cy="372" rx="65" ry="8" fill="none" stroke="#00b4d8" stroke-width="1"/>
+      <rect x="435" y="100" width="75" height="18" rx="3" fill="rgba(0,119,182,0.15)" stroke="#0077b6" stroke-width="0.5"/>
+      <text x="472" y="113" fill="#0077b6" font-size="9" text-anchor="middle" font-weight="700">SEC 4</text>
+      <line x1="472" y1="118" x2="472" y2="125" stroke="#0077b6" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <text x="470" y="400" fill="#6e7681" font-size="8" text-anchor="middle">MHD ACCELERATOR</text>
+      <text x="470" y="412" fill="#6e7681" font-size="7" text-anchor="middle">32 electrode pairs</text>
+      <text x="470" y="423" fill="#0077b6" font-size="7" text-anchor="middle">300&ndash;600 kW input</text>
+
+      <!-- SECTION 5: C-D NOZZLE (555-660) -->
+      <polygon points="555,170 555,330 610,340 660,290 660,210 610,160" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+      <!-- Throat indicator -->
+      <line x1="597" y1="190" x2="597" y2="310" stroke="#ff6b35" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <text x="597" y="187" fill="#ff6b35" font-size="7" text-anchor="middle">THROAT</text>
+      <rect x="575" y="100" width="60" height="18" rx="3" fill="rgba(255,107,53,0.12)" stroke="#ff6b35" stroke-width="0.5"/>
+      <text x="605" y="113" fill="#ff6b35" font-size="9" text-anchor="middle" font-weight="700">SEC 5</text>
+      <line x1="605" y1="118" x2="605" y2="160" stroke="#ff6b35" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <text x="605" y="380" fill="#6e7681" font-size="8" text-anchor="middle">C-D NOZZLE</text>
+      <text x="605" y="392" fill="#6e7681" font-size="7" text-anchor="middle">IN718 + C/SiC</text>
+
+      <!-- DIMENSION LINES -->
+      <!-- Total length -->
+      <line x1="60" y1="60" x2="660" y2="60" stroke="#00b4d8" stroke-width="0.8" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="360" y="55" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700">2,850 mm (TOTAL LENGTH)</text>
+      <!-- Section lengths -->
+      <line x1="60" y1="78" x2="175" y2="78" stroke="#6e7681" stroke-width="0.5" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="117" y="74" fill="#6e7681" font-size="8" text-anchor="middle">550</text>
+      <line x1="175" y1="78" x2="260" y2="78" stroke="#6e7681" stroke-width="0.5" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="217" y="74" fill="#6e7681" font-size="8" text-anchor="middle">400</text>
+      <line x1="260" y1="78" x2="385" y2="78" stroke="#6e7681" stroke-width="0.5" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="322" y="74" fill="#6e7681" font-size="8" text-anchor="middle">600</text>
+      <line x1="385" y1="78" x2="555" y2="78" stroke="#6e7681" stroke-width="0.5" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="470" y="74" fill="#6e7681" font-size="8" text-anchor="middle">800</text>
+      <line x1="555" y1="78" x2="660" y2="78" stroke="#6e7681" stroke-width="0.5" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="607" y="74" fill="#6e7681" font-size="8" text-anchor="middle">500</text>
+
+      <!-- Max OD dimension -->
+      <line x1="45" y1="125" x2="45" y2="375" stroke="#00b4d8" stroke-width="0.8" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="40" y="255" fill="#00b4d8" font-size="10" text-anchor="end" transform="rotate(-90,40,255)">900 mm MAX OD</text>
+
+      <!-- RDE diameter callouts -->
+      <line x1="700" y1="142" x2="700" y2="358" stroke="#ff6b35" stroke-width="0.5" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="705" y="248" fill="#ff6b35" font-size="8">OD 528</text>
+      <line x1="260" y1="142" x2="700" y2="142" stroke="#ff6b35" stroke-width="0.3" stroke-dasharray="3,3"/>
+      <line x1="260" y1="358" x2="700" y2="358" stroke="#ff6b35" stroke-width="0.3" stroke-dasharray="3,3"/>
+
+      <!-- Annulus gap callout -->
+      <line x1="720" y1="175" x2="720" y2="325" stroke="#2ec4b6" stroke-width="0.5" marker-start="url(#arr2)" marker-end="url(#arr)"/>
+      <text x="725" y="248" fill="#2ec4b6" font-size="8">ID 350</text>
+
+      <!-- MOUNTING BRACKETS (Schematic) -->
+      <rect x="370" y="370" width="30" height="20" fill="none" stroke="#8b949e" stroke-width="1"/>
+      <rect x="420" y="370" width="30" height="20" fill="none" stroke="#8b949e" stroke-width="1"/>
+      <text x="425" y="405" fill="#8b949e" font-size="7" text-anchor="middle">MOUNTS (4&times;M16)</text>
+
+      <!-- CONDUIT LINES -->
+      <path d="M 175 145 Q 160 120 140 115 L 80 115" fill="none" stroke="#ffd60a" stroke-width="0.8"/>
+      <text x="78" y="112" fill="#ffd60a" font-size="7" text-anchor="end">FUEL IN</text>
+      <path d="M 260 135 Q 250 100 235 95 L 80 95" fill="none" stroke="#00b4d8" stroke-width="0.8"/>
+      <text x="78" y="92" fill="#00b4d8" font-size="7" text-anchor="end">SEED IN</text>
+      <path d="M 340 370 Q 340 430 300 435 L 80 435" fill="none" stroke="#2ec4b6" stroke-width="0.8"/>
+      <text x="78" y="432" fill="#2ec4b6" font-size="7" text-anchor="end">COOLANT IN/OUT</text>
+      <path d="M 470 375 Q 470 445 430 450 L 80 450" fill="none" stroke="#90e0ef" stroke-width="0.8"/>
+      <text x="78" y="447" fill="#90e0ef" font-size="7" text-anchor="end">LN&#x2082; CRYO</text>
+
+      <!-- LEGEND -->
+      <rect x="750" y="100" width="240" height="200" fill="#0a1020" stroke="#1a2744" rx="6"/>
+      <text x="765" y="120" fill="#00b4d8" font-size="10" font-weight="700" letter-spacing="1">LEGEND</text>
+      <line x1="765" y1="136" x2="785" y2="136" stroke="#00b4d8" stroke-width="1.5"/><text x="792" y="140" fill="#c9d1d9" font-size="8">Ti-6Al-4V (Intake)</text>
+      <line x1="765" y1="156" x2="785" y2="156" stroke="#ff6b35" stroke-width="1.5"/><text x="792" y="160" fill="#c9d1d9" font-size="8">Inconel 718/625 (RDE, Nozzle)</text>
+      <line x1="765" y1="176" x2="785" y2="176" stroke="#2ec4b6" stroke-width="1.5"/><text x="792" y="180" fill="#c9d1d9" font-size="8">C/SiC Composite (Liners)</text>
+      <line x1="765" y1="196" x2="785" y2="196" stroke="#bc8ff3" stroke-width="1.5"/><text x="792" y="200" fill="#c9d1d9" font-size="8">MHD Flow Channel</text>
+      <rect x="765" y="211" width="20" height="4" fill="#ffd60a"/><text x="792" y="218" fill="#c9d1d9" font-size="8">W-Cu Electrodes</text>
+      <ellipse cx="775" cy="236" rx="10" ry="4" fill="none" stroke="#00b4d8" stroke-width="1"/><text x="792" y="240" fill="#c9d1d9" font-size="8">SC Magnet Coils (NbTi)</text>
+      <line x1="765" y1="256" x2="785" y2="256" stroke="#0077b6" stroke-width="1.5"/><text x="792" y="260" fill="#c9d1d9" font-size="8">Cryostat (304 SS)</text>
+      <line x1="765" y1="276" x2="785" y2="276" stroke="#1a3a5c" stroke-width="0.5" stroke-dasharray="12,4,3,4"/><text x="792" y="280" fill="#c9d1d9" font-size="8">Centerline</text>
+      <line x1="765" y1="292" x2="785" y2="292" stroke="#6e7681" stroke-width="0.5" stroke-dasharray="3,3"/><text x="792" y="296" fill="#c9d1d9" font-size="8">Hidden / Internal</text>
+
+      <!-- SECTION CUT INDICATORS -->
+      <text x="750" y="340" fill="#00b4d8" font-size="10" font-weight="700" letter-spacing="1">SECTION CUTS</text>
+      <text x="750" y="358" fill="#6e7681" font-size="8">A-A : RDE Annulus cross-section (see below)</text>
+      <text x="750" y="373" fill="#6e7681" font-size="8">B-B : MHD Generator electrode stack</text>
+      <text x="750" y="388" fill="#6e7681" font-size="8">C-C : Nozzle throat profile</text>
+      <!-- A-A cut line on main drawing -->
+      <line x1="215" y1="130" x2="215" y2="370" stroke="#e6edf3" stroke-width="0.8" stroke-dasharray="10,3,2,3"/>
+      <text x="208" y="128" fill="#e6edf3" font-size="9" font-weight="700">A</text>
+      <text x="208" y="378" fill="#e6edf3" font-size="9" font-weight="700">A</text>
+    </svg>
+  </div>
+
+  <!-- SECTION A-A: RDE Cross Section + Front View -->
+  <div class="grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <h3>Section A-A &mdash; RDE Annulus Cross-Section</h3>
+      <svg viewBox="0 0 400 400" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr3" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,6 2.5,0 5" fill="#00b4d8"/></marker>
+          <marker id="arr4" markerWidth="6" markerHeight="5" refX="0" refY="2.5" orient="auto"><polygon points="6 0,0 2.5,6 5" fill="#00b4d8"/></marker>
+        </defs>
+        <!-- Outer shell (IN718) -->
+        <circle cx="200" cy="200" r="132" fill="none" stroke="#ff6b35" stroke-width="2"/>
+        <!-- Inner shell -->
+        <circle cx="200" cy="200" r="125" fill="none" stroke="#ff6b35" stroke-width="0.5" stroke-dasharray="4,2"/>
+        <!-- Cooling channels (48) -->
+        <circle cx="200" cy="200" r="120" fill="none" stroke="#2ec4b6" stroke-width="0.3" stroke-dasharray="2,6"/>
+        <!-- C/SiC liner outer -->
+        <circle cx="200" cy="200" r="110" fill="none" stroke="#2ec4b6" stroke-width="1.5"/>
+        <!-- C/SiC liner inner -->
+        <circle cx="200" cy="200" r="87" fill="none" stroke="#2ec4b6" stroke-width="1.5"/>
+        <!-- TBC coating -->
+        <circle cx="200" cy="200" r="86" fill="none" stroke="#ffd60a" stroke-width="1" stroke-dasharray="2,2"/>
+        <!-- Flow annulus -->
+        <circle cx="200" cy="200" r="85" fill="rgba(255,107,53,0.06)" stroke="none"/>
+        <circle cx="200" cy="200" r="85" fill="none" stroke="#ff6b35" stroke-width="0.3"/>
+        <!-- Inner wall (centerbody side) -->
+        <circle cx="200" cy="200" r="60" fill="none" stroke="#2ec4b6" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="55" fill="none" stroke="#ff6b35" stroke-width="1"/>
+        <!-- Center -->
+        <circle cx="200" cy="200" r="2" fill="#1a3a5c"/>
+        <line x1="190" y1="200" x2="210" y2="200" stroke="#1a3a5c" stroke-width="0.5"/>
+        <line x1="200" y1="190" x2="200" y2="210" stroke="#1a3a5c" stroke-width="0.5"/>
+        <!-- Injector dots (24) -->
+        <g fill="#ff6b35">
+          <circle cx="200" cy="73" r="2.5"/><circle cx="233" cy="75" r="2.5"/><circle cx="263" cy="84" r="2.5"/>
+          <circle cx="287" cy="100" r="2.5"/><circle cx="304" cy="122" r="2.5"/><circle cx="314" cy="149" r="2.5"/>
+          <circle cx="316" cy="178" r="2.5"/><circle cx="310" cy="206" r="2.5"/><circle cx="298" cy="232" r="2.5"/>
+          <circle cx="279" cy="254" r="2.5"/><circle cx="256" cy="269" r="2.5"/><circle cx="229" cy="277" r="2.5"/>
+          <circle cx="200" cy="279" r="2.5"/><circle cx="171" cy="277" r="2.5"/><circle cx="144" cy="269" r="2.5"/>
+          <circle cx="121" cy="254" r="2.5"/><circle cx="102" cy="232" r="2.5"/><circle cx="90" cy="206" r="2.5"/>
+          <circle cx="84" cy="178" r="2.5"/><circle cx="86" cy="149" r="2.5"/><circle cx="96" cy="122" r="2.5"/>
+          <circle cx="113" cy="100" r="2.5"/><circle cx="137" cy="84" r="2.5"/><circle cx="167" cy="75" r="2.5"/>
+        </g>
+        <!-- Dimension: OD -->
+        <line x1="200" y1="30" x2="200" y2="45" stroke="#00b4d8" stroke-width="0.5"/>
+        <line x1="68" y1="200" x2="332" y2="200" stroke="#00b4d8" stroke-width="0.5" marker-start="url(#arr4)" marker-end="url(#arr3)"/>
+        <text x="200" y="195" fill="#00b4d8" font-size="10" text-anchor="middle" font-weight="700" font-family="Courier New">OD 528 mm</text>
+        <!-- Dimension: ID -->
+        <line x1="145" y1="230" x2="255" y2="230" stroke="#2ec4b6" stroke-width="0.5" marker-start="url(#arr4)" marker-end="url(#arr3)"/>
+        <text x="200" y="243" fill="#2ec4b6" font-size="9" text-anchor="middle" font-family="Courier New">ID 350 mm</text>
+        <!-- Annular gap -->
+        <line x1="335" y1="200" x2="370" y2="155" stroke="#6e7681" stroke-width="0.5"/>
+        <text x="372" y="153" fill="#6e7681" font-size="8" font-family="Courier New">75 mm gap</text>
+        <!-- Labels -->
+        <text x="200" y="25" fill="#e6edf3" font-size="11" text-anchor="middle" font-weight="700" font-family="Courier New">SECTION A-A</text>
+        <text x="340" y="100" fill="#ff6b35" font-size="8" font-family="Courier New">24&times; injectors</text>
+        <line x1="338" y1="103" x2="316" y2="149" stroke="#ff6b35" stroke-width="0.3"/>
+        <text x="340" y="300" fill="#2ec4b6" font-size="8" font-family="Courier New">C/SiC liner</text>
+        <line x1="338" y1="292" x2="298" y2="268" stroke="#2ec4b6" stroke-width="0.3"/>
+        <text x="50" y="100" fill="#ffd60a" font-size="8" font-family="Courier New">TBC coat</text>
+        <line x1="52" y1="103" x2="86" y2="140" stroke="#ffd60a" stroke-width="0.3"/>
+      </svg>
+    </div>
+
+    <div class="card">
+      <h3>Front View &mdash; Intake Face</h3>
+      <svg viewBox="0 0 400 400" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer cowl -->
+        <circle cx="200" cy="200" r="170" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
+        <!-- Inner ring -->
+        <circle cx="200" cy="200" r="155" fill="none" stroke="#00b4d8" stroke-width="0.5"/>
+        <!-- Centerbody cone face -->
+        <circle cx="200" cy="200" r="25" fill="none" stroke="#2ec4b6" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="12" fill="none" stroke="#2ec4b6" stroke-width="0.5"/>
+        <!-- Diffuser vanes (schematic, 12 vanes) -->
+        <g stroke="#6e7681" stroke-width="0.5">
+          <line x1="200" y1="45" x2="200" y2="175"/><line x1="200" y1="225" x2="200" y2="355"/>
+          <line x1="45" y1="200" x2="175" y2="200"/><line x1="225" y1="200" x2="355" y2="200"/>
+          <line x1="90" y1="90" x2="183" y2="183"/><line x1="217" y1="217" x2="310" y2="310"/>
+          <line x1="310" y1="90" x2="217" y2="183"/><line x1="183" y1="217" x2="90" y2="310"/>
+          <line x1="134" y1="60" x2="191" y2="178"/><line x1="209" y1="222" x2="266" y2="340"/>
+          <line x1="266" y1="60" x2="209" y2="178"/><line x1="191" y1="222" x2="134" y2="340"/>
+          <line x1="60" y1="134" x2="178" y2="191"/><line x1="222" y1="209" x2="340" y2="266"/>
+          <line x1="60" y1="266" x2="178" y2="209"/><line x1="222" y1="191" x2="340" y2="134"/>
+        </g>
+        <!-- Center cross -->
+        <line x1="195" y1="200" x2="205" y2="200" stroke="#1a3a5c" stroke-width="0.5"/>
+        <line x1="200" y1="195" x2="200" y2="205" stroke="#1a3a5c" stroke-width="0.5"/>
+        <!-- Diameter callout -->
+        <line x1="30" y1="200" x2="370" y2="200" stroke="#00b4d8" stroke-width="0.5" stroke-dasharray="6,3" marker-start="url(#arr4)" marker-end="url(#arr3)"/>
+        <text x="200" y="190" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700" font-family="Courier New">850 mm</text>
+        <!-- Labels -->
+        <text x="200" y="25" fill="#e6edf3" font-size="11" text-anchor="middle" font-weight="700" font-family="Courier New">FRONT VIEW</text>
+        <text x="340" y="90" fill="#6e7681" font-size="8" font-family="Courier New">12&times; vanes</text>
+        <text x="200" y="390" fill="#6e7681" font-size="8" text-anchor="middle" font-family="Courier New">Intake face, looking aft</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- WALL CROSS-SECTION DETAIL -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Detail D &mdash; RDE Wall Cross-Section (Scale 5:1)</h3>
+    <svg viewBox="0 0 900 260" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
+      <!-- HOT GAS arrow -->
+      <text x="30" y="30" fill="#ff6b35" font-size="12" font-weight="700" font-family="Courier New">HOT GAS</text>
+      <text x="30" y="46" fill="#ff6b35" font-size="10" font-family="Courier New">3,500&ndash;4,000 K</text>
+      <polygon points="120,50 120,200 130,200 115,220 100,200 110,200 110,50" fill="rgba(255,107,53,0.15)" stroke="#ff6b35" stroke-width="0.5"/>
+
+      <!-- Layers (left to right = gas-side to cold-side) -->
+      <!-- TBC -->
+      <rect x="170" y="30" width="40" height="200" fill="rgba(255,214,10,0.08)" stroke="#ffd60a" stroke-width="1"/>
+      <text x="190" y="248" fill="#ffd60a" font-size="8" text-anchor="middle" font-family="Courier New">GZO TBC</text>
+      <text x="190" y="258" fill="#ffd60a" font-size="7" text-anchor="middle">0.4 mm</text>
+      <!-- YSZ interlayer -->
+      <rect x="210" y="30" width="20" height="200" fill="rgba(255,214,10,0.04)" stroke="#ffd60a" stroke-width="0.5" stroke-dasharray="3,2"/>
+      <text x="220" y="248" fill="#ffd60a" font-size="7" text-anchor="middle" font-family="Courier New">YSZ</text>
+      <text x="220" y="258" fill="#ffd60a" font-size="7" text-anchor="middle">0.15</text>
+      <!-- Bond coat -->
+      <rect x="230" y="30" width="15" height="200" fill="rgba(139,148,158,0.08)" stroke="#8b949e" stroke-width="0.5"/>
+      <text x="237" y="248" fill="#8b949e" font-size="7" text-anchor="middle" font-family="Courier New">NiCrAlY</text>
+      <text x="237" y="258" fill="#8b949e" font-size="7" text-anchor="middle">0.1</text>
+      <!-- W-Re-HfC liner -->
+      <rect x="245" y="30" width="120" height="200" fill="rgba(188,143,243,0.06)" stroke="#bc8ff3" stroke-width="1.5"/>
+      <text x="305" y="135" fill="#bc8ff3" font-size="10" text-anchor="middle" font-weight="700" font-family="Courier New">W-3Re-0.5HfC</text>
+      <text x="305" y="150" fill="#bc8ff3" font-size="8" text-anchor="middle">or C/SiC Liner</text>
+      <text x="305" y="248" fill="#bc8ff3" font-size="8" text-anchor="middle" font-family="Courier New">Structural Liner</text>
+      <text x="305" y="258" fill="#bc8ff3" font-size="7" text-anchor="middle">3.0&ndash;8.0 mm</text>
+      <!-- Ir barrier -->
+      <rect x="365" y="30" width="8" height="200" fill="rgba(46,196,178,0.1)" stroke="#2ec4b6" stroke-width="0.5"/>
+      <text x="369" y="248" fill="#2ec4b6" font-size="6" text-anchor="middle">Ir</text>
+      <!-- GRCop-42 cooling jacket -->
+      <rect x="373" y="30" width="160" height="200" fill="rgba(255,214,10,0.04)" stroke="#ffd60a" stroke-width="1.5"/>
+      <!-- Cooling channels inside -->
+      <rect x="393" y="80" width="25" height="100" rx="3" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="0.5"/>
+      <rect x="428" y="80" width="25" height="100" rx="3" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="0.5"/>
+      <rect x="463" y="80" width="25" height="100" rx="3" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="0.5"/>
+      <rect x="498" y="80" width="25" height="100" rx="3" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="0.5"/>
+      <text x="453" y="145" fill="#ffd60a" font-size="9" text-anchor="middle" font-weight="700" font-family="Courier New">GRCop-42</text>
+      <text x="453" y="160" fill="#00b4d8" font-size="8" text-anchor="middle">Cooling channels</text>
+      <text x="453" y="248" fill="#ffd60a" font-size="8" text-anchor="middle" font-family="Courier New">Cooling Jacket</text>
+      <text x="453" y="258" fill="#ffd60a" font-size="7" text-anchor="middle">4.0 mm + channels</text>
+      <!-- Nb-Si structural shell -->
+      <rect x="533" y="30" width="130" height="200" fill="rgba(0,119,182,0.06)" stroke="#0077b6" stroke-width="1.5"/>
+      <text x="598" y="135" fill="#0077b6" font-size="10" text-anchor="middle" font-weight="700" font-family="Courier New">Nb-Si-Ti-Hf-Cr</text>
+      <text x="598" y="150" fill="#0077b6" font-size="8" text-anchor="middle">or Inconel 718</text>
+      <text x="598" y="248" fill="#0077b6" font-size="8" text-anchor="middle" font-family="Courier New">Pressure Shell</text>
+      <text x="598" y="258" fill="#0077b6" font-size="7" text-anchor="middle">4.0&ndash;6.0 mm</text>
+
+      <!-- COLD SIDE arrow -->
+      <text x="700" y="30" fill="#00b4d8" font-size="12" font-weight="700" font-family="Courier New">COLD SIDE</text>
+      <text x="700" y="46" fill="#00b4d8" font-size="10" font-family="Courier New">~400&ndash;500 K</text>
+
+      <!-- Temperature gradient bar -->
+      <rect x="170" y="15" width="493" height="6" rx="3" fill="none" stroke="none"/>
+      <rect x="170" y="15" width="493" height="6" rx="3" fill="url(#tempgrad)" stroke="none"/>
+      <defs><linearGradient id="tempgrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ff6b35"/><stop offset="40%" style="stop-color:#ffd60a"/><stop offset="100%" style="stop-color:#0077b6"/></linearGradient></defs>
+
+      <!-- Total thickness callout -->
+      <line x1="170" y1="235" x2="663" y2="235" stroke="#e6edf3" stroke-width="0.5" marker-start="url(#arr4)" marker-end="url(#arr3)"/>
+      <text x="415" y="232" fill="#e6edf3" font-size="9" text-anchor="middle" font-weight="700" font-family="Courier New">~12 mm TOTAL WALL</text>
+    </svg>
+  </div>
+
+  <!-- BOM TABLE -->
+  <div class="card span-full">
+    <h3>Bill of Materials &mdash; Core Engine Assembly</h3>
+    <table>
+      <thead><tr><th>Item</th><th>Part Name</th><th>Material</th><th>Qty</th><th>Mass (kg)</th><th>Manufacture</th><th>Printable?</th></tr></thead>
+      <tbody>
+        <tr><td class="val">1</td><td>Intake cowl</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td>1 (2&ndash;3 segments)</td><td class="val">18</td><td>EBM / LPBF</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">2</td><td>Intake centerbody</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td>1</td><td class="val">8</td><td>LPBF</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">3</td><td>Diffuser duct</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td>1</td><td class="val">9</td><td>EBM</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">4</td><td>RDE outer shell + channels</td><td><span class="mat-badge mat-in">IN718</span></td><td>1</td><td class="val">30</td><td>LPBF (DMLS)</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">5</td><td>RDE injector face plate</td><td><span class="mat-badge mat-in">IN625</span></td><td>1</td><td class="val">12</td><td>LPBF (DMLS)</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">6</td><td>RDE inner liner</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td>1</td><td class="val">5</td><td>CVI</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">7</td><td>MHD generator outer shell</td><td><span class="mat-badge mat-in">IN718</span></td><td>1</td><td class="val">45</td><td>LPBF</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">8</td><td>MHD generator channel walls</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td>1 set</td><td class="val">18</td><td>CVI</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">9</td><td>MHD gen electrodes</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td><td>48</td><td class="val">12</td><td>Press-sinter-infiltrate</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">10</td><td>MHD gen insulators</td><td><span class="mat-badge mat-bn">BN</span></td><td>24</td><td class="val">2</td><td>CNC from billet</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">11</td><td>MHD gen magnet coils</td><td><span class="mat-badge" style="background:rgba(0,180,216,0.12);color:var(--accent);">NbTi</span></td><td>1 set</td><td class="val">40</td><td>Wound wire</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">12</td><td>MHD gen cryostat</td><td><span class="mat-badge mat-ss">304 SS</span></td><td>1</td><td class="val">15</td><td>Roll + TIG weld</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">13</td><td>MHD accel outer shell</td><td><span class="mat-badge mat-in">IN718</span></td><td>1</td><td class="val">55</td><td>LPBF</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">14</td><td>MHD accel channel walls</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td>1 set</td><td class="val">22</td><td>CVI</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">15</td><td>MHD accel electrodes</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td><td>64</td><td class="val">16</td><td>Press-sinter-infiltrate</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">16</td><td>MHD accel insulators</td><td><span class="mat-badge mat-bn">BN</span></td><td>32</td><td class="val">3</td><td>CNC from billet</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">17</td><td>MHD accel magnet coils</td><td><span class="mat-badge" style="background:rgba(0,180,216,0.12);color:var(--accent);">NbTi</span></td><td>1 set</td><td class="val">50</td><td>Wound wire</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">18</td><td>MHD accel cryostat</td><td><span class="mat-badge mat-ss">304 SS</span></td><td>1</td><td class="val">18</td><td>Roll + TIG weld</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">19</td><td>C-D nozzle outer shell</td><td><span class="mat-badge mat-in">IN718</span></td><td>1</td><td class="val">18</td><td>LPBF</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">20</td><td>Nozzle inner wall</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td>1</td><td class="val">7</td><td>CVI</td><td><span class="print-no">NO</span></td></tr>
+        <tr><td class="val">21</td><td>Mounting brackets</td><td><span class="mat-badge mat-in">IN718</span></td><td>4</td><td class="val">10</td><td>LPBF</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">22</td><td>Fasteners (M16)</td><td><span class="mat-badge mat-in">A-286</span></td><td>8</td><td class="val">2</td><td>Purchased</td><td>&mdash;</td></tr>
+        <tr><td class="val">23</td><td>C-seals</td><td><span class="mat-badge mat-in">IN X-750</span></td><td>6</td><td class="val">0.5</td><td>Purchased</td><td>&mdash;</td></tr>
+        <tr><td class="val">24</td><td>Cooling manifolds</td><td><span class="mat-badge mat-ss">316L SS</span></td><td>1 set</td><td class="val">8</td><td>LPBF</td><td><span class="print-yes">YES</span></td></tr>
+        <tr><td class="val">25</td><td>Wiring + plumbing harness</td><td>Mixed</td><td>1 set</td><td class="val">12</td><td>Hand assembly</td><td>&mdash;</td></tr>
+        <tr><td class="val">26</td><td>ECU + sensors</td><td>Electronics</td><td>1 set</td><td class="val">8</td><td>Purchased / PCB</td><td>&mdash;</td></tr>
+        <tr class="cost-total"><td></td><td colspan="3">TOTAL DRY MASS</td><td>~420 kg</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <!-- ==================== STORYBOARD ==================== -->
 <div class="section" id="storyboard">
   <h2><span class="icon">&#127916;</span> Cinematic Storyboard</h2>
@@ -2229,6 +2613,467 @@
     <div style="margin-top:10px; text-align:center;">
       <a href="hpm120-storyboard.html" target="_blank" style="color:var(--accent); font-size:0.85em; text-decoration:none; border-bottom:1px solid var(--accent);">Open full storyboard in new tab &rarr;</a>
     </div>
+  </div>
+</div>
+
+<!-- ==================== ELECTRONICS ==================== -->
+<div class="section" id="electronics">
+  <h2><span class="icon">&#9889;</span> Electronics &amp; Electrical Systems</h2>
+
+  <div class="warn-box" style="margin-bottom:20px;">
+    <strong>Self-Powering Architecture:</strong> After start-up, the MHD generator produces 300&ndash;600 kW that directly powers the MHD accelerator. Only ~15 kW of external electrical power is needed at steady state for controls, sensors, and pumps.
+  </div>
+
+  <!-- ---- ECU ARCHITECTURE ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Engine Control Unit (ECU) Architecture</h3>
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">ECU Hardware</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Processor</td><td class="val">Dual-redundant FPGA (Xilinx Zynq UltraScale+) + ARM Cortex-R5 safety core</td></tr>
+          <tr><td>Clock speed</td><td class="val">667 MHz (FPGA fabric), 500 MHz (ARM)</td></tr>
+          <tr><td>Control loop rate</td><td class="val">10 kHz main loop, 100 kHz for MHD power regulation</td></tr>
+          <tr><td>ADC resolution</td><td class="val">16-bit, 1 MSPS per channel (simultaneous sampling)</td></tr>
+          <tr><td>DAC outputs</td><td class="val">12-bit, 100 kSPS (valve drivers, throttle)</td></tr>
+          <tr><td>Digital I/O</td><td class="val">64 channels (isolated, 28 V tolerant)</td></tr>
+          <tr><td>Communication</td><td class="val">ARINC 429 (aircraft), CAN-FD (internal), Ethernet (ground test)</td></tr>
+          <tr><td>Power input</td><td class="val">28 V DC (MIL-STD-704F compliant)</td></tr>
+          <tr><td>Power consumption</td><td class="val">45 W (ECU core), 120 W (with all drivers)</td></tr>
+          <tr><td>Housing</td><td class="val">MIL-STD-810G, IP67, EMI/RFI shielded (DO-160G)</td></tr>
+          <tr><td>Mass</td><td class="val">3.2 kg</td></tr>
+          <tr><td>Operating temp</td><td class="val">&minus;40&deg;C to +85&deg;C</td></tr>
+          <tr><td>Redundancy</td><td class="val">Dual-channel with cross-monitoring, fail-safe shutdown</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">ECU Control Functions</h4>
+        <ol class="steps">
+          <li>Startup sequencing &mdash; igniter power-up, fuel priming, detonation initiation</li>
+          <li>Fuel metering &mdash; closed-loop fuel flow control via servo valve position</li>
+          <li>Detonation monitoring &mdash; wave speed, count, and stability from high-speed pressure data</li>
+          <li>MHD power regulation &mdash; generator load matching, accelerator current control</li>
+          <li>Thermal protection &mdash; monitor all TCs, trip if any wall exceeds limit</li>
+          <li>Cooling control &mdash; pump speed modulation for fuel, water, and LN&#x2082; circuits</li>
+          <li>Magnet management &mdash; ramp-up/down sequencing for SC magnet coils</li>
+          <li>Thrust modulation &mdash; throttle command &rarr; fuel flow + MHD power split</li>
+          <li>Emergency shutdown &mdash; &lt;50 ms full shutdown on any critical fault</li>
+          <li>Health monitoring &mdash; real-time BITE, data logging at &gt;1 MHz aggregate</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- SENSOR SUITE ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Sensor Suite</h3>
+    <table>
+      <thead><tr><th>Measurement</th><th>Sensor Type</th><th>Qty</th><th>Range</th><th>Bandwidth</th><th>Location</th></tr></thead>
+      <tbody>
+        <tr><td class="val">Detonation pressure</td><td>Piezoelectric (PCB 113B)</td><td class="val">8</td><td>0&ndash;200 bar</td><td class="val hot">&gt;500 kHz</td><td>RDE annulus wall (circumferential)</td></tr>
+        <tr><td class="val">Chamber static pressure</td><td>Piezoresistive (Kulite XTEL)</td><td class="val">6</td><td>0&ndash;50 bar</td><td class="val">50 kHz</td><td>RDE exit, MHD inlet/outlet</td></tr>
+        <tr><td class="val">Wall temperature</td><td>Type K thermocouple</td><td class="val">24</td><td>0&ndash;1,250&deg;C</td><td class="val">10 Hz</td><td>All sections, outer wall</td></tr>
+        <tr><td class="val">Gas temperature</td><td>Type B thermocouple</td><td class="val">6</td><td>600&ndash;1,800&deg;C</td><td class="val">5 Hz</td><td>RDE exit, MHD channels, nozzle</td></tr>
+        <tr><td class="val">TBC surface temp</td><td>2-color pyrometer (IR)</td><td class="val">4</td><td>500&ndash;2,000&deg;C</td><td class="val">1 kHz</td><td>RDE hot-side, nozzle throat</td></tr>
+        <tr><td class="val">Fuel flow rate</td><td>Coriolis mass flow</td><td class="val">2</td><td>0&ndash;5 kg/s</td><td class="val">100 Hz</td><td>Fuel supply line, return line</td></tr>
+        <tr><td class="val">Air mass flow</td><td>Pitot rake + differential P</td><td class="val">1 (8-point)</td><td>0&ndash;120 kg/s</td><td class="val">50 Hz</td><td>Intake diffuser exit</td></tr>
+        <tr><td class="val">Coolant flow rate</td><td>Turbine flow meter</td><td class="val">4</td><td>0&ndash;10 L/s</td><td class="val">10 Hz</td><td>Each cooling circuit</td></tr>
+        <tr><td class="val">LN&#x2082; level</td><td>Capacitance level probe</td><td class="val">2</td><td>0&ndash;100%</td><td class="val">1 Hz</td><td>Generator &amp; accelerator cryostats</td></tr>
+        <tr><td class="val">Cryostat temperature</td><td>Cernox RTD (Lakeshore)</td><td class="val">4</td><td>4&ndash;300 K</td><td class="val">10 Hz</td><td>SC magnet coils (2 per coil)</td></tr>
+        <tr><td class="val">Magnet current</td><td>Hall-effect CT (LEM)</td><td class="val">2</td><td>0&ndash;15,000 A</td><td class="val">1 kHz</td><td>Each SC magnet power lead</td></tr>
+        <tr><td class="val">MHD voltage</td><td>Isolated differential probe</td><td class="val">56</td><td>0&ndash;500 V</td><td class="val">10 kHz</td><td>Each electrode pair (gen + accel)</td></tr>
+        <tr><td class="val">MHD current</td><td>Shunt resistor + amplifier</td><td class="val">56</td><td>0&ndash;2,000 A</td><td class="val">10 kHz</td><td>Each electrode pair (gen + accel)</td></tr>
+        <tr><td class="val">Plasma conductivity</td><td>4-probe impedance (custom)</td><td class="val">4</td><td>0&ndash;100 S/m</td><td class="val">1 kHz</td><td>MHD gen inlet/exit, accel inlet/exit</td></tr>
+        <tr><td class="val">Exhaust velocity</td><td>Laser Doppler velocimetry (LDV)</td><td class="val">1</td><td>0&ndash;2,500 m/s</td><td class="val">100 Hz</td><td>Nozzle exit plane (ground test only)</td></tr>
+        <tr><td class="val">Thrust</td><td>Strain-gauge load cell</td><td class="val">4</td><td>0&ndash;50 kN each</td><td class="val">1 kHz</td><td>Test stand mounting points</td></tr>
+        <tr><td class="val">Vibration</td><td>Triaxial accelerometer (IEPE)</td><td class="val">4</td><td>&plusmn;500 g</td><td class="val">50 kHz</td><td>RDE, MHD gen, MHD accel, nozzle</td></tr>
+        <tr><td class="val">Fuel pressure</td><td>Piezoresistive</td><td class="val">4</td><td>0&ndash;60 bar</td><td class="val">1 kHz</td><td>Pump exit, manifold, injectors (2)</td></tr>
+        <tr><td class="val">Seed flow rate</td><td>Coriolis mass flow</td><td class="val">1</td><td>0&ndash;1.5 kg/s</td><td class="val">10 Hz</td><td>Alkali seed injection line</td></tr>
+        <tr class="cost-total"><td colspan="2">TOTAL SENSOR COUNT</td><td>~190</td><td colspan="3"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- POWER DISTRIBUTION ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Power Distribution Architecture</h3>
+
+    <!-- Power flow diagram -->
+    <div class="flow" style="margin-bottom:16px;">
+      <div class="flow-block" style="border-color:var(--warn);">
+        <div class="fb-num" style="color:var(--warn);">STARTUP</div>
+        <div class="fb-title">APU / Ground Cart</div>
+        <div class="fb-detail">50 kW &bull; 270 V DC<br>or 400 V 3-phase AC</div>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-block">
+        <div class="fb-num">BUS 1</div>
+        <div class="fb-title">Main DC Bus</div>
+        <div class="fb-detail">270 V DC<br>MIL-STD-704F</div>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-block" style="border-color:var(--green);">
+        <div class="fb-num" style="color:var(--green);">STEADY STATE</div>
+        <div class="fb-title">MHD Generator</div>
+        <div class="fb-detail">300&ndash;600 kW output<br>Self-powering</div>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-block" style="border-color:var(--accent);">
+        <div class="fb-num">BUS 2</div>
+        <div class="fb-title">MHD Power Bus</div>
+        <div class="fb-detail">500&ndash;2,000 V DC<br>To accelerator</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">Power Buses</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Main DC bus</td><td class="val">270 V DC &bull; 200 A max &bull; MIL-STD-704F</td></tr>
+          <tr><td>MHD power bus</td><td class="val">500&ndash;2,000 V DC &bull; 300&ndash;600 kW &bull; Isolated</td></tr>
+          <tr><td>Low-voltage bus</td><td class="val">28 V DC &bull; 60 A &bull; ECU, sensors, valves</td></tr>
+          <tr><td>Magnet bus</td><td class="val">20 V DC &bull; 12,000 A &bull; SC coil ramp</td></tr>
+          <tr><td>Igniter bus</td><td class="val">4 kV AC @ 2.45 GHz &bull; 5 kW &bull; Start-up only</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">Power Conversion Units</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>MHD power conditioner</td><td class="val">DC-DC converter, 600 kW, &eta; &gt; 95%</td></tr>
+          <tr><td>270V &rarr; 28V converter</td><td class="val">DC-DC, 2 kW, isolated, redundant</td></tr>
+          <tr><td>Magnet power supply</td><td class="val">270V &rarr; 20V @ 12 kA, ramped</td></tr>
+          <tr><td>Magnetron HV supply</td><td class="val">270V &rarr; 4 kV AC, 5 kW, 2.45 GHz</td></tr>
+          <tr><td>Pump motor drives</td><td class="val">270V &rarr; 3-phase 400V, VFD, 3&times;5 kW</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- POWER BUDGET ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Electrical Power Budget</h3>
+    <div class="grid-2">
+      <div>
+        <h4 style="color:var(--warn);margin-bottom:8px;">Start-up Mode (~50 kW external)</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Plasma igniter (magnetron)</td><td class="val hot">5 kW &bull; 2.45 GHz</td></tr>
+          <tr><td>SC magnet ramp-up</td><td class="val hot">30 kW &bull; 20 V @ 12 kA (60 s ramp)</td></tr>
+          <tr><td>Fuel pump</td><td class="val">3 kW</td></tr>
+          <tr><td>Coolant pumps (water + LN&#x2082;)</td><td class="val">5 kW</td></tr>
+          <tr><td>ECU + sensors + valves</td><td class="val">2 kW</td></tr>
+          <tr><td>Seed injection pump</td><td class="val">1 kW</td></tr>
+          <tr><td>Cryocooler compressor</td><td class="val">4 kW</td></tr>
+          <tr class="cost-total"><td>Total Start-up</td><td>~50 kW</td></tr>
+        </table>
+        <div class="note" style="margin-top:8px;">Start-up lasts ~60&ndash;120 s. Once RDE detonation is stable and MHD generator reaches operating temperature, the engine transitions to self-powering mode.</div>
+      </div>
+      <div>
+        <h4 style="color:var(--green);margin-bottom:8px;">Steady-State Mode (~15 kW external)</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>MHD generator output</td><td class="val ok">300&ndash;600 kW (self-generated)</td></tr>
+          <tr><td>MHD accelerator input</td><td class="val ok">300&ndash;600 kW (from generator)</td></tr>
+          <tr><td style="border-top:1px solid var(--border);">Fuel pump</td><td class="val">3 kW</td></tr>
+          <tr><td>Coolant pumps (water + LN&#x2082;)</td><td class="val">5 kW</td></tr>
+          <tr><td>Cryocooler compressor</td><td class="val">4 kW</td></tr>
+          <tr><td>ECU + sensors + valves</td><td class="val">2 kW</td></tr>
+          <tr><td>Seed injection pump</td><td class="val">1 kW</td></tr>
+          <tr class="cost-total"><td>Total External Power</td><td>~15 kW</td></tr>
+        </table>
+        <div class="note" style="margin-top:8px;">97% reduction vs old architecture (420&ndash;1,050 kW). Only pumps, controls, and cryo need external power. The MHD cycle is fully self-sustaining.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- MHD POWER ELECTRONICS ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>MHD Power Conditioning System</h3>
+    <p style="margin-bottom:14px;color:var(--dim);font-size:0.9em;">The MHD generator produces raw DC power from 56 electrode pairs. This must be conditioned and routed to the 56 accelerator electrode pairs.</p>
+
+    <div class="grid-3">
+      <div style="border:1px solid var(--green);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--green);margin-bottom:8px;font-size:0.9em;">Generator Side (Extract)</h4>
+        <table class="pp-table" style="font-size:0.8em;">
+          <tr><td>Electrode pairs</td><td class="val">24 (Faraday segmented)</td></tr>
+          <tr><td>Voltage per pair</td><td class="val">20&ndash;50 V DC</td></tr>
+          <tr><td>Current per pair</td><td class="val">500&ndash;1,200 A</td></tr>
+          <tr><td>Total output</td><td class="val ok">300&ndash;600 kW</td></tr>
+          <tr><td>Load matching</td><td class="val">Individual MOSFET load banks per pair</td></tr>
+          <tr><td>Protection</td><td class="val">Arc detection + fast crowbar (&lt;10 &micro;s)</td></tr>
+        </table>
+      </div>
+      <div style="border:1px solid var(--accent);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--accent);margin-bottom:8px;font-size:0.9em;">DC-DC Power Converter</h4>
+        <table class="pp-table" style="font-size:0.8em;">
+          <tr><td>Topology</td><td class="val">Multi-phase interleaved buck-boost</td></tr>
+          <tr><td>Input voltage</td><td class="val">20&ndash;1,200 V (variable, from gen)</td></tr>
+          <tr><td>Output voltage</td><td class="val">500&ndash;2,000 V (regulated, to accel)</td></tr>
+          <tr><td>Rating</td><td class="val">600 kW continuous</td></tr>
+          <tr><td>Efficiency</td><td class="val">&gt;95% at rated load</td></tr>
+          <tr><td>Switching devices</td><td class="val">SiC MOSFET (1,700 V / 400 A modules)</td></tr>
+          <tr><td>Switching frequency</td><td class="val">50&ndash;100 kHz</td></tr>
+          <tr><td>Cooling</td><td class="val">Water-glycol cold plate, 0.5 kg/s</td></tr>
+          <tr><td>Mass</td><td class="val">~35 kg</td></tr>
+        </table>
+      </div>
+      <div style="border:1px solid var(--hot);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--hot);margin-bottom:8px;font-size:0.9em;">Accelerator Side (Drive)</h4>
+        <table class="pp-table" style="font-size:0.8em;">
+          <tr><td>Electrode pairs</td><td class="val">32 (Faraday segmented)</td></tr>
+          <tr><td>Voltage per pair</td><td class="val">15&ndash;60 V DC</td></tr>
+          <tr><td>Current per pair</td><td class="val">300&ndash;800 A</td></tr>
+          <tr><td>Total input</td><td class="val hot">300&ndash;600 kW</td></tr>
+          <tr><td>Current regulation</td><td class="val">Individual buck converter per pair</td></tr>
+          <tr><td>Protection</td><td class="val">Over-current trip + arc suppression</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- WIRING HARNESS ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Wiring Harness Specification</h3>
+    <div class="grid-2">
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">Harness Segments</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>MHD power cables (gen &rarr; converter)</td><td class="val">24 pairs &bull; 25 mm&#xB2; Cu &bull; silicone insulated &bull; 600 V rated</td></tr>
+          <tr><td>MHD power cables (converter &rarr; accel)</td><td class="val">32 pairs &bull; 16 mm&#xB2; Cu &bull; silicone insulated &bull; 2 kV rated</td></tr>
+          <tr><td>Magnet power leads</td><td class="val">2 sets &bull; HTS current leads (77 K &rarr; 4 K transition) &bull; 12 kA</td></tr>
+          <tr><td>Sensor harness (thermocouples)</td><td class="val">30 pairs &bull; Type K/B extension wire &bull; shielded</td></tr>
+          <tr><td>Sensor harness (pressure)</td><td class="val">18 cables &bull; coaxial &bull; BNC/SMA connectors</td></tr>
+          <tr><td>ECU control harness</td><td class="val">1 &bull; MIL-DTL-38999 circular connectors &bull; 128 pins</td></tr>
+          <tr><td>Valve driver cables</td><td class="val">8 &bull; 18 AWG shielded twisted pair</td></tr>
+          <tr><td>Igniter HV cable</td><td class="val">1 &bull; RG-214 coax &bull; N-type connectors &bull; 5 kW @ 2.45 GHz</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">Harness Specs</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Total harness mass</td><td class="val">~12 kg</td></tr>
+          <tr><td>Total cable count</td><td class="val">~150 discrete cables</td></tr>
+          <tr><td>Wire type (general)</td><td class="val">MIL-W-22759 (PTFE/Kapton insulated)</td></tr>
+          <tr><td>Temperature rating</td><td class="val">200&deg;C continuous (260&deg;C peak)</td></tr>
+          <tr><td>EMI shielding</td><td class="val">Braided shield on all signal cables, &gt;40 dB attenuation</td></tr>
+          <tr><td>Connector standard</td><td class="val">MIL-DTL-38999 Series III (power &amp; signal)</td></tr>
+          <tr><td>Firewall penetrations</td><td class="val">6 &bull; Hermetic bulkhead connectors</td></tr>
+          <tr><td>Routing</td><td class="val">Along conduit tubes, clamped every 150 mm</td></tr>
+          <tr><td>Labeling</td><td class="val">Laser-marked heat-shrink sleeves at each end</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- ACTUATORS & VALVES ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Actuators, Valves &amp; Electromechanical Components</h3>
+    <table>
+      <thead><tr><th>Component</th><th>Type</th><th>Qty</th><th>Spec</th><th>Control</th><th>Power</th></tr></thead>
+      <tbody>
+        <tr><td class="val">Main fuel valve</td><td>Servo-actuated ball valve</td><td class="val">1</td><td>25 mm bore, 50 bar, IN625 body</td><td>ECU closed-loop, 50 ms response</td><td class="val">80 W</td></tr>
+        <tr><td class="val">Fuel metering valve</td><td>Proportional solenoid (Moog)</td><td class="val">1</td><td>0&ndash;3.0 kg/s, &plusmn;1% linearity</td><td>ECU analog command (4&ndash;20 mA)</td><td class="val">45 W</td></tr>
+        <tr><td class="val">Seed injection valve</td><td>Proportional solenoid</td><td class="val">1</td><td>0&ndash;1.0 kg/s, corrosion-resistant</td><td>ECU analog command</td><td class="val">30 W</td></tr>
+        <tr><td class="val">Coolant control valves</td><td>Motorized ball valve</td><td class="val">4</td><td>20 mm bore, 10 bar, 316L body</td><td>ECU on/off + modulating</td><td class="val">25 W ea.</td></tr>
+        <tr><td class="val">LN&#x2082; fill/vent valves</td><td>Cryogenic solenoid (ASCO)</td><td class="val">4</td><td>12 mm bore, rated to 77 K</td><td>ECU on/off</td><td class="val">15 W ea.</td></tr>
+        <tr><td class="val">Emergency fuel cutoff</td><td>Pyro-actuated shutoff</td><td class="val">2</td><td>25 mm bore, &lt;5 ms close time</td><td>ECU fault trigger (one-shot)</td><td class="val">N/A (pyro)</td></tr>
+        <tr><td class="val">Fuel pump motor</td><td>BLDC motor + controller</td><td class="val">1</td><td>3 kW, 12,000 RPM, 45 bar output</td><td>ECU speed command via VFD</td><td class="val">3 kW</td></tr>
+        <tr><td class="val">Water pump motor</td><td>BLDC motor + controller</td><td class="val">2</td><td>2.5 kW each, 5 bar, 5 kg/s</td><td>ECU speed command via VFD</td><td class="val">2.5 kW ea.</td></tr>
+        <tr><td class="val">LN&#x2082; circulation pump</td><td>Cryogenic centrifugal</td><td class="val">1</td><td>0.5 kW, 77 K rated, hermetic</td><td>ECU on/off</td><td class="val">0.5 kW</td></tr>
+        <tr><td class="val">Cryocooler compressor</td><td>Gifford-McMahon or pulse tube</td><td class="val">1</td><td>50 W cooling @ 77 K, 4 kW input</td><td>Standalone controller, ECU monitor</td><td class="val">4 kW</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- DAQ SYSTEM ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Data Acquisition System (Ground Test)</h3>
+    <div class="grid-2">
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">High-Speed DAQ</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Platform</td><td class="val">NI PXIe-1085 chassis + modules</td></tr>
+          <tr><td>Analog input channels</td><td class="val">64 channels, simultaneous sampling</td></tr>
+          <tr><td>Sample rate (pressure)</td><td class="val">2 MSPS per channel (8 channels)</td></tr>
+          <tr><td>Sample rate (general)</td><td class="val">100 kSPS per channel (56 channels)</td></tr>
+          <tr><td>Resolution</td><td class="val">16-bit (pressure), 24-bit (TC, strain)</td></tr>
+          <tr><td>Aggregate throughput</td><td class="val">&gt;50 MB/s sustained to RAID SSD</td></tr>
+          <tr><td>TC input module</td><td class="val">NI PXIe-4353 (32-ch thermocouple)</td></tr>
+          <tr><td>Dynamic signal module</td><td class="val">NI PXIe-4497 (16-ch IEPE / pressure)</td></tr>
+          <tr><td>Digital I/O module</td><td class="val">NI PXIe-6614 (32-ch counter/timer)</td></tr>
+          <tr><td>Storage</td><td class="val">4 TB NVMe RAID-0 (15 min @ full rate)</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;">Software &amp; Interfaces</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Control software</td><td class="val">LabVIEW Real-Time + FPGA</td></tr>
+          <tr><td>Test sequencer</td><td class="val">LabVIEW state machine (start/run/shutdown)</td></tr>
+          <tr><td>Real-time display</td><td class="val">Custom HMI: 6&times; strip charts, gauges, status</td></tr>
+          <tr><td>Post-processing</td><td class="val">MATLAB / Python (FFT, wave tracking, performance)</td></tr>
+          <tr><td>Detonation analysis</td><td class="val">Custom FFT: wave speed, count, frequency from 8-ch pressure ring</td></tr>
+          <tr><td>Safety interlock</td><td class="val">Hardware watchdog: independent of DAQ software</td></tr>
+          <tr><td>Remote operation</td><td class="val">Ethernet to control room, 50 m min cable run</td></tr>
+          <tr><td>Video sync</td><td class="val">IRIG-B time code to high-speed camera trigger</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- SAFETY ELECTRONICS ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Safety &amp; Protection Electronics</h3>
+    <div class="grid-3">
+      <div style="border:1px solid var(--hot);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--hot);margin-bottom:8px;font-size:0.9em;">Emergency Shutdown Triggers</h4>
+        <ul class="checklist" style="font-size:0.82em;">
+          <li>Wall temperature &gt; 1,400 K (any TC)</li>
+          <li>Chamber pressure &gt; 30 bar</li>
+          <li>Detonation wave loss &gt; 500 ms</li>
+          <li>Fuel pressure drop &gt; 20% from setpoint</li>
+          <li>Coolant flow &lt; 50% of nominal</li>
+          <li>LN&#x2082; level &lt; 10%</li>
+          <li>MHD arc fault detected</li>
+          <li>Vibration &gt; 50 g RMS</li>
+          <li>Manual E-STOP (hardwired, any of 3 stations)</li>
+        </ul>
+      </div>
+      <div style="border:1px solid var(--warn);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--warn);margin-bottom:8px;font-size:0.9em;">Shutdown Sequence (&lt;50 ms)</h4>
+        <ol class="steps" style="font-size:0.82em;">
+          <li>Fire pyro fuel cutoff valves (both)</li>
+          <li>De-energize MHD accelerator</li>
+          <li>Open all coolant valves to 100%</li>
+          <li>De-energize plasma igniter</li>
+          <li>Ramp magnets to zero (60 s controlled)</li>
+          <li>Maintain coolant flow for 5 min post-shutdown</li>
+          <li>Log all sensor data through shutdown</li>
+        </ol>
+      </div>
+      <div style="border:1px solid var(--green);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--green);margin-bottom:8px;font-size:0.9em;">Protection Hardware</h4>
+        <table class="pp-table" style="font-size:0.8em;">
+          <tr><td>E-STOP circuit</td><td class="val">Hardwired NC relay chain (SIL-2)</td></tr>
+          <tr><td>Fire detection</td><td class="val">2&times; UV/IR flame detector</td></tr>
+          <tr><td>Fire suppression</td><td class="val">CO&#x2082; flood system, manual + auto trigger</td></tr>
+          <tr><td>Blast shield</td><td class="val">12 mm steel plate, 3 m standoff</td></tr>
+          <tr><td>Fuel leak detection</td><td class="val">Combustible gas sensor (LEL) &times; 4</td></tr>
+          <tr><td>HV interlock</td><td class="val">Door switches on MHD power cabinets</td></tr>
+          <tr><td>Ground fault</td><td class="val">RCD on all AC circuits, &lt;30 mA trip</td></tr>
+          <tr><td>Lightning / surge</td><td class="val">SPD on all power entries (Type 1+2)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- ELECTRONICS BOM ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Electronics Bill of Materials &amp; Cost</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Components</th><th>Est. Cost</th><th>Phase</th></tr></thead>
+      <tbody>
+        <tr><td class="val">ECU (dual FPGA + ARM)</td><td>Custom PCB, MIL-spec housing, connectors</td><td class="val">$8K&ndash;$15K</td><td>Phase 2+</td></tr>
+        <tr><td class="val">High-speed pressure sensors &times;8</td><td>PCB 113B series, charge amplifiers</td><td class="val">$6K&ndash;$12K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Thermocouples (K+B) &times;30</td><td>Mineral-insulated, connectors, extension wire</td><td class="val">$2K&ndash;$4K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Pyrometers (IR) &times;4</td><td>2-color, fiber-optic, signal conditioners</td><td class="val">$8K&ndash;$16K</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Flow meters (Coriolis) &times;3</td><td>Fuel, seed, air measurement</td><td class="val">$6K&ndash;$12K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">MHD voltage/current probes &times;112</td><td>Isolated probes + signal conditioning boards</td><td class="val">$15K&ndash;$30K</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Cryogenic sensors &times;6</td><td>Cernox RTDs, capacitance level probes</td><td class="val">$4K&ndash;$8K</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Load cells &times;4</td><td>Strain-gauge, 50 kN, amplifiers</td><td class="val">$3K&ndash;$6K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Accelerometers &times;4</td><td>Triaxial IEPE, signal conditioners</td><td class="val">$2K&ndash;$4K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">MHD power conditioner</td><td>SiC MOSFET converter, 600 kW, water-cooled</td><td class="val">$40K&ndash;$80K</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Magnet power supply</td><td>20 V / 12 kA, ramped, quench protection</td><td class="val">$15K&ndash;$30K</td><td>Phase 3</td></tr>
+        <tr><td class="val">Magnetron + HV supply</td><td>2.45 GHz, 5 kW, WR-340 waveguide</td><td class="val">$4K&ndash;$6K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">VFDs (pump motor drives) &times;3</td><td>5 kW each, 400 V output</td><td class="val">$3K&ndash;$6K</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Valves + actuators (all)</td><td>Servo, solenoid, pyro, cryogenic</td><td class="val">$8K&ndash;$15K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">DAQ system (NI PXIe)</td><td>Chassis, modules, cables, software</td><td class="val">$25K&ndash;$50K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Wiring harness</td><td>MIL-spec wire, connectors, conduit, labels</td><td class="val">$5K&ndash;$10K</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Safety systems</td><td>E-STOP chain, fire/gas detection, suppression</td><td class="val">$5K&ndash;$10K</td><td>Phase 1+</td></tr>
+        <tr class="cost-total"><td colspan="2">TOTAL ELECTRONICS</td><td>~$160K&ndash;$315K</td><td>All phases</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- BLOCK DIAGRAM ---- -->
+  <div class="card span-full">
+    <h3>System Block Diagram</h3>
+    <svg viewBox="0 0 1000 500" style="width:100%;min-width:700px;background:#060a14;border-radius:6px;font-family:'Courier New',monospace;" xmlns="http://www.w3.org/2000/svg">
+      <!-- ECU (center) -->
+      <rect x="400" y="200" width="200" height="80" rx="8" fill="rgba(0,180,216,0.1)" stroke="#00b4d8" stroke-width="2"/>
+      <text x="500" y="230" fill="#00b4d8" font-size="14" text-anchor="middle" font-weight="700">ECU</text>
+      <text x="500" y="248" fill="#6e7681" font-size="9" text-anchor="middle">FPGA + ARM</text>
+      <text x="500" y="262" fill="#6e7681" font-size="9" text-anchor="middle">10 kHz control loop</text>
+
+      <!-- Sensors (top left) -->
+      <rect x="50" y="30" width="160" height="130" rx="6" fill="rgba(46,196,178,0.06)" stroke="#2ec4b6" stroke-width="1"/>
+      <text x="130" y="52" fill="#2ec4b6" font-size="11" text-anchor="middle" font-weight="700">SENSORS</text>
+      <text x="130" y="70" fill="#6e7681" font-size="8" text-anchor="middle">8&times; Pressure (500 kHz)</text>
+      <text x="130" y="84" fill="#6e7681" font-size="8" text-anchor="middle">30&times; Temperature</text>
+      <text x="130" y="98" fill="#6e7681" font-size="8" text-anchor="middle">4&times; Pyrometer</text>
+      <text x="130" y="112" fill="#6e7681" font-size="8" text-anchor="middle">7&times; Flow meter</text>
+      <text x="130" y="126" fill="#6e7681" font-size="8" text-anchor="middle">56&times; MHD V/I probes</text>
+      <text x="130" y="140" fill="#6e7681" font-size="8" text-anchor="middle">4&times; Vibration</text>
+      <line x1="210" y1="95" x2="400" y2="220" stroke="#2ec4b6" stroke-width="1"/>
+
+      <!-- Power Source (top right) -->
+      <rect x="780" y="30" width="160" height="90" rx="6" fill="rgba(255,214,10,0.06)" stroke="#ffd60a" stroke-width="1"/>
+      <text x="860" y="52" fill="#ffd60a" font-size="11" text-anchor="middle" font-weight="700">POWER SOURCE</text>
+      <text x="860" y="72" fill="#6e7681" font-size="8" text-anchor="middle">APU / Ground Cart</text>
+      <text x="860" y="86" fill="#6e7681" font-size="8" text-anchor="middle">270 V DC &bull; 50 kW start</text>
+      <text x="860" y="100" fill="#6e7681" font-size="8" text-anchor="middle">15 kW steady state</text>
+      <line x1="780" y1="75" x2="600" y2="220" stroke="#ffd60a" stroke-width="1"/>
+
+      <!-- MHD Power (right) -->
+      <rect x="700" y="190" width="180" height="100" rx="6" fill="rgba(255,107,53,0.06)" stroke="#ff6b35" stroke-width="1"/>
+      <text x="790" y="215" fill="#ff6b35" font-size="11" text-anchor="middle" font-weight="700">MHD POWER</text>
+      <text x="790" y="233" fill="#6e7681" font-size="8" text-anchor="middle">Generator: 300&ndash;600 kW out</text>
+      <text x="790" y="247" fill="#6e7681" font-size="8" text-anchor="middle">DC-DC: SiC, 95% eff</text>
+      <text x="790" y="261" fill="#6e7681" font-size="8" text-anchor="middle">Accelerator: 300&ndash;600 kW in</text>
+      <text x="790" y="275" fill="#2ec4b6" font-size="9" text-anchor="middle" font-weight="700">Self-sustaining loop</text>
+      <line x1="700" y1="240" x2="600" y2="240" stroke="#ff6b35" stroke-width="1.5"/>
+
+      <!-- Actuators (bottom left) -->
+      <rect x="50" y="340" width="160" height="120" rx="6" fill="rgba(188,143,243,0.06)" stroke="#bc8ff3" stroke-width="1"/>
+      <text x="130" y="362" fill="#bc8ff3" font-size="11" text-anchor="middle" font-weight="700">ACTUATORS</text>
+      <text x="130" y="380" fill="#6e7681" font-size="8" text-anchor="middle">Fuel metering valve</text>
+      <text x="130" y="394" fill="#6e7681" font-size="8" text-anchor="middle">Seed injection valve</text>
+      <text x="130" y="408" fill="#6e7681" font-size="8" text-anchor="middle">Coolant valves &times;4</text>
+      <text x="130" y="422" fill="#6e7681" font-size="8" text-anchor="middle">LN&#x2082; valves &times;4</text>
+      <text x="130" y="436" fill="#6e7681" font-size="8" text-anchor="middle">Pump VFDs &times;3</text>
+      <text x="130" y="450" fill="#6e7681" font-size="8" text-anchor="middle">Pyro cutoff &times;2</text>
+      <line x1="210" y1="400" x2="400" y2="265" stroke="#bc8ff3" stroke-width="1"/>
+
+      <!-- Safety (bottom center) -->
+      <rect x="350" y="370" width="160" height="100" rx="6" fill="rgba(255,107,53,0.06)" stroke="#ff6b35" stroke-width="1"/>
+      <text x="430" y="392" fill="#ff6b35" font-size="11" text-anchor="middle" font-weight="700">SAFETY</text>
+      <text x="430" y="410" fill="#6e7681" font-size="8" text-anchor="middle">E-STOP chain (SIL-2)</text>
+      <text x="430" y="424" fill="#6e7681" font-size="8" text-anchor="middle">Fire/gas detection</text>
+      <text x="430" y="438" fill="#6e7681" font-size="8" text-anchor="middle">CO&#x2082; suppression</text>
+      <text x="430" y="452" fill="#6e7681" font-size="8" text-anchor="middle">HV interlocks</text>
+      <line x1="450" y1="370" x2="480" y2="280" stroke="#ff6b35" stroke-width="1"/>
+
+      <!-- Magnets (bottom right) -->
+      <rect x="600" y="370" width="160" height="90" rx="6" fill="rgba(0,119,182,0.06)" stroke="#0077b6" stroke-width="1"/>
+      <text x="680" y="392" fill="#0077b6" font-size="11" text-anchor="middle" font-weight="700">SC MAGNETS</text>
+      <text x="680" y="410" fill="#6e7681" font-size="8" text-anchor="middle">NbTi coils &times;2</text>
+      <text x="680" y="424" fill="#6e7681" font-size="8" text-anchor="middle">2&ndash;4 T field</text>
+      <text x="680" y="438" fill="#6e7681" font-size="8" text-anchor="middle">12 kA ramp supply</text>
+      <text x="680" y="452" fill="#6e7681" font-size="8" text-anchor="middle">Quench protection</text>
+      <line x1="660" y1="370" x2="560" y2="280" stroke="#0077b6" stroke-width="1"/>
+
+      <!-- DAQ (top center) -->
+      <rect x="300" y="30" width="160" height="90" rx="6" fill="rgba(139,148,158,0.06)" stroke="#8b949e" stroke-width="1"/>
+      <text x="380" y="52" fill="#8b949e" font-size="11" text-anchor="middle" font-weight="700">DAQ (Ground)</text>
+      <text x="380" y="72" fill="#6e7681" font-size="8" text-anchor="middle">NI PXIe, 64-ch</text>
+      <text x="380" y="86" fill="#6e7681" font-size="8" text-anchor="middle">2 MSPS high-speed</text>
+      <text x="380" y="100" fill="#6e7681" font-size="8" text-anchor="middle">4 TB storage</text>
+      <line x1="420" y1="120" x2="470" y2="200" stroke="#8b949e" stroke-width="1"/>
+
+      <!-- Igniter (top center-right) -->
+      <rect x="540" y="30" width="140" height="70" rx="6" fill="rgba(255,107,53,0.06)" stroke="#ff6b35" stroke-width="1"/>
+      <text x="610" y="52" fill="#ff6b35" font-size="11" text-anchor="middle" font-weight="700">PLASMA IGNITER</text>
+      <text x="610" y="72" fill="#6e7681" font-size="8" text-anchor="middle">5 kW magnetron</text>
+      <text x="610" y="86" fill="#6e7681" font-size="8" text-anchor="middle">2.45 GHz, start-up only</text>
+      <line x1="580" y1="100" x2="530" y2="200" stroke="#ff6b35" stroke-width="1"/>
+    </svg>
   </div>
 </div>
 
@@ -3324,7 +4169,9 @@ function showTab(id) {
     'model3d': '3D Model',
     'videos': 'Videos',
     'plancost': 'Plan & Cost',
-    'storyboard': 'Storyboard'
+    'storyboard': 'Storyboard',
+    'blueprint': 'Blueprint',
+    'electronics': 'Electronics'
   };
   buttons.forEach(b => {
     if (b.textContent.trim() === labels[id]) b.classList.add('active');
