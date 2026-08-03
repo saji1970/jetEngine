@@ -505,6 +505,7 @@
   <button onclick="showTab('power')">Power &amp; Cooling</button>
   <button onclick="showTab('model3d')">3D Model</button>
   <button onclick="showTab('videos')">Videos</button>
+  <button onclick="showTab('plancost')">Plan &amp; Cost</button>
 </div>
 
 <!-- ==================== OVERVIEW ==================== -->
@@ -2117,6 +2118,517 @@
   </div>
 </div>
 
+<!-- ==================== PLAN & COST ==================== -->
+<div class="section" id="plancost">
+  <h2><span class="icon">&#128176;</span> Manufacturing Plan, Equipment &amp; Cost</h2>
+
+  <!-- ---- EQUIPMENT OVERVIEW ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Equipment Requirements Overview</h3>
+    <p style="margin-bottom:14px;color:var(--dim);font-size:0.9em;">Complete equipment needed to manufacture the HPM-120, from prototype through production. Phase 1 requires minimal investment &mdash; outsource everything except test equipment.</p>
+
+    <div class="tab-group">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="showPlanTab(this,'pc-am')">3D Printing / AM</button>
+        <button class="tab-btn" onclick="showPlanTab(this,'pc-post')">Post-Processing</button>
+        <button class="tab-btn" onclick="showPlanTab(this,'pc-ceramic')">Ceramic &amp; Coatings</button>
+        <button class="tab-btn" onclick="showPlanTab(this,'pc-refract')">Refractory &amp; Advanced</button>
+      </div>
+
+      <div class="tab-content active" id="pc-am">
+        <table>
+          <thead><tr><th>Machine</th><th>Technology</th><th>Materials</th><th>Build Volume</th><th>Est. Cost</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td class="val">EOS M290</td><td>LPBF (single laser)</td><td>IN718, IN625, GRCop-42, 316L</td><td>250&times;250&times;325 mm</td><td class="ok">$500K&ndash;$800K</td><td>Phase 1 &mdash; all parts fit</td></tr>
+            <tr><td class="val">EOS M400-4</td><td>LPBF (4-laser)</td><td>IN718, IN625</td><td>400&times;400&times;400 mm</td><td class="warn">$1.5M&ndash;$2.0M</td><td>Full-size RDE shell, nozzle, injector</td></tr>
+            <tr><td class="val">SLM Solutions 800</td><td>LPBF (quad laser)</td><td>IN718, Ti-6Al-4V</td><td>500&times;280&times;850 mm</td><td class="warn">$1.5M&ndash;$2.5M</td><td>Large single-piece intake, nozzle</td></tr>
+            <tr><td class="val">Arcam EBM Q20+</td><td>Electron Beam Melting</td><td>Ti-6Al-4V</td><td>350 dia &times; 380 mm</td><td class="warn">$1.0M&ndash;$1.5M</td><td>Intake cowl, diffuser (Ti parts)</td></tr>
+            <tr><td class="val">Velo3D Sapphire XC</td><td>LPBF (non-contact)</td><td>IN718, Ti</td><td>600 dia &times; 550 mm</td><td class="hot">$2.0M&ndash;$3.0M</td><td>Full-size nozzle in one print</td></tr>
+          </tbody>
+        </table>
+        <div class="note" style="margin-top:12px;">For Phase 1&ndash;2, use service bureaus (Protolabs, Carpenter Additive, Elementum 3D, Materialise) instead of purchasing machines. Typical lead time: 2&ndash;6 weeks.</div>
+      </div>
+
+      <div class="tab-content" id="pc-post">
+        <table>
+          <thead><tr><th>Equipment</th><th>Purpose</th><th>Est. Cost</th><th>Outsource Option</th></tr></thead>
+          <tbody>
+            <tr><td class="val">Hot Isostatic Press (HIP)</td><td>Close internal porosity in AM parts</td><td class="warn">$500K&ndash;$2M</td><td>Bodycote, Quintus ($500&ndash;$2K/batch)</td></tr>
+            <tr><td class="val">Vacuum Furnace (1,200&deg;C)</td><td>Heat treatment, stress relief, aging</td><td class="ok">$150K&ndash;$400K</td><td>Solar Atmospheres ($300&ndash;$1K/batch)</td></tr>
+            <tr><td class="val">Wire EDM</td><td>Cut parts from build plate, profiles</td><td class="ok">$100K&ndash;$300K</td><td>Any precision shop ($50&ndash;$200/hr)</td></tr>
+            <tr><td class="val">5-Axis CNC Mill</td><td>Finish machining sealing faces, bores</td><td class="ok">$200K&ndash;$600K</td><td>Aerospace machine shops ($80&ndash;$150/hr)</td></tr>
+            <tr><td class="val">CNC Lathe</td><td>Cylindrical features, annulus bores</td><td class="ok">$100K&ndash;$300K</td><td>Outsource ($60&ndash;$120/hr)</td></tr>
+            <tr><td class="val">CMM (Coordinate Measuring)</td><td>Dimensional inspection (&plusmn;0.01 mm)</td><td class="ok">$80K&ndash;$250K</td><td>Outsource ($100&ndash;$300/part)</td></tr>
+            <tr><td class="val">Industrial CT Scanner</td><td>Non-destructive internal inspection</td><td class="warn">$300K&ndash;$1M</td><td>Nikon, Zeiss ($200&ndash;$500/scan)</td></tr>
+            <tr><td class="val">FPI Kit</td><td>Surface crack detection</td><td class="ok">$5K&ndash;$20K</td><td>Outsource ($50&ndash;$150/part)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-content" id="pc-ceramic">
+        <table>
+          <thead><tr><th>Equipment</th><th>Purpose</th><th>Est. Cost</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="val">CVI Reactor</td><td>C/SiC liner fabrication</td><td class="hot">$1M&ndash;$5M</td><td>Must outsource &mdash; Safran Ceramics, CoorsTek, GE CMC</td></tr>
+            <tr><td class="val">Air Plasma Spray (APS)</td><td>ZrO&#x2082; / GZO TBC coatings</td><td class="ok">$80K&ndash;$200K</td><td>Outsource: Praxair, Oerlikon Metco</td></tr>
+            <tr><td class="val">HVOF Spray System</td><td>NiCrAlY bond coat application</td><td class="ok">$100K&ndash;$250K</td><td>Often bundled with APS outsourcing</td></tr>
+            <tr><td class="val">EB-PVD System</td><td>Columnar TBC, Ir coatings</td><td class="hot">$2M&ndash;$5M</td><td>Must outsource &mdash; Chromalloy, PW Coatings</td></tr>
+            <tr><td class="val">Diamond Grinding Station</td><td>C/SiC final machining</td><td class="ok">$50K&ndash;$150K</td><td>Can outsource to ceramic machining shops</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-content" id="pc-refract">
+        <table>
+          <thead><tr><th>Equipment</th><th>Purpose</th><th>Est. Cost</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="val">Spark Plasma Sintering (SPS)</td><td>W-Re-HfC, HEA consolidation</td><td class="ok">$200K&ndash;$500K</td><td>FCT Systeme, Thermal Technology</td></tr>
+            <tr><td class="val">Vacuum Arc Melter (VAR)</td><td>Nb-Si, Co-Re, HEA ingots</td><td class="ok">$150K&ndash;$400K</td><td>Lab-scale button melter: $20K&ndash;$50K</td></tr>
+            <tr><td class="val">Planetary Ball Mill</td><td>Mechanical alloying of powders</td><td class="ok">$20K&ndash;$60K</td><td>Retsch PM400, Fritsch Pulverisette</td></tr>
+            <tr><td class="val">Ar Glove Box</td><td>Handling O&#x2082;-sensitive powders</td><td class="ok">$15K&ndash;$50K</td><td>MBraun, Vacuum Atmospheres Co.</td></tr>
+            <tr><td class="val">Sinker EDM</td><td>Machining W, Mo, HEA parts</td><td class="ok">$80K&ndash;$200K</td><td>Makino, Sodick, Mitsubishi</td></tr>
+            <tr><td class="val">H&#x2082; Atmosphere Furnace</td><td>W sintering + Cu infiltration</td><td class="ok">$80K&ndash;$200K</td><td>Combined sintering &amp; infiltration</td></tr>
+            <tr><td class="val">Hydraulic Press (400 MPa)</td><td>W powder compaction for electrodes</td><td class="ok">$30K&ndash;$100K</td><td>Standard PM press</td></tr>
+            <tr><td class="val">Pack Cementation Furnace</td><td>Silicide coatings on Nb-Si</td><td class="ok">$30K&ndash;$80K</td><td>Modified tube furnace with gas handling</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- 3D PRINTING FEASIBILITY ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>3D Printing Feasibility &mdash; Every Component</h3>
+    <p style="margin-bottom:14px;color:var(--dim);font-size:0.9em;">~45% of parts by count (~70% of structural mass) can be 3D printed. The rest must be conventionally manufactured.</p>
+
+    <table>
+      <thead><tr><th>Component</th><th>Printable?</th><th>Technology</th><th>Material</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Intake Cowl</td><td><span class="print-yes">YES</span></td><td>EBM / LPBF</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td>Split into 2&ndash;3 segments if &gt;350 mm</td></tr>
+        <tr><td>Intake Centerbody</td><td><span class="print-yes">YES</span></td><td>LPBF</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td>Single piece, standard build</td></tr>
+        <tr><td>Diffuser Duct</td><td><span class="print-yes">YES</span></td><td>EBM / LPBF</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td><td>Straightforward geometry</td></tr>
+        <tr><td>RDE Outer Shell</td><td><span class="print-yes">YES</span></td><td>LPBF</td><td><span class="mat-badge mat-in">IN718</span></td><td>Integrated cooling channels &mdash; ideal for AM</td></tr>
+        <tr><td>RDE Injector Face</td><td><span class="print-yes">YES</span></td><td>LPBF</td><td><span class="mat-badge mat-in">IN625</span></td><td>Star part: 24 injectors + internal manifold</td></tr>
+        <tr><td>RDE Inner Liner</td><td><span class="print-no">NO</span></td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td>Ceramic composite &mdash; not metal AM</td></tr>
+        <tr><td>MHD Channel Walls</td><td><span class="print-no">NO</span></td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td>Ceramic composite</td></tr>
+        <tr><td>MHD Electrodes</td><td><span class="print-no">NO</span></td><td>Press-sinter-infiltrate</td><td><span class="mat-badge mat-wcu">W-Cu 80/20</span></td><td>Cu melts during W sintering in AM</td></tr>
+        <tr><td>MHD Insulators</td><td><span class="print-no">NO</span></td><td>CNC from billet</td><td><span class="mat-badge mat-bn">BN</span></td><td>Hot-pressed ceramic billet</td></tr>
+        <tr><td>Nozzle Outer Shell</td><td><span class="print-yes">YES</span></td><td>LPBF</td><td><span class="mat-badge mat-in">IN718</span></td><td>Single-piece complex contour</td></tr>
+        <tr><td>Nozzle Inner Wall</td><td><span class="print-no">NO</span></td><td>CVI</td><td><span class="mat-badge mat-csic">C/SiC</span></td><td>Ceramic composite</td></tr>
+        <tr><td>Mounting Brackets</td><td><span class="print-yes">YES</span></td><td>LPBF</td><td><span class="mat-badge mat-in">IN718</span></td><td>Topology-optimized for AM</td></tr>
+        <tr><td>Cooling Manifolds</td><td><span class="print-yes">YES</span></td><td>LPBF</td><td><span class="mat-badge mat-ss">316L SS</span></td><td>Complex plumbing &mdash; AM advantage</td></tr>
+        <tr><td>Cryostats</td><td><span class="print-no">NO</span></td><td>Roll + TIG weld</td><td><span class="mat-badge mat-ss">304 SS</span></td><td>Sheet metal forming is simpler/cheaper</td></tr>
+        <tr><td>Magnet Coils</td><td><span class="print-no">NO</span></td><td>Wire winding</td><td><span class="mat-badge" style="background:rgba(0,180,216,0.12);color:var(--accent);">NbTi</span></td><td>Procured superconducting wire</td></tr>
+        <tr><td>Seals (C-seals)</td><td><span class="print-no">NO</span></td><td>Stamped / formed</td><td><span class="mat-badge mat-in">IN X-750</span></td><td>Buy from seal vendor</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- ADVANCED ALLOY AM READINESS ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Advanced Alloy 3D Printing Readiness</h3>
+    <p style="margin-bottom:14px;color:var(--dim);font-size:0.9em;">Assessment of whether the 7 advanced metallurgy alloys can be additively manufactured.</p>
+    <table>
+      <thead><tr><th>Alloy</th><th>Composition</th><th>AM Feasible?</th><th>Best Method</th><th>TRL</th><th>Recommendation</th></tr></thead>
+      <tbody>
+        <tr><td class="val">W-Re-HfC</td><td>W-3Re-0.5HfC</td><td><span class="print-no">NO (2025)</span></td><td>LPBF (future)</td><td>2&ndash;3</td><td>Use SPS + HIP</td></tr>
+        <tr><td class="val">Nb-Si Composite</td><td>Nb-22Ti-16Si-5Cr-2Hf-2Al</td><td><span class="print-no">PARTIAL</span></td><td>LPBF / DED</td><td>3&ndash;4</td><td>Use VAR + extrusion for production</td></tr>
+        <tr><td class="val">NbMoTaW-Re RHEA</td><td>Nb&#x2082;&#x2085;Mo&#x2082;&#x2085;Ta&#x2082;&#x2085;W&#x2082;&#x2080;Re&#x2085;</td><td><span class="print-no">PARTIAL</span></td><td>L-DED</td><td>3&ndash;4</td><td>DED prototypes feasible</td></tr>
+        <tr><td class="val">GRCop-42</td><td>Cu-4Cr-2Nb</td><td><span class="print-yes">YES</span></td><td>LPBF</td><td style="color:var(--green);font-weight:700;">7+</td><td style="color:var(--green);">Print immediately &mdash; NASA proven</td></tr>
+        <tr><td class="val">W-La&#x2082;O&#x2083;/Cu Graded</td><td>W-1La&#x2082;O&#x2083; &rarr; Cu</td><td><span class="print-no">NO</span></td><td>N/A</td><td>1&ndash;2</td><td>Use press-sinter-infiltrate</td></tr>
+        <tr><td class="val">Co-Re-Cr</td><td>Co-17Re-23Cr</td><td><span class="print-yes">FEASIBLE</span></td><td>LPBF</td><td>4&ndash;5</td><td>Feasible with parameter dev</td></tr>
+        <tr><td class="val">GZO/YSZ TBC</td><td>Gd&#x2082;Zr&#x2082;O&#x2087; + 8YSZ</td><td>&mdash;</td><td>APS / EB-PVD</td><td>8</td><td>Not an AM process (coating)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- COST BREAKDOWN BY PHASE ---- -->
+  <h2 style="margin-top:30px;"><span class="icon">&#128178;</span> Cost Breakdown by Phase</h2>
+
+  <div class="grid-3" style="margin-bottom:20px;">
+    <!-- Phase 1 Cost -->
+    <div class="card">
+      <h3 style="color:var(--green);">Phase 1 &mdash; RDE Demonstrator</h3>
+      <div style="font-size:2em;font-weight:700;color:var(--green);margin:10px 0;">~$65K</div>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:12px;">1&ndash;5 kN &bull; All outsourced manufacturing</div>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Metal AM printing (all parts)</td><td class="val">$15,000</td></tr>
+        <tr><td>HIP + heat treatment</td><td class="val">$5,000</td></tr>
+        <tr><td>CNC finishing</td><td class="val">$8,000</td></tr>
+        <tr><td>Plasma igniter (5 kW magnetron)</td><td class="val">$4,000</td></tr>
+        <tr><td>High-speed pressure transducers &times;8</td><td class="val">$6,000</td></tr>
+        <tr><td>Fuel system (pump, regulator, tank)</td><td class="val">$3,000</td></tr>
+        <tr><td>Data acquisition (&gt;1 MHz)</td><td class="val">$5,000</td></tr>
+        <tr><td>Standard instrumentation</td><td class="val">$5,000</td></tr>
+        <tr><td>Test stand + safety equipment</td><td class="val">$8,000</td></tr>
+        <tr><td>Misc + contingency</td><td class="val">$6,000</td></tr>
+        <tr class="cost-total"><td>Total Phase 1</td><td>~$65,000</td></tr>
+      </table>
+      <div class="note" style="margin-top:10px;">All parts fit in a single EOS M290 build volume. Zero capital equipment required &mdash; outsource everything.</div>
+    </div>
+
+    <!-- Phase 2 Cost -->
+    <div class="card">
+      <h3 style="color:var(--warn);">Phase 2 &mdash; RDE + MHD Demo</h3>
+      <div style="font-size:2em;font-weight:700;color:var(--warn);margin:10px 0;">~$350K&ndash;$700K</div>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:12px;">10&ndash;20 kN &bull; Adds MHD sections &amp; copper magnets</div>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Metal AM (larger parts)</td><td class="val">$40K&ndash;$80K</td></tr>
+        <tr><td>GRCop-42 cooling jacket (AM)</td><td class="val">$15K&ndash;$30K</td></tr>
+        <tr><td>C/SiC liners (CVI outsource)</td><td class="val">$80K&ndash;$150K</td></tr>
+        <tr><td>W-Cu electrodes (112 pcs)</td><td class="val">$20K&ndash;$40K</td></tr>
+        <tr><td>BN insulators (56 pcs)</td><td class="val">$8K&ndash;$15K</td></tr>
+        <tr><td>Copper electromagnets (2 sets)</td><td class="val">$20K&ndash;$60K</td></tr>
+        <tr><td>Post-processing (HIP, HT, CNC)</td><td class="val">$25K&ndash;$50K</td></tr>
+        <tr><td>Cooling system (pumps, HX, plumbing)</td><td class="val">$15K&ndash;$30K</td></tr>
+        <tr><td>Alkali seed injection system</td><td class="val">$10K&ndash;$20K</td></tr>
+        <tr><td>Instrumentation upgrade</td><td class="val">$20K&ndash;$40K</td></tr>
+        <tr><td>ECU + control software</td><td class="val">$15K&ndash;$30K</td></tr>
+        <tr><td>Test facility upgrades</td><td class="val">$30K&ndash;$60K</td></tr>
+        <tr><td>Contingency (25%)</td><td class="val">$60K&ndash;$130K</td></tr>
+        <tr class="cost-total"><td>Total Phase 2</td><td>~$350K&ndash;$700K</td></tr>
+      </table>
+    </div>
+
+    <!-- Phase 3 Cost -->
+    <div class="card">
+      <h3 style="color:var(--hot);">Phase 3 &mdash; Full-Scale 120 kN</h3>
+      <div style="font-size:2em;font-weight:700;color:var(--hot);margin:10px 0;">~$1.8M&ndash;$4.1M</div>
+      <div style="font-size:0.82em;color:var(--dim);margin-bottom:12px;">50&ndash;120 kN &bull; Superconducting magnets &bull; Advanced alloys</div>
+      <table class="pp-table" style="font-size:0.82em;">
+        <tr><td>Metal AM printing (all parts)</td><td class="val">$120K&ndash;$250K</td></tr>
+        <tr><td>C/SiC CMC liners (5 sets)</td><td class="val">$250K&ndash;$600K</td></tr>
+        <tr><td>Superconducting magnets (2 sets)</td><td class="val">$400K&ndash;$1M</td></tr>
+        <tr><td>MHD power conditioning</td><td class="val">$80K&ndash;$150K</td></tr>
+        <tr><td>Cryogenic system (LN&#x2082;)</td><td class="val">$60K&ndash;$120K</td></tr>
+        <tr><td>Advanced alloy parts (W-Re, Nb-Si, HEA)</td><td class="val">$100K&ndash;$250K</td></tr>
+        <tr><td>TBC coatings (GZO/YSZ bilayer)</td><td class="val">$40K&ndash;$80K</td></tr>
+        <tr><td>Sensors &amp; instrumentation</td><td class="val">$100K&ndash;$180K</td></tr>
+        <tr><td>ECU &amp; control software</td><td class="val">$60K&ndash;$120K</td></tr>
+        <tr><td>Post-processing (HIP, HT, CNC)</td><td class="val">$80K&ndash;$180K</td></tr>
+        <tr><td>Assembly &amp; integration</td><td class="val">$80K&ndash;$150K</td></tr>
+        <tr><td>Test facility &amp; stand</td><td class="val">$200K&ndash;$500K</td></tr>
+        <tr><td>Contingency (25%)</td><td class="val">$360K&ndash;$810K</td></tr>
+        <tr class="cost-total"><td>Total Phase 3</td><td>~$1.8M&ndash;$4.1M</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ---- TOTAL PROGRAM COST ---- -->
+  <div class="card span-full" style="margin-bottom:20px;text-align:center;">
+    <h3>Total Program Cost (Phase 1 &rarr; 3)</h3>
+    <div style="display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap;margin:20px 0;">
+      <div>
+        <div style="font-size:0.8em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Low Estimate</div>
+        <div style="font-size:2.5em;font-weight:700;color:var(--green);">$2.2M</div>
+      </div>
+      <div style="font-size:2em;color:var(--dim);">&mdash;</div>
+      <div>
+        <div style="font-size:0.8em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">High Estimate</div>
+        <div style="font-size:2.5em;font-weight:700;color:var(--hot);">$4.9M</div>
+      </div>
+    </div>
+    <p style="color:var(--dim);font-size:0.85em;">Excludes engineering labor, design, simulation, and facility lease. Assumes outsourced manufacturing for Phase 1&ndash;2.</p>
+  </div>
+
+  <!-- ---- EQUIPMENT INVESTMENT STRATEGY ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Equipment Investment Strategy</h3>
+    <div class="grid-3" style="margin-top:14px;">
+      <div style="border:1px solid var(--green);border-radius:8px;padding:16px;">
+        <h4 style="color:var(--green);margin-bottom:8px;font-size:0.9em;">Option A: Maximum Outsourcing</h4>
+        <div style="font-size:1.5em;font-weight:700;color:var(--green);margin-bottom:8px;">~$65K&ndash;$150K</div>
+        <p style="font-size:0.82em;color:var(--dim);">Equipment owned: test stand &amp; instrumentation only. All manufacturing outsourced to service bureaus.</p>
+        <div style="margin-top:10px;font-size:0.82em;">
+          <div style="color:var(--green);">&#10003; Lowest capital risk</div>
+          <div style="color:var(--green);">&#10003; No facility requirements</div>
+          <div style="color:var(--warn);">&#9888; Slower iteration cycles</div>
+          <div style="color:var(--warn);">&#9888; Less IP control</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--warn);border-radius:8px;padding:16px;">
+        <h4 style="color:var(--warn);margin-bottom:8px;font-size:0.9em;">Option B: Partial In-House</h4>
+        <div style="font-size:1.5em;font-weight:700;color:var(--warn);margin-bottom:8px;">~$865K&ndash;$1.5M</div>
+        <p style="font-size:0.82em;color:var(--dim);">Own EOS M290, vacuum furnace, wire EDM, small CNC. Outsource HIP, C/SiC, magnets, coatings.</p>
+        <div style="margin-top:10px;font-size:0.82em;">
+          <div style="color:var(--green);">&#10003; Rapid design iteration</div>
+          <div style="color:var(--green);">&#10003; In-house AM capability</div>
+          <div style="color:var(--warn);">&#9888; Facility &amp; staff needed</div>
+          <div style="color:var(--warn);">&#9888; Still outsource specialty</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--hot);border-radius:8px;padding:16px;">
+        <h4 style="color:var(--hot);margin-bottom:8px;font-size:0.9em;">Option C: Full In-House</h4>
+        <div style="font-size:1.5em;font-weight:700;color:var(--hot);margin-bottom:8px;">~$4.2M&ndash;$8.7M</div>
+        <p style="font-size:0.82em;color:var(--dim);">Full manufacturing capability: large LPBF, HIP, SPS, VAR, EDM, CNC, APS, CT scanner, clean room.</p>
+        <div style="margin-top:10px;font-size:0.82em;">
+          <div style="color:var(--green);">&#10003; Full control &amp; speed</div>
+          <div style="color:var(--green);">&#10003; Production capability</div>
+          <div style="color:var(--hot);">&#9888; Major capital investment</div>
+          <div style="color:var(--hot);">&#9888; Significant facility needs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- TIMELINE / ROADMAP ---- -->
+  <h2 style="margin-top:30px;"><span class="icon">&#128197;</span> Development Timeline &amp; Roadmap</h2>
+
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Program Timeline</h3>
+
+    <!-- Gantt-style timeline -->
+    <div style="overflow-x:auto;margin-top:14px;">
+      <table style="min-width:900px;">
+        <thead>
+          <tr>
+            <th style="width:180px;">Phase / Activity</th>
+            <th colspan="4" style="text-align:center;">Year 1</th>
+            <th colspan="4" style="text-align:center;">Year 2</th>
+            <th colspan="4" style="text-align:center;">Year 3</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th style="font-size:0.7em;text-align:center;">Q1</th><th style="font-size:0.7em;text-align:center;">Q2</th><th style="font-size:0.7em;text-align:center;">Q3</th><th style="font-size:0.7em;text-align:center;">Q4</th>
+            <th style="font-size:0.7em;text-align:center;">Q1</th><th style="font-size:0.7em;text-align:center;">Q2</th><th style="font-size:0.7em;text-align:center;">Q3</th><th style="font-size:0.7em;text-align:center;">Q4</th>
+            <th style="font-size:0.7em;text-align:center;">Q1</th><th style="font-size:0.7em;text-align:center;">Q2</th><th style="font-size:0.7em;text-align:center;">Q3</th><th style="font-size:0.7em;text-align:center;">Q4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 1: Design &amp; Procure</td>
+            <td colspan="2" style="background:rgba(46,196,178,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--green);">&#9608;&#9608;&#9608;</td>
+            <td colspan="10"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 1: AM Build + Post</td>
+            <td></td>
+            <td colspan="2" style="background:rgba(46,196,178,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--green);">&#9608;&#9608;&#9608;</td>
+            <td colspan="9"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 1: Assembly &amp; Test</td>
+            <td colspan="2"></td>
+            <td colspan="2" style="background:rgba(46,196,178,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--green);">&#9608;&#9608;&#9608;</td>
+            <td colspan="8"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 1: Iterate &amp; Retest</td>
+            <td colspan="3"></td>
+            <td colspan="2" style="background:rgba(46,196,178,0.15);border-radius:4px;text-align:center;font-size:0.7em;color:var(--green);">&#9608;&#9608;</td>
+            <td colspan="7"></td>
+          </tr>
+          <tr><td colspan="13" style="border:none;height:4px;"></td></tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 2: Design MHD</td>
+            <td colspan="4"></td>
+            <td colspan="2" style="background:rgba(255,214,10,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--warn);">&#9608;&#9608;&#9608;</td>
+            <td colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 2: Procure C/SiC &amp; Magnets</td>
+            <td colspan="4"></td>
+            <td colspan="3" style="background:rgba(255,214,10,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--warn);">&#9608;&#9608;&#9608;</td>
+            <td colspan="5"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 2: AM Build + Electrodes</td>
+            <td colspan="5"></td>
+            <td colspan="2" style="background:rgba(255,214,10,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--warn);">&#9608;&#9608;&#9608;</td>
+            <td colspan="5"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 2: Integration &amp; Test</td>
+            <td colspan="6"></td>
+            <td colspan="2" style="background:rgba(255,214,10,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--warn);">&#9608;&#9608;&#9608;</td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 2: Iterate &amp; Validate</td>
+            <td colspan="7"></td>
+            <td colspan="2" style="background:rgba(255,214,10,0.15);border-radius:4px;text-align:center;font-size:0.7em;color:var(--warn);">&#9608;&#9608;</td>
+            <td colspan="3"></td>
+          </tr>
+          <tr><td colspan="13" style="border:none;height:4px;"></td></tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 3: Full-Scale Design</td>
+            <td colspan="8"></td>
+            <td colspan="2" style="background:rgba(255,107,53,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--hot);">&#9608;&#9608;&#9608;</td>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 3: SC Magnets &amp; C/SiC</td>
+            <td colspan="8"></td>
+            <td colspan="3" style="background:rgba(255,107,53,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--hot);">&#9608;&#9608;&#9608;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 3: AM + Adv. Alloys</td>
+            <td colspan="9"></td>
+            <td colspan="2" style="background:rgba(255,107,53,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--hot);">&#9608;&#9608;&#9608;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="val" style="font-size:0.85em;">Phase 3: Full Integration</td>
+            <td colspan="10"></td>
+            <td colspan="2" style="background:rgba(255,107,53,0.25);border-radius:4px;text-align:center;font-size:0.7em;color:var(--hot);">&#9608;&#9608;&#9608;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ---- PHASE MILESTONE DETAILS ---- -->
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="card">
+      <h3 style="color:var(--green);">Phase 1 Milestones</h3>
+      <ol class="steps">
+        <li>Finalize RDE annulus &amp; injector CAD</li>
+        <li>Submit AM build order to service bureau</li>
+        <li>Receive parts, HIP, heat treat, CNC finish</li>
+        <li>Assemble RDE demonstrator on test stand</li>
+        <li>Instrumentation checkout &amp; cold-flow test</li>
+        <li>First ignition &mdash; prove rotating detonation</li>
+        <li>Parametric testing: wave speed, pressure gain</li>
+        <li>Iterate injector design if needed (reprint)</li>
+        <li>Sustained run &gt; 60 s at target conditions</li>
+      </ol>
+      <div class="note" style="margin-top:10px;">
+        <strong>Go/No-Go Gate:</strong> Stable detonation with pressure gain &gt;5:1 and wave speed &gt;1,000 m/s before proceeding to Phase 2.
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--warn);">Phase 2 Milestones</h3>
+      <ol class="steps">
+        <li>Design MHD generator &amp; accelerator channels</li>
+        <li>Order C/SiC liners (3&ndash;6 month lead)</li>
+        <li>Fabricate W-Cu electrodes &amp; BN insulators</li>
+        <li>Build copper electromagnets (1&ndash;2 T)</li>
+        <li>3D print larger RDE + MHD structural parts</li>
+        <li>Print GRCop-42 cooling jacket</li>
+        <li>Assemble MHD electrode&ndash;insulator stacks</li>
+        <li>Integrate RDE + MHD + cooling + seed systems</li>
+        <li>First MHD-coupled hot fire test</li>
+        <li>Demonstrate self-sustaining power cycle</li>
+      </ol>
+      <div class="note" style="margin-top:10px;">
+        <strong>Go/No-Go Gate:</strong> MHD generator produces &gt;100 kW and self-powers the accelerator. Total thrust &gt;10 kN.
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--hot);">Phase 3 Milestones</h3>
+      <ol class="steps">
+        <li>Full-scale 120 kN engine detailed design</li>
+        <li>Procure superconducting NbTi magnets</li>
+        <li>Fabricate full-size C/SiC liners with GZO/YSZ TBC</li>
+        <li>SPS/HIP advanced alloy components (W-Re, Nb-Si)</li>
+        <li>3D print full-size IN718 &amp; GRCop-42 structures</li>
+        <li>Fabricate graded W-La&#x2082;O&#x2083;/Cu electrodes</li>
+        <li>Full system integration &amp; cryo plumb-in</li>
+        <li>Progressive hot fire: 25% &rarr; 50% &rarr; 75% &rarr; 100% thrust</li>
+        <li>Performance mapping &amp; endurance testing</li>
+        <li>Target: 120 kN thrust, &gt;29:1 T/W ratio</li>
+      </ol>
+      <div class="note" style="margin-top:10px;">
+        <strong>Success Criteria:</strong> 120 kN sustained thrust with self-powering MHD cycle and &lt;15 kW external power at steady state.
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- MANUFACTURING FLOW DIAGRAM ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Manufacturing Flow &mdash; What Gets Printed vs. What Doesn&rsquo;t</h3>
+    <div class="grid-2" style="margin-top:14px;">
+      <div style="border:1px solid var(--green);border-radius:8px;padding:16px;">
+        <h4 style="color:var(--green);margin-bottom:10px;">3D Printed (~45% of parts, ~70% structural mass)</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>RDE injector face plate</td><td><span class="mat-badge mat-in">IN625</span></td></tr>
+          <tr><td>RDE outer shell + cooling channels</td><td><span class="mat-badge mat-in">IN718</span></td></tr>
+          <tr><td>RDE cooling jacket</td><td><span class="mat-badge mat-cu">GRCop-42</span></td></tr>
+          <tr><td>Nozzle outer shell</td><td><span class="mat-badge mat-in">IN718</span></td></tr>
+          <tr><td>Intake cowl &amp; centerbody</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td></tr>
+          <tr><td>Diffuser duct</td><td><span class="mat-badge mat-ti">Ti-6Al-4V</span></td></tr>
+          <tr><td>Mounting brackets</td><td><span class="mat-badge mat-in">IN718</span></td></tr>
+          <tr><td>Cooling manifolds</td><td><span class="mat-badge mat-ss">316L SS</span></td></tr>
+        </table>
+      </div>
+      <div style="border:1px solid var(--hot);border-radius:8px;padding:16px;">
+        <h4 style="color:var(--hot);margin-bottom:10px;">Conventionally Made (~55% of parts)</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>C/SiC ceramic liners (RDE, MHD, nozzle)</td><td>CVI process</td></tr>
+          <tr><td>W-Cu electrodes (112 pcs)</td><td>Press-sinter-infiltrate</td></tr>
+          <tr><td>BN insulators (56 pcs)</td><td>CNC from billet</td></tr>
+          <tr><td>TBC &amp; EBC coatings</td><td>APS / EB-PVD spray</td></tr>
+          <tr><td>Superconducting magnet coils</td><td>NbTi wire winding</td></tr>
+          <tr><td>Cryostats</td><td>Roll-form + TIG weld</td></tr>
+          <tr><td>C-seals</td><td>Stamped IN X-750</td></tr>
+          <tr><td>Plasma igniter waveguide</td><td>CNC machined copper</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- EQUIPMENT PURCHASE PRIORITY ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Equipment Purchase Priority Order</h3>
+    <table>
+      <thead><tr><th>Priority</th><th>Equipment</th><th>When</th><th>Est. Cost</th><th>Justification</th></tr></thead>
+      <tbody>
+        <tr><td class="val" style="color:var(--green);font-weight:700;">1</td><td class="val">Test stand + instrumentation</td><td>Phase 1 start</td><td class="val">~$50K</td><td>Cannot test without it</td></tr>
+        <tr><td class="val" style="color:var(--green);font-weight:700;">2</td><td class="val">Service bureau contracts (AM, HIP, CNC)</td><td>Phase 1 start</td><td class="val">~$30K</td><td>Outsource all manufacturing</td></tr>
+        <tr><td class="val" style="color:var(--green);font-weight:700;">3</td><td class="val">Basic metrology (hardness, gauges)</td><td>Phase 1</td><td class="val">~$5K</td><td>In-house QC capability</td></tr>
+        <tr><td class="val" style="color:var(--warn);font-weight:700;">4</td><td class="val">EOS M290 (LPBF printer)</td><td>Phase 2 start</td><td class="val">$500K&ndash;$800K</td><td>Rapid in-house design iteration</td></tr>
+        <tr><td class="val" style="color:var(--warn);font-weight:700;">5</td><td class="val">Wire EDM</td><td>Phase 2</td><td class="val">$100K&ndash;$200K</td><td>Cut parts from build plates</td></tr>
+        <tr><td class="val" style="color:var(--warn);font-weight:700;">6</td><td class="val">Vacuum furnace</td><td>Phase 2</td><td class="val">$150K&ndash;$300K</td><td>In-house heat treatment</td></tr>
+        <tr><td class="val" style="color:var(--warn);font-weight:700;">7</td><td class="val">Ar glove box</td><td>Phase 2</td><td class="val">$15K&ndash;$30K</td><td>Safe powder handling</td></tr>
+        <tr><td class="val" style="color:var(--hot);font-weight:700;">8</td><td class="val">SPS system</td><td>Phase 3 prep</td><td class="val">$200K&ndash;$500K</td><td>Advanced alloy development</td></tr>
+        <tr><td class="val" style="color:var(--hot);font-weight:700;">9</td><td class="val">EOS M400-4 (large-format LPBF)</td><td>Phase 3</td><td class="val">$1.5M&ndash;$2M</td><td>Full-size parts in-house</td></tr>
+        <tr><td class="val" style="color:var(--hot);font-weight:700;">10</td><td class="val">APS spray system</td><td>Phase 3</td><td class="val">$100K&ndash;$200K</td><td>In-house TBC coating</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- KEY SUPPLIERS ---- -->
+  <div class="card span-full">
+    <h3>Key Suppliers &amp; Service Providers</h3>
+    <div class="grid-3" style="margin-top:14px;">
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;font-size:0.85em;">Metal AM Service Bureaus</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Protolabs / 3D Hubs</td><td class="val">IN, Ti, SS, Al</td></tr>
+          <tr><td>Carpenter Additive</td><td class="val">IN718, GRCop-42</td></tr>
+          <tr><td>Elementum 3D</td><td class="val">GRCop-42, RAM</td></tr>
+          <tr><td>Velo3D (contract)</td><td class="val">Large-format IN, Ti</td></tr>
+          <tr><td>Materialise</td><td class="val">IN, Ti, SS, Al</td></tr>
+          <tr><td>TRUMPF</td><td class="val">IN, Ti, specialty</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;font-size:0.85em;">Specialty Materials</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Plansee (Austria)</td><td class="val">W, Mo, Re powders</td></tr>
+          <tr><td>H.C. Starck</td><td class="val">W, Ta, Nb powders</td></tr>
+          <tr><td>CBMM (Brazil)</td><td class="val">Nb metal</td></tr>
+          <tr><td>ATI (USA)</td><td class="val">Ta, Hf metal</td></tr>
+          <tr><td>Heraeus (Germany)</td><td class="val">Ir, Pt metals</td></tr>
+          <tr><td>Johnson Matthey (UK)</td><td class="val">Ir, Rh, PGMs</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px;font-size:0.85em;">Outsource Services</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Safran Ceramics</td><td class="val">C/SiC CVI liners</td></tr>
+          <tr><td>CoorsTek / GE CMC</td><td class="val">C/SiC CVI liners</td></tr>
+          <tr><td>Bodycote / Quintus</td><td class="val">HIP services</td></tr>
+          <tr><td>Solar Atmospheres</td><td class="val">Vacuum heat treat</td></tr>
+          <tr><td>Oerlikon Metco</td><td class="val">TBC coatings (APS)</td></tr>
+          <tr><td>Bruker / Cryomagnetics</td><td class="val">SC magnets</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Three.js CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
@@ -2696,7 +3208,8 @@ function showTab(id) {
     'testing': 'Testing',
     'power': 'Power & Cooling',
     'model3d': '3D Model',
-    'videos': 'Videos'
+    'videos': 'Videos',
+    'plancost': 'Plan & Cost'
   };
   buttons.forEach(b => {
     if (b.textContent.trim() === labels[id]) b.classList.add('active');
@@ -2706,6 +3219,14 @@ function showTab(id) {
   if (id === 'model3d' && typeof initEngine3D === 'function') {
     initEngine3D();
   }
+}
+
+function showPlanTab(btn, id) {
+  var group = btn.closest('.tab-group');
+  group.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  group.querySelectorAll('.tab-content').forEach(function(c){ c.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
 }
 </script>
 </body>
