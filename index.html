@@ -504,6 +504,7 @@
   <button onclick="showTab('testing')">Testing</button>
   <button onclick="showTab('power')">Power &amp; Cooling</button>
   <button onclick="showTab('model3d')">3D Model</button>
+  <button onclick="showTab('videos')">Videos</button>
 </div>
 
 <!-- ==================== OVERVIEW ==================== -->
@@ -2084,6 +2085,30 @@
   HPM-120 Hybrid Plasma MHD Engine &mdash; Engineering Specification Package &mdash; Conceptual Design Document
 </div>
 
+<!-- ==================== VIDEOS ==================== -->
+<div class="section" id="videos">
+  <h2><span class="icon">&#9654;</span> Engine Test Videos</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>HPM-120 Ignition Sequence</h3>
+      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
+        <source src="hpm120-ignition.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top:10px; color:var(--dim);">Ultra-cinematic ignition shot of the HPM-120 hybrid plasma MHD engine. Captures the initial ignition sequence with plasma discharge and MHD field activation.</p>
+    </div>
+    <div class="card">
+      <h3>HPM-120 Engine Running</h3>
+      <video controls playsinline preload="metadata" style="width:100%; border-radius:6px;">
+        <source src="hpm120-engine-running.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top:10px; color:var(--dim);">Extended footage of the HPM-120 engine during sustained operation. Shows the engine running at full power with exhaust plume and MHD plasma interaction visible.</p>
+    </div>
+  </div>
+</div>
+
 <!-- Three.js CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
@@ -2662,7 +2687,8 @@ function showTab(id) {
     'phases': 'Build Phases',
     'testing': 'Testing',
     'power': 'Power & Cooling',
-    'model3d': '3D Model'
+    'model3d': '3D Model',
+    'videos': 'Videos'
   };
   buttons.forEach(b => {
     if (b.textContent.trim() === labels[id]) b.classList.add('active');
