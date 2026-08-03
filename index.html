@@ -509,6 +509,7 @@
   <button onclick="showTab('storyboard')">Storyboard</button>
   <button onclick="showTab('blueprint')">Blueprint</button>
   <button onclick="showTab('electronics')">Electronics</button>
+  <button onclick="showTab('software')">Software &amp; Dashboard</button>
 </div>
 
 <!-- ==================== OVERVIEW ==================== -->
@@ -2133,10 +2134,19 @@
 <div class="section" id="blueprint">
   <h2><span class="icon">&#128208;</span> Engineering Blueprint</h2>
 
+  <!-- Download buttons -->
+  <div style="margin-bottom:20px;display:flex;gap:10px;flex-wrap:wrap;">
+    <button onclick="downloadSVG('bp-side','HPM-120_Side_Elevation.svg')" style="background:rgba(0,180,216,0.12);border:1px solid var(--accent);color:var(--accent);padding:8px 18px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:0.85em;">&#11015; Side Elevation SVG</button>
+    <button onclick="downloadSVG('bp-section-aa','HPM-120_Section_AA_RDE.svg')" style="background:rgba(0,180,216,0.12);border:1px solid var(--accent);color:var(--accent);padding:8px 18px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:0.85em;">&#11015; Section A-A SVG</button>
+    <button onclick="downloadSVG('bp-front','HPM-120_Front_View.svg')" style="background:rgba(0,180,216,0.12);border:1px solid var(--accent);color:var(--accent);padding:8px 18px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:0.85em;">&#11015; Front View SVG</button>
+    <button onclick="downloadSVG('bp-wall','HPM-120_Wall_Detail.svg')" style="background:rgba(0,180,216,0.12);border:1px solid var(--accent);color:var(--accent);padding:8px 18px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:0.85em;">&#11015; Wall Detail SVG</button>
+    <button onclick="downloadAllBlueprints()" style="background:rgba(46,196,178,0.15);border:1px solid var(--green);color:var(--green);padding:8px 18px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:0.85em;font-weight:700;">&#11015; Download All Blueprints</button>
+  </div>
+
   <!-- SIDE VIEW (Principal Drawing) -->
   <div class="card span-full" style="margin-bottom:20px; overflow-x:auto;">
     <h3>General Arrangement &mdash; Side Elevation</h3>
-    <svg viewBox="0 0 1400 520" style="width:100%;min-width:900px;background:#060a14;border-radius:6px;font-family:'Courier New',monospace;" xmlns="http://www.w3.org/2000/svg">
+    <svg id="bp-side" viewBox="0 0 1400 520" style="width:100%;min-width:900px;background:#060a14;border-radius:6px;font-family:'Courier New',monospace;" xmlns="http://www.w3.org/2000/svg">
       <!-- Grid -->
       <defs>
         <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#0d1a30" stroke-width="0.5"/></pattern>
@@ -2315,7 +2325,7 @@
   <div class="grid-2" style="margin-bottom:20px;">
     <div class="card">
       <h3>Section A-A &mdash; RDE Annulus Cross-Section</h3>
-      <svg viewBox="0 0 400 400" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
+      <svg id="bp-section-aa" viewBox="0 0 400 400" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr3" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,6 2.5,0 5" fill="#00b4d8"/></marker>
           <marker id="arr4" markerWidth="6" markerHeight="5" refX="0" refY="2.5" orient="auto"><polygon points="6 0,0 2.5,6 5" fill="#00b4d8"/></marker>
@@ -2376,7 +2386,7 @@
 
     <div class="card">
       <h3>Front View &mdash; Intake Face</h3>
-      <svg viewBox="0 0 400 400" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
+      <svg id="bp-front" viewBox="0 0 400 400" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
         <!-- Outer cowl -->
         <circle cx="200" cy="200" r="170" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
         <!-- Inner ring -->
@@ -2412,7 +2422,7 @@
   <!-- WALL CROSS-SECTION DETAIL -->
   <div class="card span-full" style="margin-bottom:20px;">
     <h3>Detail D &mdash; RDE Wall Cross-Section (Scale 5:1)</h3>
-    <svg viewBox="0 0 900 260" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
+    <svg id="bp-wall" viewBox="0 0 900 260" style="width:100%;background:#060a14;border-radius:6px;" xmlns="http://www.w3.org/2000/svg">
       <!-- HOT GAS arrow -->
       <text x="30" y="30" fill="#ff6b35" font-size="12" font-weight="700" font-family="Courier New">HOT GAS</text>
       <text x="30" y="46" fill="#ff6b35" font-size="10" font-family="Courier New">3,500&ndash;4,000 K</text>
@@ -3074,6 +3084,308 @@
       <text x="610" y="86" fill="#6e7681" font-size="8" text-anchor="middle">2.45 GHz, start-up only</text>
       <line x1="580" y1="100" x2="530" y2="200" stroke="#ff6b35" stroke-width="1"/>
     </svg>
+  </div>
+</div>
+
+<!-- ==================== SOFTWARE & DASHBOARD ==================== -->
+<div class="section" id="software">
+  <h2><span class="icon">&#128187;</span> Software &amp; Engine Dashboard</h2>
+
+  <!-- ---- SOFTWARE STACK OVERVIEW ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Software Stack Overview</h3>
+    <p style="margin-bottom:14px;color:var(--dim);font-size:0.9em;">Complete software required to design, simulate, control, and monitor the HPM-120 from CAD through flight.</p>
+
+    <div class="grid-4">
+      <div style="border:1px solid var(--accent);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--accent);margin-bottom:6px;font-size:0.85em;">DESIGN &amp; CAD</h4>
+        <div style="font-size:2em;font-weight:700;color:var(--accent);margin-bottom:6px;">Layer 1</div>
+        <p style="font-size:0.8em;color:var(--dim);">Geometry, tolerancing, and AM build preparation</p>
+      </div>
+      <div style="border:1px solid var(--green);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--green);margin-bottom:6px;font-size:0.85em;">SIMULATION</h4>
+        <div style="font-size:2em;font-weight:700;color:var(--green);margin-bottom:6px;">Layer 2</div>
+        <p style="font-size:0.8em;color:var(--dim);">CFD, FEA, MHD, detonation, thermal</p>
+      </div>
+      <div style="border:1px solid var(--warn);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--warn);margin-bottom:6px;font-size:0.85em;">EMBEDDED / ECU</h4>
+        <div style="font-size:2em;font-weight:700;color:var(--warn);margin-bottom:6px;">Layer 3</div>
+        <p style="font-size:0.8em;color:var(--dim);">Real-time firmware, FPGA bitstream, safety logic</p>
+      </div>
+      <div style="border:1px solid var(--hot);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--hot);margin-bottom:6px;font-size:0.85em;">TEST &amp; MONITOR</h4>
+        <div style="font-size:2em;font-weight:700;color:var(--hot);margin-bottom:6px;">Layer 4</div>
+        <p style="font-size:0.8em;color:var(--dim);">DAQ, dashboard, post-processing, analytics</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- LAYER 1: DESIGN ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Layer 1 &mdash; Design &amp; CAD Software</h3>
+    <table>
+      <thead><tr><th>Software</th><th>Purpose</th><th>License Type</th><th>Est. Cost</th><th>Phase</th></tr></thead>
+      <tbody>
+        <tr><td class="val">SolidWorks / Siemens NX</td><td>Primary 3D CAD &mdash; full engine geometry, assemblies, GD&amp;T, drawings</td><td>Commercial</td><td class="val">$4K&ndash;$12K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">nTopology</td><td>Lattice and topology optimization for AM brackets, lightweight structures</td><td>Commercial</td><td class="val">$8K&ndash;$15K/yr</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Materialise Magics</td><td>AM build preparation &mdash; support generation, slicing, orientation, nesting</td><td>Commercial</td><td class="val">$10K&ndash;$20K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Netfabb (Autodesk)</td><td>AM mesh repair, lattice generation, build simulation (distortion prediction)</td><td>Commercial</td><td class="val">$3K&ndash;$6K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">FreeCAD / OpenSCAD</td><td>Open-source CAD for prototype iterations, parametric modeling</td><td>Open source</td><td class="val ok">Free</td><td>Phase 1</td></tr>
+        <tr><td class="val">GrabCAD Print</td><td>Direct-to-printer workflow for AM machines (Stratasys / EOS compatible)</td><td>Free</td><td class="val ok">Free</td><td>Phase 1+</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- LAYER 2: SIMULATION ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Layer 2 &mdash; Simulation &amp; Analysis Software</h3>
+    <table>
+      <thead><tr><th>Software</th><th>Purpose</th><th>License Type</th><th>Est. Cost</th><th>Phase</th></tr></thead>
+      <tbody>
+        <tr><td class="val">ANSYS Fluent</td><td>CFD &mdash; intake flow, nozzle expansion, cooling channel flow, heat transfer</td><td>Commercial</td><td class="val">$25K&ndash;$60K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">ANSYS Mechanical</td><td>FEA &mdash; structural stress, thermal stress, modal analysis, fatigue life</td><td>Commercial</td><td class="val">$15K&ndash;$40K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">OpenFOAM</td><td>Open-source CFD &mdash; custom solvers for detonation and MHD simulation</td><td>Open source</td><td class="val ok">Free</td><td>Phase 1+</td></tr>
+        <tr><td class="val">COMSOL Multiphysics</td><td>Coupled MHD + thermal + EM simulation &mdash; electrode interactions, Lorentz forces, plasma conductivity</td><td>Commercial</td><td class="val">$8K&ndash;$30K/yr</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Cantera</td><td>Chemical kinetics &mdash; detonation wave modeling, combustion products, alkali seed ionization</td><td>Open source</td><td class="val ok">Free</td><td>Phase 1+</td></tr>
+        <tr><td class="val">NASA CEA (Chemical Equilibrium)</td><td>Combustion product composition, adiabatic flame temperature, exhaust properties</td><td>Free (NASA)</td><td class="val ok">Free</td><td>Phase 1+</td></tr>
+        <tr><td class="val">MATLAB / Simulink</td><td>System modeling &mdash; engine cycle analysis, control law design, MHD power balance</td><td>Commercial</td><td class="val">$3K&ndash;$8K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Python (NumPy/SciPy)</td><td>Custom analysis scripts, data post-processing, performance mapping</td><td>Open source</td><td class="val ok">Free</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Simcenter STAR-CCM+</td><td>High-fidelity rotating detonation simulation with moving reference frames</td><td>Commercial</td><td class="val">$20K&ndash;$50K/yr</td><td>Phase 2+</td></tr>
+        <tr><td class="val">ABAQUS</td><td>Advanced FEA &mdash; creep analysis, C/SiC composite failure, thermal cycling fatigue</td><td>Commercial</td><td class="val">$15K&ndash;$40K/yr</td><td>Phase 3</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:10px;">For Phase 1, use OpenFOAM + Cantera + NASA CEA + Python to minimize cost. Upgrade to commercial solvers (ANSYS, COMSOL) for Phase 2+ when higher fidelity is needed.</div>
+  </div>
+
+  <!-- ---- LAYER 3: EMBEDDED ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Layer 3 &mdash; Embedded &amp; ECU Software</h3>
+    <div class="grid-2">
+      <div>
+        <h4 style="color:var(--warn);margin-bottom:8px;">FPGA Firmware (Real-Time Control)</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>Development tool</td><td class="val">Xilinx Vivado + Vitis HLS</td></tr>
+          <tr><td>Language</td><td class="val">VHDL / Verilog (FPGA fabric) + C/C++ (HLS)</td></tr>
+          <tr><td>Target device</td><td class="val">Zynq UltraScale+ ZU7EV</td></tr>
+          <tr><td>Control loop</td><td class="val">10 kHz main, 100 kHz MHD power</td></tr>
+          <tr><td>ADC interface</td><td class="val">16-bit, 1 MSPS, 64-ch multiplexed</td></tr>
+          <tr><td>Safety watchdog</td><td class="val">Hardware timer, independent of main loop</td></tr>
+          <tr><td>State machine</td><td class="val">PRE-START &rarr; IGNITION &rarr; RAMP &rarr; RUN &rarr; SHUTDOWN</td></tr>
+          <tr><td>Fault handler</td><td class="val">Priority-based, &lt;50 ms to full shutdown</td></tr>
+          <tr><td>License cost</td><td class="val warn">$3K&ndash;$5K/yr (Vivado Enterprise)</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="color:var(--warn);margin-bottom:8px;">ARM Application Software</h4>
+        <table class="pp-table" style="font-size:0.82em;">
+          <tr><td>OS</td><td class="val">FreeRTOS or VxWorks (DO-178C if flight)</td></tr>
+          <tr><td>Language</td><td class="val">C (MISRA-C:2012 compliant)</td></tr>
+          <tr><td>Functions</td><td class="val">Sequencing, data logging, ARINC 429, BITE</td></tr>
+          <tr><td>Throttle control</td><td class="val">PID + feedforward, gain-scheduled by altitude/Mach</td></tr>
+          <tr><td>MHD power control</td><td class="val">Adaptive load matching, MPPT-style algorithm</td></tr>
+          <tr><td>Detonation tracker</td><td class="val">Real-time FFT on 8-ch pressure ring, wave count/speed</td></tr>
+          <tr><td>Data logging</td><td class="val">Circular buffer, 10 MB/s to flash, 30 min retention</td></tr>
+          <tr><td>Communication</td><td class="val">ARINC 429 (TX/RX), CAN-FD (internal bus)</td></tr>
+          <tr><td>Development tools</td><td class="val">ARM DS / GCC + GDB, JTAG debug</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:14px;">
+      <div style="border:1px solid var(--warn);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--warn);margin-bottom:6px;font-size:0.85em;">ECU State Machine</h4>
+        <svg viewBox="0 0 300 220" style="width:100%;background:#060a14;border-radius:4px;" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="70" height="28" rx="4" fill="rgba(139,148,158,0.12)" stroke="#8b949e" stroke-width="1"/><text x="45" y="29" fill="#8b949e" font-size="8" text-anchor="middle" font-family="Courier New">IDLE</text>
+          <line x1="80" y1="24" x2="105" y2="24" stroke="#6e7681" stroke-width="1" marker-end="url(#arr)"/>
+          <rect x="105" y="10" width="80" height="28" rx="4" fill="rgba(255,214,10,0.12)" stroke="#ffd60a" stroke-width="1"/><text x="145" y="29" fill="#ffd60a" font-size="8" text-anchor="middle" font-family="Courier New">PRE-START</text>
+          <line x1="185" y1="24" x2="210" y2="24" stroke="#6e7681" stroke-width="1" marker-end="url(#arr)"/>
+          <rect x="210" y="10" width="80" height="28" rx="4" fill="rgba(255,107,53,0.15)" stroke="#ff6b35" stroke-width="1"/><text x="250" y="29" fill="#ff6b35" font-size="8" text-anchor="middle" font-family="Courier New">IGNITION</text>
+          <line x1="250" y1="38" x2="250" y2="60" stroke="#6e7681" stroke-width="1" marker-end="url(#arr)"/>
+          <rect x="210" y="60" width="80" height="28" rx="4" fill="rgba(255,107,53,0.15)" stroke="#ff6b35" stroke-width="1"/><text x="250" y="79" fill="#ff6b35" font-size="8" text-anchor="middle" font-family="Courier New">RAMP-UP</text>
+          <line x1="210" y1="74" x2="185" y2="74" stroke="#6e7681" stroke-width="1" marker-end="url(#arr)"/>
+          <rect x="100" y="60" width="85" height="28" rx="4" fill="rgba(46,196,178,0.15)" stroke="#2ec4b6" stroke-width="1.5"/><text x="142" y="79" fill="#2ec4b6" font-size="8" text-anchor="middle" font-weight="700" font-family="Courier New">RUNNING</text>
+          <line x1="142" y1="88" x2="142" y2="110" stroke="#6e7681" stroke-width="1" marker-end="url(#arr)"/>
+          <rect x="100" y="110" width="85" height="28" rx="4" fill="rgba(0,180,216,0.12)" stroke="#00b4d8" stroke-width="1"/><text x="142" y="129" fill="#00b4d8" font-size="8" text-anchor="middle" font-family="Courier New">COOLDOWN</text>
+          <line x1="100" y1="124" x2="80" y2="124" stroke="#6e7681" stroke-width="1" marker-end="url(#arr)"/>
+          <rect x="10" y="110" width="70" height="28" rx="4" fill="rgba(139,148,158,0.12)" stroke="#8b949e" stroke-width="1"/><text x="45" y="129" fill="#8b949e" font-size="8" text-anchor="middle" font-family="Courier New">IDLE</text>
+          <!-- Emergency path -->
+          <rect x="10" y="170" width="85" height="28" rx="4" fill="rgba(255,53,53,0.15)" stroke="#ff3535" stroke-width="1.5"/><text x="52" y="189" fill="#ff3535" font-size="8" text-anchor="middle" font-weight="700" font-family="Courier New">E-SHUTDOWN</text>
+          <line x1="142" y1="88" x2="95" y2="175" stroke="#ff3535" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#arr)"/>
+          <text x="80" y="140" fill="#ff3535" font-size="6" font-family="Courier New">ANY FAULT</text>
+        </svg>
+      </div>
+      <div style="border:1px solid var(--warn);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--warn);margin-bottom:6px;font-size:0.85em;">Control Law Summary</h4>
+        <table class="pp-table" style="font-size:0.8em;">
+          <tr><td>Thrust control</td><td class="val">Fuel flow &rarr; PID &rarr; metering valve</td></tr>
+          <tr><td>Detonation guard</td><td class="val">Wave speed &lt; limit &rarr; reduce fuel</td></tr>
+          <tr><td>MHD gen load match</td><td class="val">V/I sensing &rarr; MPPT &rarr; load bank</td></tr>
+          <tr><td>MHD accel current</td><td class="val">Thrust demand &rarr; current setpoint</td></tr>
+          <tr><td>Thermal limit</td><td class="val">T_wall &gt; 1,350 K &rarr; increase coolant</td></tr>
+          <tr><td>Magnet protection</td><td class="val">Quench detect &rarr; dump resistor</td></tr>
+          <tr><td>Fuel pressure</td><td class="val">Pump speed &rarr; PI &rarr; target pressure</td></tr>
+        </table>
+      </div>
+      <div style="border:1px solid var(--warn);border-radius:8px;padding:14px;">
+        <h4 style="color:var(--warn);margin-bottom:6px;font-size:0.85em;">Certification Path (Flight)</h4>
+        <table class="pp-table" style="font-size:0.8em;">
+          <tr><td>Software standard</td><td class="val">DO-178C (Level A)</td></tr>
+          <tr><td>Hardware standard</td><td class="val">DO-254 (Level A)</td></tr>
+          <tr><td>Environmental</td><td class="val">DO-160G (all categories)</td></tr>
+          <tr><td>Engine cert</td><td class="val">FAR 33 / EASA CS-E</td></tr>
+          <tr><td>RTOS requirement</td><td class="val">VxWorks 653 (ARINC 653)</td></tr>
+          <tr><td>Code coverage</td><td class="val">MC/DC 100% (Level A)</td></tr>
+          <tr><td>V&amp;V toolchain</td><td class="val">LDRA, VectorCAST, Polyspace</td></tr>
+        </table>
+        <div class="note" style="margin-top:8px;font-size:0.78em;">Certification required only for flight. Ground test uses FreeRTOS + custom safety layer (non-certified).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- LAYER 4: TEST & MONITORING ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Layer 4 &mdash; Test, Monitoring &amp; Post-Processing Software</h3>
+    <table>
+      <thead><tr><th>Software</th><th>Purpose</th><th>License</th><th>Est. Cost</th><th>Phase</th></tr></thead>
+      <tbody>
+        <tr><td class="val">LabVIEW Real-Time + FPGA</td><td>DAQ control, test sequencing, safety interlocks, real-time display</td><td>Commercial</td><td class="val">$5K&ndash;$15K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">LabVIEW Dashboard (Web VI)</td><td>Remote monitoring HMI &mdash; live gauges, strip charts, alarm annunciation</td><td>Included</td><td class="val">Incl. w/ LabVIEW</td><td>Phase 1+</td></tr>
+        <tr><td class="val">MATLAB + Signal Processing Toolbox</td><td>Post-test FFT analysis, detonation wave tracking, performance calcs</td><td>Commercial</td><td class="val">$3K&ndash;$6K/yr</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Python (Matplotlib, Pandas, SciPy)</td><td>Custom analysis scripts, automated report generation, data visualization</td><td>Open source</td><td class="val ok">Free</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Grafana + InfluxDB</td><td>Real-time dashboarding with time-series database for long-duration test campaigns</td><td>Open source</td><td class="val ok">Free</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Git + GitHub</td><td>Version control for all firmware, scripts, test procedures, CAD files</td><td>Free / Commercial</td><td class="val ok">Free&ndash;$20/mo</td><td>Phase 1+</td></tr>
+        <tr><td class="val">Docker</td><td>Containerized simulation environments, reproducible analysis pipelines</td><td>Open source</td><td class="val ok">Free</td><td>Phase 2+</td></tr>
+        <tr><td class="val">Photron PFV (camera software)</td><td>High-speed camera control + image analysis for detonation visualization</td><td>Included w/ camera</td><td class="val">Incl. w/ camera</td><td>Phase 1+</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---- SOFTWARE COST SUMMARY ---- -->
+  <div class="card span-full" style="margin-bottom:20px;">
+    <h3>Software Cost Summary by Phase</h3>
+    <div class="grid-3">
+      <div style="border:1px solid var(--green);border-radius:8px;padding:14px;text-align:center;">
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Phase 1 (Open Source Focus)</div>
+        <div style="font-size:2em;font-weight:700;color:var(--green);margin:6px 0;">~$5K&ndash;$15K/yr</div>
+        <p style="font-size:0.78em;color:var(--dim);">FreeCAD + OpenFOAM + Cantera + Python + LabVIEW (student/startup). Minimal commercial licenses.</p>
+      </div>
+      <div style="border:1px solid var(--warn);border-radius:8px;padding:14px;text-align:center;">
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Phase 2 (Mixed)</div>
+        <div style="font-size:2em;font-weight:700;color:var(--warn);margin:6px 0;">~$40K&ndash;$80K/yr</div>
+        <p style="font-size:0.78em;color:var(--dim);">Add SolidWorks + ANSYS + COMSOL + Vivado. Commercial simulation for MHD optimization.</p>
+      </div>
+      <div style="border:1px solid var(--hot);border-radius:8px;padding:14px;text-align:center;">
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Phase 3 (Full Suite)</div>
+        <div style="font-size:2em;font-weight:700;color:var(--hot);margin:6px 0;">~$80K&ndash;$180K/yr</div>
+        <p style="font-size:0.78em;color:var(--dim);">Full ANSYS + STAR-CCM+ + ABAQUS + Vivado Enterprise + certification tools (LDRA, VectorCAST).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- LIVE ENGINE DASHBOARD ---- -->
+  <h2 style="margin-top:30px;"><span class="icon">&#128202;</span> Engine Dashboard (Simulated)</h2>
+
+  <div class="card span-full" style="margin-bottom:20px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+      <h3 style="margin:0;">HPM-120 Real-Time Engine Monitor</h3>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span id="dash-status" style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6e7681;"></span>
+        <span id="dash-status-text" style="font-size:0.82em;color:var(--dim);font-family:'Courier New',monospace;">IDLE</span>
+        <button id="dash-start-btn" onclick="toggleDashboard()" style="background:rgba(46,196,178,0.15);border:1px solid var(--green);color:var(--green);padding:6px 16px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:0.82em;">Start Simulation</button>
+      </div>
+    </div>
+
+    <!-- Throttle -->
+    <div style="margin-bottom:16px;display:flex;align-items:center;gap:12px;">
+      <span style="font-size:0.82em;color:var(--dim);width:70px;">Throttle:</span>
+      <input id="dash-throttle" type="range" min="0" max="100" value="0" oninput="updateDashThrottle(this.value)" style="flex:1;max-width:400px;accent-color:var(--accent);">
+      <span id="dash-throttle-val" style="font-size:1.1em;font-weight:700;color:var(--accent);width:50px;font-family:'Courier New',monospace;">0%</span>
+    </div>
+
+    <!-- Primary gauges -->
+    <div class="grid-4" style="margin-bottom:16px;" id="dash-gauges">
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;">
+        <div style="font-size:0.7em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Thrust</div>
+        <div id="g-thrust" style="font-size:2.4em;font-weight:700;color:var(--accent);font-family:'Courier New',monospace;">0.0</div>
+        <div style="font-size:0.75em;color:var(--dim);">kN</div>
+        <div style="margin-top:6px;height:4px;background:var(--border);border-radius:2px;overflow:hidden;"><div id="gb-thrust" style="height:100%;width:0%;background:var(--accent);transition:width 0.3s;"></div></div>
+      </div>
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;">
+        <div style="font-size:0.7em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Exhaust Temp</div>
+        <div id="g-temp" style="font-size:2.4em;font-weight:700;color:var(--hot);font-family:'Courier New',monospace;">288</div>
+        <div style="font-size:0.75em;color:var(--dim);">K</div>
+        <div style="margin-top:6px;height:4px;background:var(--border);border-radius:2px;overflow:hidden;"><div id="gb-temp" style="height:100%;width:0%;background:var(--hot);transition:width 0.3s;"></div></div>
+      </div>
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;">
+        <div style="font-size:0.7em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Chamber Pressure</div>
+        <div id="g-press" style="font-size:2.4em;font-weight:700;color:var(--warn);font-family:'Courier New',monospace;">1.0</div>
+        <div style="font-size:0.75em;color:var(--dim);">bar</div>
+        <div style="margin-top:6px;height:4px;background:var(--border);border-radius:2px;overflow:hidden;"><div id="gb-press" style="height:100%;width:0%;background:var(--warn);transition:width 0.3s;"></div></div>
+      </div>
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;">
+        <div style="font-size:0.7em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">MHD Power</div>
+        <div id="g-mhd" style="font-size:2.4em;font-weight:700;color:var(--green);font-family:'Courier New',monospace;">0</div>
+        <div style="font-size:0.75em;color:var(--dim);">kW</div>
+        <div style="margin-top:6px;height:4px;background:var(--border);border-radius:2px;overflow:hidden;"><div id="gb-mhd" style="height:100%;width:0%;background:var(--green);transition:width 0.3s;"></div></div>
+      </div>
+    </div>
+
+    <!-- Secondary gauges -->
+    <div class="grid-4" style="margin-bottom:16px;">
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;">
+        <div style="font-size:0.65em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Air Flow</div>
+        <div id="g-air" style="font-size:1.6em;font-weight:700;color:var(--white);font-family:'Courier New',monospace;">0.0</div>
+        <div style="font-size:0.7em;color:var(--dim);">kg/s</div>
+      </div>
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;">
+        <div style="font-size:0.65em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Fuel Flow</div>
+        <div id="g-fuel" style="font-size:1.6em;font-weight:700;color:var(--warn);font-family:'Courier New',monospace;">0.00</div>
+        <div style="font-size:0.7em;color:var(--dim);">kg/s</div>
+      </div>
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;">
+        <div style="font-size:0.65em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">Wall Temp (Max)</div>
+        <div id="g-wall" style="font-size:1.6em;font-weight:700;color:var(--hot);font-family:'Courier New',monospace;">310</div>
+        <div style="font-size:0.7em;color:var(--dim);">K</div>
+      </div>
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;">
+        <div style="font-size:0.65em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;">External Power</div>
+        <div id="g-ext" style="font-size:1.6em;font-weight:700;color:var(--accent);font-family:'Courier New',monospace;">0.0</div>
+        <div style="font-size:0.7em;color:var(--dim);">kW</div>
+      </div>
+    </div>
+
+    <!-- Detonation wave & MHD strip charts -->
+    <div class="grid-2" style="margin-bottom:16px;">
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:14px;">
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Detonation Wave Speed</div>
+        <canvas id="dash-wave-chart" width="500" height="120" style="width:100%;height:120px;border-radius:4px;"></canvas>
+        <div style="display:flex;justify-content:space-between;margin-top:4px;">
+          <span style="font-size:0.7em;color:var(--dim);">Target: 1,500&ndash;2,000 m/s</span>
+          <span id="g-wave" style="font-size:0.85em;font-weight:700;color:var(--accent);font-family:'Courier New',monospace;">0 m/s</span>
+        </div>
+      </div>
+      <div style="background:#060a14;border:1px solid var(--border);border-radius:8px;padding:14px;">
+        <div style="font-size:0.75em;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">MHD Generator Output</div>
+        <canvas id="dash-mhd-chart" width="500" height="120" style="width:100%;height:120px;border-radius:4px;"></canvas>
+        <div style="display:flex;justify-content:space-between;margin-top:4px;">
+          <span style="font-size:0.7em;color:var(--dim);">Target: 300&ndash;600 kW</span>
+          <span id="g-mhdout" style="font-size:0.85em;font-weight:700;color:var(--green);font-family:'Courier New',monospace;">0 kW</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- System status indicators -->
+    <div style="display:flex;gap:14px;flex-wrap:wrap;padding:10px;background:#060a14;border:1px solid var(--border);border-radius:8px;">
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-fuel" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> FUEL SYS</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-rde" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> RDE</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-mhdg" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> MHD GEN</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-mhda" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> MHD ACCEL</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-cool" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> COOLING</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-mag" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> MAGNETS</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-cryo" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> CRYO</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-ign" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> IGNITER</div>
+      <div style="font-size:0.75em;color:var(--dim);display:flex;align-items:center;gap:4px;"><span id="s-ecu" style="width:8px;height:8px;border-radius:50%;background:#6e7681;display:inline-block;"></span> ECU LINK</div>
+    </div>
   </div>
 </div>
 
@@ -4171,7 +4483,8 @@ function showTab(id) {
     'plancost': 'Plan & Cost',
     'storyboard': 'Storyboard',
     'blueprint': 'Blueprint',
-    'electronics': 'Electronics'
+    'electronics': 'Electronics',
+    'software': 'Software & Dashboard'
   };
   buttons.forEach(b => {
     if (b.textContent.trim() === labels[id]) b.classList.add('active');
@@ -4189,6 +4502,200 @@ function showPlanTab(btn, id) {
   group.querySelectorAll('.tab-content').forEach(function(c){ c.classList.remove('active'); });
   btn.classList.add('active');
   document.getElementById(id).classList.add('active');
+}
+
+// ========== BLUEPRINT SVG DOWNLOAD ==========
+function downloadSVG(svgId, filename) {
+  var svg = document.getElementById(svgId);
+  if (!svg) return;
+  var serializer = new XMLSerializer();
+  var source = serializer.serializeToString(svg);
+  if (!source.match(/^<svg[^>]+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/)) {
+    source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+  }
+  var blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function downloadAllBlueprints() {
+  var blueprints = [
+    ['bp-side', 'HPM-120_Side_Elevation.svg'],
+    ['bp-section-aa', 'HPM-120_Section_AA_RDE.svg'],
+    ['bp-front', 'HPM-120_Front_View.svg'],
+    ['bp-wall', 'HPM-120_Wall_Detail.svg']
+  ];
+  blueprints.forEach(function(bp, i) {
+    setTimeout(function() { downloadSVG(bp[0], bp[1]); }, i * 300);
+  });
+}
+
+// ========== LIVE ENGINE DASHBOARD ==========
+var dashInterval = null;
+var dashRunning = false;
+var dashThrottle = 0;
+var waveData = [];
+var mhdData = [];
+var DASH_HISTORY = 100;
+
+function toggleDashboard() {
+  dashRunning = !dashRunning;
+  var btn = document.getElementById('dash-start-btn');
+  var status = document.getElementById('dash-status');
+  var statusText = document.getElementById('dash-status-text');
+  if (dashRunning) {
+    btn.textContent = 'Stop Simulation';
+    btn.style.borderColor = 'var(--hot)';
+    btn.style.color = 'var(--hot)';
+    btn.style.background = 'rgba(255,107,53,0.15)';
+    status.style.background = 'var(--green)';
+    statusText.textContent = 'RUNNING';
+    statusText.style.color = 'var(--green)';
+    waveData = [];
+    mhdData = [];
+    dashInterval = setInterval(updateDashboard, 100);
+  } else {
+    btn.textContent = 'Start Simulation';
+    btn.style.borderColor = 'var(--green)';
+    btn.style.color = 'var(--green)';
+    btn.style.background = 'rgba(46,196,178,0.15)';
+    status.style.background = '#6e7681';
+    statusText.textContent = 'IDLE';
+    statusText.style.color = 'var(--dim)';
+    clearInterval(dashInterval);
+    dashInterval = null;
+  }
+}
+
+function updateDashThrottle(val) {
+  dashThrottle = parseInt(val);
+  document.getElementById('dash-throttle-val').textContent = dashThrottle + '%';
+}
+
+function updateDashboard() {
+  var t = dashThrottle / 100;
+  var noise = function(scale) { return (Math.random() - 0.5) * scale; };
+
+  // Compute gauge values based on throttle
+  var thrust = t * 120 + noise(2);
+  var temp = 288 + t * 3212 + noise(50);
+  var press = 1.0 + t * 24 + noise(0.5);
+  var mhdPow = t > 0.15 ? (t - 0.15) * 706 + noise(15) : 0;
+  var airFlow = t * 45 + noise(1.5);
+  var fuelFlow = t * 3.2 + noise(0.1);
+  var wallTemp = 310 + t * 890 + noise(20);
+  var extPow = t < 0.3 ? (0.3 - t) * 50 + noise(2) : 0 + noise(0.5);
+  var waveSpeed = t > 0.1 ? 1800 + t * 400 + noise(80) : 0;
+  var mhdOut = mhdPow;
+
+  // Clamp
+  thrust = Math.max(0, thrust);
+  mhdPow = Math.max(0, mhdPow);
+  extPow = Math.max(0, extPow);
+  waveSpeed = Math.max(0, waveSpeed);
+  mhdOut = Math.max(0, mhdOut);
+
+  // Update gauge displays
+  document.getElementById('g-thrust').textContent = thrust.toFixed(1);
+  document.getElementById('g-temp').textContent = Math.round(temp);
+  document.getElementById('g-press').textContent = press.toFixed(1);
+  document.getElementById('g-mhd').textContent = Math.round(mhdPow);
+  document.getElementById('g-air').textContent = airFlow.toFixed(1);
+  document.getElementById('g-fuel').textContent = fuelFlow.toFixed(2);
+  document.getElementById('g-wall').textContent = Math.round(wallTemp);
+  document.getElementById('g-ext').textContent = extPow.toFixed(1);
+  document.getElementById('g-wave').textContent = Math.round(waveSpeed) + ' m/s';
+  document.getElementById('g-mhdout').textContent = Math.round(mhdOut) + ' kW';
+
+  // Update bar fills
+  document.getElementById('gb-thrust').style.width = (t * 100) + '%';
+  document.getElementById('gb-temp').style.width = Math.min(100, ((temp - 288) / 3500) * 100) + '%';
+  document.getElementById('gb-press').style.width = Math.min(100, ((press - 1) / 25) * 100) + '%';
+  document.getElementById('gb-mhd').style.width = Math.min(100, (mhdPow / 600) * 100) + '%';
+
+  // Update status indicators
+  var setStatus = function(id, active, warn) {
+    var el = document.getElementById(id);
+    if (warn) el.style.background = 'var(--warn)';
+    else if (active) el.style.background = 'var(--green)';
+    else el.style.background = '#6e7681';
+  };
+  setStatus('s-fuel', t > 0.02);
+  setStatus('s-rde', t > 0.1);
+  setStatus('s-mhdg', t > 0.15);
+  setStatus('s-mhda', t > 0.2);
+  setStatus('s-cool', t > 0.05);
+  setStatus('s-mag', t > 0.1);
+  setStatus('s-cryo', t > 0.08);
+  setStatus('s-ign', t > 0.05 && t < 0.3, t > 0.05 && t < 0.3);
+  setStatus('s-ecu', true);
+
+  // Strip chart data
+  waveData.push(waveSpeed);
+  mhdData.push(mhdOut);
+  if (waveData.length > DASH_HISTORY) waveData.shift();
+  if (mhdData.length > DASH_HISTORY) mhdData.shift();
+
+  // Draw wave speed chart
+  drawStripChart('dash-wave-chart', waveData, 2400, '#00b4d8', 'rgba(0,180,216,0.15)');
+  // Draw MHD output chart
+  drawStripChart('dash-mhd-chart', mhdData, 650, '#2ec4b6', 'rgba(46,196,178,0.15)');
+}
+
+function drawStripChart(canvasId, data, maxVal, lineColor, fillColor) {
+  var canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w = canvas.width;
+  var h = canvas.height;
+  ctx.clearRect(0, 0, w, h);
+
+  // Grid lines
+  ctx.strokeStyle = 'rgba(110,118,129,0.2)';
+  ctx.lineWidth = 0.5;
+  for (var i = 0; i < 5; i++) {
+    var y = (i / 4) * h;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(w, y);
+    ctx.stroke();
+  }
+
+  if (data.length < 2) return;
+
+  var step = w / (DASH_HISTORY - 1);
+  var startX = w - (data.length - 1) * step;
+
+  // Fill
+  ctx.beginPath();
+  ctx.moveTo(startX, h);
+  for (var i = 0; i < data.length; i++) {
+    var x = startX + i * step;
+    var y = h - (data[i] / maxVal) * h;
+    ctx.lineTo(x, Math.max(0, y));
+  }
+  ctx.lineTo(startX + (data.length - 1) * step, h);
+  ctx.closePath();
+  ctx.fillStyle = fillColor;
+  ctx.fill();
+
+  // Line
+  ctx.beginPath();
+  for (var i = 0; i < data.length; i++) {
+    var x = startX + i * step;
+    var y = h - (data[i] / maxVal) * h;
+    if (i === 0) ctx.moveTo(x, Math.max(0, y));
+    else ctx.lineTo(x, Math.max(0, y));
+  }
+  ctx.strokeStyle = lineColor;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
 }
 </script>
 </body>
